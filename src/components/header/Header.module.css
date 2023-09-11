@@ -1,0 +1,147 @@
+.mainHeaderBg {
+  background: url(../../pictures/header.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  height: 190px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.headerOverflow {
+  background: url(../../pictures/header-container-bg.png), left, top, repeat;
+}
+
+.headerRegisterOverflow {
+  background: #000;
+  height: 30px;
+}
+
+.registration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 30px;
+}
+.registration p {
+  padding: 5px 10px 5px 10px;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.registration p:hover {
+  text-decoration: underline;
+}
+
+.headerLogoContainer {
+  padding: 10px 0px 10px 0px;
+  width: 300px;
+  height: 128px;
+}
+.headerLogoContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.infoAndSearchContainer {
+  max-width: 100%;
+  height: 100%;
+}
+
+.facebookContainer {
+  padding: 10px 0px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 5px;
+}
+.facebookContainer span {
+  font-weight: bold;
+  padding: 5px 3px 5px 3px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  text-transform: none;
+}
+.facebookContainer Button {
+  font-size: 11px;
+  height: 19px;
+  padding: 0;
+  min-width: 110px;
+}
+.facebookContainer .shareFacebook {
+  min-width: 50px;
+}
+.facebookContainer .textInSpanFacebook {
+  font-weight: normal;
+}
+
+.contactContainer {
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.6rem;
+  color: white;
+}
+.contactContainer .phone {
+  padding-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+  background: url(../../pictures/phone_icon.png);
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+.contactContainer .email {
+  padding-left: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+  background: url(../../pictures/mail_icon.png);
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  height: 20px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.selectOption {
+  height: 20px;
+}

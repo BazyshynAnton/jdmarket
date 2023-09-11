@@ -1,0 +1,119 @@
+.mainHeaderBg {
+  background: url(../../pictures/header.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  height: 190px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.headerOverflow {
+  background: url(../../pictures/header-container-bg.png), left, top, repeat;
+}
+
+.headerRegisterOverflow {
+  background: #000;
+  height: 30px;
+}
+
+.registration {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 30px;
+  p {
+    padding: 5px 10px 5px 10px;
+    color: white;
+    font-size: 0.75rem;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.headerLogoContainer {
+  padding: 10px 0px 10px 0px;
+  width: 300px;
+  height: 128px;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.infoAndSearchContainer {
+  max-width: 100%;
+  height: 100%;
+}
+
+.facebookContainer {
+  padding: 10px 0px 0px 0px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+
+  span {
+    font-weight: bold;
+    padding: 5px 3px 5px 3px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    text-transform: none;
+  }
+  Button {
+    font-size: 11px;
+    height: 19px;
+    padding: 0;
+    min-width: 110px;
+  }
+
+  .shareFacebook {
+    min-width: 50px;
+  }
+
+  .textInSpanFacebook {
+    font-weight: normal;
+  }
+}
+
+.contactContainer {
+  padding-top: 20px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: white;
+  .phone {
+    padding-left: 15px;
+    display: flex;
+    gap: 4px;
+    background: url(../../pictures/phone_icon.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+  }
+  .email {
+    padding-left: 22px;
+    display: flex;
+    gap: 4px;
+    background: url(../../pictures/mail_icon.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+  }
+}
+
+.form {
+  display: flex;
+  max-width: 100%;
+  height: 20px;
+  flex-direction: row;
+}
+
+.selectOption {
+  height: 20px;
+}
