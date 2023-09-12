@@ -2,7 +2,7 @@
   background: url(../../pictures/header.jpg);
   background-position: center top;
   background-repeat: no-repeat;
-  height: 190px;
+  height: 135px;
 
   display: flex;
   flex-direction: row;
@@ -39,6 +39,7 @@
   padding: 10px 0px 10px 0px;
   width: 300px;
   height: 128px;
+  cursor: pointer;
 
   img {
     object-fit: cover;
@@ -83,11 +84,11 @@
 }
 
 .contactContainer {
-  padding-top: 20px;
+  padding-top: 10px;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.3rem;
   color: white;
   .phone {
     padding-left: 15px;
@@ -96,24 +97,261 @@
     background: url(../../pictures/phone_icon.png);
     background-position: center left;
     background-repeat: no-repeat;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 20px;
   }
   .email {
     padding-left: 22px;
     display: flex;
+
     gap: 4px;
     background: url(../../pictures/mail_icon.png);
     background-position: center left;
     background-repeat: no-repeat;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
-.form {
+.formAndBtnContainer {
+  margin-top: 10px;
   display: flex;
-  max-width: 100%;
+  align-items: center;
+  flex-direction: row;
   height: 20px;
+}
+
+.containerSearch {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 27px;
+  background: #0f0d0d;
+  border: solid 1px #989797;
+
+  input {
+    background: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 27px;
+    width: 20px; /* Ширина правой стороны с наклоном */
+
+    background: linear-gradient(to left, #0f0d0d 50%, transparent 50%);
+    border-top: solid 1px #989797;
+    border-bottom: solid 1px #989797;
+    border-right: solid 1px #989797;
+    transform: skewX(-20deg); /* Поворот правой стороны */
+    position: relative;
+    top: 0;
+    left: 6px;
+
+    z-index: 100; /* Помещаем повернутую часть над содержимым */
+  }
+}
+
+.formController {
+  padding-top: 2px;
+  position: relative;
+}
+
+.submitBtn {
+  margin-left: 20px;
+  width: 30px;
+  height: 27px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    color: red;
+    border: 2px solid white;
+  }
+}
+
+.afterContainer {
+  height: 27px;
+  &:after {
+    content: '';
+    display: block;
+    height: 27px;
+    width: 20px; /* Ширина правой стороны с наклоном */
+
+    background: linear-gradient(to right, white 65%, transparent 50%);
+
+    transform: skewX(-20deg); /* Поворот правой стороны */
+    position: relative;
+    top: -27px;
+    left: 16px;
+
+    z-index: 100; /* Помещаем повернутую часть над содержимым */
+  }
+}
+
+.searchIco {
+  z-index: 200;
+}
+
+.underHeader {
+  width: 100%;
+  height: 20px;
+  background: url(../../pictures/under.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.appBar {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.toolbarContainer {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  min-height: 40px;
+  padding: 0;
+  z-index: 2;
+}
+.lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0;
+  cursor: pointer;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+.listItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  transition: 0.2s ease-in-out;
+
+  &:first-child {
+    background: red;
+  }
+
+  &:hover {
+    background: red;
+  }
+}
+
+///остановка тут
+.absoluteInventory {
+  position: absolute;
+  width: 100%;
+  height: 190px;
+  top: 40px;
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  transform: translateY(-20%);
+  animation: ani 1s forwards;
+}
+@keyframes ani {
+  0% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.sectionInventory {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease-in-out;
+
+  cursor: pointer;
+  img {
+    margin-top: 30px;
+    filter: blur(3px);
+  }
+  &:hover {
+    img {
+      filter: blur(0px);
+    }
+    background: rgb(69, 69, 69);
+  }
+}
+
+.borderSection {
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
+}
+
+.textInSection {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 18px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.openMenu {
+  background: red;
+}
+
+.companyProfile {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 40px;
+  background: #000;
+  display: flex;
   flex-direction: row;
 }
 
-.selectOption {
-  height: 20px;
+.companySection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    background: rgb(69, 69, 69);
+  }
+}
+
+.borderCompanySectionOne {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+.borderCompanySectionTwo {
+  border-right: 1px solid grey;
+}
+
+.textInCompany {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 18px;
+
+  cursor: pointer;
 }
