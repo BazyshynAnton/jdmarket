@@ -1,11 +1,7 @@
-import Header from '../components/header/Header'
+import ContentOfHomePage from '../components/contentOfHomePage/ContentOfHomePage'
 
 const HomePage = () => {
-  return (
-    <>
-      <Header />
-    </>
-  )
+  return <ContentOfHomePage />
 }
 
 export default HomePage

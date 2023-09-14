@@ -1,0 +1,82 @@
+.containerIco {
+  width: 70px;
+  height: 48.45px;
+}
+.containerIco img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselAndTitleContainer {
+  position: relative;
+  width: 770px;
+  height: 533px;
+  overflow: visible;
+}
+
+.imgContainerSlide {
+  z-index: 1;
+  position: relative;
+  width: 770px;
+  height: 533px;
+  overflow: visible;
+}
+.imgContainerSlide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.titleOnSlide {
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  height: 160px;
+  left: -19px;
+  bottom: 40px;
+  background: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border-right: solid 8px #ca0909;
+}
+.titleOnSlide::before {
+  content: url(../../pictures/caption_corner.png);
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  top: -21px;
+}
+
+.bgAndText {
+  background: url(../../pictures/slider-caption-bg.png);
+  margin-left: 0%;
+  opacity: 1;
+  width: 300px;
+  height: 160px;
+  -webkit-transition: margin-left 800ms linear 0s;
+  transition: margin-left 800ms linear 0s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-right: solid 4px #fff;
+  padding: 13px 15px 25px 35px;
+}
+.bgAndText h3 {
+  font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 26px;
+  color: #fff;
+}
+.bgAndText p {
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.3;
+  font-size: 13px;
+  font-weight: 100;
+}

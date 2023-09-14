@@ -1,0 +1,68 @@
+.panelContainer {
+  position: relative;
+  width: 370px;
+  height: 533px;
+  padding: 20px 20px 20px 20px;
+  background: url(../../pictures/infoPanel.jpg);
+  overflow: visible;
+}
+.panelContainer::before {
+  content: url(../../pictures/box-shadow-left.png);
+  position: absolute;
+  bottom: -23px;
+  left: 0;
+}
+.panelContainer::after {
+  content: url(../../pictures/box-shadow-right.png);
+  position: absolute;
+  bottom: -23px;
+  right: 0;
+}
+
+.shadowBg {
+  padding: 10px 15px 10px 15px;
+  height: 380px;
+  background: rgba(0, 0, 0, 0.5215686275);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  border-radius: 5px;
+}
+.shadowBg h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Pathway Gothic One", sans-serif;
+}
+.shadowBg p {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: justify;
+}
+.shadowBg button {
+  background: none;
+  color: red;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.imgContainerUsa {
+  width: 270px;
+  height: 30px;
+  cursor: pointer;
+}
+.imgContainerUsa img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

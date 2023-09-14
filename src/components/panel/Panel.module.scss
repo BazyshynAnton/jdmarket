@@ -1,0 +1,62 @@
+.panelContainer {
+  position: relative;
+  width: 370px;
+  height: 533px;
+  padding: 20px 20px 20px 20px;
+  background: url(../../pictures/infoPanel.jpg);
+  overflow: visible;
+  &::before {
+    content: url(../../pictures/box-shadow-left.png);
+    position: absolute;
+    bottom: -23px;
+    left: 0;
+  }
+  &::after {
+    content: url(../../pictures/box-shadow-right.png);
+    position: absolute;
+    bottom: -23px;
+    right: 0;
+  }
+}
+
+.shadowBg {
+  padding: 10px 15px 10px 15px;
+  height: 380px;
+  background: #00000085;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+
+  h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Pathway Gothic One', sans-serif;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: justify;
+  }
+  button {
+    background: none;
+    color: red;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+}
+
+.imgContainerUsa {
+  width: 270px;
+  height: 30px;
+  cursor: pointer;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
