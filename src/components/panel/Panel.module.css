@@ -9,13 +9,13 @@
 .panelContainer::before {
   content: url(../../pictures/box-shadow-left.png);
   position: absolute;
-  bottom: -23px;
+  bottom: -21px;
   left: 0;
 }
 .panelContainer::after {
   content: url(../../pictures/box-shadow-right.png);
   position: absolute;
-  bottom: -23px;
+  bottom: -21px;
   right: 0;
 }
 
@@ -53,6 +53,7 @@
   font-weight: 600;
   font-size: 14px;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .imgContainerUsa {
