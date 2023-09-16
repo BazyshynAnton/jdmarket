@@ -341,33 +341,8 @@
       -ms-flex-direction: row;
           flex-direction: row;
   z-index: 2;
-  -webkit-transform: translateY(-20%);
-          transform: translateY(-20%);
-  -webkit-animation: aniEnter 1s forwards;
-          animation: aniEnter 1s forwards;
 }
 
-@-webkit-keyframes aniEnter {
-  0% {
-    -webkit-transform: translateY(-20%);
-            transform: translateY(-20%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes aniEnter {
-  0% {
-    -webkit-transform: translateY(-20%);
-            transform: translateY(-20%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
 .sectionInventory {
   width: 100%;
   display: -webkit-box;
@@ -429,10 +404,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-transform: translateY(-20%);
-          transform: translateY(-20%);
-  -webkit-animation: aniEnter 1s forwards;
-          animation: aniEnter 1s forwards;
   z-index: 2;
 }
 

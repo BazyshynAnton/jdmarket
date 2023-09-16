@@ -4,10 +4,8 @@ import {
   Box,
   Button,
   FormControl,
-  InputLabel,
   Select,
   MenuItem,
-  TextField,
   AppBar,
   Toolbar,
   List,
@@ -25,6 +23,7 @@ import jdmClassic from '../../pictures/jdmClassic.jpg'
 import nonJdm from '../../pictures/nonJdm.jpg'
 
 import styles from './Header.module.css'
+import { CSSTransition } from 'react-transition-group'
 
 const Header = () => {
   const [searchCategory, setSearchCategory] = useState('Maker')
@@ -67,16 +66,9 @@ const Header = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Ваши действия при отправке формы
-    console.log('Категория:', searchCategory)
-    console.log('Поиск:', searchInput)
   }
 
-  const handleSearchButtonClick = () => {
-    // Ваши действия при нажатии кнопки поиска
-    console.log('Категория:', searchCategory)
-    console.log('Поиск:', searchInput)
-  }
+  const handleSearchButtonClick = () => {}
   return (
     <Box className={styles.headerOverflow}>
       <Box className={styles.headerRegisterOverflow}>
@@ -187,7 +179,12 @@ const Header = () => {
               <ListItem className={styles.listItem}>FAQ</ListItem>
             </List>
           </Toolbar>
-          {isMenuOpen && (
+          <CSSTransition
+            in={isMenuOpen}
+            timeout={300}
+            classNames="absoluteInventory"
+            mountOnEnter
+            unmountOnExit>
             <Box
               className={styles.absoluteInventory}
               onMouseEnter={handleMouseEnter}
@@ -212,8 +209,13 @@ const Header = () => {
                 </Typography>
               </Box>
             </Box>
-          )}
-          {isMenuTwoOpen && (
+          </CSSTransition>
+          <CSSTransition
+            in={isMenuTwoOpen}
+            timeout={300}
+            classNames="companyProfile"
+            mountOnEnter
+            unmountOnExit>
             <Box
               className={styles.companyProfile}
               onMouseEnter={handleMouseEnterTwo}
@@ -241,9 +243,14 @@ const Header = () => {
                 </Typography>
               </Box>
             </Box>
-          )}
+          </CSSTransition>
 
-          {isMenuThreeOpen && (
+          <CSSTransition
+            in={isMenuThreeOpen}
+            timeout={300}
+            classNames="companyProfile"
+            mountOnEnter
+            unmountOnExit>
             <Box
               className={styles.companyProfile}
               onMouseEnter={handleMouseEnterThree}
@@ -265,7 +272,7 @@ const Header = () => {
                 <Typography className={styles.textInCompany}>FORUM</Typography>
               </Box>
             </Box>
-          )}
+          </CSSTransition>
         </AppBar>
       </Container>
       <Box className={styles.underHeader} />

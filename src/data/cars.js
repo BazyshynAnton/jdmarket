@@ -46,7 +46,7 @@ const cars = [
   },
   {
     img: oneSkylineHakosuka,
-    text: 'Shigeru Watanabe GT-R Hakosuka KPGC10 (N.8344) PRICE: ASK',
+    text: 'Shigeru Watanabe GT-R Hakosuka KPGC10 (N.8344)',
     id: '8344',
   },
   {

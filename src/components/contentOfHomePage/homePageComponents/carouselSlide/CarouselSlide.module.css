@@ -47,7 +47,7 @@
   border-right: solid 8px #ca0909;
 }
 .titleOnSlide::before {
-  content: url(../../pictures/caption_corner.png);
+  content: url(../../../../pictures/caption_corner.png);
   width: 30px;
   height: 21px;
   position: absolute;
@@ -55,7 +55,7 @@
 }
 
 .bgAndText {
-  background: url(../../pictures/slider-caption-bg.png);
+  background: url(../../../../pictures/slider-caption-bg.png);
   margin-left: 0%;
   opacity: 1;
   width: 300px;

@@ -5,7 +5,7 @@ import 'swiper/css'
 
 import CardOfManufacture from '../cardOfManufacture/CardOfManufacture'
 import SwiperManufactureNavBtns from '../swiperNavBtns/SwiperManufactureNavBtns'
-import manufactures from '../../../data/manufactures'
+import manufactures from '../../../../../data/manufactures'
 
 import styles from '../CarouselsOfCars.module.css'
 

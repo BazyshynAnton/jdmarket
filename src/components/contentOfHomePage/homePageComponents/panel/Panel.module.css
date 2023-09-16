@@ -3,17 +3,17 @@
   width: 370px;
   height: 533px;
   padding: 20px 20px 20px 20px;
-  background: url(../../pictures/infoPanel.jpg);
+  background: url(../../../../pictures/infoPanel.jpg);
   overflow: visible;
 }
 .panelContainer::before {
-  content: url(../../pictures/box-shadow-left.png);
+  content: url(../../../../pictures/box-shadow-left.png);
   position: absolute;
   bottom: -21px;
   left: 0;
 }
 .panelContainer::after {
-  content: url(../../pictures/box-shadow-right.png);
+  content: url(../../../../pictures/box-shadow-right.png);
   position: absolute;
   bottom: -21px;
   right: 0;

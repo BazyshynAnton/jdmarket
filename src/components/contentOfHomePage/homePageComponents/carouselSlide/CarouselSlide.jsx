@@ -1,5 +1,5 @@
-import { Box, Container } from '@mui/material'
-import slides from '../../data/slides'
+import { Box } from '@mui/material'
+import slides from '../../../../data/slides'
 import Carousel from 'react-material-ui-carousel'
 import Item from './Item'
 import IndiIco from './IndiIco'

@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import styles from './Panel.module.css'
-import american from '../../pictures/american.png'
+import american from '../../../../pictures/american.png'
 
 const Panel = () => {
   return (

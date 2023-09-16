@@ -268,17 +268,6 @@
   display: flex;
   flex-direction: row;
   z-index: 2;
-  transform: translateY(-20%);
-  animation: aniEnter 1s forwards;
-}
-
-@keyframes aniEnter {
-  0% {
-    transform: translateY(-20%);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .sectionInventory {
@@ -326,8 +315,7 @@
   background: #000;
   display: flex;
   flex-direction: row;
-  transform: translateY(-20%);
-  animation: aniEnter 1s forwards;
+
   z-index: 2;
 }
 

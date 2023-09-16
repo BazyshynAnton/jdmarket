@@ -21,7 +21,7 @@
   font-size: 30px;
 }
 .nameOfSwiper::after {
-  content: url(../../pictures/headerSectionCorner.png);
+  content: url(../../../../pictures/headerSectionCorner.png);
   position: absolute;
   right: -15px;
   top: 0;
@@ -40,7 +40,7 @@
   font-size: 30px;
 }
 .manufactureNameOfSwiper::after {
-  content: url(../../pictures/headerSectionCorner.png);
+  content: url(../../../../pictures/headerSectionCorner.png);
   position: absolute;
   right: -15px;
   top: 0;

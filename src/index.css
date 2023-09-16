@@ -69,3 +69,90 @@ input[name='searchInput']::placeholder {
 .css-1p823my-MuiListItem-root {
   width: auto;
 }
+
+.modal-enter {
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+.modal-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.modal-exit {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.modal-exit-active {
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+.help-enter {
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+.help-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.help-exit {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.help-exit-active {
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+.absoluteInventory-enter {
+  transform: translateY(-10%);
+  opacity: 0;
+}
+
+.absoluteInventory-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.absoluteInventory-exit {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.absoluteInventory-exit-active {
+  transform: translateY(-20%);
+  opacity: 0;
+}
+.companyProfile-enter {
+  transform: translateY(-10%);
+  opacity: 0;
+}
+
+.companyProfile-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.companyProfile-exit {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.companyProfile-exit-active {
+  transform: translateY(-20%);
+  opacity: 0;
+}

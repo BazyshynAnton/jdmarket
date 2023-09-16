@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import forumBanner from '../../pictures/forumBanner.jpg'
+import forumBanner from '../../../../pictures/forumBanner.jpg'
 
 const ForumBanner = () => {
   return (

@@ -1,12 +1,12 @@
 import { useSwiper } from 'swiper/react'
-import buttonNext from '../../../pictures/button-next.png'
-import buttonPrevious from '../../../pictures/button-previous.png'
-import buttonNextRed from '../../../pictures/button-next-red.png'
-import buttonPreviousRed from '../../../pictures/button-previous-red.png'
+import buttonNext from '../../../../../pictures/button-next.png'
+import buttonPrevious from '../../../../../pictures/button-previous.png'
+import buttonNextRed from '../../../../../pictures/button-next-red.png'
+import buttonPreviousRed from '../../../../../pictures/button-previous-red.png'
 import styles from './SwiperNavBtns.module.css'
 import { useState } from 'react'
 
-const SwiperNavBtns = () => {
+const SwiperManufactureNavBtns = () => {
   const [arrow, setArrow] = useState(false)
   const [arrowTwo, setArrowTwo] = useState(false)
   const swiper = useSwiper()
@@ -25,9 +25,8 @@ const SwiperNavBtns = () => {
   const handleMouseLeaveTwo = () => {
     setArrowTwo(false)
   }
-
   return (
-    <div className={styles.navBtns}>
+    <div className={styles.navManufactureBtns}>
       <div
         onClick={() => swiper.slidePrev()}
         onMouseEnter={handleMouseEnter}
@@ -52,4 +51,4 @@ const SwiperNavBtns = () => {
   )
 }
 
-export default SwiperNavBtns
+export default SwiperManufactureNavBtns
