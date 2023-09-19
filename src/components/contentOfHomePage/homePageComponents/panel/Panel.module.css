@@ -1,9 +1,11 @@
 .panelContainer {
   position: relative;
-  width: 370px;
+  width: 33%;
   height: 533px;
   padding: 20px 20px 20px 20px;
   background: url(../../../../pictures/infoPanel.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: visible;
 }
 .panelContainer::before {
@@ -33,6 +35,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1rem;
   color: white;
   border-radius: 5px;
 }
@@ -55,6 +58,9 @@
   text-decoration: underline;
   cursor: pointer;
 }
+.shadowBg button:hover {
+  color: rgb(93, 165, 216);
+}
 
 .imgContainerUsa {
   width: 270px;
@@ -66,4 +72,29 @@
      object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 1050px) {
+  .panelContainer {
+    position: relative;
+    width: 350px;
+    height: 533px;
+    padding: 20px 20px 20px 20px;
+    background: url(../../../../pictures/infoPanel.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: visible;
+  }
+  .panelContainer::before {
+    content: url(../../../../pictures/box-shadow-left.png);
+    position: absolute;
+    bottom: -21px;
+    left: 0;
+  }
+  .panelContainer::after {
+    content: url(../../../../pictures/box-shadow-right.png);
+    position: absolute;
+    bottom: -21px;
+    right: 0;
+  }
 }

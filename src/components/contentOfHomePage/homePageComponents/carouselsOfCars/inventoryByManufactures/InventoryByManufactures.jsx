@@ -8,8 +8,34 @@ import SwiperManufactureNavBtns from '../swiperNavBtns/SwiperManufactureNavBtns'
 import manufactures from '../../../../../data/manufactures'
 
 import styles from '../CarouselsOfCars.module.css'
+import { useEffect, useState } from 'react'
 
 const InventoryByManufactures = () => {
+  const [slidesPerView, setSlidesPerView] = useState(4)
+
+  useEffect(() => {
+    const handleResize = () => {
+      // При ширине экрана меньше 800px, устанавливаем 3 слайда,
+      // в противном случае устанавливаем 4 слайда (по умолчанию).
+      if (window.innerWidth <= 655) {
+        setSlidesPerView(2)
+      } else if (window.innerWidth <= 800) {
+        setSlidesPerView(3)
+      } else {
+        setSlidesPerView(4)
+      }
+    }
+
+    // Вызываем handleResize при загрузке страницы и изменении размера окна.
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    // Очищаем слушатель событий при размонтировании компонента.
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <Box className={styles.mainContainerSwiper}>
       <Box className={styles.manufactureNameOfSwiper}>
@@ -17,7 +43,7 @@ const InventoryByManufactures = () => {
       </Box>
 
       <Swiper
-        slidesPerView={4}
+        slidesPerView={slidesPerView}
         spaceBetween={30}
         navigation={true}
         modules={[Navigation]}

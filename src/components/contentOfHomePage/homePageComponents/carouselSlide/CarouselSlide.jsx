@@ -13,16 +13,7 @@ const CarouselSlide = () => {
         IndicatorIcon={slides.map((slide) => (
           <IndiIco key={slide.id} slide={slide} />
         ))}
-        indicatorContainerProps={{
-          style: {
-            display: 'flex',
-            flexDirection: 'row',
-            position: 'absolute',
-            bottom: '15px',
-            right: '-410px',
-            zIndex: '1',
-          },
-        }}
+        indicatorContainerProps={{ className: styles.indicatorPropsCont }}
         indicatorIconButtonProps={{
           style: {
             border: '2px solid white',

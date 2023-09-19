@@ -6,11 +6,11 @@ const Panel = () => {
   return (
     <Box className={styles.panelContainer}>
       <Box className={styles.shadowBg}>
-        <h2>Welcome to JDM EXPO Co. Ltd. Japan</h2>
+        <h2>Welcome to JDM Co. Ltd. Japan</h2>
         <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;JDM EXPO is one of the leading sports and
-          classic vehicle exporters located in central Japan. With over 36 years
-          of experience in the market and partners around the world, we have the
+          &nbsp;&nbsp;&nbsp;&nbsp;JDM is one of the leading sports and classic
+          vehicle exporters located in central Japan. With over 36 years of
+          experience in the market and partners around the world, we have the
           largest stock of sports cars and classic cars in Japan. We provide a
           full service of searching for and re-conditioning vehicles according
           to your preference and deliver them anywhere around the globe.

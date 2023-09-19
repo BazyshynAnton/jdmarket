@@ -22,7 +22,7 @@ const slides = [
     id: 3,
     img: slide3,
     title: 'slide3',
-    header: 'JDM EXPO TUNING',
+    header: 'JDM TUNING',
     text: 'We are a leader in Japanese automotive industry in exporting Japanese iconic sports cars – Skyline GT-R R32, R33 & R34s and provide you absolutely great vehicles and services in importing your dream Skyline at unbeatable prices!',
   },
   {
