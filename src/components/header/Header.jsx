@@ -30,6 +30,7 @@ import nonJdm from '../../pictures/nonJdm.jpg'
 
 import styles from './Header.module.css'
 import { CSSTransition } from 'react-transition-group'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   const [searchCategory, setSearchCategory] = useState('Maker')
@@ -106,7 +107,9 @@ const Header = () => {
       <Container>
         <Box className={styles.mainHeaderBg}>
           <Box className={styles.headerLogoContainer}>
-            <img src={headerLogo} alt="JDMexpoLogo" />
+            <NavLink to="/">
+              <img src={headerLogo} alt="JDMexpoLogo" />
+            </NavLink>
           </Box>
 
           <Box className={styles.infoAndSearchContainer}>
@@ -171,18 +174,23 @@ const Header = () => {
             <>
               <Toolbar className={styles.toolbarContainer}>
                 <List className={styles.lists}>
-                  <ListItem className={styles.listItem}>
-                    <HomeRoundedIcon className={styles.homeBtn} />
-                    HOME
-                  </ListItem>
-                  <ListItem
+                  <NavLink to="/">
+                    <ListItem className={styles.listItem}>
+                      <HomeRoundedIcon className={styles.homeBtn} />
+                      HOME
+                    </ListItem>
+                  </NavLink>
+
+                  <NavLink
+                    to="/vehicle-inventory"
                     className={`${styles.listItem} ${
                       isMenuOpen ? styles.openMenu : ''
                     }`}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}>
-                    VEHICLE INVENTORY
-                  </ListItem>
+                    <ListItem>VEHICLE INVENTORY</ListItem>
+                  </NavLink>
+
                   <ListItem className={styles.listItem}>
                     JAPAN CAR AUCTION
                   </ListItem>
@@ -341,14 +349,22 @@ const Header = () => {
               </Box>
               <List className={styles.listInBurgerMenu}>
                 <ListItem className={styles.listIntemInBurgerMenu}>
-                  <p>HOME</p>
+                  <NavLink to="/">
+                    <p>HOME</p>
+                  </NavLink>
                 </ListItem>
                 <ListItem
                   onClick={handleClickFunctionInBurger}
                   className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
                     isOpen ? styles.activeBurgerVehicle : ''
                   }`}>
-                  <p>VEHICLE INVENTORY</p>
+                  {!isOpen && <p>VEHICLE INVENTORY</p>}
+                  {isOpen && (
+                    <NavLink to="/vehicle-inventory">
+                      <p>VEHICLE INVENTORY</p>{' '}
+                    </NavLink>
+                  )}
+
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isOpen}
