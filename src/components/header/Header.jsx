@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import {
   Container,
   Box,
@@ -61,6 +61,18 @@ const Header = () => {
     setMenuThreeOpen(false)
   }
 
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleClickFunctionInBurger = () => setIsOpen(!isOpen)
+
+  const [isOpenTwo, setIsOpenTwo] = useState(false)
+
+  const handleClickFunctionInBurgerTwo = () => setIsOpenTwo(!isOpenTwo)
+
+  const [isOpenThree, setIsOpenThree] = useState(false)
+
+  const handleClickFunctionInBurgerThree = () => setIsOpenThree(!isOpenThree)
+
   // Функции для обновления состояний при изменении ввода
   const handleCategoryChange = (e) => {
     setSearchCategory(e.target.value)
@@ -79,6 +91,8 @@ const Header = () => {
   const isDesktop = useMediaQuery('(min-width: 656px)')
 
   const [open, setOpen] = useState(false)
+
+  const nodeRef = React.useRef(null)
 
   return (
     <Box className={styles.headerOverflow}>
@@ -113,7 +127,7 @@ const Header = () => {
                 <p>+81-573-66-5670</p>
               </Box>
               <Box className={styles.email}>
-                <p>info@jdm-expo.com</p>
+                <p>info@jdm.com</p>
               </Box>
             </Box>
             <Box className={styles.formAndBtnContainer}>
@@ -197,12 +211,14 @@ const Header = () => {
                 </List>
               </Toolbar>
               <CSSTransition
+                nodeRef={nodeRef}
                 in={isMenuOpen}
                 timeout={300}
                 classNames="absoluteInventory"
                 mountOnEnter
                 unmountOnExit>
                 <Box
+                  ref={nodeRef}
                   className={styles.absoluteInventory}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}>
@@ -228,12 +244,14 @@ const Header = () => {
                 </Box>
               </CSSTransition>
               <CSSTransition
+                nodeRef={nodeRef}
                 in={isMenuTwoOpen}
                 timeout={300}
                 classNames="companyProfile"
                 mountOnEnter
                 unmountOnExit>
                 <Box
+                  ref={nodeRef}
                   className={styles.companyProfile}
                   onMouseEnter={handleMouseEnterTwo}
                   onMouseLeave={handleMouseLeaveTwo}>
@@ -262,12 +280,14 @@ const Header = () => {
                 </Box>
               </CSSTransition>
               <CSSTransition
+                nodeRef={nodeRef}
                 in={isMenuThreeOpen}
                 timeout={300}
                 classNames="companyProfile"
                 mountOnEnter
                 unmountOnExit>
                 <Box
+                  ref={nodeRef}
                   className={styles.mediaProfile}
                   onMouseEnter={handleMouseEnterThree}
                   onMouseLeave={handleMouseLeaveThree}>
@@ -321,28 +341,118 @@ const Header = () => {
               </Box>
               <List className={styles.listInBurgerMenu}>
                 <ListItem className={styles.listIntemInBurgerMenu}>
-                  HOME
+                  <p>HOME</p>
+                </ListItem>
+                <ListItem
+                  onClick={handleClickFunctionInBurger}
+                  className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
+                    isOpen ? styles.activeBurgerVehicle : ''
+                  }`}>
+                  <p>VEHICLE INVENTORY</p>
+                  <CSSTransition
+                    nodeRef={nodeRef}
+                    in={isOpen}
+                    timeout={300} // Время анимации (в миллисекундах)
+                    classNames="dropdown" // CSS-классы для анимации
+                    unmountOnExit>
+                    <Box
+                      ref={nodeRef}
+                      className={`${
+                        isOpen
+                          ? styles.dropVehicleInventory
+                          : styles.notOpenVehicleInventory
+                      }`}>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p>JDM SPORTS</p>
+                        <img src={jdmSports} alt="jdm-sports" />
+                      </Box>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p>JDM CLASSIC</p>
+                        <img src={jdmClassic} alt="jdm-classic" />
+                      </Box>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p>NON JDM</p>
+                        <img src={nonJdm} alt="non-jdm" />
+                      </Box>
+                    </Box>
+                  </CSSTransition>
                 </ListItem>
                 <ListItem className={styles.listIntemInBurgerMenu}>
-                  VEHICLE INVENTORY
+                  <p>JAPAN CAR AUCTION</p>
+                </ListItem>
+                <ListItem
+                  onClick={handleClickFunctionInBurgerTwo}
+                  className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
+                    isOpenTwo ? styles.activeBurgerVehicle : ''
+                  }`}>
+                  <p>COMPANY PROFILE</p>
+                  <CSSTransition
+                    nodeRef={nodeRef}
+                    in={isOpenTwo}
+                    timeout={300} // Время анимации (в миллисекундах)
+                    classNames="dropdown" // CSS-классы для анимации
+                    unmountOnExit>
+                    <Box
+                      ref={nodeRef}
+                      className={`${
+                        isOpenTwo
+                          ? styles.dropVehicleInventory
+                          : styles.notOpenVehicleInventory
+                      }`}>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p> ABOUT US</p>
+                      </Box>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p>OUR SERVICES</p>
+                      </Box>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p>WHY CHOOSE US</p>
+                      </Box>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p> TESTIMONIALS</p>
+                      </Box>
+                    </Box>
+                  </CSSTransition>
                 </ListItem>
                 <ListItem className={styles.listIntemInBurgerMenu}>
-                  JAPAN CAR AUCTION
+                  <p>USA JDM IMPORTS</p>
+                </ListItem>
+                <ListItem
+                  onClick={handleClickFunctionInBurgerThree}
+                  className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
+                    isOpenThree ? styles.activeBurgerVehicle : ''
+                  }`}>
+                  <p>SOCIAL MEDIA</p>
+                  <CSSTransition
+                    nodeRef={nodeRef}
+                    in={isOpenThree}
+                    timeout={300} // Время анимации (в миллисекундах)
+                    classNames="dropdown" // CSS-классы для анимации
+                    unmountOnExit>
+                    <Box
+                      ref={nodeRef}
+                      className={`${
+                        isOpenThree
+                          ? styles.dropVehicleInventory
+                          : styles.notOpenVehicleInventory
+                      }`}>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p>MEDIA</p>
+                      </Box>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p>FACEBOOK</p>
+                      </Box>
+                      <Box className={styles.jdmSectionInBurger}>
+                        <p>FORUM</p>
+                      </Box>
+                    </Box>
+                  </CSSTransition>
                 </ListItem>
                 <ListItem className={styles.listIntemInBurgerMenu}>
-                  COMPANY PROFILE
+                  <p>CONTACT US</p>
                 </ListItem>
                 <ListItem className={styles.listIntemInBurgerMenu}>
-                  USA JDM IMPORTS
-                </ListItem>
-                <ListItem className={styles.listIntemInBurgerMenu}>
-                  SOCIAL MEDIA
-                </ListItem>
-                <ListItem className={styles.listIntemInBurgerMenu}>
-                  CONTACT US
-                </ListItem>
-                <ListItem className={styles.listIntemInBurgerMenu}>
-                  FAQ
+                  <p>FAQ</p>
                 </ListItem>
               </List>
             </SwipeableDrawer>

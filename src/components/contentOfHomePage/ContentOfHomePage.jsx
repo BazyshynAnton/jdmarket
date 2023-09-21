@@ -9,6 +9,7 @@ import InventoryByManufactures from './homePageComponents/carouselsOfCars/invent
 import ForumBanner from './homePageComponents/forumBanner/ForumBanner'
 import InformationDesk from './homePageComponents/informationDesk/InformationDesk'
 import Footer from '../footer/Footer'
+import BackToTopBtn from '../backToTopBtn/BackToTopBtn'
 
 const ContentOfHomePage = () => {
   return (
@@ -25,6 +26,7 @@ const ContentOfHomePage = () => {
         <ForumBanner />
         <InformationDesk />
       </Container>
+      <BackToTopBtn />
       <Footer />
     </>
   )

@@ -9,6 +9,8 @@ import styles from './InformationDesk.module.css'
 import { CSSTransition } from 'react-transition-group'
 
 const InformationDesk = () => {
+  const nodeRef = React.useRef(null)
+
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenTwo, setIsOpenTwo] = useState(false)
   const [formData, setFormData] = useState({
@@ -47,12 +49,14 @@ const InformationDesk = () => {
   return (
     <Box className={styles.containerInfo}>
       <CSSTransition
+        nodeRef={nodeRef}
         in={isOpen}
         timeout={300}
         classNames="modal"
         mountOnEnter
         unmountOnExit>
         <div
+          ref={nodeRef}
           className={styles.modalContent}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}>
@@ -61,12 +65,14 @@ const InformationDesk = () => {
         </div>
       </CSSTransition>
       <CSSTransition
+        nodeRef={nodeRef}
         in={isOpenTwo}
         timeout={300}
         classNames="help"
         mountOnEnter
         unmountOnExit>
         <div
+          ref={nodeRef}
           className={styles.helpContent}
           onMouseEnter={handleMouseEnterTwo}
           onMouseLeave={handleMouseLeaveTwo}>

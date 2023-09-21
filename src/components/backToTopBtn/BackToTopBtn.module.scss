@@ -1,0 +1,110 @@
+.mainContainer {
+  position: fixed;
+  top: 400px;
+  display: block;
+  margin-left: 1190px;
+  display: flex;
+
+  z-index: 9999;
+}
+
+.backToTopBtnMainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 46px;
+  z-index: 9999;
+}
+
+.backToTopBtnIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #767676;
+  height: 36px;
+  width: 36px;
+
+  color: #ffffff;
+  rotate: -90deg;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: #000;
+  }
+}
+
+.emailIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #767676;
+  width: 36px;
+  height: 36px;
+
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.phoneIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #767676;
+  width: 36px;
+  height: 36px;
+
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.infoMail {
+  position: absolute;
+  top: 44px;
+  left: -86px;
+  background: #767676;
+  height: 36px;
+  z-index: -100;
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: white;
+    font-family: Pathway Gothic One, PathwayGothicOneRegular, Arial, Helvetica;
+    font-size: 18px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+}
+.infoPhone {
+  position: absolute;
+  top: 88px;
+  left: -88px;
+  background: #767676;
+  height: 36px;
+  z-index: -100;
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: white;
+    font-family: Pathway Gothic One, PathwayGothicOneRegular, Arial, Helvetica;
+    font-size: 18px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+}

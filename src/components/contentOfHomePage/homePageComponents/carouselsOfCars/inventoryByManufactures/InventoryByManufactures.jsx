@@ -17,7 +17,9 @@ const InventoryByManufactures = () => {
     const handleResize = () => {
       // При ширине экрана меньше 800px, устанавливаем 3 слайда,
       // в противном случае устанавливаем 4 слайда (по умолчанию).
-      if (window.innerWidth <= 655) {
+      if (window.innerWidth <= 380) {
+        setSlidesPerView(1)
+      } else if (window.innerWidth <= 655) {
         setSlidesPerView(2)
       } else if (window.innerWidth <= 800) {
         setSlidesPerView(3)

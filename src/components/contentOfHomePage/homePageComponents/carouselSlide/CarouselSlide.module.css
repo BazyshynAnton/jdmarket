@@ -199,3 +199,59 @@
     height: 100%;
   }
 }
+@media (max-width: 380px) {
+  .titleOnSlide {
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    height: 60px;
+    left: -19px;
+    bottom: 10px;
+    background: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    border-right: solid 8px #ca0909;
+  }
+  .titleOnSlide::before {
+    content: url(../../../../pictures/caption_corner.png);
+    width: 30px;
+    height: 21px;
+    position: absolute;
+    top: -21px;
+  }
+  .bgAndText {
+    background: url(../../../../pictures/slider-caption-bg.png);
+    margin-left: 0%;
+    opacity: 1;
+    width: 300px;
+    height: 60px;
+    -webkit-transition: margin-left 800ms linear 0s;
+    transition: margin-left 800ms linear 0s;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-right: solid 4px #fff;
+    padding: 0px 0px 0px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .bgAndText h3 {
+    font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    color: #fff;
+  }
+  .bgAndText p {
+    display: none;
+  }
+}

@@ -28,3 +28,20 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 300px) {
+  .navBtns {
+    width: 45px;
+    height: 17px;
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 9999;
+    div {
+      cursor: pointer;
+    }
+  }
+}
