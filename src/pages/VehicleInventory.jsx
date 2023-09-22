@@ -1,5 +1,11 @@
+import ContentOfVehicleInventory from '../components/contentOfVehicleInventory/ContentOfVehicleInventory'
+
 const VehicleInventory = () => {
-  return <div>VEHICLE INVENTORY</div>
+  return (
+    <>
+      <ContentOfVehicleInventory />
+    </>
+  )
 }
 
 export default VehicleInventory
