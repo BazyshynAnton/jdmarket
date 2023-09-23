@@ -230,25 +230,30 @@ const Header = () => {
                   className={styles.absoluteInventory}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}>
-                  <Box className={styles.sectionInventory}>
+                  <NavLink
+                    to="/vehicle-inventory/jdm-sports"
+                    className={styles.sectionInventory}>
                     <img src={jdmSports} alt="jdm-sports" />
                     <Typography className={styles.textInSection}>
                       JDM SPORTS
                     </Typography>
-                  </Box>
-                  <Box
+                  </NavLink>
+                  <NavLink
+                    to="/vehicle-inventory/jdm-classic"
                     className={`${styles.sectionInventory} ${styles.borderSection}`}>
                     <img src={jdmClassic} alt="jdm-classic" />
                     <Typography className={styles.textInSection}>
                       JDM CLASSIC
                     </Typography>
-                  </Box>
-                  <Box className={styles.sectionInventory}>
+                  </NavLink>
+                  <NavLink
+                    to="/vehicle-inventory/non-jdm"
+                    className={styles.sectionInventory}>
                     <img src={nonJdm} alt="non-jdm" />
                     <Typography className={styles.textInSection}>
                       NON JDM
                     </Typography>
-                  </Box>
+                  </NavLink>
                 </Box>
               </CSSTransition>
               <CSSTransition

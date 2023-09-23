@@ -21,7 +21,11 @@ a {
   text-decoration: none;
   color: white;
 }
-
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
   padding: 0px 10px 0px 10px;
 }

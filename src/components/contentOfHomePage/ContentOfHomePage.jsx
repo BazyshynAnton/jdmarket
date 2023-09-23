@@ -14,7 +14,6 @@ import BackToTopBtn from '../backToTopBtn/BackToTopBtn'
 const ContentOfHomePage = () => {
   return (
     <>
-      <Header />
       <Container>
         <Box className={styles.containerCarouselAndPanel}>
           <CarouselSlide />
@@ -26,8 +25,6 @@ const ContentOfHomePage = () => {
         <ForumBanner />
         <InformationDesk />
       </Container>
-      <BackToTopBtn />
-      <Footer />
     </>
   )
 }

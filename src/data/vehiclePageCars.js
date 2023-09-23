@@ -12,8 +12,6 @@ import twoSilviaS15 from '../pictures/twoSilviaS15.jpg'
 import twoNissanSkylineR32 from '../pictures/twoNissanSkylineR32.jpg'
 import oneNissanPao from '../pictures/oneNissanPao.jpg'
 import president from '../pictures/president.jpg'
-import csp from '../pictures/csp.jpg'
-import figaro from '../pictures/figaro.jpg'
 import nsx from '../pictures/nsx.jpg'
 import audiR8 from '../pictures/audiR8.jpg'
 import cobra from '../pictures/cobra.jpg'
@@ -29,6 +27,7 @@ const vehiclePageCars = [
     imgTwo: available,
     text: 'Nissan Skyline GTR R34 V spec (N.8402)',
     id: '8f22002c-8568-4e5b-829c-84cebeea1130',
+    mark: 'nissan',
     class: 1,
   },
   {
@@ -36,6 +35,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Civic Type R EK9 (N.8484)',
     id: 'bd49b226-73d7-4d2a-b83c-16a5d4fda5bf',
+    mark: 'honda',
     class: 1,
   },
   {
@@ -43,6 +43,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Mitsubishi Lancer Evolution V (N.8485)',
     id: 'cb0d8ff0-22b0-4112-ba44-582fef739f87',
+    mark: 'mitsubishi',
     class: 1,
   },
   {
@@ -50,6 +51,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Subaru Impreza 22B STi for sale (N.8482)',
     id: '98200cf2-ed46-420e-8daf-a8cb3fe0b4ef',
+    mark: 'subaru',
     class: 1,
   },
   {
@@ -57,6 +59,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Nissan S15 Silvia Spec R (N.8481)',
     id: '7c986b6a-84ba-40d6-b6bf-56f6307d5ff0',
+    mark: 'nissan',
     class: 1,
   },
   {
@@ -64,6 +67,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Toyota Celica GT FOUR WRC (N.8480)',
     id: '1111c5e3-0320-4d0b-a1fa-528ef55c26b1',
+    mark: 'toyota',
     class: 1,
   },
   {
@@ -71,6 +75,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Nissan 180SX (N.8479)',
     id: '824a0b4b-935c-4ae2-8773-623eec448b6a',
+    mark: 'nissan',
     class: 1,
   },
   {
@@ -78,6 +83,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Nissan 180SX Sileighty (N.8478)',
     id: '137e3bd1-6ff6-42b2-ab8b-830e605de588',
+    mark: 'nissan',
     class: 1,
   },
   {
@@ -85,6 +91,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Toyota Supra SZ-R (N.8474)',
     id: '8e4c538b-fda9-4f63-9ae2-771ea8312b5f',
+    mark: 'toyota',
     class: 1,
   },
   {
@@ -92,6 +99,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Mazda RX-7 (N.8469)',
     id: '62d3d58f-ba8c-4dd9-922d-86116769e349',
+    mark: 'mazda',
     class: 1,
   },
   {
@@ -99,6 +107,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Nissan Silvia S15 Spec R (N.8459)',
     id: 'd492e992-c9ec-4fc1-8286-427b9a8a23ee',
+    mark: 'nissan',
     class: 1,
   },
   {
@@ -106,6 +115,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Nissan Skyline GTR R32 (N.8456)',
     id: '153641c9-af92-441c-9777-94f422f2d147',
+    mark: 'nissan',
     class: 1,
   },
   {
@@ -113,6 +123,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Nissan Pao (N.8462)',
     id: 'bead981a-5ffb-4c7e-8b4e-5286d372662d',
+    mark: 'oldNissan',
     class: 2,
   },
   {
@@ -120,6 +131,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Nissan President for sale (N.8111)',
     id: 'b533c631-8527-46d4-8ae1-231bcf02a8b2',
+    mark: 'oldNissan',
     class: 2,
   },
 
@@ -128,6 +140,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Honda NSX for sale (N.8137)',
     id: '9e67839b-4dc4-4c35-8893-4d94eecb5db8',
+    mark: 'oldHonda',
     class: 2,
   },
   {
@@ -135,6 +148,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Audi R8 V10 Plus 5.2 (N.8471)',
     id: 'fecdad83-7823-47a9-b588-22daccb8914e',
+    mark: 'audi',
     class: 3,
   },
   {
@@ -142,6 +156,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Shelby Cobra (N.8460)',
     id: 'c6d5b665-33ed-4ba7-acb1-b9998e15b15c',
+    mark: 'shelby',
     class: 3,
   },
   {
@@ -149,6 +164,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'Mercedes Benz for sale (N.8451)',
     id: '0886a16a-006e-4d24-9e5c-f3ed208bc1cc',
+    mark: 'mercedes',
     class: 3,
   },
   {
@@ -156,6 +172,7 @@ const vehiclePageCars = [
     imgTwo: sold,
     text: 'BMW M3 for sale (N.8171)',
     id: 'ce2d0658-1ebb-4b85-a2cb-eef03095b871',
+    mark: 'bmw',
     class: 3,
   },
 ]
