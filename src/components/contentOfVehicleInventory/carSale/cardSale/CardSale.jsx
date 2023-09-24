@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 
-import styles from '../CarSale.module.css'
+import styles from './CardSale.module.css'
 
 const CardSale = ({ card }) => {
   return (

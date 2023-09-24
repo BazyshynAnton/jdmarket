@@ -392,127 +392,47 @@
 
 @media (max-width: 1315px) {
   .appBar {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    background: none;
     box-shadow: none;
   }
 
   .lists {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: row;
     flex-wrap: wrap;
-    padding: 0;
-    cursor: pointer;
-    font-family: 'Pathway Gothic One', sans-serif;
-  }
-  .listItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    transition: 0.2s ease-in-out;
-    background: #000;
-
-    &:first-child {
-      background: red;
-    }
-
-    &:hover {
-      background: red;
-    }
   }
 
   .absoluteInventory {
-    position: absolute;
-    width: 100%;
-    height: 190px;
-    top: 40px;
-    background: #000;
-    display: flex;
-    flex-direction: row;
     z-index: 20;
   }
 
   .sectionInventory {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.4s ease-in-out;
-
-    cursor: pointer;
     img {
       width: 100%;
-
-      filter: blur(3px);
-    }
-    &:hover {
-      img {
-        filter: blur(0px);
-      }
-      background: rgb(69, 69, 69);
     }
   }
 
   .textInSection {
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 18px;
-    padding-top: 10px;
     padding-bottom: 30px;
-    cursor: pointer;
   }
 
   .companyProfile {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    top: 40px;
-    background: #000;
-    display: flex;
-    flex-direction: row;
-
     z-index: 20;
   }
 
   .mediaProfile {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    top: 40px;
-    background: #000;
-    display: flex;
-    flex-direction: row;
-
     z-index: 20;
   }
 }
 
 @media (max-width: 1017px) {
   .mediaProfile {
-    position: absolute;
-    width: 100%;
-    height: 50px;
     top: 80px;
-    background: #000;
-    display: flex;
-    flex-direction: row;
-
-    z-index: 20;
   }
 }
 
 @media (max-width: 655px) {
   .appBar {
-    display: flex;
-    flex-direction: row;
     position: absolute;
     top: 115px;
-    background: none;
     left: 0;
     width: 22px;
     height: 50px;
@@ -521,16 +441,8 @@
   }
 
   .headerLogoContainer {
-    padding: 10px 0px 10px 0px;
     width: 110px;
     height: 60px;
-    cursor: pointer;
-
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
   }
 
   .burgerBtn {
@@ -626,100 +538,40 @@
   }
 
   .formAndBtnContainer {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    height: 20px;
     z-index: 500;
   }
 
   .containerSearch {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    height: 27px;
-    background: #0f0d0d;
-    border: solid 1px #989797;
     width: 200px;
 
     input {
-      background: none;
-      outline: none;
-      color: rgb(255, 255, 255);
-      font-style: italic;
-      margin-top: 4px;
       font-size: 10px;
     }
 
     &:after {
-      content: '';
-      display: block;
-      height: 27px;
-      width: 20px; /* Ширина правой стороны с наклоном */
-
-      background: linear-gradient(to left, #0f0d0d 50%, transparent 50%);
-      border-top: solid 1px #989797;
-      border-bottom: solid 1px #989797;
-      border-right: solid 1px #989797;
-      transform: skewX(-20deg); /* Поворот правой стороны */
-      position: relative;
-      top: 0;
       left: 22px;
-
-      z-index: 100; /* Помещаем повернутую часть над содержимым */
     }
   }
 }
 
 @media (max-width: 390px) {
   .mainHeaderBg {
-    background: url(../../pictures/header.jpg);
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    height: 135px;
-
-    display: flex;
-    flex-direction: row;
     justify-content: flex-end;
   }
+
   .headerLogoContainer {
     display: none;
   }
 
   .appBar {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
     top: 30px;
-    background: none;
     left: -30px;
-    width: 22px;
-    height: 50px;
-    padding-left: 60px;
-    z-index: 0;
   }
 }
 
 @media (max-width: 285px) {
   .containerSearch {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    height: 27px;
-    background: #0f0d0d;
-    border: solid 1px #989797;
     width: 100%;
-
-    input {
-      background: none;
-      outline: none;
-      color: rgb(255, 255, 255);
-      font-style: italic;
-      margin-top: 4px;
-      font-size: 10px;
-    }
 
     &:after {
       display: none;
@@ -729,69 +581,19 @@
 
 @media (max-width: 250px) {
   .appBar {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
     top: 25px;
-    background: none;
     left: -50px;
-    width: 22px;
-    height: 50px;
-    padding-left: 60px;
-    z-index: 0;
   }
 
   .facebookContainer {
-    padding: 10px 0px 0px 0px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 5px;
-
-    span {
-      font-weight: bold;
-      padding: 5px 3px 5px 3px;
-      display: inline-block;
-      vertical-align: middle;
-      line-height: normal;
-      text-transform: none;
-    }
     Button {
       font-size: 8px;
-      height: 19px;
-      padding: 0;
       min-width: 80px;
     }
 
     .shareFacebook {
       min-width: 30px;
       font-size: 8px;
-    }
-
-    .textInSpanFacebook {
-      font-weight: normal;
-    }
-  }
-
-  .containerSearch {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    height: 27px;
-    background: #0f0d0d;
-    border: solid 1px #989797;
-    width: 100%;
-
-    input {
-      background: none;
-      outline: none;
-      color: rgb(255, 255, 255);
-      font-style: italic;
-      margin-top: 4px;
-      font-size: 10px;
-    }
-
-    &:after {
-      display: none;
     }
   }
 }

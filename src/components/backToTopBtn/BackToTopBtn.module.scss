@@ -108,3 +108,15 @@
     color: white;
   }
 }
+
+@media (max-width: 1325px) {
+  .mainContainer {
+    margin-left: 1150px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .mainContainer {
+    display: none;
+  }
+}

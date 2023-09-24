@@ -1,0 +1,120 @@
+.mainCardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #000;
+  margin-bottom: 10px;
+}
+
+.imgContainer {
+  position: relative;
+  cursor: pointer;
+}
+.imgContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.imgAvailableSoldContainer {
+  position: absolute;
+  right: -8px;
+  top: -7px;
+}
+.imgAvailableSoldContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.textContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #000;
+  height: 50px;
+}
+.textContainer p {
+  font-family: "Pathway Gothic One", sans-serif;
+  color: white;
+  font-size: 15px;
+  padding: 8px 0px 0px 8px;
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 15px 0px 0px;
+}
+.btnContainer button {
+  background: red;
+  font-family: "Pathway Gothic One", sans-serif;
+  color: white;
+  font-size: 15px;
+  padding: 2px 13px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 920px) {
+  .textContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+  }
+  .textContainer p {
+    padding: 10px 0px 0px 0px;
+  }
+  .btnContainer {
+    padding: 10px 0px 10px 0px;
+  }
+}
+@media (max-width: 730px) {
+  .imgAvailableSoldContainer {
+    right: -6px;
+    top: -5px;
+    width: 110;
+    height: 110px;
+  }
+  .imgAvailableSoldContainer img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .textContainer p {
+    font-size: 13px;
+  }
+}

@@ -24,36 +24,30 @@ const CarSale = () => {
         <Box className={styles.sectionsContainer}>
           <NavLink
             to="/vehicle-inventory/jdm-sports"
-            className={styles.linkStyleForSection}>
-            <Box className={styles.section}>
-              <img src={jdmSports} alt="jdm-sports" />
+            className={`${styles.linkStyleForSection} ${styles.section}`}>
+            <img src={jdmSports} alt="jdm-sports" />
 
-              <p>
-                <i>JDM SPORTS</i>
-              </p>
-            </Box>
+            <p>
+              <i>JDM SPORTS</i>
+            </p>
           </NavLink>
           <NavLink
             to="/vehicle-inventory/jdm-classic"
-            className={styles.linkStyleForSection}>
-            <Box className={styles.section}>
-              <img src={jdmClassic} alt="jdm-classic" />
+            className={`${styles.linkStyleForSection} ${styles.section}`}>
+            <img src={jdmClassic} alt="jdm-classic" />
 
-              <p>
-                <i>JDM CLASSIC</i>
-              </p>
-            </Box>
+            <p>
+              <i>JDM CLASSIC</i>
+            </p>
           </NavLink>
           <NavLink
             to="/vehicle-inventory/non-jdm"
-            className={styles.linkStyleForSection}>
-            <Box className={styles.section}>
-              <img src={nonJdm} alt="non-jdm" />
+            className={`${styles.linkStyleForSection} ${styles.section}`}>
+            <img src={nonJdm} alt="non-jdm" />
 
-              <p>
-                <i>NON JDM</i>
-              </p>
-            </Box>
+            <p>
+              <i>NON JDM</i>
+            </p>
           </NavLink>
         </Box>
       </Box>

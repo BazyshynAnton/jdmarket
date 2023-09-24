@@ -39,6 +39,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -113,4 +115,32 @@
 .filterBtn:hover {
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
+}
+
+@media (max-width: 395px) {
+  .section {
+    width: 90%;
+  }
+  .section img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100px;
+    height: 100%;
+  }
+}
+@media (max-width: 550px) {
+  .containerOfAllCars {
+    grid-template-columns: repeat(auto-fill, minmax(calc(44.44% - 10px), 1fr));
+  }
+}
+@media (max-width: 390px) {
+  .containerOfAllCars {
+    grid-template-columns: repeat(auto-fill, minmax(calc(55.55% - 10px), 1fr));
+  }
+  .navContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }

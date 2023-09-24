@@ -45,24 +45,6 @@
 
 @media (max-width: 300px) {
   .navBtns {
-    width: 45px;
-    height: 17px;
-    position: absolute;
     top: -30px;
-    right: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    z-index: 9999;
-  }
-  .navBtns div {
-    cursor: pointer;
   }
 }

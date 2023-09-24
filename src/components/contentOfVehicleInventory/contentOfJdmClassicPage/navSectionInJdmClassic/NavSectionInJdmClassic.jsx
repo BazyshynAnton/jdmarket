@@ -32,7 +32,7 @@ const NavSectionInJdmClassic = () => {
             <p>VEHICLE INVENTORY</p>
           </NavLink>
           <p>{'>'}</p>
-          <p>JDM sports</p>
+          <p>JDM classic</p>
         </Box>
       </Box>
       <Box className={styles.sectionsContainer}>

@@ -27,6 +27,7 @@
 .sectionsContainer {
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
   justify-content: center;
@@ -88,5 +89,32 @@
   cursor: pointer;
   &:hover {
     box-shadow: 5px 5px 5px black;
+  }
+}
+
+@media (max-width: 395px) {
+  .section {
+    width: 90%;
+
+    img {
+      object-fit: cover;
+      width: 100px;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .containerOfAllCars {
+    grid-template-columns: repeat(auto-fill, minmax(calc(44.44% - 10px), 1fr));
+  }
+}
+
+@media (max-width: 390px) {
+  .containerOfAllCars {
+    grid-template-columns: repeat(auto-fill, minmax(calc(55.55% - 10px), 1fr));
+  }
+  .navContainer {
+    flex-direction: column;
   }
 }

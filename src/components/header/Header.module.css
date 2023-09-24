@@ -496,172 +496,41 @@
 
 @media (max-width: 1315px) {
   .appBar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    position: relative;
-    background: none;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
   .lists {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    padding: 0;
-    cursor: pointer;
-    font-family: "Pathway Gothic One", sans-serif;
-  }
-  .listItem {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 40px;
-    -webkit-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;
-    background: #000;
-  }
-  .listItem:first-child {
-    background: red;
-  }
-  .listItem:hover {
-    background: red;
   }
   .absoluteInventory {
-    position: absolute;
-    width: 100%;
-    height: 190px;
-    top: 40px;
-    background: #000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     z-index: 20;
-  }
-  .sectionInventory {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-transition: 0.4s ease-in-out;
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
   }
   .sectionInventory img {
     width: 100%;
-    -webkit-filter: blur(3px);
-            filter: blur(3px);
-  }
-  .sectionInventory:hover {
-    background: rgb(69, 69, 69);
-  }
-  .sectionInventory:hover img {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
   }
   .textInSection {
-    font-family: "Pathway Gothic One", sans-serif;
-    font-size: 18px;
-    padding-top: 10px;
     padding-bottom: 30px;
-    cursor: pointer;
   }
   .companyProfile {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    top: 40px;
-    background: #000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     z-index: 20;
   }
   .mediaProfile {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    top: 40px;
-    background: #000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     z-index: 20;
   }
 }
 @media (max-width: 1017px) {
   .mediaProfile {
-    position: absolute;
-    width: 100%;
-    height: 50px;
     top: 80px;
-    background: #000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    z-index: 20;
   }
 }
 @media (max-width: 655px) {
   .appBar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     position: absolute;
     top: 115px;
-    background: none;
     left: 0;
     width: 22px;
     height: 50px;
@@ -669,16 +538,8 @@
     z-index: 0;
   }
   .headerLogoContainer {
-    padding: 10px 0px 10px 0px;
     width: 110px;
     height: 60px;
-    cursor: pointer;
-  }
-  .headerLogoContainer img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    width: 100%;
-    height: 100%;
   }
   .burgerBtn {
     color: white;
@@ -805,76 +666,20 @@
     height: auto;
   }
   .formAndBtnContainer {
-    margin-top: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    height: 20px;
     z-index: 500;
   }
   .containerSearch {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    height: 27px;
-    background: #0f0d0d;
-    border: solid 1px #989797;
     width: 200px;
   }
   .containerSearch input {
-    background: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    margin-top: 4px;
     font-size: 10px;
   }
   .containerSearch:after {
-    content: "";
-    display: block;
-    height: 27px;
-    width: 20px; /* Ширина правой стороны с наклоном */
-    background: -webkit-gradient(linear, right top, left top, color-stop(50%, #0f0d0d), color-stop(50%, transparent));
-    background: linear-gradient(to left, #0f0d0d 50%, transparent 50%);
-    border-top: solid 1px #989797;
-    border-bottom: solid 1px #989797;
-    border-right: solid 1px #989797;
-    -webkit-transform: skewX(-20deg);
-            transform: skewX(-20deg); /* Поворот правой стороны */
-    position: relative;
-    top: 0;
     left: 22px;
-    z-index: 100; /* Помещаем повернутую часть над содержимым */
   }
 }
 @media (max-width: 390px) {
   .mainHeaderBg {
-    background: url(../../pictures/header.jpg);
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    height: 135px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -883,47 +688,13 @@
     display: none;
   }
   .appBar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    position: absolute;
     top: 30px;
-    background: none;
     left: -30px;
-    width: 22px;
-    height: 50px;
-    padding-left: 60px;
-    z-index: 0;
   }
 }
 @media (max-width: 285px) {
   .containerSearch {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    height: 27px;
-    background: #0f0d0d;
-    border: solid 1px #989797;
     width: 100%;
-  }
-  .containerSearch input {
-    background: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    margin-top: 4px;
-    font-size: 10px;
   }
   .containerSearch:after {
     display: none;
@@ -931,79 +702,16 @@
 }
 @media (max-width: 250px) {
   .appBar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    position: absolute;
     top: 25px;
-    background: none;
     left: -50px;
-    width: 22px;
-    height: 50px;
-    padding-left: 60px;
-    z-index: 0;
-  }
-  .facebookContainer {
-    padding: 10px 0px 0px 0px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    gap: 5px;
-  }
-  .facebookContainer span {
-    font-weight: bold;
-    padding: 5px 3px 5px 3px;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    text-transform: none;
   }
   .facebookContainer Button {
     font-size: 8px;
-    height: 19px;
-    padding: 0;
     min-width: 80px;
   }
   .facebookContainer .shareFacebook {
     min-width: 30px;
     font-size: 8px;
-  }
-  .facebookContainer .textInSpanFacebook {
-    font-weight: normal;
-  }
-  .containerSearch {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    height: 27px;
-    background: #0f0d0d;
-    border: solid 1px #989797;
-    width: 100%;
-  }
-  .containerSearch input {
-    background: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    margin-top: 4px;
-    font-size: 10px;
-  }
-  .containerSearch:after {
-    display: none;
   }
 }
 @media (max-width: 260px) {
