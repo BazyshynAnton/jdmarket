@@ -205,7 +205,9 @@ const Header = () => {
                   <ListItem className={styles.listItem}>
                     USA JDM IMPORTS
                   </ListItem>
-                  <ListItem className={styles.listItem}>HOW TO BUY?</ListItem>
+                  <NavLink to="/how-to-buy" className={styles.listItem}>
+                    <ListItem>HOW TO BUY?</ListItem>
+                  </NavLink>
                   <ListItem
                     className={`${styles.listItem} ${
                       isMenuThreeOpen ? styles.openMenu : ''

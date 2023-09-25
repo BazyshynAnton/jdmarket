@@ -5,6 +5,7 @@ import MainLayout from './layouts/MainLayout'
 import JdmSportsPage from './pages/vehicleInventory/jdmSportsPage'
 import JdmClassicPage from './pages/vehicleInventory/JdmClassicPage'
 import NonJdmPage from './pages/vehicleInventory/NonJdmPage'
+import HowToBuyPage from './pages/HowToBuyPage'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           element={<JdmClassicPage />}
         />
         <Route path="vehicle-inventory/:non-jdm" element={<NonJdmPage />} />
+        <Route path="how-to-buy" element={<HowToBuyPage />} />
       </Route>
     </Routes>
   )
