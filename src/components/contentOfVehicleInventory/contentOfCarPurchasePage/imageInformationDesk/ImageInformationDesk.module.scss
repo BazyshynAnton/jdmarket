@@ -1,0 +1,50 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.imgSlider {
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.imgsSmallBlock {
+  border: 1px solid rgb(179, 179, 179);
+  display: flex;
+}
+
+.smallImgs {
+  object-fit: cover;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  .imgClick {
+    cursor: pointer;
+  }
+}
+
+.containerInfoAndSlider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+//nf
+.containerNotFoundCar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

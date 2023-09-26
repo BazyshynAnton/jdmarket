@@ -17,6 +17,31 @@ import audiR8 from '../pictures/audiR8.jpg'
 import cobra from '../pictures/cobra.jpg'
 import benz from '../pictures/benz.jpg'
 import m3 from '../pictures/m3.jpg'
+//r4
+import r34buy1 from '../pictures/r34buy1.jpg'
+import r34buy2 from '../pictures/r34buy2.jpg'
+import r34buy3 from '../pictures/r34buy3.jpg'
+import r34buy4 from '../pictures/r34buy4.jpg'
+import r34buy5 from '../pictures/r34buy5.jpg'
+import r34buy6 from '../pictures/r34buy6.jpg'
+import r34buy7 from '../pictures/r34buy7.jpg'
+import r34buy8 from '../pictures/r34buy8.jpg'
+import r34buy9 from '../pictures/r34buy9.jpg'
+import r34buy10 from '../pictures/r34buy10.jpg'
+import r34buy11 from '../pictures/r34buy11.jpg'
+import r34buy12 from '../pictures/r34buy12.jpg'
+import smallr34buy1 from '../pictures/smallr34buy1.jpg'
+import smallr34buy2 from '../pictures/smallr34buy2.jpg'
+import smallr34buy3 from '../pictures/smallr34buy3.jpg'
+import smallr34buy4 from '../pictures/smallr34buy4.jpg'
+import smallr34buy5 from '../pictures/smallr34buy5.jpg'
+import smallr34buy6 from '../pictures/smallr34buy6.jpg'
+import smallr34buy7 from '../pictures/smallr34buy7.jpg'
+import smallr34buy8 from '../pictures/smallr34buy8.jpg'
+import smallr34buy9 from '../pictures/smallr34buy9.jpg'
+import smallr34buy10 from '../pictures/smallr34buy10.jpg'
+import smallr34buy11 from '../pictures/smallr34buy11.jpg'
+import smallr34buy12 from '../pictures/smallr34buy12.jpg'
 
 import available from '../pictures/available.png'
 import sold from '../pictures/sold.png'
@@ -25,6 +50,30 @@ const vehiclePageCars = [
   {
     img: oneNissanSkylinerMod34,
     imgTwo: available,
+    img1: r34buy1,
+    img2: r34buy2,
+    img3: r34buy3,
+    img4: r34buy4,
+    img5: r34buy5,
+    img6: r34buy6,
+    img7: r34buy7,
+    img8: r34buy8,
+    img9: r34buy9,
+    img10: r34buy10,
+    img11: r34buy11,
+    img12: r34buy12,
+    smallImg1: smallr34buy1,
+    smallImg2: smallr34buy2,
+    smallImg3: smallr34buy3,
+    smallImg4: smallr34buy4,
+    smallImg5: smallr34buy5,
+    smallImg6: smallr34buy6,
+    smallImg7: smallr34buy7,
+    smallImg8: smallr34buy8,
+    smallImg9: smallr34buy9,
+    smallImg10: smallr34buy10,
+    smallImg11: smallr34buy11,
+    smallImg12: smallr34buy12,
     text: 'Nissan Skyline GTR R34 V spec (N.8402)',
     id: '8f22002c-8568-4e5b-829c-84cebeea1130',
     mark: 'nissan',

@@ -53,7 +53,9 @@ const CarSale = () => {
       </Box>
       <Box className={styles.containerOfAllCars}>
         {vehiclePageCars.map((card) => (
-          <CardSale key={card.id} card={card} />
+          <NavLink key={card.id} to={`/vehicle-inventory/${card.id}`}>
+            <CardSale card={card} />
+          </NavLink>
         ))}
       </Box>
     </>
