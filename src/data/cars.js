@@ -1,4 +1,4 @@
-import oneNissanSkylineR34 from '../pictures/oneNissanSkylineR34.jpg'
+import oneNissanSkyliner34 from '../pictures/oneNissanSkyliner34.jpg'
 import oneNissanSkylineR32 from '../pictures/oneNissanSkylineR32.jpg'
 import oneNissanSkylineR33 from '../pictures/oneNissanSkylineR33.jpg'
 import oneLancerEvo3 from '../pictures/oneLancerEvo3.jpg'
@@ -15,7 +15,7 @@ import oneSkylineR30 from '../pictures/oneSkylineR30.jpg'
 
 const cars = [
   {
-    img: oneNissanSkylineR34,
+    img: oneNissanSkyliner34,
     text: 'Nissan Skyline GTR R34 V spec (N.8402)',
     id: '8402',
   },

@@ -1,4 +1,5 @@
 .mainContainer {
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,4 +9,26 @@
           flex-direction: column;
   background: white;
   padding: 50px 20px;
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 0.2rem;
+  font-size: 12px;
+}
+.navigation .activeNav {
+  color: red;
+  cursor: pointer;
+}
+.navigation .activeNav:hover {
+  text-decoration: underline;
 }

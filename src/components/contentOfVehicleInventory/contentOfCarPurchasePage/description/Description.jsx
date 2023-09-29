@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import styles from '../infoAboutCar/InfoAndVideoAboutCar.module.css'
 
-const Discribtion = () => {
+const Description = () => {
   return (
     <Box className={styles.descrip}>
       <p>Nissan Skyline GTR R34 V spec</p>
@@ -31,4 +31,4 @@ const Discribtion = () => {
   )
 }
 
-export default Discribtion
+export default Description

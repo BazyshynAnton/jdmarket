@@ -1,6 +1,24 @@
 .mainContainer {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   background: white;
   padding: 50px 20px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.2rem;
+
+  font-size: 12px;
+
+  .activeNav {
+    color: red;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

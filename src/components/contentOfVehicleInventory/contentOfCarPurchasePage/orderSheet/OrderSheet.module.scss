@@ -1,0 +1,82 @@
+.orderSheet {
+  position: relative;
+  margin-top: 35px;
+  display: flex;
+  background: #b90000;
+  width: 110px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 22px;
+  cursor: pointer;
+  &::after {
+    content: url('../../../../pictures/cornerOrder.png');
+    position: absolute;
+
+    right: -10px;
+    top: 0;
+  }
+}
+
+.lineUnderOrderSheet {
+  width: 100%;
+  height: 2px;
+  background: #b90000;
+}
+
+.containerOfForm {
+  margin-top: 20px;
+  padding: 10px;
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+  }
+
+  img {
+    margin-top: 20px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  button {
+    margin-top: 10px;
+    background: #b90000;
+    padding: 5px 10px;
+    width: 60px;
+    color: white;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.formStyles {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  input {
+    width: 200px;
+    height: 25px;
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+  }
+
+  textarea {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 150px;
+    padding: 5px;
+    border: 1px solid black;
+    outline: none;
+  }
+}

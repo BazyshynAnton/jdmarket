@@ -9,6 +9,7 @@ import cars from '../../../../../data/cars'
 
 import styles from '../CarouselsOfCars.module.css'
 import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const LatestArrivals = () => {
   const [slidesPerView, setSlidesPerView] = useState(4)
@@ -55,7 +56,7 @@ const LatestArrivals = () => {
         className={styles.latestArrivalsSwiper}>
         {cars.slice(0, 7).map((car) => (
           <SwiperSlide className={styles.swiperSlideContainer} key={car.id}>
-            <CardOfCar text={car.text} img={car.img} />
+            <CardOfCar text={car.text} img={car.img} id={car.id} />
           </SwiperSlide>
         ))}
         <SwiperNavBtns />

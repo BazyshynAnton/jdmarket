@@ -7,7 +7,7 @@ import { Box } from '@mui/material'
 import styles from './ImageInformationDesk.module.css'
 import { useState } from 'react'
 import InfoAboutCar from '../infoAboutCar/InfoAboutCar'
-import Discribtion from '../discribtion/Discribtion'
+import Description from '../description/Description'
 
 const ImageInformationDesk = () => {
   const { id } = useParams()
@@ -128,7 +128,7 @@ const ImageInformationDesk = () => {
             <InfoAboutCar />
           </Box>
           <Box className={styles.otherBlock}>
-            <Discribtion />
+            <Description />
           </Box>
         </Box>
       ) : (
