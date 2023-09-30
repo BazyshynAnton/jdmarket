@@ -25,7 +25,6 @@ const ContentOfCarPurchasePage = () => {
         <Box className={styles.containerInfoAndSlider}>
           <ImageInformationDesk />
         </Box>
-        <OrderSheet />
       </Box>
 
       <FeaturedCars />

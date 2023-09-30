@@ -107,7 +107,7 @@ const Header = () => {
       <Container>
         <Box className={styles.mainHeaderBg}>
           <Box className={styles.headerLogoContainer}>
-            <NavLink to="/">
+            <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
               <img src={headerLogo} alt="JDMexpoLogo" />
             </NavLink>
           </Box>
@@ -141,7 +141,8 @@ const Header = () => {
                       className="selectionOpt"
                       name="filter_type"
                       value={searchCategory}
-                      onChange={handleCategoryChange}>
+                      onChange={handleCategoryChange}
+                    >
                       <MenuItem value="Maker">Maker</MenuItem>
                       <MenuItem value="HONDA">HONDA</MenuItem>
                       <MenuItem value="MAZDA">MAZDA</MenuItem>
@@ -161,7 +162,8 @@ const Header = () => {
               <Box className={styles.afterContainer}>
                 <Box
                   className={styles.submitBtn}
-                  onClick={handleSearchButtonClick}>
+                  onClick={handleSearchButtonClick}
+                >
                   <SearchIcon className={styles.searchIco} />
                 </Box>
               </Box>
@@ -174,7 +176,7 @@ const Header = () => {
             <>
               <Toolbar className={styles.toolbarContainer}>
                 <List className={styles.lists}>
-                  <NavLink to="/">
+                  <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
                     <ListItem className={styles.listItem}>
                       <HomeRoundedIcon className={styles.homeBtn} />
                       HOME
@@ -183,11 +185,13 @@ const Header = () => {
 
                   <NavLink
                     to="/vehicle-inventory"
+                    onClick={() => window.scrollTo(0, 0)}
                     className={`${styles.listItem} ${
                       isMenuOpen ? styles.openMenu : ''
                     }`}
                     onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}>
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <ListItem>VEHICLE INVENTORY</ListItem>
                   </NavLink>
 
@@ -199,13 +203,18 @@ const Header = () => {
                       isMenuTwoOpen ? styles.openMenu : ''
                     }`}
                     onMouseEnter={handleMouseEnterTwo}
-                    onMouseLeave={handleMouseLeaveTwo}>
+                    onMouseLeave={handleMouseLeaveTwo}
+                  >
                     COMPANY PROFILE
                   </ListItem>
                   <ListItem className={styles.listItem}>
                     USA JDM IMPORTS
                   </ListItem>
-                  <NavLink to="/how-to-buy" className={styles.listItem}>
+                  <NavLink
+                    to="/how-to-buy"
+                    onClick={() => window.scrollTo(0, 0)}
+                    className={styles.listItem}
+                  >
                     <ListItem>HOW TO BUY?</ListItem>
                   </NavLink>
                   <ListItem
@@ -213,7 +222,8 @@ const Header = () => {
                       isMenuThreeOpen ? styles.openMenu : ''
                     }`}
                     onMouseEnter={handleMouseEnterThree}
-                    onMouseLeave={handleMouseLeaveThree}>
+                    onMouseLeave={handleMouseLeaveThree}
+                  >
                     SOCIAL MEDIA
                   </ListItem>
                   <ListItem className={styles.listItem}>CONTACT US</ListItem>
@@ -226,15 +236,19 @@ const Header = () => {
                 timeout={300}
                 classNames="absoluteInventory"
                 mountOnEnter
-                unmountOnExit>
+                unmountOnExit
+              >
                 <Box
                   ref={nodeRef}
                   className={styles.absoluteInventory}
                   onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}>
+                  onMouseLeave={handleMouseLeave}
+                >
                   <NavLink
                     to="/vehicle-inventory/jdm-sports"
-                    className={styles.sectionInventory}>
+                    onClick={() => window.scrollTo(0, 0)}
+                    className={styles.sectionInventory}
+                  >
                     <img src={jdmSports} alt="jdm-sports" />
                     <Typography className={styles.textInSection}>
                       JDM SPORTS
@@ -242,7 +256,9 @@ const Header = () => {
                   </NavLink>
                   <NavLink
                     to="/vehicle-inventory/jdm-classic"
-                    className={`${styles.sectionInventory} ${styles.borderSection}`}>
+                    onClick={() => window.scrollTo(0, 0)}
+                    className={`${styles.sectionInventory} ${styles.borderSection}`}
+                  >
                     <img src={jdmClassic} alt="jdm-classic" />
                     <Typography className={styles.textInSection}>
                       JDM CLASSIC
@@ -250,7 +266,9 @@ const Header = () => {
                   </NavLink>
                   <NavLink
                     to="/vehicle-inventory/non-jdm"
-                    className={styles.sectionInventory}>
+                    onClick={() => window.scrollTo(0, 0)}
+                    className={styles.sectionInventory}
+                  >
                     <img src={nonJdm} alt="non-jdm" />
                     <Typography className={styles.textInSection}>
                       NON JDM
@@ -264,25 +282,29 @@ const Header = () => {
                 timeout={300}
                 classNames="companyProfile"
                 mountOnEnter
-                unmountOnExit>
+                unmountOnExit
+              >
                 <Box
                   ref={nodeRef}
                   className={styles.companyProfile}
                   onMouseEnter={handleMouseEnterTwo}
-                  onMouseLeave={handleMouseLeaveTwo}>
+                  onMouseLeave={handleMouseLeaveTwo}
+                >
                   <Box className={styles.companySection}>
                     <Typography className={styles.textInCompany}>
                       ABOUT US
                     </Typography>
                   </Box>
                   <Box
-                    className={`${styles.companySection} ${styles.borderCompanySectionOne}`}>
+                    className={`${styles.companySection} ${styles.borderCompanySectionOne}`}
+                  >
                     <Typography className={styles.textInCompany}>
                       OUR SERVICES
                     </Typography>
                   </Box>
                   <Box
-                    className={`${styles.companySection} ${styles.borderCompanySectionTwo}`}>
+                    className={`${styles.companySection} ${styles.borderCompanySectionTwo}`}
+                  >
                     <Typography className={styles.textInCompany}>
                       WHY CHOOSE US
                     </Typography>
@@ -300,23 +322,27 @@ const Header = () => {
                 timeout={300}
                 classNames="companyProfile"
                 mountOnEnter
-                unmountOnExit>
+                unmountOnExit
+              >
                 <Box
                   ref={nodeRef}
                   className={styles.mediaProfile}
                   onMouseEnter={handleMouseEnterThree}
-                  onMouseLeave={handleMouseLeaveThree}>
+                  onMouseLeave={handleMouseLeaveThree}
+                >
                   <Box className={styles.mediaSection}>
                     <Typography className={styles.textInMedia}>
                       MEDIA
                     </Typography>
                   </Box>
                   <Box
-                    className={`${styles.mediaSection} ${styles.borderMediaSectionOne}`}>
+                    className={`${styles.mediaSection} ${styles.borderMediaSectionOne}`}
+                  >
                     <Typography className={styles.textInMedia}>BLOG</Typography>
                   </Box>
                   <Box
-                    className={`${styles.mediaSection} ${styles.borderMediaSectionTwo}`}>
+                    className={`${styles.mediaSection} ${styles.borderMediaSectionTwo}`}
+                  >
                     <Typography className={styles.textInMedia}>
                       FACEBOOK
                     </Typography>
@@ -345,7 +371,8 @@ const Header = () => {
               anchor="left"
               PaperProps={{
                 className: styles.swipeBar,
-              }}>
+              }}
+            >
               <Box className={styles.closeBurgerIcon}>
                 <IconButton onClick={() => setOpen(false)}>
                   <MenuOpenIcon sx={{ color: 'white', fontSize: '1.8rem' }} />
@@ -356,7 +383,7 @@ const Header = () => {
               </Box>
               <List className={styles.listInBurgerMenu}>
                 <ListItem className={styles.listIntemInBurgerMenu}>
-                  <NavLink to="/">
+                  <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
                     <p>HOME</p>
                   </NavLink>
                 </ListItem>
@@ -364,11 +391,15 @@ const Header = () => {
                   onClick={handleClickFunctionInBurger}
                   className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
                     isOpen ? styles.activeBurgerVehicle : ''
-                  }`}>
+                  }`}
+                >
                   {!isOpen && <p>VEHICLE INVENTORY</p>}
                   {isOpen && (
-                    <NavLink to="/vehicle-inventory">
-                      <p>VEHICLE INVENTORY</p>{' '}
+                    <NavLink
+                      to="/vehicle-inventory"
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
+                      <p>VEHICLE INVENTORY</p>
                     </NavLink>
                   )}
 
@@ -377,14 +408,16 @@ const Header = () => {
                     in={isOpen}
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
-                    unmountOnExit>
+                    unmountOnExit
+                  >
                     <Box
                       ref={nodeRef}
                       className={`${
                         isOpen
                           ? styles.dropVehicleInventory
                           : styles.notOpenVehicleInventory
-                      }`}>
+                      }`}
+                    >
                       <Box className={styles.jdmSectionInBurger}>
                         <p>JDM SPORTS</p>
                         <img src={jdmSports} alt="jdm-sports" />
@@ -407,21 +440,24 @@ const Header = () => {
                   onClick={handleClickFunctionInBurgerTwo}
                   className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
                     isOpenTwo ? styles.activeBurgerVehicle : ''
-                  }`}>
+                  }`}
+                >
                   <p>COMPANY PROFILE</p>
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isOpenTwo}
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
-                    unmountOnExit>
+                    unmountOnExit
+                  >
                     <Box
                       ref={nodeRef}
                       className={`${
                         isOpenTwo
                           ? styles.dropVehicleInventory
                           : styles.notOpenVehicleInventory
-                      }`}>
+                      }`}
+                    >
                       <Box className={styles.jdmSectionInBurger}>
                         <p> ABOUT US</p>
                       </Box>
@@ -444,21 +480,24 @@ const Header = () => {
                   onClick={handleClickFunctionInBurgerThree}
                   className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
                     isOpenThree ? styles.activeBurgerVehicle : ''
-                  }`}>
+                  }`}
+                >
                   <p>SOCIAL MEDIA</p>
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isOpenThree}
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
-                    unmountOnExit>
+                    unmountOnExit
+                  >
                     <Box
                       ref={nodeRef}
                       className={`${
                         isOpenThree
                           ? styles.dropVehicleInventory
                           : styles.notOpenVehicleInventory
-                      }`}>
+                      }`}
+                    >
                       <Box className={styles.jdmSectionInBurger}>
                         <p>MEDIA</p>
                       </Box>

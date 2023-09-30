@@ -38,7 +38,8 @@ const NavSectionInJdmClassic = () => {
       <Box className={styles.sectionsContainer}>
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('oldHonda')}>
+          onClick={() => setSectionMark('oldHonda')}
+        >
           <img src={sectionClassicHonda} alt="oldHonda" />
           <p>
             <i>HONDA</i>
@@ -46,7 +47,8 @@ const NavSectionInJdmClassic = () => {
         </Box>
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('oldToyota')}>
+          onClick={() => setSectionMark('oldToyota')}
+        >
           <img src={sectionClassicToyota} alt="oldToyota" />
           <p>
             <i>TOYOTA</i>
@@ -54,7 +56,8 @@ const NavSectionInJdmClassic = () => {
         </Box>
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('oldNissan')}>
+          onClick={() => setSectionMark('oldNissan')}
+        >
           <img src={sectionClassicNissan} alt="oldNissan" />
           <p>
             <i>NISSAN</i>
@@ -63,7 +66,8 @@ const NavSectionInJdmClassic = () => {
 
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('oldMitsubishi')}>
+          onClick={() => setSectionMark('oldMitsubishi')}
+        >
           <img src={sectionClassicMitsubishi} alt="oldMitsubishi" />
           <p>
             <i>MITSUBISHI</i>
@@ -72,7 +76,8 @@ const NavSectionInJdmClassic = () => {
 
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('oldSubaru')}>
+          onClick={() => setSectionMark('oldSubaru')}
+        >
           <img src={sectionClassicSubaru} alt="oldSubaru" />
           <p>
             <i>SUBARU</i>
@@ -80,7 +85,8 @@ const NavSectionInJdmClassic = () => {
         </Box>
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('oldMazda')}>
+          onClick={() => setSectionMark('oldMazda')}
+        >
           <img src={sectionCLassicMazda} alt="oldMazda" />
           <p>
             <i>MAZDA</i>
@@ -91,7 +97,8 @@ const NavSectionInJdmClassic = () => {
       {sectionMark !== null && (
         <button
           className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}>
+          onClick={() => setSectionMark(null)}
+        >
           <p>Reset Filter</p>
         </button>
       )}
@@ -99,10 +106,22 @@ const NavSectionInJdmClassic = () => {
       <Box className={styles.containerOfAllCars}>
         {sectionMark === null
           ? filteredCarsByClass.map((card) => (
-              <CardSale key={card.id} card={card} />
+              <NavLink
+                key={card.id}
+                to={`/vehicle-inventory/${card.id}`}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <CardSale card={card} />
+              </NavLink>
             ))
           : filteredCarsByMark.map((card) => (
-              <CardSale key={card.id} card={card} />
+              <NavLink
+                key={card.id}
+                to={`/vehicle-inventory/${card.id}`}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <CardSale card={card} />
+              </NavLink>
             ))}
       </Box>
     </>

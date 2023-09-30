@@ -8,6 +8,7 @@ import styles from './ImageInformationDesk.module.css'
 import { useState } from 'react'
 import InfoAboutCar from '../infoAboutCar/InfoAboutCar'
 import Description from '../description/Description'
+import OrderSheet from '../orderSheet/OrderSheet'
 
 const ImageInformationDesk = () => {
   const { id } = useParams()
@@ -20,7 +21,7 @@ const ImageInformationDesk = () => {
   return (
     <>
       {id === currId ? (
-        <Box>
+        <>
           <Box className={styles.containerInfoAndSlider}>
             <Box className={styles.mainContainer}>
               <Box className={styles.imgSlider}>
@@ -130,7 +131,8 @@ const ImageInformationDesk = () => {
           <Box className={styles.otherBlock}>
             <Description />
           </Box>
-        </Box>
+          <OrderSheet/>
+        </>
       ) : (
         <Box className={styles.containerNotFoundCar}>
           <img src={sms} alt="not-found" />

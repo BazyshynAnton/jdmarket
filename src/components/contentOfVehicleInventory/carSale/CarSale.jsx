@@ -14,7 +14,11 @@ const CarSale = () => {
     <>
       <Box className={styles.mainNavAndSectionContainer}>
         <Box className={styles.navContainer}>
-          <NavLink to="/" className={styles.homeBtn}>
+          <NavLink
+            to="/"
+            onClick={() => window.scrollTo(0, 0)}
+            className={styles.homeBtn}
+          >
             <p>HOME</p>
           </NavLink>
           <p>{'>'}</p>
@@ -24,7 +28,9 @@ const CarSale = () => {
         <Box className={styles.sectionsContainer}>
           <NavLink
             to="/vehicle-inventory/jdm-sports"
-            className={`${styles.linkStyleForSection} ${styles.section}`}>
+            onClick={() => window.scrollTo(0, 0)}
+            className={`${styles.linkStyleForSection} ${styles.section}`}
+          >
             <img src={jdmSports} alt="jdm-sports" />
 
             <p>
@@ -33,7 +39,9 @@ const CarSale = () => {
           </NavLink>
           <NavLink
             to="/vehicle-inventory/jdm-classic"
-            className={`${styles.linkStyleForSection} ${styles.section}`}>
+            onClick={() => window.scrollTo(0, 0)}
+            className={`${styles.linkStyleForSection} ${styles.section}`}
+          >
             <img src={jdmClassic} alt="jdm-classic" />
 
             <p>
@@ -42,7 +50,9 @@ const CarSale = () => {
           </NavLink>
           <NavLink
             to="/vehicle-inventory/non-jdm"
-            className={`${styles.linkStyleForSection} ${styles.section}`}>
+            onClick={() => window.scrollTo(0, 0)}
+            className={`${styles.linkStyleForSection} ${styles.section}`}
+          >
             <img src={nonJdm} alt="non-jdm" />
 
             <p>
@@ -53,7 +63,11 @@ const CarSale = () => {
       </Box>
       <Box className={styles.containerOfAllCars}>
         {vehiclePageCars.map((card) => (
-          <NavLink key={card.id} to={`/vehicle-inventory/${card.id}`}>
+          <NavLink
+            key={card.id}
+            to={`/vehicle-inventory/${card.id}`}
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <CardSale card={card} />
           </NavLink>
         ))}

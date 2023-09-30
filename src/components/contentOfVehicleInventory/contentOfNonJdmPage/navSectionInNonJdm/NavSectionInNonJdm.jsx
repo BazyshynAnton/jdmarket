@@ -39,7 +39,8 @@ const NavSectionInNonJdm = () => {
       <Box className={styles.sectionsContainer}>
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('porsche')}>
+          onClick={() => setSectionMark('porsche')}
+        >
           <img src={nonPorsche} alt="porsche" />
 
           <p>
@@ -48,7 +49,8 @@ const NavSectionInNonJdm = () => {
         </Box>
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('mercedes')}>
+          onClick={() => setSectionMark('mercedes')}
+        >
           <img src={nonMercedes} alt="mercedes" />
 
           <p>
@@ -57,7 +59,8 @@ const NavSectionInNonJdm = () => {
         </Box>
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('jaguar')}>
+          onClick={() => setSectionMark('jaguar')}
+        >
           <img src={nonJaguar} alt="jaguar" />
 
           <p>
@@ -66,7 +69,8 @@ const NavSectionInNonJdm = () => {
         </Box>
         <Box
           className={styles.section}
-          onClick={() => setSectionMark('ferrari')}>
+          onClick={() => setSectionMark('ferrari')}
+        >
           <img src={nonFerrari} alt="ferrari" />
 
           <p>
@@ -93,7 +97,8 @@ const NavSectionInNonJdm = () => {
       {sectionMark !== null && (
         <button
           className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}>
+          onClick={() => setSectionMark(null)}
+        >
           <p>Reset Filter</p>
         </button>
       )}
@@ -101,10 +106,22 @@ const NavSectionInNonJdm = () => {
       <Box className={styles.containerOfAllCars}>
         {sectionMark === null
           ? filterCarsByClass.map((card) => (
-              <CardSale key={card.id} card={card} />
+              <NavLink
+                key={card.id}
+                to={`/vehicle-inventory/${card.id}`}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <CardSale card={card} />
+              </NavLink>
             ))
           : filterCarsByMark.map((card) => (
-              <CardSale key={card.id} card={card} />
+              <NavLink
+                key={card.id}
+                to={`/vehicle-inventory/${card.id}`}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                <CardSale card={card} />
+              </NavLink>
             ))}
       </Box>
     </>
