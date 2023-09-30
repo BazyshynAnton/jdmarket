@@ -7,12 +7,14 @@ import JdmClassicPage from './pages/vehicleInventory/JdmClassicPage'
 import NonJdmPage from './pages/vehicleInventory/NonJdmPage'
 import HowToBuyPage from './pages/HowToBuyPage'
 import CarPurchasePage from './pages/CarPurchasePage'
+import LoginPage from './pages/LoginPage'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route element={<HomePage />} index />
+        <Route path="login" element={<LoginPage />} />
         <Route path="vehicle-inventory" element={<VehicleInventory />} />
         <Route
           path="vehicle-inventory/:jdm-sports"

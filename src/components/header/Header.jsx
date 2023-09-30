@@ -100,7 +100,9 @@ const Header = () => {
       <Box className={styles.headerRegisterOverflow}>
         <Container>
           <Box className={styles.registration}>
-            <p>Log in</p>
+            <NavLink to="/login">
+              <p>Log in</p>
+            </NavLink>
           </Box>
         </Container>
       </Box>
