@@ -22,3 +22,9 @@
     }
   }
 }
+
+@media (max-width: 460px) {
+  .navigation {
+    flex-direction: column;
+  }
+}

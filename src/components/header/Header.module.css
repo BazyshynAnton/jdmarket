@@ -669,13 +669,13 @@
     z-index: 500;
   }
   .containerSearch {
-    width: 200px;
+    width: 210px;
   }
   .containerSearch input {
     font-size: 10px;
   }
   .containerSearch:after {
-    left: 22px;
+    left: 12px;
   }
 }
 @media (max-width: 390px) {

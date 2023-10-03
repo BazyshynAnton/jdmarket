@@ -86,3 +86,9 @@
   border: 1px solid black;
   outline: none;
 }
+
+@media (max-width: 292px) {
+  .formStyles input {
+    width: 100%;
+  }
+}

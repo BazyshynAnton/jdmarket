@@ -32,3 +32,12 @@
 .navigation .activeNav:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 460px) {
+  .navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
