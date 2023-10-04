@@ -6,7 +6,7 @@ import {
   setFormData,
   setMister,
   setMissus,
-} from '../createAccountAndRegisteredAccount/createAccountAndRegisteredAccountSlice'
+} from '../createAccountAndRegisteredAccount/createAccountSlice'
 
 const stylesForRegistrationForm = {
   stylesForRadioInput: {

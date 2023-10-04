@@ -1,11 +1,10 @@
 import { Box } from '@mui/material'
 import styles from '../ContentOfLoginPage.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  setFormData,
-  setRegistration,
-} from './createAccountAndRegisteredAccountSlice'
+import { setFormData, setRegistration } from './createAccountSlice'
+import { setDefaultData, setValid } from './alreadyRegisteredAccountSlice'
 import RegistrationForm from '../registrationForm/RegistrationForm'
+import { NavLink } from 'react-router-dom'
 
 const stylesForRegistrationForm = {
   stylesForIputContainer: {
@@ -15,12 +14,15 @@ const stylesForRegistrationForm = {
 }
 
 const CreateAccountAndRegisteredAccount = () => {
+  //formRegister
   const { formData, registration } = useSelector((store) => store.formRegister)
 
   const dispatch = useDispatch()
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
+
+    dispatch(setValid())
   }
 
   const handleFormControll = (event) => {
@@ -30,6 +32,15 @@ const CreateAccountAndRegisteredAccount = () => {
 
   const handleRegistration = () => {
     dispatch(setRegistration())
+  }
+
+  //already registered account
+  const { accountInfo, valid } = useSelector((store) => store.registeredAccount)
+
+  const handleAlreadyRegisteredInputChange = (event) => {
+    const { name, value } = event.target
+
+    dispatch(setDefaultData({ ...accountInfo, [name]: value }))
   }
 
   return (
@@ -48,7 +59,7 @@ const CreateAccountAndRegisteredAccount = () => {
                 <input
                   type="email"
                   name="email"
-                  id="email"
+                  id="email1"
                   autoComplete="email"
                   value={formData.email}
                   onChange={handleFormControll}
@@ -69,14 +80,34 @@ const CreateAccountAndRegisteredAccount = () => {
             <form onSubmit={handleFormSubmit} className={styles.formRegistered}>
               <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
                 <label htmlFor="email">Email address</label>
-                <input name="email" id="email2" autoComplete="email" />
+                <input
+                  name="emailAddress"
+                  id="email2"
+                  autoComplete="email"
+                  value={accountInfo.emailAddress}
+                  onChange={handleAlreadyRegisteredInputChange}
+                />
               </Box>
               <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
                 <label htmlFor="password">Password</label>
-                <input name="password" id="password" />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  value={accountInfo.password}
+                  onChange={handleAlreadyRegisteredInputChange}
+                />
               </Box>
               <p className={styles.forgotPassword}>Forgot your password?</p>
-              <button type="button">sign in</button>
+              {accountInfo.emailAddress.includes(
+                'stroustrup-example@gmail.com'
+              ) && accountInfo.password.includes('BjarneStroustrup') ? (
+                <NavLink to="/user" style={{ width: '60px' }}>
+                  <button type="button">sign in</button>
+                </NavLink>
+              ) : (
+                <button type="button">sign in</button>
+              )}
             </form>
           </Box>
         </>

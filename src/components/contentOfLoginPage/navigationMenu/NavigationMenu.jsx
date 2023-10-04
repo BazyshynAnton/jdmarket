@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import styles from '../ContentOfLoginPage.module.css'
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { backToLoginPage } from '../createAccountAndRegisteredAccount/createAccountAndRegisteredAccountSlice'
+import { backToLoginPage } from '../createAccountAndRegisteredAccount/createAccountSlice'
 const NavigationMenu = () => {
   const dispatch = useDispatch()
   const { registration } = useSelector((store) => store.formRegister)

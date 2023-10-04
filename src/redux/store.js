@@ -1,5 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import useFormRegister from '../components/contentOfLoginPage/createAccountAndRegisteredAccount/createAccountAndRegisteredAccountSlice'
+import useFormRegister from '../components/contentOfLoginPage/createAccountAndRegisteredAccount/createAccountSlice'
+import alreadyRegisteredAccount from '../components/contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+
 export default configureStore({
-  reducer: { formRegister: useFormRegister },
+  reducer: {
+    formRegister: useFormRegister,
+    registeredAccount: alreadyRegisteredAccount,
+  },
 })
