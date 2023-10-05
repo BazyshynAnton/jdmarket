@@ -1,12 +1,23 @@
 import { Box, useMediaQuery } from '@mui/material'
 import styles from './InfoAndVideoAboutCar.module.css'
 import VideoAboutCar from './VideoAboutCar'
-
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  setInFavorite,
+  setFavoriteCar,
+} from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 const colorForInformation = {
   color: '#800000',
 }
 
+const key = '8402'
+
 const InfoAboutCar = () => {
+  const dispatch = useDispatch()
+  const { activeUser, favoriteCar } = useSelector(
+    (store) => store.registeredAccount
+  )
+
   const isDesktop = useMediaQuery('(min-width:236px)')
   return (
     <Box className={styles.mainInfoContainer}>
@@ -50,7 +61,45 @@ const InfoAboutCar = () => {
         </Box>
       )}
       <h2>Price(USD): $245000</h2>
-      <button>✦ Add to favorites</button>
+
+      {activeUser ? (
+        favoriteCar.id.includes(key) ? (
+          <button
+            onClick={() =>
+              swal({
+                title: 'Again?...',
+                text: 'This car has already been added to favorites!😊',
+              })
+            }
+          >
+            ✦ Add to favorites
+          </button> //ALREADY
+        ) : (
+          <button
+            onClick={() => {
+              dispatch(setFavoriteCar(key))
+
+              swal({
+                title: 'Great!',
+                text: 'We are waiting for your letter!😊',
+              })
+            }}
+          >
+            ✦ Add to favorites
+          </button> // ADD!!!
+        )
+      ) : (
+        <button
+          onClick={() =>
+            swal({
+              title: 'Oops...',
+              text: 'Please "Log in" or register.',
+            })
+          }
+        >
+          ✦ Add to favorites
+        </button> // PLZ REGISTER!!!
+      )}
       <VideoAboutCar />
     </Box>
   )

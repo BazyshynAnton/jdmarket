@@ -1,0 +1,204 @@
+.mainCOntainerOfUserPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.userInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3rem;
+}
+.userInfo p {
+  width: 230px;
+  cursor: pointer;
+}
+
+.userAvatarContainer {
+  border: 2px solid #8b0000;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 230px;
+  height: 200px;
+  -webkit-box-shadow: 10px 10px 10px rgb(97, 97, 97);
+          box-shadow: 10px 10px 10px rgb(97, 97, 97);
+}
+.userAvatarContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cardOfCarsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+.cardOfCarsContainer .imgContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 180px;
+  padding-top: 20px;
+}
+.cardOfCarsContainer .imgContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cardTextAndButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 45px;
+}
+.cardTextAndButton p {
+  width: 60%;
+  font-size: 12px;
+}
+
+.removeFromFavorites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 85px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.removeFromFavorites:hover .removeButton {
+  color: #8b0000;
+}
+.removeFromFavorites .removeButton {
+  color: rgb(84, 84, 84);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.removeFromFavorites p {
+  font-size: 16px;
+}
+
+.mainContainerSwiper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+}
+
+.nameOfSwiper {
+  position: relative;
+  padding: 10px 0px 0px 20px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgb(185, 185, 185)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgb(185, 185, 185));
+  width: 210px;
+  height: 45px;
+  font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 30px;
+}
+.nameOfSwiper::after {
+  content: url(../../../pictures/headerSectionCorner.png);
+  position: absolute;
+  right: -15px;
+  top: 0;
+  bottom: 0;
+}
+
+.favoriteCarsSwiper {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background: rgb(185, 185, 185);
+  overflow-y: visible;
+  padding: 0px 20px 0px 20px;
+}
+
+.swiperSlideContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navBtns {
+  width: 45px;
+  height: 17px;
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  z-index: 9999;
+}
+.navBtns div {
+  cursor: pointer;
+}

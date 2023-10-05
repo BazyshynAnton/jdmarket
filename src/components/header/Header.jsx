@@ -31,6 +31,8 @@ import nonJdm from '../../pictures/nonJdm.jpg'
 import styles from './Header.module.css'
 import { CSSTransition } from 'react-transition-group'
 import { NavLink } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { setActiveUserLogout } from '../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
 const Header = () => {
   const [searchCategory, setSearchCategory] = useState('Maker')
@@ -94,15 +96,57 @@ const Header = () => {
   const [open, setOpen] = useState(false)
 
   const nodeRef = React.useRef(null)
+  //account
+  const { accountInfo, activeUser } = useSelector(
+    (store) => store.registeredAccount
+  )
+  const dispatch = useDispatch()
 
   return (
     <Box className={styles.headerOverflow}>
       <Box className={styles.headerRegisterOverflow}>
         <Container>
           <Box className={styles.registration}>
-            <NavLink to="/login">
-              <p>Log in</p>
-            </NavLink>
+            {activeUser ? (
+              <Box
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: '0.3rem',
+                }}
+              >
+                <NavLink to="/user">
+                  <p
+                    style={{
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {accountInfo.nameAccount} {accountInfo.secondName}
+                  </p>
+                </NavLink>
+                <hr
+                  style={{
+                    height: '20px',
+                    color: 'white',
+                    background: 'white',
+                    width: '1px',
+                  }}
+                />
+                <NavLink
+                  to="/login"
+                  onClick={() => {
+                    dispatch(setActiveUserLogout())
+                  }}
+                >
+                  <p>Logout</p>
+                </NavLink>
+              </Box>
+            ) : (
+              <NavLink to="/login">
+                <p>Log in</p>
+              </NavLink>
+            )}
           </Box>
         </Container>
       </Box>

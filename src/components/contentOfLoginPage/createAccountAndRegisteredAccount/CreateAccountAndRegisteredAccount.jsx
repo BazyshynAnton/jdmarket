@@ -2,7 +2,10 @@ import { Box } from '@mui/material'
 import styles from '../ContentOfLoginPage.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setFormData, setRegistration } from './createAccountSlice'
-import { setDefaultData, setValid } from './alreadyRegisteredAccountSlice'
+import {
+  setDefaultData,
+  setActiveUserSignIn,
+} from './alreadyRegisteredAccountSlice'
 import RegistrationForm from '../registrationForm/RegistrationForm'
 import { NavLink } from 'react-router-dom'
 
@@ -35,7 +38,7 @@ const CreateAccountAndRegisteredAccount = () => {
   }
 
   //already registered account
-  const { accountInfo, valid } = useSelector((store) => store.registeredAccount)
+  const { accountInfo } = useSelector((store) => store.registeredAccount)
 
   const handleAlreadyRegisteredInputChange = (event) => {
     const { name, value } = event.target
@@ -102,7 +105,13 @@ const CreateAccountAndRegisteredAccount = () => {
               {accountInfo.emailAddress.includes(
                 'stroustrup-example@gmail.com'
               ) && accountInfo.password.includes('BjarneStroustrup') ? (
-                <NavLink to="/user" style={{ width: '60px' }}>
+                <NavLink
+                  to="/user"
+                  style={{ width: '60px' }}
+                  onClick={() => {
+                    dispatch(setActiveUserSignIn())
+                  }}
+                >
                   <button type="button">sign in</button>
                 </NavLink>
               ) : (
