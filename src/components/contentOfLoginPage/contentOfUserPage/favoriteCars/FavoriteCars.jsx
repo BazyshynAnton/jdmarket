@@ -8,9 +8,12 @@ import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import CardNavBtns from '../cardNavBtns/CardNavBtns'
 import { useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 const FavoriteCars = () => {
-  const { favoriteCar } = useSelector((store) => store.registeredAccount)
+  const { favoriteCar, activeUser } = useSelector(
+    (store) => store.registeredAccount
+  )
   const [slidesPerView, setSlidesPerView] = useState(3)
   const favoriteCars = cars.filter((car) => favoriteCar.id.includes(car.id))
   useEffect(() => {
@@ -60,6 +63,8 @@ const FavoriteCars = () => {
         <Box
           style={{
             display: 'flex',
+            flexDirection: 'column',
+            gap: '0.3rem',
             justifyContent: 'center',
             alignItems: 'center',
             fontFamily: 'Pathway Gothic One, sans-serif',
@@ -68,6 +73,43 @@ const FavoriteCars = () => {
           className={styles.favoriteCarsSwiper}
         >
           List is empty ☹️
+          {activeUser ? (
+            <NavLink
+              to="/vehicle-inventory"
+              style={{
+                borderRadius: '5px',
+                width: '90px',
+                padding: '5px 8px',
+                color: '#fff',
+                background: 'red',
+                cursor: 'pointer',
+                fontSize: '15px',
+                textAlign: 'center',
+              }}
+            >
+              show cars
+            </NavLink>
+          ) : (
+            <button
+              onClick={() =>
+                swal({
+                  title: 'Oops...',
+                  text: 'You are not registered or not logged in.',
+                })
+              }
+              style={{
+                borderRadius: '5px',
+                width: '90px',
+                padding: '5px 8px',
+                color: '#fff',
+                background: 'red',
+                cursor: 'pointer',
+                fontSize: '12px',
+              }}
+            >
+              show cars
+            </button>
+          )}
         </Box>
       )}
     </Box>

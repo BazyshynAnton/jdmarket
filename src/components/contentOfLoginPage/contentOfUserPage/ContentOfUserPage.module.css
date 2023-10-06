@@ -4,11 +4,15 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #fff;
+  height: 500px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .userInfo {
@@ -17,8 +21,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: 0.3rem;
 }
 .userInfo p {
@@ -33,11 +37,11 @@
   width: 230px;
   height: 200px;
   -webkit-box-shadow: 10px 10px 10px rgb(97, 97, 97);
-          box-shadow: 10px 10px 10px rgb(97, 97, 97);
+  box-shadow: 10px 10px 10px rgb(97, 97, 97);
 }
 .userAvatarContainer img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -47,15 +51,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   padding-bottom: 20px;
   cursor: pointer;
@@ -65,18 +69,18 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   height: 180px;
   padding-top: 20px;
 }
 .cardOfCarsContainer .imgContainer img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -87,14 +91,14 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   height: 45px;
 }
 .cardTextAndButton p {
@@ -107,16 +111,16 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   width: 85px;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 .removeFromFavorites:hover .removeButton {
   color: #8b0000;
@@ -136,26 +140,36 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 70%;
 }
 
 .nameOfSwiper {
   position: relative;
   padding: 10px 0px 0px 20px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgb(185, 185, 185)));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgb(185, 185, 185));
-  width: 210px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0.2)),
+    to(rgb(185, 185, 185))
+  );
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgb(185, 185, 185)
+  );
+  width: 180px;
   height: 45px;
   font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 30px;
 }
 .nameOfSwiper::after {
-  content: url(../../../pictures/headerSectionCorner.png);
+  content: url(../../../pictures/headerUserCorner.png);
   position: absolute;
-  right: -15px;
+  right: -24px;
   top: 0;
   bottom: 0;
 }
@@ -174,11 +188,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .navBtns {
@@ -191,14 +205,123 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   z-index: 9999;
 }
 .navBtns div {
   cursor: pointer;
+}
+
+.navMenuOfUserPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 0.3rem;
+  font-size: 12px;
+}
+.navMenuOfUserPage p {
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.navMenuOfUserPage p:hover {
+  text-decoration: none;
+}
+
+.containerEditProfile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+.containerEditProfile h4 {
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+}
+
+.forRadioAndCheckboxContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  gap: 0.2rem;
+}
+.forRadioAndCheckboxContainer label {
+  padding-right: 7px;
+}
+
+.formEditContent {
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.formEditContent label {
+  font-size: 12px;
+}
+.formEditContent p {
+  font-size: 12px;
+}
+.formEditContent input {
+  width: 180px;
+  height: 28px;
+  border: 1px solid #a3a3a3;
+  padding: 5px;
+  outline: none;
+}
+
+.stylesForSubmitBtn {
+  width: 60px;
+  height: 28px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#d80505),
+    to(#a10202)
+  );
+  background: linear-gradient(to bottom, #d80505 0%, #a10202 100%);
+}
+.stylesForSubmitBtn:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#a10202),
+    to(#d80505)
+  );
+  background: linear-gradient(to bottom, #a10202 0%, #d80505 100%);
 }

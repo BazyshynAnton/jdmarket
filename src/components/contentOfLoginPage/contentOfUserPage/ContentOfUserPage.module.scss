@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: #fff;
+  height: 500px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .userInfo {
@@ -109,16 +113,17 @@
     rgba(0, 0, 0, 0.2),
     rgb(185, 185, 185)
   );
-  width: 210px;
+  width: 180px;
   height: 45px;
   font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 30px;
 
   &::after {
-    content: url(../../../pictures/headerSectionCorner.png);
+    content: url(../../../pictures/headerUserCorner.png);
     position: absolute;
-    right: -15px;
+
+    right: -24px;
     top: 0;
     bottom: 0;
   }
@@ -152,5 +157,82 @@
   z-index: 9999;
   div {
     cursor: pointer;
+  }
+}
+
+//user
+
+.navMenuOfUserPage {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  font-size: 12px;
+  p {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+//editprofile
+
+.containerEditProfile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+
+  h4 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+  }
+}
+
+.forRadioAndCheckboxContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  label {
+    padding-right: 7px;
+  }
+}
+
+.formEditContent {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  label {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+  input {
+    width: 180px;
+    height: 28px;
+    border: 1px solid #a3a3a3;
+    padding: 5px;
+    outline: none;
+  }
+}
+
+.stylesForSubmitBtn {
+  width: 60px;
+  height: 28px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #d80505 0%, #a10202 100%);
+
+  &:hover {
+    background: linear-gradient(to bottom, #a10202 0%, #d80505 100%);
   }
 }

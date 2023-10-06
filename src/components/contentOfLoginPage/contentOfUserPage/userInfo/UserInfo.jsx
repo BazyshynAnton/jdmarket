@@ -1,7 +1,8 @@
 import { Box } from '@mui/material'
 import avatarExample from '../../../../pictures/avatarExample.jpg'
 import styles from '../ContentOfUserPage.module.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setEdit } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
 const stylesForTextAndButton = {
   text: {
@@ -20,7 +21,11 @@ const stylesForTextAndButton = {
 }
 
 const UserInfo = () => {
-  const { accountInfo } = useSelector((store) => store.registeredAccount)
+  const { accountInfo, activeUser } = useSelector(
+    (store) => store.registeredAccount
+  )
+
+  const dispatch = useDispatch()
 
   return (
     <Box className={styles.userInfo}>
@@ -32,7 +37,28 @@ const UserInfo = () => {
         {accountInfo.nameAccount} {accountInfo.secondName}
       </p>
       <p>{accountInfo.emailAddress}</p>
-      <button style={stylesForTextAndButton.btn}>Edit Profile</button>
+      {activeUser ? (
+        <button
+          onClick={() => {
+            dispatch(setEdit())
+          }}
+          style={stylesForTextAndButton.btn}
+        >
+          Edit Profile
+        </button>
+      ) : (
+        <button
+          onClick={() =>
+            swal({
+              title: 'Oops...',
+              text: 'You are not registered or not logged in.',
+            })
+          }
+          style={stylesForTextAndButton.btn}
+        >
+          Edit Profile
+        </button>
+      )}
     </Box>
   )
 }
