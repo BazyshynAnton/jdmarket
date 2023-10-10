@@ -14,14 +14,16 @@ const ContentOfUserPage = () => {
   return (
     <Container>
       <NavMenuOfUserPage />
-      {edit ? (
-        <EditProfile />
-      ) : (
-        <Box className={styles.mainCOntainerOfUserPage}>
-          <UserInfo />
-          <FavoriteCars />
-        </Box>
-      )}
+      <Box className={styles.mainCOntainerOfUserPage}>
+        {edit ? (
+          <EditProfile />
+        ) : (
+          <>
+            <UserInfo />
+            <FavoriteCars />
+          </>
+        )}
+      </Box>
 
       <ForumBanner />
       <InformationDesk />

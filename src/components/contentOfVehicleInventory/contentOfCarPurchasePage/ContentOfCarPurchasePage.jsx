@@ -19,7 +19,7 @@ const ContentOfCarPurchasePage = () => {
           VEHICLE INVENTORY
         </NavLink>
         <p>{'>'}</p>
-        <p>Nissan Skyline GTR R34 V spec (N.8402)</p>
+        <p>Purchase page</p>
       </Box>
       <Box className={styles.mainContainer}>
         <Box className={styles.containerInfoAndSlider}>

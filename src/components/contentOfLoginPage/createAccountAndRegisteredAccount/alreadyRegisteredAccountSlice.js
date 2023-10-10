@@ -13,7 +13,7 @@ const accountExampleState = {
     secondName: 'Stroustrup',
     emailAddress: 'stroustrup-example@gmail.com',
     password: 'BjarneStroustrup',
-    misterAccount: false,
+    misterAccount: true,
     missusAccount: false,
   },
 }
