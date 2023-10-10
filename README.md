@@ -46,7 +46,7 @@ Start the project `npm run dev`
 
 ## Screenshots of the Project  
 ### Fast Navigation  
-### [Home Page](#-home-page)  
+### [Home Page](#-home-page-)  
 ### [Vehicle Inventory](#-vehicle-inventory)  
 ### [JDM Sports](#-home-page)  
 ### [JDM Classic](#-home-page)  
@@ -68,7 +68,7 @@ Start the project `npm run dev`
 
 
 
-### 🔴Home Page⚪  
+### 🔴Home Page⚪ {#-home-page-}  
 
 ![1homePagePic](https://github.com/BazyshynAnton/JDM/assets/120124298/1cb723bf-7fbc-4e0c-be59-a0db963ef5e1)
 
