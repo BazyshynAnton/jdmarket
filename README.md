@@ -25,9 +25,9 @@ we offer a multitude of options to suit every taste and need.
 -React-Router-DOM.  
 -Redux Tool Kit for state management.  
 -Material-UI for UI components.  
--SCSS for styling.
--vite
-and other.
+-SCSS for styling.  
+-vite.  
+and other.  
 
 ## Authors
 
