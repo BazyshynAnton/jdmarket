@@ -45,6 +45,29 @@ GitHub - https://github.com/BazyshynAnton
 Start the project `npm run dev`  
 
 ## Screenshots of the Project  
+### Fast Navigation  
+### [Home Page](#-home-page)  
+### [Vehicle Inventory](#-vehicle-inventory)  
+### [JDM Sports](#-home-page)  
+### [JDM Classic](#-home-page)  
+### [NON JDM](#-home-page)  
+### [Page of purchase car](#-home-page)  
+### [Page of sold car](#-home-page)  
+### [Page of "How To Buy"](#-home-page)  
+### ["Log in" Page](#-home-page)  
+### ["Create Account" Page](#-home-page)  
+### ["User" Page](#-home-page)  
+### ["User" Page with favorite car(s)](#-home-page)  
+### ["Edit Profile" Page](#-home-page)  
+### ["Navigation Menu" on tablets or phones](#-home-page)  
+### [Other Features](#-home-page)  
+
+
+
+
+
+
+
 ### 🔴Home Page⚪  
 
 ![1homePagePic](https://github.com/BazyshynAnton/JDM/assets/120124298/1cb723bf-7fbc-4e0c-be59-a0db963ef5e1)
