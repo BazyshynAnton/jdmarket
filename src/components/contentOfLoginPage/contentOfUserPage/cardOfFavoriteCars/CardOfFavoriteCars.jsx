@@ -1,10 +1,11 @@
-import { Box } from '@mui/material'
+import { Box, useMediaQuery } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import CancelIcon from '@mui/icons-material/Cancel'
 import styles from '../ContentOfUserPage.module.css'
 
 import { setRemoveFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
 
 const stylesForCardOfFavoriteCars = {
   btn: {
@@ -16,7 +17,21 @@ const stylesForCardOfFavoriteCars = {
     width: '40%',
     height: '30px',
     cursor: 'pointer',
-    fontSize: '13px',
+    fontSize: '12px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  btn2: {
+    float: 'right',
+    background: '#a10202',
+    borderRadius: '4px',
+    color: 'white',
+    width: '100%',
+    height: '30px',
+    cursor: 'pointer',
+    fontSize: '12px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -24,6 +39,19 @@ const stylesForCardOfFavoriteCars = {
 }
 
 const CardOfFavoriteCars = ({ text, img, id }) => {
+  const [ifStyle, setIfStyle] = useState(window.innerWidth <= 970)
+  useEffect(() => {
+    const handleResize = () => {
+      setIfStyle(window.innerWidth <= 970)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   const dispatch = useDispatch()
   const { favoriteCar } = useSelector((store) => store.registeredAccount)
   return (
@@ -38,7 +66,11 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
             <p>{text}</p>
             <NavLink
               to="/vehicle-inventory/8f22002c-8568-4e5b-829c-84cebeea1130"
-              style={stylesForCardOfFavoriteCars.btn}
+              style={
+                ifStyle
+                  ? stylesForCardOfFavoriteCars.btn2
+                  : stylesForCardOfFavoriteCars.btn
+              }
             >
               view details
             </NavLink>

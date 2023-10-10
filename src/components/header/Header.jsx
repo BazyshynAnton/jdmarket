@@ -33,6 +33,7 @@ import { CSSTransition } from 'react-transition-group'
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setActiveUserLogout } from '../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+import { setClearRegistration } from '../contentOfLoginPage/createAccountAndRegisteredAccount/createAccountSlice'
 
 const Header = () => {
   const [searchCategory, setSearchCategory] = useState('Maker')
@@ -143,7 +144,12 @@ const Header = () => {
                 </NavLink>
               </Box>
             ) : (
-              <NavLink to="/login">
+              <NavLink
+                to="/login"
+                onClick={() => {
+                  dispatch(setClearRegistration())
+                }}
+              >
                 <p>Log in</p>
               </NavLink>
             )}

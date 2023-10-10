@@ -26,6 +26,9 @@ const userFormRegister = createSlice({
         state.registration = true
       }
     },
+    setClearRegistration: (state) => {
+      state.registration = false
+    },
     setMister: (state) => {
       state.formData.mister = true
       state.formData.missus = false
@@ -41,6 +44,7 @@ const userFormRegister = createSlice({
 export const {
   setFormData,
   setRegistration,
+  setClearRegistration,
   setMister,
   setMissus,
   backToLoginPage,

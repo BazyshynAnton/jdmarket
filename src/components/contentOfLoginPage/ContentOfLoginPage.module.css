@@ -67,7 +67,7 @@
   font-size: 12px;
 }
 .createAndRegisteredContainer input {
-  width: 40%;
+  width: 200px;
   border: 1px solid #a3a3a3;
   height: 28px;
   outline: none;
@@ -137,7 +137,11 @@
           flex-direction: column;
   gap: 1rem;
 }
-.registeredContainer .formRegistered .forgotPassword {
+.registeredContainer .formRegistered button {
+  width: 60px;
+}
+
+.forgotPassword {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   text-decoration: underline;
@@ -145,11 +149,8 @@
   width: 130px;
   cursor: pointer;
 }
-.registeredContainer .formRegistered .forgotPassword:hover {
+.forgotPassword:hover {
   text-decoration: none;
-}
-.registeredContainer .formRegistered button {
-  width: 60px;
 }
 
 .registrationFormContainer {
@@ -160,7 +161,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  width: 100%;
 }
 
 .forRadioAndCheckboxContainer {
@@ -193,4 +194,42 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.5rem;
+}
+
+@media (max-width: 790px) {
+  .createAndRegisteredContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createAccountContainer {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .registeredContainer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 280px) {
+  .navContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createAndRegisteredContainer input {
+    width: 100%;
+  }
+  .createAndRegisteredContainer .forgotPassword {
+    font-size: 10px;
+    width: 100%;
+  }
 }
