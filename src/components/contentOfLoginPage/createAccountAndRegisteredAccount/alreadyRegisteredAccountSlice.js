@@ -4,7 +4,10 @@ const accountExampleState = {
   activeUser: false,
   inFavorite: false,
   edit: false,
-
+  inputNameAccountControll: false,
+  inputSecondNameControll: false,
+  inputEmailControll: false,
+  inputPasswordControll: false,
   favoriteCar: {
     id: '',
   },
@@ -52,8 +55,35 @@ const alreadyRegisteredAccount = createSlice({
     setEdit: (state) => {
       state.edit = true
     },
+    setEditFalse: (state) => {
+      state.edit = false
+    },
     setConfirm: (state) => {
       state.edit = false
+    },
+
+    setControllValid: (state) => {
+      if (state.accountInfo.emailAddress !== 'stroustrup-example@gmail.com') {
+        state.inputEmailControll = true
+      }
+      if (state.accountInfo.password !== 'BjarneStroustrup') {
+        state.inputPasswordControll = true
+      }
+    },
+
+    setControllEditProfile: (state) => {
+      if (state.accountInfo.nameAccount === '') {
+        state.inputNameAccountControll = true
+      }
+      if (state.accountInfo.secondName === '') {
+        state.inputSecondNameControll = true
+      }
+      if (state.accountInfo.emailAddress === '') {
+        state.inputEmailControll = true
+      }
+      if (state.accountInfo.password === '') {
+        state.inputPasswordControll = true
+      }
     },
   },
 })
@@ -66,9 +96,12 @@ export const {
   setFavoriteCar,
   setRemoveFavoriteCar,
   setEdit,
+  setEditFalse,
   setMisterAccount,
   setMissusAccount,
   setConfirm,
+  setControllValid,
+  setControllEditProfile,
 } = alreadyRegisteredAccount.actions
 
 export default alreadyRegisteredAccount.reducer

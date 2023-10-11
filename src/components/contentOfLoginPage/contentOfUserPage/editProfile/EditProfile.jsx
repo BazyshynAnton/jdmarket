@@ -6,6 +6,7 @@ import {
   setMissusAccount,
   setMisterAccount,
   setConfirm,
+  setControllEditProfile,
 } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
 const stylesForEditForm = {
@@ -21,7 +22,13 @@ const stylesForEditForm = {
 }
 
 const EditProfile = () => {
-  const { accountInfo } = useSelector((store) => store.registeredAccount)
+  const {
+    accountInfo,
+    inputNameAccountControll,
+    inputSecondNameControll,
+    inputEmailControll,
+    inputPasswordControll,
+  } = useSelector((store) => store.registeredAccount)
   const dispatch = useDispatch()
   const handleFormSubmit = (e) => {
     e.preventDefault()
@@ -69,7 +76,13 @@ const EditProfile = () => {
           <label htmlFor="missus">Ms.</label>
         </Box>
         <Box sx={stylesForEditForm.stylesForIputContainer}>
-          <label htmlFor="nameAccount">First name*</label>
+          {inputNameAccountControll ? (
+            <label htmlFor="nameAccount" style={{ color: 'red' }}>
+              First name*
+            </label>
+          ) : (
+            <label htmlFor="nameAccount">First name*</label>
+          )}
           <input
             name="nameAccount"
             id="nameAccount"
@@ -78,7 +91,13 @@ const EditProfile = () => {
           />
         </Box>
         <Box sx={stylesForEditForm.stylesForIputContainer}>
-          <label htmlFor="secondName">Last name*</label>
+          {inputSecondNameControll ? (
+            <label htmlFor="secondName" style={{ color: 'red' }}>
+              Last name*
+            </label>
+          ) : (
+            <label htmlFor="secondName">Last name*</label>
+          )}
           <input
             name="secondName"
             id="secondName"
@@ -87,16 +106,29 @@ const EditProfile = () => {
           />
         </Box>
         <Box sx={stylesForEditForm.stylesForIputContainer}>
-          <label htmlFor="email3">Email*</label>
+          {inputEmailControll ? (
+            <label htmlFor="email3" style={{ color: 'red' }}>
+              Email*
+            </label>
+          ) : (
+            <label htmlFor="email3">Email*</label>
+          )}
           <input
-            name="email"
+            name="emailAddress"
             id="email3"
             autoComplete="email"
             defaultValue={accountInfo.emailAddress}
+            onChange={handleInputChange}
           />
         </Box>
         <Box sx={stylesForEditForm.stylesForIputContainer}>
-          <label htmlFor="password2">Password*</label>
+          {inputPasswordControll ? (
+            <label htmlFor="password2" style={{ color: 'red' }}>
+              Password*
+            </label>
+          ) : (
+            <label htmlFor="password2">Password*</label>
+          )}
           <input
             type="password"
             name="password"
@@ -120,13 +152,26 @@ const EditProfile = () => {
           />
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <button
-            type="button"
-            onClick={() => dispatch(setConfirm())}
-            className={styles.stylesForSubmitBtn}
-          >
-            confirm
-          </button>
+          {accountInfo.nameAccount === '' ||
+          accountInfo.secondName === '' ||
+          accountInfo.emailAddress === '' ||
+          accountInfo.password === '' ? (
+            <button
+              type="button"
+              onClick={() => dispatch(setControllEditProfile())}
+              className={styles.stylesForSubmitBtn}
+            >
+              confirm
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => dispatch(setConfirm())}
+              className={styles.stylesForSubmitBtn}
+            >
+              confirm
+            </button>
+          )}
         </Box>
       </form>
     </Box>

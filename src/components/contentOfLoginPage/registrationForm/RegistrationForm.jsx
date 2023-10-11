@@ -6,6 +6,7 @@ import {
   setFormData,
   setMister,
   setMissus,
+  setCreateAccount,
 } from '../createAccountAndRegisteredAccount/createAccountSlice'
 
 const stylesForRegistrationForm = {
@@ -25,7 +26,13 @@ const stylesForRegistrationForm = {
 }
 
 const RegistrationForm = () => {
-  const { formData } = useSelector((store) => store.formRegister)
+  const {
+    formData,
+    onClickFieldEmail,
+    onClickFieldFirstName,
+    onClickFieldLastName,
+    onClickFieldPassword,
+  } = useSelector((store) => store.formRegister)
 
   const dispatch = useDispatch()
 
@@ -44,6 +51,10 @@ const RegistrationForm = () => {
   }
   const handleRadioMissusChange = () => {
     dispatch(setMissus())
+  }
+
+  const handleInputSubmit = () => {
+    dispatch(setCreateAccount())
   }
 
   return (
@@ -78,7 +89,13 @@ const RegistrationForm = () => {
           <label htmlFor="missus">Ms.</label>
         </Box>
         <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
-          <label htmlFor="firstName">First name*</label>
+          {onClickFieldFirstName ? (
+            <label htmlFor="firstName" style={{ color: 'red' }}>
+              First name*
+            </label>
+          ) : (
+            <label htmlFor="firstName">First name*</label>
+          )}
           <input
             name="firstName"
             id="firstName"
@@ -87,7 +104,13 @@ const RegistrationForm = () => {
           />
         </Box>
         <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
-          <label htmlFor="lastName">Last name*</label>
+          {onClickFieldLastName ? (
+            <label htmlFor="lastName" style={{ color: 'red' }}>
+              Last name*
+            </label>
+          ) : (
+            <label htmlFor="lastName">Last name*</label>
+          )}
           <input
             name="lastName"
             id="lastName"
@@ -96,16 +119,29 @@ const RegistrationForm = () => {
           />
         </Box>
         <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
-          <label htmlFor="email3">Email*</label>
+          {onClickFieldEmail ? (
+            <label htmlFor="email3" style={{ color: 'red' }}>
+              Email*
+            </label>
+          ) : (
+            <label htmlFor="email3">Email*</label>
+          )}
           <input
             name="email"
             id="email3"
             autoComplete="email"
+            onChange={handleInputChange}
             defaultValue={formData.email}
           />
         </Box>
         <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
-          <label htmlFor="password2">Password*</label>
+          {onClickFieldPassword ? (
+            <label htmlFor="password2" style={{ color: 'red' }}>
+              Password*
+            </label>
+          ) : (
+            <label htmlFor="password2">Password*</label>
+          )}
           <input
             type="password"
             name="password"
@@ -130,7 +166,10 @@ const RegistrationForm = () => {
             </label>
           </Box>
 
-          <button style={stylesForRegistrationForm.stylesForSubmitBtn}>
+          <button
+            onClick={handleInputSubmit}
+            style={stylesForRegistrationForm.stylesForSubmitBtn}
+          >
             register
           </button>
         </Box>
