@@ -44,18 +44,23 @@ GitHub - https://github.com/BazyshynAnton
 
 Start the project `npm run dev`  
 
+
 ### 🔴Home Page⚪  
 
 ![1homePagePic](https://github.com/BazyshynAnton/JDM/assets/120124298/1cb723bf-7fbc-4e0c-be59-a0db963ef5e1)
 
-![23findYourCar](https://github.com/BazyshynAnton/JDM/assets/120124298/cf24ef24-f1b1-4623-911b-bc9db96589ee)
+![23findYourCar](https://github.com/BazyshynAnton/JDM/assets/120124298/a9f27b79-e397-4634-b061-4394cecf1a8d)
 
 ![vehicleMenu](https://github.com/BazyshynAnton/JDM/assets/120124298/dcd6031e-eb62-4b95-8e1e-4041a1a0ab00)
 
 ![companyMenu](https://github.com/BazyshynAnton/JDM/assets/120124298/8f5dc53b-21dc-45b9-8786-ceb963d690e4)
 
-![mediaMenu](https://github.com/BazyshynAnton/JDM/assets/120124298/264c8efc-e6c4-4e04-af6f-e68f4d5c2794)
+![mediaMenu](https://github.com/BazyshynAnton/JDM/assets/120124298/264c8efc-e6c4-4e04-af6f-e68f4d5c2794)  
 
+### 🔴Example of how search works⚪  
+
+
+https://github.com/BazyshynAnton/JDM/assets/120124298/c8679dcf-0416-416a-a76c-3817fc498034
 
 
 ### 🔴Vehicle Inventory⚪  
@@ -118,9 +123,11 @@ Start the project `npm run dev`
 ![16editProfile](https://github.com/BazyshynAnton/JDM/assets/120124298/33c072d3-0281-443d-a7a4-d1919db4f379)
 
 ### 🔴"Navigation Menu" on tablets or phones⚪  
-![24navMenuPhone](https://github.com/BazyshynAnton/JDM/assets/120124298/830f47d6-b486-4ed5-bf6d-48b71170f7ee)
+![24navMenuPhone](https://github.com/BazyshynAnton/JDM/assets/120124298/89b2ca21-2f5f-4539-8a5a-685ad9936101)
 
-![25navMenuPhone](https://github.com/BazyshynAnton/JDM/assets/120124298/77f68dd2-3e4d-40c5-86dd-bf998d285537)
+
+![25navMenuPhone](https://github.com/BazyshynAnton/JDM/assets/120124298/43149421-c902-4cfa-819d-89802818dcfd)
+
 
 ### 🔴Other Features⚪  
 
