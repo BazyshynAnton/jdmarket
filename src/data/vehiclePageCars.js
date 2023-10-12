@@ -82,7 +82,7 @@ const vehiclePageCars = [
   {
     img: oneCivicTypeR,
     imgTwo: sold,
-    text: 'Civic Type R EK9 (N.8484)',
+    text: 'Honda Civic Type R EK9 (N.8484)',
     id: 'bd49b226-73d7-4d2a-b83c-16a5d4fda5bf',
     mark: 'honda',
     class: 1,

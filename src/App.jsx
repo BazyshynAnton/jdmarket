@@ -9,6 +9,8 @@ import HowToBuyPage from './pages/HowToBuyPage'
 import CarPurchasePage from './pages/CarPurchasePage'
 import LoginPage from './pages/LoginPage'
 import UserPage from './pages/UserPage'
+import SearchPage from './pages/SearchPage'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path="user" element={<UserPage />} />
         <Route path="vehicle-inventory" element={<VehicleInventory />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route
           path="vehicle-inventory/:jdm-sports"
           element={<JdmSportsPage />}
@@ -29,6 +32,7 @@ function App() {
         <Route path="vehicle-inventory/:non-jdm" element={<NonJdmPage />} />
         <Route path="how-to-buy" element={<HowToBuyPage />} />
         <Route path="vehicle-inventory/:id" element={<CarPurchasePage />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )

@@ -37,11 +37,30 @@ import {
   setEditFalse,
 } from '../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 import { setClearRegistration } from '../contentOfLoginPage/createAccountAndRegisteredAccount/createAccountSlice'
+import { setSelectForm, setSearchInput } from './headerSlice'
 
 const Header = () => {
-  const [searchCategory, setSearchCategory] = useState('Maker')
-  const [searchInput, setSearchInput] = useState('')
+  const { searchInput, selectForm } = useSelector((store) => store.headerSlice)
 
+  //Search HandleControll by RTK -----
+  const handleCategoryChange = (e) => {
+    const { value } = e.target
+    dispatch(setSelectForm({ searchCategory: value }))
+  }
+
+  const handleInputChange = (e) => {
+    dispatch(setSearchInput(e.target.value))
+  }
+
+  const handleSearchButtonClick = () => {}
+  // ---------------------------------
+
+  //Stop default event
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
+  //menu controll
   const [isMenuOpen, setMenuOpen] = useState(false)
   const [isMenuTwoOpen, setMenuTwoOpen] = useState(false)
   const [isMenuThreeOpen, setMenuThreeOpen] = useState(false)
@@ -68,6 +87,7 @@ const Header = () => {
     setMenuThreeOpen(false)
   }
 
+  //Burger menu controll
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClickFunctionInBurger = () => setIsOpen(!isOpen)
@@ -80,30 +100,18 @@ const Header = () => {
 
   const handleClickFunctionInBurgerThree = () => setIsOpenThree(!isOpenThree)
 
-  // Функции для обновления состояний при изменении ввода
-  const handleCategoryChange = (e) => {
-    setSearchCategory(e.target.value)
-  }
-
-  const handleInputChange = (e) => {
-    setSearchInput(e.target.value)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
-  const handleSearchButtonClick = () => {}
-
+  //Controll window size
   const isDesktop = useMediaQuery('(min-width: 656px)')
 
   const [open, setOpen] = useState(false)
 
   const nodeRef = React.useRef(null)
+
   //account
   const { accountInfo, activeUser } = useSelector(
     (store) => store.registeredAccount
   )
+  //dispatch
   const dispatch = useDispatch()
 
   return (
@@ -196,15 +204,16 @@ const Header = () => {
                     <Select
                       className="selectionOpt"
                       name="filter_type"
-                      value={searchCategory}
+                      value={selectForm.searchCategory}
                       onChange={handleCategoryChange}
                     >
                       <MenuItem value="Maker">Maker</MenuItem>
-                      <MenuItem value="HONDA">HONDA</MenuItem>
-                      <MenuItem value="MAZDA">MAZDA</MenuItem>
-                      <MenuItem value="MITSUBISHI">MITSUBISHI</MenuItem>
-                      <MenuItem value="NISSAN">NISSAN</MenuItem>
-                      <MenuItem value="SUBARU">SUBARU</MenuItem>
+                      <MenuItem value="honda">HONDA</MenuItem>
+                      <MenuItem value="mazda">MAZDA</MenuItem>
+                      <MenuItem value="mitsubishi">MITSUBISHI</MenuItem>
+                      <MenuItem value="nissan">NISSAN</MenuItem>
+                      <MenuItem value="subaru">SUBARU</MenuItem>
+                      <MenuItem value="toyota">TOYOTA</MenuItem>
                     </Select>
                   </FormControl>
                   <input
@@ -215,13 +224,16 @@ const Header = () => {
                   />
                 </form>
               </Box>
+
               <Box className={styles.afterContainer}>
-                <Box
-                  className={styles.submitBtn}
-                  onClick={handleSearchButtonClick}
-                >
-                  <SearchIcon className={styles.searchIco} />
-                </Box>
+                <NavLink to="search">
+                  <Box
+                    className={styles.submitBtn}
+                    onClick={handleSearchButtonClick}
+                  >
+                    <SearchIcon className={styles.searchIco} />
+                  </Box>
+                </NavLink>
               </Box>
             </Box>
           </Box>
