@@ -451,7 +451,13 @@ const Header = () => {
               </Box>
               <List className={styles.listInBurgerMenu}>
                 <ListItem className={styles.listIntemInBurgerMenu}>
-                  <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
+                  <NavLink
+                    to="/"
+                    onClick={() => {
+                      window.scrollTo(0, 0)
+                      setOpen(false)
+                    }}
+                  >
                     <p>HOME</p>
                   </NavLink>
                 </ListItem>
@@ -465,7 +471,10 @@ const Header = () => {
                   {isOpen && (
                     <NavLink
                       to="/vehicle-inventory"
-                      onClick={() => window.scrollTo(0, 0)}
+                      onClick={() => {
+                        window.scrollTo(0, 0)
+                        setOpen(false)
+                      }}
                     >
                       <p>VEHICLE INVENTORY</p>
                     </NavLink>
@@ -486,18 +495,42 @@ const Header = () => {
                           : styles.notOpenVehicleInventory
                       }`}
                     >
-                      <Box className={styles.jdmSectionInBurger}>
-                        <p>JDM SPORTS</p>
-                        <img src={jdmSports} alt="jdm-sports" />
-                      </Box>
-                      <Box className={styles.jdmSectionInBurger}>
-                        <p>JDM CLASSIC</p>
-                        <img src={jdmClassic} alt="jdm-classic" />
-                      </Box>
-                      <Box className={styles.jdmSectionInBurger}>
-                        <p>NON JDM</p>
-                        <img src={nonJdm} alt="non-jdm" />
-                      </Box>
+                      <NavLink
+                        to="/vehicle-inventory/:jdm-sports"
+                        onClick={() => {
+                          window.scrollTo(0, 0)
+                          setOpen(false)
+                        }}
+                      >
+                        <Box className={styles.jdmSectionInBurger}>
+                          <p>JDM SPORTS</p>
+                          <img src={jdmSports} alt="jdm-sports" />
+                        </Box>
+                      </NavLink>
+                      <NavLink
+                        to="/vehicle-inventory/:jdm-classic"
+                        onClick={() => {
+                          window.scrollTo(0, 0)
+                          setOpen(false)
+                        }}
+                      >
+                        <Box className={styles.jdmSectionInBurger}>
+                          <p>JDM CLASSIC</p>
+                          <img src={jdmClassic} alt="jdm-classic" />
+                        </Box>
+                      </NavLink>
+                      <NavLink
+                        to="/vehicle-inventory/:non-jdm"
+                        onClick={() => {
+                          window.scrollTo(0, 0)
+                          setOpen(false)
+                        }}
+                      >
+                        <Box className={styles.jdmSectionInBurger}>
+                          <p>NON JDM</p>
+                          <img src={nonJdm} alt="non-jdm" />
+                        </Box>
+                      </NavLink>
                     </Box>
                   </CSSTransition>
                 </ListItem>
@@ -543,6 +576,17 @@ const Header = () => {
                 </ListItem>
                 <ListItem className={styles.listIntemInBurgerMenu}>
                   <p>USA JDM IMPORTS</p>
+                </ListItem>
+                <ListItem className={styles.listIntemInBurgerMenu}>
+                  <NavLink
+                    to="/how-to-buy"
+                    onClick={() => {
+                      window.scrollTo(0, 0)
+                      setOpen(false)
+                    }}
+                  >
+                    <p>HOW TO BUY?</p>
+                  </NavLink>
                 </ListItem>
                 <ListItem
                   onClick={handleClickFunctionInBurgerThree}
