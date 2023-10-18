@@ -13,7 +13,6 @@ const stylesForCardOfFavoriteCars = {
     width: '40%',
     height: '30px',
     cursor: 'pointer',
-    fontSize: '13px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -31,6 +30,8 @@ const CardOfCar = ({ text, img, id }) => {
         {id === '8402' && (
           <NavLink
             to="/vehicle-inventory/8f22002c-8568-4e5b-829c-84cebeea1130"
+            onClick={() => window.scrollTo(0, 0)}
+            className={styles.styleForCarLinkBtn}
             style={stylesForCardOfFavoriteCars.btn}
           >
             view details

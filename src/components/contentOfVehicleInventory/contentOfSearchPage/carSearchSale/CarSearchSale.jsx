@@ -11,7 +11,7 @@ import styles from '../../carSale/CarSale.module.css'
 import { useSelector } from 'react-redux'
 
 const CarSale = () => {
-  const { searchInput, isAvailibleBtn, selectForm } = useSelector(
+  const { searchInput, sort, selectForm } = useSelector(
     (store) => store.headerSlice
   )
 
@@ -21,7 +21,7 @@ const CarSale = () => {
       car.mark.toLowerCase().includes(selectForm.searchCategory.toLowerCase())
     const textMatch = car.text.toLowerCase().includes(searchInput.toLowerCase())
 
-    return categoryMatch && textMatch
+    return categoryMatch && textMatch && sort
   })
 
   return (
@@ -40,7 +40,7 @@ const CarSale = () => {
         </Box>
       </Box>
 
-      {searchInput !== '' || selectForm.searchCategory !== 'Maker' ? (
+      {sort ? (
         <Box sx={{ marginTop: '20px', flexWrap: 'wrap', width: '100%' }}>
           <h4>
             Search{' '}
@@ -55,15 +55,12 @@ const CarSale = () => {
         </Box>
       ) : (
         <Box sx={{ marginTop: '20px', flexWrap: 'wrap', width: '100%' }}>
-          <h4>
-            Search "I am looking for..." {vehiclePageCars.length} results have
-            been found.
-          </h4>
+          <h4>I am looking for...</h4>
         </Box>
       )}
 
       <Box className={styles.containerOfAllCars}>
-        {searchInput !== '' || selectForm.searchCategory !== 'Maker'
+        {sort
           ? filteredCars.map((card) => (
               <NavLink
                 key={card.id}
@@ -73,15 +70,7 @@ const CarSale = () => {
                 <CardSearchSale card={card} />
               </NavLink>
             ))
-          : vehiclePageCars.map((card) => (
-              <NavLink
-                key={card.id}
-                to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                <CardSearchSale card={card} />
-              </NavLink>
-            ))}
+          : ''}
       </Box>
     </>
   )

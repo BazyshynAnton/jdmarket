@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const searchInputState = {
+  sort: false,
   searchInput: '',
 
   selectForm: {
@@ -18,9 +19,16 @@ const headerSlice = createSlice({
     setSearchInput: (state, action) => {
       state.searchInput = action.payload
     },
+    setSort: (state) => {
+      state.sort = true
+    },
+    setSortFalse: (state) => {
+      state.sort = false
+    },
   },
 })
 
-export const { setSelectForm, setSearchInput } = headerSlice.actions
+export const { setSelectForm, setSearchInput, setSort, setSortFalse } =
+  headerSlice.actions
 
 export default headerSlice.reducer

@@ -151,6 +151,11 @@
   width: 40%;
   height: 30px;
   cursor: pointer;
+  font-size: 12px;
+}
+
+.styleForCarLinkBtn {
+  font-size: 12px;
 }
 
 .cardOfManufactureContainer {
@@ -172,7 +177,47 @@
   width: 100%;
 }
 
+@media (max-width: 910px) {
+  .cardTextAndButton button {
+    font-size: 10.5px;
+    font-weight: bold;
+  }
+  .styleForCarLinkBtn {
+    font-size: 10px;
+    font-weight: bold;
+  }
+}
+@media (max-width: 860px) {
+  .cardTextAndButton button {
+    font-size: 9.5px;
+  }
+  .styleForCarLinkBtn {
+    font-size: 9.5px;
+  }
+}
+@media (max-width: 790px) {
+  .cardTextAndButton button {
+    font-size: 11px;
+  }
+  .styleForCarLinkBtn {
+    font-size: 11px;
+  }
+}
+@media (max-width: 455px) {
+  .cardTextAndButton button {
+    font-size: 9.5px;
+  }
+  .styleForCarLinkBtn {
+    font-size: 9.5px;
+  }
+}
 @media (max-width: 400px) {
+  .cardTextAndButton button {
+    font-size: 9px;
+  }
+  .styleForCarLinkBtn {
+    font-size: 9px;
+  }
   .nameOfSwiper {
     width: 160px;
     font-size: 20px;
@@ -183,6 +228,12 @@
   }
 }
 @media (max-width: 380px) {
+  .cardTextAndButton button {
+    font-size: 11px;
+  }
+  .styleForCarLinkBtn {
+    font-size: 11px;
+  }
   .cardOfManufactureContainer img {
     height: 100%;
   }
@@ -220,5 +271,13 @@
   }
   .titleOfSwiper {
     display: none;
+  }
+}
+@media (max-width: 244px) {
+  .cardTextAndButton button {
+    font-size: 9px;
+  }
+  .styleForCarLinkBtn {
+    font-size: 9px;
   }
 }

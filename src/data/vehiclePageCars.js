@@ -178,7 +178,7 @@ const vehiclePageCars = [
   {
     img: president,
     imgTwo: sold,
-    text: 'Nissan President for sale (N.8111)',
+    text: 'Nissan President(N.8111)',
     id: 'b533c631-8527-46d4-8ae1-231bcf02a8b2',
     mark: 'oldNissan',
     class: 2,
@@ -187,7 +187,7 @@ const vehiclePageCars = [
   {
     img: nsx,
     imgTwo: sold,
-    text: 'Honda NSX for sale (N.8137)',
+    text: 'Honda NSX(N.8137)',
     id: '9e67839b-4dc4-4c35-8893-4d94eecb5db8',
     mark: 'oldHonda',
     class: 2,
@@ -211,7 +211,7 @@ const vehiclePageCars = [
   {
     img: benz,
     imgTwo: sold,
-    text: 'Mercedes Benz for sale (N.8451)',
+    text: 'Mercedes Benz(N.8451)',
     id: '0886a16a-006e-4d24-9e5c-f3ed208bc1cc',
     mark: 'mercedes',
     class: 3,
@@ -219,7 +219,7 @@ const vehiclePageCars = [
   {
     img: m3,
     imgTwo: sold,
-    text: 'BMW M3 for sale (N.8171)',
+    text: 'BMW M3(N.8171)',
     id: 'ce2d0658-1ebb-4b85-a2cb-eef03095b871',
     mark: 'bmw',
     class: 3,

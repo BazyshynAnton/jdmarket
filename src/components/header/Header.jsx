@@ -37,7 +37,12 @@ import {
   setEditFalse,
 } from '../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 import { setClearRegistration } from '../contentOfLoginPage/createAccountAndRegisteredAccount/createAccountSlice'
-import { setSelectForm, setSearchInput } from './headerSlice'
+import {
+  setSelectForm,
+  setSearchInput,
+  setSort,
+  setSortFalse,
+} from './headerSlice'
 
 const Header = () => {
   const { searchInput, selectForm } = useSelector((store) => store.headerSlice)
@@ -46,13 +51,17 @@ const Header = () => {
   const handleCategoryChange = (e) => {
     const { value } = e.target
     dispatch(setSelectForm({ searchCategory: value }))
+    dispatch(setSortFalse())
   }
 
   const handleInputChange = (e) => {
     dispatch(setSearchInput(e.target.value))
+    dispatch(setSortFalse())
   }
 
-  const handleSearchButtonClick = () => {}
+  const handleSearchButtonClick = () => {
+    dispatch(setSort())
+  }
   // ---------------------------------
 
   //Stop default event
