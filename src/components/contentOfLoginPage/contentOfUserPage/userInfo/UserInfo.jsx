@@ -8,15 +8,19 @@ const stylesForTextAndButton = {
   text: {
     marginTop: '20px',
     width: '125px',
+    fontFamily: 'Open Sans, sans-serif',
+    fontSize: '15px',
   },
   btn: {
     marginTop: '10px',
     width: '100px',
     background: '#8B0000',
-    color: 'white',
+    color: '#fff',
     padding: '5px 10px',
     borderRadius: '5px',
     cursor: 'pointer',
+    fontFamily: 'Pathway Gothic One, sans-serif',
+    fontSize: '15px',
   },
 }
 
@@ -36,14 +40,15 @@ const UserInfo = () => {
       <p style={stylesForTextAndButton.text}>
         {accountInfo.nameAccount} {accountInfo.secondName}
       </p>
-      <p>{accountInfo.emailAddress}</p>
+      <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '15px' }}>
+        {accountInfo.emailAddress}
+      </p>
       {activeUser ? (
         <button
           onClick={() => {
             dispatch(setEdit())
           }}
-          style={stylesForTextAndButton.btn}
-        >
+          style={stylesForTextAndButton.btn}>
           Edit Profile
         </button>
       ) : (
@@ -54,8 +59,7 @@ const UserInfo = () => {
               text: 'You are not registered or not logged in.',
             })
           }
-          style={stylesForTextAndButton.btn}
-        >
+          style={stylesForTextAndButton.btn}>
           Edit Profile
         </button>
       )}

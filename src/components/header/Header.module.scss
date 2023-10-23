@@ -549,7 +549,7 @@
     }
 
     &:after {
-      left: 12px;
+      display: none;
     }
   }
 }
@@ -566,16 +566,6 @@
   .appBar {
     top: 30px;
     left: -30px;
-  }
-}
-
-@media (max-width: 285px) {
-  .containerSearch {
-    width: 100%;
-
-    &:after {
-      display: none;
-    }
   }
 }
 

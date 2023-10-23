@@ -159,16 +159,19 @@ const EditProfile = () => {
             <button
               type="button"
               onClick={() => dispatch(setControllEditProfile())}
-              className={styles.stylesForSubmitBtn}
-            >
+              className={styles.stylesForSubmitBtn}>
               confirm
             </button>
           ) : (
             <button
+              style={{
+                fontFamily: 'Pathway Gothic One, sans-serif',
+                fontSize: '15.5px',
+                letterSpacing: '0.6px',
+              }}
               type="button"
               onClick={() => dispatch(setConfirm())}
-              className={styles.stylesForSubmitBtn}
-            >
+              className={styles.stylesForSubmitBtn}>
               confirm
             </button>
           )}

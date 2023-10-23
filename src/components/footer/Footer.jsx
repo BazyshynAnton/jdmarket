@@ -82,7 +82,11 @@ const Footer = () => {
                 id="email"
                 autoComplete="email"
                 onChange={handleChange}></input>
-              <button type="submit">sign up</button>
+              <button
+                type="submit"
+                style={{ fontFamily: 'Open Sans, sans-serif' }}>
+                sign up
+              </button>
             </form>
           </Box>
         </Box>

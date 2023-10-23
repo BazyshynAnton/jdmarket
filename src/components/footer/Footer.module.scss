@@ -63,6 +63,9 @@
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 20px;
   }
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
 }
 
 .siteMapNestedMain {
@@ -75,7 +78,6 @@
     color: white;
     line-height: 20px;
     cursor: pointer;
-
     font-size: 13px;
     &:hover {
       text-decoration: underline;
@@ -99,7 +101,9 @@
   }
 
   p {
-    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 12.5px;
     color: white;
   }
 }

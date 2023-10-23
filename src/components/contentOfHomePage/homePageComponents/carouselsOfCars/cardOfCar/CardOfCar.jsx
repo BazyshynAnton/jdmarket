@@ -16,6 +16,7 @@ const stylesForCardOfFavoriteCars = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    fontFamily: 'Open Sans, sans-serif',
   },
 }
 
@@ -26,26 +27,25 @@ const CardOfCar = ({ text, img, id }) => {
         <img src={img} alt="car" />
       </Box>
       <Box className={styles.cardTextAndButton}>
-        <p>{text}</p>
+        <p style={{ fontFamily: 'Open Sans, sans-serif' }}>{text}</p>
         {id === '8402' && (
           <NavLink
             to="/vehicle-inventory/8f22002c-8568-4e5b-829c-84cebeea1130"
             onClick={() => window.scrollTo(0, 0)}
             className={styles.styleForCarLinkBtn}
-            style={stylesForCardOfFavoriteCars.btn}
-          >
+            style={stylesForCardOfFavoriteCars.btn}>
             view details
           </NavLink>
         )}
         {id !== '8402' && (
           <button
+            style={{ fontFamily: 'Open Sans, sans-serif' }}
             onClick={() =>
               swal({
                 title: 'Oops...',
                 text: 'Car Has Already Been Sold.',
               })
-            }
-          >
+            }>
             view details
           </button>
         )}

@@ -17,6 +17,7 @@ const stylesForCardOfFavoriteCars = {
     width: '40%',
     height: '30px',
     cursor: 'pointer',
+    fontFamily: 'Open Sans, sans-serif',
     fontSize: '12px',
     display: 'flex',
     justifyContent: 'center',
@@ -63,15 +64,14 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
       {id === '8402' && (
         <>
           <Box className={styles.cardTextAndButton}>
-            <p>{text}</p>
+            <p style={{ fontFamily: 'Open Sans, sans-serif' }}>{text}</p>
             <NavLink
               to="/vehicle-inventory/8f22002c-8568-4e5b-829c-84cebeea1130"
               style={
                 ifStyle
                   ? stylesForCardOfFavoriteCars.btn2
                   : stylesForCardOfFavoriteCars.btn
-              }
-            >
+              }>
               view details
             </NavLink>
           </Box>
@@ -80,9 +80,8 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
               className={styles.removeFromFavorites}
               onClick={() =>
                 dispatch(setRemoveFavoriteCar(favoriteCar.id.replace(id, '')))
-              }
-            >
-              <p>Remove</p>
+              }>
+              <p style={{ fontFamily: 'Open Sans, sans-serif' }}>Remove</p>
               <CancelIcon className={styles.removeButton} />
             </Box>
           </Box>
@@ -99,8 +98,7 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
                   title: 'Oops...',
                   text: 'Car Has Already Been Sold.',
                 })
-              }
-            >
+              }>
               view details
             </button>
           </Box>
@@ -109,8 +107,7 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
               className={styles.removeFromFavorites}
               onClick={() => {
                 dispatch(setRemoveFavoriteCar(favoriteCar.id.replace(id, '')))
-              }}
-            >
+              }}>
               <p>Remove</p>
               <CancelIcon className={styles.removeButton} />
             </Box>

@@ -25,7 +25,9 @@ const ContentOfHowToBuyPage = () => {
       </Box>
 
       <Box className={styles.wrapperInfoContainer}>
-        <Box className={styles.infoContainer}>
+        <Box
+          sx={{ fontFamily: 'Open Sans, sans-serif', fontSize: '13.5px' }}
+          className={styles.infoContainer}>
           <h1>How to Buy JDM Inventory Vehicles?</h1>
           <h3>
             Importing your dream vehicle from Japan is not as difficult as you

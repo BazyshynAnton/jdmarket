@@ -31,8 +31,7 @@ const CarSale = () => {
           <NavLink
             to="/"
             onClick={() => window.scrollTo(0, 0)}
-            className={styles.homeBtn}
-          >
+            className={styles.homeBtn}>
             <p>HOME</p>
           </NavLink>
           <p>{'>'}</p>
@@ -42,7 +41,7 @@ const CarSale = () => {
 
       {sort ? (
         <Box sx={{ marginTop: '20px', flexWrap: 'wrap', width: '100%' }}>
-          <h4>
+          <h4 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '15px' }}>
             Search{' '}
             <span style={{ color: 'red' }}>
               {selectForm.searchCategory !== 'Maker'
@@ -65,8 +64,7 @@ const CarSale = () => {
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-              >
+                onClick={() => window.scrollTo(0, 0)}>
                 <CardSearchSale card={card} />
               </NavLink>
             ))
