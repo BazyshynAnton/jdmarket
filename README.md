@@ -45,7 +45,7 @@ GitHub - https://github.com/BazyshynAnton
 Start the project `npm run dev`  
 
 
-### 🔴Home Page⚪  
+### <div align="center"><br>🔴Home Page⚪</div>  
 
 ![1homePagePic](https://github.com/BazyshynAnton/JDM/assets/120124298/1cb723bf-7fbc-4e0c-be59-a0db963ef5e1)
 
@@ -57,55 +57,49 @@ Start the project `npm run dev`
 
 ![mediaMenu](https://github.com/BazyshynAnton/JDM/assets/120124298/264c8efc-e6c4-4e04-af6f-e68f4d5c2794)  
 
-### 🔴Example of how search works⚪  
 
+### <div align="center"><br>🔴Vehicle Inventory⚪</div>  
 
-https://github.com/BazyshynAnton/JDM/assets/120124298/c8679dcf-0416-416a-a76c-3817fc498034
+![vehicle-inventory](https://github.com/BazyshynAnton/JDM/assets/120124298/0276a772-f20d-4478-8d1c-f8f2dd22ccd5)
 
+### <div align="center"><br>🔴JDM Sports⚪</div>  
 
-### 🔴Vehicle Inventory⚪  
+![jdm-sports](https://github.com/BazyshynAnton/JDM/assets/120124298/175ae296-28e1-4949-bfcf-96d8b169dd88)
 
-![2vehicleInventoryPic](https://github.com/BazyshynAnton/JDM/assets/120124298/f655c6b7-a4a9-4521-9399-a43c925d10fa)
+### <div align="center"><br>🔴JDM Classic⚪</div>    
 
+![jdm-classic](https://github.com/BazyshynAnton/JDM/assets/120124298/69fd00a1-b893-42b3-8eb5-f1060c67d963)
 
-### 🔴JDM Sports⚪  
+### <div align="center"><br>🔴NON JDM⚪</div>  
 
-![3jdmSports](https://github.com/BazyshynAnton/JDM/assets/120124298/17eff71e-5f22-4827-9d35-810d1d582cc3)
+![non-jdm](https://github.com/BazyshynAnton/JDM/assets/120124298/a454f5dc-df69-47a0-b8a8-29b35a756792)
 
-### 🔴JDM Classic⚪    
-
-![4jdmClassic](https://github.com/BazyshynAnton/JDM/assets/120124298/049d94a8-9bed-4cec-8c8c-3e6beac6d04c)
-
-### 🔴NON JDM⚪  
-
-![5nonJdm](https://github.com/BazyshynAnton/JDM/assets/120124298/d1b78992-1658-4db7-81b9-751aeed5c7fb)
-
-### 🔴Page of purchase car⚪  
+### <div align="center"><br>🔴Page of purchase car⚪</div>  
 
 ![6purchaseCarPage](https://github.com/BazyshynAnton/JDM/assets/120124298/c5f9f807-86c1-4091-9318-5dc8bc25070a)
 
-### 🔴Page of sold car⚪  
+### <div align="center"><br>🔴Page of sold car⚪</div>  
 
 ![7soldCarPage](https://github.com/BazyshynAnton/JDM/assets/120124298/0ad15f15-7b0d-43c4-89cb-dc4cd927d965)
 
-### 🔴Page of "How To Buy"⚪
+### <div align="center"><br>🔴Page of "How To Buy"⚪</div>
 
-![8howToBuyPage](https://github.com/BazyshynAnton/JDM/assets/120124298/93d1511c-3938-4180-a765-bc9646030a38)
+![how-to-buy](https://github.com/BazyshynAnton/JDM/assets/120124298/ecdbf86b-b96d-4791-b56d-5eb84895aa77)
 
-### 🔴"Log in" Page⚪  
+### <div align="center"><br>🔴"Log in" Page⚪</div>  
 
-![9loginPage](https://github.com/BazyshynAnton/JDM/assets/120124298/79ccd841-1ccc-4096-a625-502b38b9b20b)
+![log-in](https://github.com/BazyshynAnton/JDM/assets/120124298/05a5bb8c-bb20-418c-a0bf-d2b31722c960)
 
-### 🔴"Create Account" Page⚪  
+### <div align="center"><br>🔴"Create Account" Page⚪</div>  
 
 ![10createAcc](https://github.com/BazyshynAnton/JDM/assets/120124298/83083287-acc0-41cf-b6dd-d9b6cebb4639)
 
 
-### 🔴"User" Page⚪  
+### <div align="center"><br>🔴"User" Page⚪</div>  
 
-![11userPage](https://github.com/BazyshynAnton/JDM/assets/120124298/cf8ac99f-2272-4d03-a21b-02af01fca47d)
+![user](https://github.com/BazyshynAnton/JDM/assets/120124298/2ed01f86-c80b-46e4-888e-0b9cbf531425)
 
-### 🔴Add "CAR" to Favorite⚪  
+### <div align="center"><br>🔴Add "CAR" to Favorite⚪</div>  
 
 ![12addToFav](https://github.com/BazyshynAnton/JDM/assets/120124298/890e26de-b4f3-4730-b5ac-c832ef61c9d6)
 
@@ -114,22 +108,22 @@ https://github.com/BazyshynAnton/JDM/assets/120124298/c8679dcf-0416-416a-a76c-38
 ![14addToFav](https://github.com/BazyshynAnton/JDM/assets/120124298/ae6ca812-ad7e-44a3-b7c6-663aaece3103)
 
 
-### 🔴"User" Page with favorite car(s)⚪
+### <div align="center"><br>🔴"User" Page with favorite car(s)⚪</div>
 
-![15userPageWithFav](https://github.com/BazyshynAnton/JDM/assets/120124298/b13a0c3a-61a9-4e8f-9db6-a5e31f164faa)
+![user-car](https://github.com/BazyshynAnton/JDM/assets/120124298/0bedab56-3817-49b5-b090-5d1af06898b9)
 
-### 🔴"Edit Profile" Page⚪  
+### <div align="center"><br>🔴"Edit Profile" Page⚪</div>  
 
-![16editProfile](https://github.com/BazyshynAnton/JDM/assets/120124298/33c072d3-0281-443d-a7a4-d1919db4f379)
+![edit](https://github.com/BazyshynAnton/JDM/assets/120124298/b38cd7fa-c4c0-4329-80cc-be47a2ce9859)
 
-### 🔴"Navigation Menu" on tablets or phones⚪  
+### <div align="center"><br>🔴"Navigation Menu" on tablets or phones⚪</div>  
 ![24navMenuPhone](https://github.com/BazyshynAnton/JDM/assets/120124298/89b2ca21-2f5f-4539-8a5a-685ad9936101)
 
 
 ![25navMenuPhone](https://github.com/BazyshynAnton/JDM/assets/120124298/43149421-c902-4cfa-819d-89802818dcfd)
 
 
-### 🔴Other Features⚪  
+### <div align="center"><br>🔴Other Features⚪</div>  
 
 ![17notLog](https://github.com/BazyshynAnton/JDM/assets/120124298/844473f4-4a2e-4296-9c98-112ac89b0544)
 
