@@ -57,11 +57,6 @@ Start the project `npm run dev`
 
 ![mediaMenu](https://github.com/BazyshynAnton/JDM/assets/120124298/264c8efc-e6c4-4e04-af6f-e68f4d5c2794)  
 
-### 🔴Example of how search works⚪  
-
-
-https://github.com/BazyshynAnton/JDM/assets/120124298/c8679dcf-0416-416a-a76c-3817fc498034
-
 
 ### 🔴Vehicle Inventory⚪  
 
