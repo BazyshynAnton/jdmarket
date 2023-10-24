@@ -5,6 +5,7 @@ import buttonNextRed from '../../../../../pictures/button-next-red.png'
 import buttonPreviousRed from '../../../../../pictures/button-previous-red.png'
 import styles from './SwiperNavBtns.module.css'
 import { useState } from 'react'
+import { Box } from '@mui/material'
 
 const SwiperNavBtns = () => {
   const [arrow, setArrow] = useState(false)
@@ -27,8 +28,8 @@ const SwiperNavBtns = () => {
   }
 
   return (
-    <div className={styles.navBtns}>
-      <div
+    <Box className={styles.navBtns}>
+      <Box
         onClick={() => swiper.slidePrev()}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
@@ -37,8 +38,8 @@ const SwiperNavBtns = () => {
         ) : (
           <img src={buttonPrevious} alt="prev" />
         )}
-      </div>
-      <div
+      </Box>
+      <Box
         onClick={() => swiper.slideNext()}
         onMouseEnter={handleMouseEnterTwo}
         onMouseLeave={handleMouseLeaveTwo}>
@@ -47,8 +48,8 @@ const SwiperNavBtns = () => {
         ) : (
           <img src={buttonNext} alt="next" />
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

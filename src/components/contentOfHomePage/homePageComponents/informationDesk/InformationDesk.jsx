@@ -130,7 +130,7 @@ const InformationDesk = () => {
           onMouseEnter={handleMouseEnterTwo}
           onMouseLeave={handleMouseLeaveTwo}>
           <EmailIcon className={styles.mail} />
-          <p>info@jdm-expo.com</p>
+          <p>info@jdm.com</p>
         </Box>
         <Box className={styles.containerText}>
           <WhatsAppIcon className={styles.skype} />

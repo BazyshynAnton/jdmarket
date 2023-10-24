@@ -5,6 +5,7 @@ import buttonNextRed from '../../../../../pictures/button-next-red.png'
 import buttonPreviousRed from '../../../../../pictures/button-previous-red.png'
 import styles from './SwiperNavBtns.module.css'
 import { useState } from 'react'
+import { Box } from '@mui/material'
 
 const SwiperManufactureNavBtns = () => {
   const [arrow, setArrow] = useState(false)
@@ -26,8 +27,15 @@ const SwiperManufactureNavBtns = () => {
     setArrowTwo(false)
   }
   return (
-    <div className={styles.navManufactureBtns}>
-      <div
+    <>
+      <Box
+        sx={{
+          position: 'absolute',
+          zIndex: '9999',
+          top: '45%',
+          left: '10px',
+          cursor: 'pointer',
+        }}
         onClick={() => swiper.slidePrev()}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
@@ -36,8 +44,15 @@ const SwiperManufactureNavBtns = () => {
         ) : (
           <img src={buttonPrevious} alt="prev" />
         )}
-      </div>
-      <div
+      </Box>
+      <Box
+        sx={{
+          position: 'absolute',
+          zIndex: '9999',
+          top: '45%',
+          right: '10px',
+          cursor: 'pointer',
+        }}
         onClick={() => swiper.slideNext()}
         onMouseEnter={handleMouseEnterTwo}
         onMouseLeave={handleMouseLeaveTwo}>
@@ -46,8 +61,8 @@ const SwiperManufactureNavBtns = () => {
         ) : (
           <img src={buttonNext} alt="next" />
         )}
-      </div>
-    </div>
+      </Box>
+    </>
   )
 }
 

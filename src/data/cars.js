@@ -41,17 +41,17 @@ const cars = [
   },
   {
     img: onePorscheGt3,
-    text: 'Porsche 911 GT3R Taisan Porsche (SOLD)',
+    text: 'Porsche 911 GT3R (SOLD)',
     id: '8352',
   },
   {
     img: oneSkylineHakosuka,
-    text: 'Watanabe GT-R Hakosuka (SOLD)',
+    text: 'Hakosuka GT-R (SOLD)',
     id: '8344',
   },
   {
     img: twoSkylineR34,
-    text: 'Nissan Skyline GTR R34 V-spec II (SOLD)',
+    text: 'Nissan Skyline GTR R34 (SOLD)',
     id: '8306',
   },
   {

@@ -266,3 +266,8 @@ input[name='searchInput']::placeholder {
 .swal-button:not([disabled]):hover {
   background-color: red;
 }
+
+/* Delete default counter in Mozilla FireFox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
