@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Container,
   Box,
@@ -42,10 +42,15 @@ import {
   setSearchInput,
   setSort,
   setSortFalse,
+  setHelper,
 } from './headerSlice'
 
+import vehiclePageCars from '../../data/vehiclePageCars'
+
 const Header = () => {
-  const { searchInput, selectForm } = useSelector((store) => store.headerSlice)
+  const { searchInput, selectForm, helper } = useSelector(
+    (store) => store.headerSlice
+  )
 
   //Search HandleControll by RTK -----
   const handleCategoryChange = (e) => {
@@ -123,6 +128,32 @@ const Header = () => {
   //dispatch
   const dispatch = useDispatch()
 
+  const filteredCars = vehiclePageCars.filter((car) => {
+    const textMatch = car.text.toLowerCase().includes(searchInput.toLowerCase())
+
+    return textMatch
+  })
+
+  const INPUTID = 'inputID'
+
+  const handleInputHelper = () => {
+    dispatch(setHelper(true))
+  }
+
+  const handleInputRemoveHelper = (event) => {
+    if (!event.target.closest(`#${INPUTID}`)) {
+      dispatch(setHelper(false))
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleInputRemoveHelper)
+
+    return () => {
+      document.removeEventListener('click', handleInputRemoveHelper)
+    }
+  }, [])
+
   return (
     <Box className={styles.headerOverflow}>
       <Box className={styles.headerRegisterOverflow}>
@@ -135,15 +166,13 @@ const Header = () => {
                   flexDirection: 'row',
                   alignItems: 'center',
                   gap: '0.3rem',
-                }}
-              >
+                }}>
                 <NavLink to="/user">
                   <p
                     style={{
                       textDecoration: 'none',
                     }}
-                    onClick={() => dispatch(setEditFalse())}
-                  >
+                    onClick={() => dispatch(setEditFalse())}>
                     {accountInfo.nameAccount} {accountInfo.secondName}
                   </p>
                 </NavLink>
@@ -159,8 +188,7 @@ const Header = () => {
                   to="/login"
                   onClick={() => {
                     dispatch(setActiveUserLogout())
-                  }}
-                >
+                  }}>
                   <p>Logout</p>
                 </NavLink>
               </Box>
@@ -169,8 +197,7 @@ const Header = () => {
                 to="/login"
                 onClick={() => {
                   dispatch(setClearRegistration())
-                }}
-              >
+                }}>
                 <p>Log in</p>
               </NavLink>
             )}
@@ -208,14 +235,13 @@ const Header = () => {
             </Box>
             <Box className={styles.formAndBtnContainer}>
               <Box className={styles.containerSearch}>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} style={{ position: 'relative' }}>
                   <FormControl className={styles.formController}>
                     <Select
                       className="selectionOpt"
                       name="filter_type"
                       value={selectForm.searchCategory}
-                      onChange={handleCategoryChange}
-                    >
+                      onChange={handleCategoryChange}>
                       <MenuItem value="Maker">Maker</MenuItem>
                       <MenuItem value="honda">HONDA</MenuItem>
                       <MenuItem value="mazda">MAZDA</MenuItem>
@@ -226,11 +252,60 @@ const Header = () => {
                     </Select>
                   </FormControl>
                   <input
+                    id={INPUTID}
                     name="searchInput"
                     value={searchInput}
                     onChange={handleInputChange}
+                    onClick={handleInputHelper}
                     placeholder="I am looking for..."
+                    autoComplete="off"
                   />
+                  {helper && (
+                    <Box
+                      sx={{
+                        maxHeight: '200px',
+                        position: 'absolute',
+                        bottom: '100',
+                        background: '#fff',
+                        zIndex: '9999',
+                        width: '230px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '5px',
+                        border: '1px solid black',
+                        borderRadius: '4px',
+                        padding: '5px',
+                        fontFamily: "'Open Sans', sans-serif",
+                        fontSize: '12px',
+                        overflow: 'hidden',
+                      }}>
+                      {filteredCars.map((car) => (
+                        <p
+                          className={styles.hoverForHelpSearchMenu}
+                          key={car.id}>
+                          {car.text}
+                        </p>
+                      ))}
+                      {filteredCars.length === 19 && (
+                        <Box
+                          sx={{
+                            position: 'absolute',
+                            bottom: '0px',
+                            width: '100%',
+                            height: '24px',
+                            background: '#fff',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            fontFamily: "'Open Sans', sans-serif",
+                            fontWeight: 'bold',
+                            fontSize: '15px',
+                            cursor: 'default',
+                          }}>
+                          ...
+                        </Box>
+                      )}
+                    </Box>
+                  )}
                 </form>
               </Box>
 
@@ -238,8 +313,7 @@ const Header = () => {
                 <NavLink to="search">
                   <Box
                     className={styles.submitBtn}
-                    onClick={handleSearchButtonClick}
-                  >
+                    onClick={handleSearchButtonClick}>
                     <SearchIcon className={styles.searchIco} />
                   </Box>
                 </NavLink>
@@ -267,8 +341,7 @@ const Header = () => {
                       isMenuOpen ? styles.openMenu : ''
                     }`}
                     onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
+                    onMouseLeave={handleMouseLeave}>
                     <ListItem>VEHICLE INVENTORY</ListItem>
                   </NavLink>
 
@@ -280,8 +353,7 @@ const Header = () => {
                       isMenuTwoOpen ? styles.openMenu : ''
                     }`}
                     onMouseEnter={handleMouseEnterTwo}
-                    onMouseLeave={handleMouseLeaveTwo}
-                  >
+                    onMouseLeave={handleMouseLeaveTwo}>
                     COMPANY PROFILE
                   </ListItem>
                   <ListItem className={styles.listItem}>
@@ -290,8 +362,7 @@ const Header = () => {
                   <NavLink
                     to="/how-to-buy"
                     onClick={() => window.scrollTo(0, 0)}
-                    className={styles.listItem}
-                  >
+                    className={styles.listItem}>
                     <ListItem>HOW TO BUY?</ListItem>
                   </NavLink>
                   <ListItem
@@ -299,8 +370,7 @@ const Header = () => {
                       isMenuThreeOpen ? styles.openMenu : ''
                     }`}
                     onMouseEnter={handleMouseEnterThree}
-                    onMouseLeave={handleMouseLeaveThree}
-                  >
+                    onMouseLeave={handleMouseLeaveThree}>
                     SOCIAL MEDIA
                   </ListItem>
                   <ListItem className={styles.listItem}>CONTACT US</ListItem>
@@ -313,19 +383,16 @@ const Header = () => {
                 timeout={300}
                 classNames="absoluteInventory"
                 mountOnEnter
-                unmountOnExit
-              >
+                unmountOnExit>
                 <Box
                   ref={nodeRef}
                   className={styles.absoluteInventory}
                   onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                >
+                  onMouseLeave={handleMouseLeave}>
                   <NavLink
                     to="/vehicle-inventory/jdm-sports"
                     onClick={() => window.scrollTo(0, 0)}
-                    className={styles.sectionInventory}
-                  >
+                    className={styles.sectionInventory}>
                     <img src={jdmSports} alt="jdm-sports" />
                     <Typography className={styles.textInSection}>
                       JDM SPORTS
@@ -334,8 +401,7 @@ const Header = () => {
                   <NavLink
                     to="/vehicle-inventory/jdm-classic"
                     onClick={() => window.scrollTo(0, 0)}
-                    className={`${styles.sectionInventory} ${styles.borderSection}`}
-                  >
+                    className={`${styles.sectionInventory} ${styles.borderSection}`}>
                     <img src={jdmClassic} alt="jdm-classic" />
                     <Typography className={styles.textInSection}>
                       JDM CLASSIC
@@ -344,8 +410,7 @@ const Header = () => {
                   <NavLink
                     to="/vehicle-inventory/non-jdm"
                     onClick={() => window.scrollTo(0, 0)}
-                    className={styles.sectionInventory}
-                  >
+                    className={styles.sectionInventory}>
                     <img src={nonJdm} alt="non-jdm" />
                     <Typography className={styles.textInSection}>
                       NON JDM
@@ -359,29 +424,25 @@ const Header = () => {
                 timeout={300}
                 classNames="companyProfile"
                 mountOnEnter
-                unmountOnExit
-              >
+                unmountOnExit>
                 <Box
                   ref={nodeRef}
                   className={styles.companyProfile}
                   onMouseEnter={handleMouseEnterTwo}
-                  onMouseLeave={handleMouseLeaveTwo}
-                >
+                  onMouseLeave={handleMouseLeaveTwo}>
                   <Box className={styles.companySection}>
                     <Typography className={styles.textInCompany}>
                       ABOUT US
                     </Typography>
                   </Box>
                   <Box
-                    className={`${styles.companySection} ${styles.borderCompanySectionOne}`}
-                  >
+                    className={`${styles.companySection} ${styles.borderCompanySectionOne}`}>
                     <Typography className={styles.textInCompany}>
                       OUR SERVICES
                     </Typography>
                   </Box>
                   <Box
-                    className={`${styles.companySection} ${styles.borderCompanySectionTwo}`}
-                  >
+                    className={`${styles.companySection} ${styles.borderCompanySectionTwo}`}>
                     <Typography className={styles.textInCompany}>
                       WHY CHOOSE US
                     </Typography>
@@ -399,27 +460,23 @@ const Header = () => {
                 timeout={300}
                 classNames="companyProfile"
                 mountOnEnter
-                unmountOnExit
-              >
+                unmountOnExit>
                 <Box
                   ref={nodeRef}
                   className={styles.mediaProfile}
                   onMouseEnter={handleMouseEnterThree}
-                  onMouseLeave={handleMouseLeaveThree}
-                >
+                  onMouseLeave={handleMouseLeaveThree}>
                   <Box className={styles.mediaSection}>
                     <Typography className={styles.textInMedia}>
                       MEDIA
                     </Typography>
                   </Box>
                   <Box
-                    className={`${styles.mediaSection} ${styles.borderMediaSectionOne}`}
-                  >
+                    className={`${styles.mediaSection} ${styles.borderMediaSectionOne}`}>
                     <Typography className={styles.textInMedia}>BLOG</Typography>
                   </Box>
                   <Box
-                    className={`${styles.mediaSection} ${styles.borderMediaSectionTwo}`}
-                  >
+                    className={`${styles.mediaSection} ${styles.borderMediaSectionTwo}`}>
                     <Typography className={styles.textInMedia}>
                       FACEBOOK
                     </Typography>
@@ -448,8 +505,7 @@ const Header = () => {
               anchor="left"
               PaperProps={{
                 className: styles.swipeBar,
-              }}
-            >
+              }}>
               <Box className={styles.closeBurgerIcon}>
                 <IconButton onClick={() => setOpen(false)}>
                   <MenuOpenIcon sx={{ color: 'white', fontSize: '1.8rem' }} />
@@ -465,8 +521,7 @@ const Header = () => {
                     onClick={() => {
                       window.scrollTo(0, 0)
                       setOpen(false)
-                    }}
-                  >
+                    }}>
                     <p>HOME</p>
                   </NavLink>
                 </ListItem>
@@ -474,8 +529,7 @@ const Header = () => {
                   onClick={handleClickFunctionInBurger}
                   className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
                     isOpen ? styles.activeBurgerVehicle : ''
-                  }`}
-                >
+                  }`}>
                   {!isOpen && <p>VEHICLE INVENTORY</p>}
                   {isOpen && (
                     <NavLink
@@ -483,8 +537,7 @@ const Header = () => {
                       onClick={() => {
                         window.scrollTo(0, 0)
                         setOpen(false)
-                      }}
-                    >
+                      }}>
                       <p>VEHICLE INVENTORY</p>
                     </NavLink>
                   )}
@@ -494,23 +547,20 @@ const Header = () => {
                     in={isOpen}
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
-                    unmountOnExit
-                  >
+                    unmountOnExit>
                     <Box
                       ref={nodeRef}
                       className={`${
                         isOpen
                           ? styles.dropVehicleInventory
                           : styles.notOpenVehicleInventory
-                      }`}
-                    >
+                      }`}>
                       <NavLink
                         to="/vehicle-inventory/:jdm-sports"
                         onClick={() => {
                           window.scrollTo(0, 0)
                           setOpen(false)
-                        }}
-                      >
+                        }}>
                         <Box className={styles.jdmSectionInBurger}>
                           <p>JDM SPORTS</p>
                           <img src={jdmSports} alt="jdm-sports" />
@@ -521,8 +571,7 @@ const Header = () => {
                         onClick={() => {
                           window.scrollTo(0, 0)
                           setOpen(false)
-                        }}
-                      >
+                        }}>
                         <Box className={styles.jdmSectionInBurger}>
                           <p>JDM CLASSIC</p>
                           <img src={jdmClassic} alt="jdm-classic" />
@@ -533,8 +582,7 @@ const Header = () => {
                         onClick={() => {
                           window.scrollTo(0, 0)
                           setOpen(false)
-                        }}
-                      >
+                        }}>
                         <Box className={styles.jdmSectionInBurger}>
                           <p>NON JDM</p>
                           <img src={nonJdm} alt="non-jdm" />
@@ -550,24 +598,21 @@ const Header = () => {
                   onClick={handleClickFunctionInBurgerTwo}
                   className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
                     isOpenTwo ? styles.activeBurgerVehicle : ''
-                  }`}
-                >
+                  }`}>
                   <p>COMPANY PROFILE</p>
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isOpenTwo}
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
-                    unmountOnExit
-                  >
+                    unmountOnExit>
                     <Box
                       ref={nodeRef}
                       className={`${
                         isOpenTwo
                           ? styles.dropVehicleInventory
                           : styles.notOpenVehicleInventory
-                      }`}
-                    >
+                      }`}>
                       <Box className={styles.jdmSectionInBurger}>
                         <p> ABOUT US</p>
                       </Box>
@@ -592,8 +637,7 @@ const Header = () => {
                     onClick={() => {
                       window.scrollTo(0, 0)
                       setOpen(false)
-                    }}
-                  >
+                    }}>
                     <p>HOW TO BUY?</p>
                   </NavLink>
                 </ListItem>
@@ -601,24 +645,21 @@ const Header = () => {
                   onClick={handleClickFunctionInBurgerThree}
                   className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
                     isOpenThree ? styles.activeBurgerVehicle : ''
-                  }`}
-                >
+                  }`}>
                   <p>SOCIAL MEDIA</p>
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isOpenThree}
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
-                    unmountOnExit
-                  >
+                    unmountOnExit>
                     <Box
                       ref={nodeRef}
                       className={`${
                         isOpenThree
                           ? styles.dropVehicleInventory
                           : styles.notOpenVehicleInventory
-                      }`}
-                    >
+                      }`}>
                       <Box className={styles.jdmSectionInBurger}>
                         <p>MEDIA</p>
                       </Box>
