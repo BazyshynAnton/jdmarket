@@ -40,7 +40,7 @@ a {
 }
 
 input[name='searchInput']::placeholder {
-  color: white;
+  color: #fff;
   font-style: italic;
 }
 
@@ -74,6 +74,7 @@ input[name='searchInput']::placeholder {
   width: auto;
 }
 
+/* modal */
 .modal-enter {
   transform: translateY(20%);
   opacity: 0;
@@ -95,7 +96,7 @@ input[name='searchInput']::placeholder {
   transform: translateY(20%);
   opacity: 0;
 }
-
+/* help */
 .help-enter {
   transform: translateY(20%);
   opacity: 0;
@@ -118,6 +119,7 @@ input[name='searchInput']::placeholder {
   opacity: 0;
 }
 
+/* absoluteInventory */
 .absoluteInventory-enter {
   transform: translateY(-10%);
   opacity: 0;
@@ -139,6 +141,7 @@ input[name='searchInput']::placeholder {
   transform: translateY(-20%);
   opacity: 0;
 }
+/* companyProfile */
 .companyProfile-enter {
   transform: translateY(-10%);
   opacity: 0;
@@ -160,7 +163,7 @@ input[name='searchInput']::placeholder {
   transform: translateY(-20%);
   opacity: 0;
 }
-
+/* fadeBackToTopBtn */
 .fadeBackToTopBtn-enter {
   transform: translateY(-10%);
   opacity: 0;
@@ -182,7 +185,7 @@ input[name='searchInput']::placeholder {
   transform: translateY(-20%);
   opacity: 0;
 }
-
+/* infoMail */
 .infoMail-enter {
   transform: translateX(20%);
   opacity: 0;
@@ -204,7 +207,7 @@ input[name='searchInput']::placeholder {
   transform: translateX(0);
   opacity: 0;
 }
-
+/* dropdown */
 .dropdown-enter {
   max-height: 0;
   overflow: hidden;
@@ -223,6 +226,28 @@ input[name='searchInput']::placeholder {
 
 .dropdown-exit-active {
   max-height: 0;
+}
+/* search helper */
+.helper-enter {
+  transform: translateY(0%);
+  opacity: 0;
+}
+
+.helper-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.helper-exit {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.helper-exit-active {
+  transform: translateY(-1%);
+  opacity: 0;
 }
 
 /* sweet-alert */

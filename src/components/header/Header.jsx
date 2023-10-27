@@ -41,7 +41,6 @@ import {
   setSelectForm,
   setSearchInput,
   setSort,
-  setSortFalse,
   setHelper,
 } from './headerSlice'
 
@@ -56,16 +55,16 @@ const Header = () => {
   const handleCategoryChange = (e) => {
     const { value } = e.target
     dispatch(setSelectForm({ searchCategory: value }))
-    dispatch(setSortFalse())
+    dispatch(setSort(false))
   }
 
   const handleInputChange = (e) => {
     dispatch(setSearchInput(e.target.value))
-    dispatch(setSortFalse())
+    dispatch(setSort(false))
   }
 
   const handleSearchButtonClick = () => {
-    dispatch(setSort())
+    dispatch(setSort(true))
   }
   // ---------------------------------
 
@@ -128,6 +127,7 @@ const Header = () => {
   //dispatch
   const dispatch = useDispatch()
 
+  //search helper
   const filteredCars = vehiclePageCars.filter((car) => {
     const textMatch = car.text.toLowerCase().includes(searchInput.toLowerCase())
 
@@ -137,7 +137,9 @@ const Header = () => {
   const INPUTID = 'inputID'
 
   const handleInputHelper = () => {
+    dispatch(setSearchInput(''))
     dispatch(setHelper(true))
+    dispatch(setSort(false))
   }
 
   const handleInputRemoveHelper = (event) => {
@@ -147,12 +149,16 @@ const Header = () => {
   }
 
   useEffect(() => {
-    document.addEventListener('click', handleInputRemoveHelper)
+    if (helper) {
+      document.addEventListener('click', handleInputRemoveHelper)
+    }
 
     return () => {
-      document.removeEventListener('click', handleInputRemoveHelper)
+      return document.removeEventListener('click', handleInputRemoveHelper)
     }
-  }, [])
+  }, [helper])
+
+  //CSSTransition for search helper
 
   return (
     <Box className={styles.headerOverflow}>
@@ -254,58 +260,74 @@ const Header = () => {
                   <input
                     id={INPUTID}
                     name="searchInput"
+                    type="search"
                     value={searchInput}
                     onChange={handleInputChange}
                     onClick={handleInputHelper}
                     placeholder="I am looking for..."
                     autoComplete="off"
                   />
-                  {helper && (
-                    <Box
-                      sx={{
-                        maxHeight: '200px',
-                        position: 'absolute',
-                        bottom: '100',
-                        background: '#fff',
-                        zIndex: '9999',
-                        width: '230px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '5px',
-                        border: '1px solid black',
-                        borderRadius: '4px',
-                        padding: '5px',
-                        fontFamily: "'Open Sans', sans-serif",
-                        fontSize: '12px',
-                        overflow: 'hidden',
-                      }}>
-                      {filteredCars.map((car) => (
-                        <p
-                          className={styles.hoverForHelpSearchMenu}
-                          key={car.id}>
-                          {car.text}
-                        </p>
-                      ))}
-                      {filteredCars.length === 19 && (
+                  <CSSTransition
+                    nodeRef={nodeRef}
+                    in={helper}
+                    timeout={300}
+                    classNames="helper"
+                    unmountOnExit={true}>
+                    {() =>
+                      helper && filteredCars.length === 0 ? (
+                        ''
+                      ) : (
                         <Box
+                          ref={nodeRef}
                           sx={{
+                            maxHeight: '200px',
                             position: 'absolute',
-                            bottom: '0px',
-                            width: '100%',
-                            height: '24px',
+                            bottom: '100',
                             background: '#fff',
+                            zIndex: '9999',
+                            width: '230px',
                             display: 'flex',
-                            justifyContent: 'center',
+                            flexDirection: 'column',
+                            gap: '5px',
+                            border: '1px solid black',
+                            borderRadius: '4px',
+                            padding: '5px',
                             fontFamily: "'Open Sans', sans-serif",
-                            fontWeight: 'bold',
-                            fontSize: '15px',
-                            cursor: 'default',
+                            fontSize: '12px',
+                            overflow: 'hidden',
                           }}>
-                          ...
+                          {filteredCars.map((car) => (
+                            <p
+                              onClick={() => dispatch(setSearchInput(car.text))}
+                              className={styles.hoverForHelpSearchMenu}
+                              key={car.id}>
+                              {car.text}
+                            </p>
+                          ))}
+                          {filteredCars.length === 19 && (
+                            <Box
+                              sx={{
+                                position: 'absolute',
+                                bottom: '0px',
+                                width: '100%',
+                                height: '25px',
+                                background: '#fff',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                fontFamily: "'Open Sans', sans-serif",
+                                fontWeight: 'bold',
+                                fontSize: '15px',
+                                cursor: 'default',
+                              }}>
+                              <span style={{ padding: '0px 10px 0px 0px' }}>
+                                ...
+                              </span>
+                            </Box>
+                          )}
                         </Box>
-                      )}
-                    </Box>
-                  )}
+                      )
+                    }
+                  </CSSTransition>
                 </form>
               </Box>
 

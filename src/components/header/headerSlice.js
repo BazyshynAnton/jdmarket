@@ -20,11 +20,8 @@ const headerSlice = createSlice({
     setSearchInput: (state, action) => {
       state.searchInput = action.payload
     },
-    setSort: (state) => {
-      state.sort = true
-    },
-    setSortFalse: (state) => {
-      state.sort = false
+    setSort: (state, action) => {
+      state.sort = action.payload
     },
     setHelper: (state, action) => {
       state.helper = action.payload
