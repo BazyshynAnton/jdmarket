@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {
   Container,
-  Box,
   Button,
   FormControl,
   Select,
@@ -161,12 +160,12 @@ const Header = () => {
   //CSSTransition for search helper
 
   return (
-    <Box className={styles.headerOverflow}>
-      <Box className={styles.headerRegisterOverflow}>
+    <div className={styles.headerOverflow}>
+      <div className={styles.headerRegisterOverflow}>
         <Container>
-          <Box className={styles.registration}>
+          <div className={styles.registration}>
             {activeUser ? (
-              <Box
+              <div
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
@@ -197,7 +196,7 @@ const Header = () => {
                   }}>
                   <p>Logout</p>
                 </NavLink>
-              </Box>
+              </div>
             ) : (
               <NavLink
                 to="/login"
@@ -207,19 +206,19 @@ const Header = () => {
                 <p>Log in</p>
               </NavLink>
             )}
-          </Box>
+          </div>
         </Container>
-      </Box>
+      </div>
       <Container>
-        <Box className={styles.mainHeaderBg}>
-          <Box className={styles.headerLogoContainer}>
+        <div className={styles.mainHeaderBg}>
+          <div className={styles.headerLogoContainer}>
             <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
               <img src={headerLogo} alt="JDMexpoLogo" />
             </NavLink>
-          </Box>
+          </div>
 
-          <Box className={styles.infoAndSearchContainer}>
-            <Box className={styles.facebookContainer}>
+          <div className={styles.infoAndSearchContainer}>
+            <div className={styles.facebookContainer}>
               <Button variant="contained">
                 <span>
                   <ThumbUpIcon sx={{ width: 15 }} />
@@ -230,17 +229,17 @@ const Header = () => {
               <Button variant="contained" className={styles.shareFacebook}>
                 <span>Share</span>
               </Button>
-            </Box>
-            <Box className={styles.contactContainer}>
-              <Box className={styles.phone}>
+            </div>
+            <div className={styles.contactContainer}>
+              <div className={styles.phone}>
                 <p>+81-573-66-5670</p>
-              </Box>
-              <Box className={styles.email}>
+              </div>
+              <div className={styles.email}>
                 <p>info@jdm.com</p>
-              </Box>
-            </Box>
-            <Box className={styles.formAndBtnContainer}>
-              <Box className={styles.containerSearch}>
+              </div>
+            </div>
+            <div className={styles.formAndBtnContainer}>
+              <div className={styles.containerSearch}>
                 <form onSubmit={handleSubmit} style={{ position: 'relative' }}>
                   <FormControl className={styles.formController}>
                     <Select
@@ -277,9 +276,9 @@ const Header = () => {
                       helper && filteredCars.length === 0 ? (
                         ''
                       ) : (
-                        <Box
+                        <div
                           ref={nodeRef}
-                          sx={{
+                          style={{
                             maxHeight: '200px',
                             position: 'absolute',
                             bottom: '100',
@@ -305,8 +304,8 @@ const Header = () => {
                             </p>
                           ))}
                           {filteredCars.length === 19 && (
-                            <Box
-                              sx={{
+                            <div
+                              style={{
                                 position: 'absolute',
                                 bottom: '0px',
                                 width: '100%',
@@ -322,29 +321,29 @@ const Header = () => {
                               <span style={{ padding: '0px 10px 0px 0px' }}>
                                 ...
                               </span>
-                            </Box>
+                            </div>
                           )}
-                        </Box>
+                        </div>
                       )
                     }
                   </CSSTransition>
                 </form>
-              </Box>
+              </div>
 
-              <Box className={styles.afterContainer}>
+              <div className={styles.afterContainer}>
                 <NavLink to="search">
-                  <Box
+                  <div
                     className={styles.submitBtn}
                     onClick={handleSearchButtonClick}>
                     <SearchIcon className={styles.searchIco} />
-                  </Box>
+                  </div>
                 </NavLink>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <AppBar position="static" className={styles.appBar}>
+        <AppBar position="relative" className={styles.appBar}>
           {isDesktop && (
             <>
               <Toolbar className={styles.toolbarContainer}>
@@ -406,7 +405,7 @@ const Header = () => {
                 classNames="absoluteInventory"
                 mountOnEnter
                 unmountOnExit>
-                <Box
+                <div
                   ref={nodeRef}
                   className={styles.absoluteInventory}
                   onMouseEnter={handleMouseEnter}
@@ -438,7 +437,7 @@ const Header = () => {
                       NON JDM
                     </Typography>
                   </NavLink>
-                </Box>
+                </div>
               </CSSTransition>
               <CSSTransition
                 nodeRef={nodeRef}
@@ -447,34 +446,34 @@ const Header = () => {
                 classNames="companyProfile"
                 mountOnEnter
                 unmountOnExit>
-                <Box
+                <div
                   ref={nodeRef}
                   className={styles.companyProfile}
                   onMouseEnter={handleMouseEnterTwo}
                   onMouseLeave={handleMouseLeaveTwo}>
-                  <Box className={styles.companySection}>
+                  <div className={styles.companySection}>
                     <Typography className={styles.textInCompany}>
                       ABOUT US
                     </Typography>
-                  </Box>
-                  <Box
+                  </div>
+                  <div
                     className={`${styles.companySection} ${styles.borderCompanySectionOne}`}>
                     <Typography className={styles.textInCompany}>
                       OUR SERVICES
                     </Typography>
-                  </Box>
-                  <Box
+                  </div>
+                  <div
                     className={`${styles.companySection} ${styles.borderCompanySectionTwo}`}>
                     <Typography className={styles.textInCompany}>
                       WHY CHOOSE US
                     </Typography>
-                  </Box>
-                  <Box className={styles.companySection}>
+                  </div>
+                  <div className={styles.companySection}>
                     <Typography className={styles.textInCompany}>
                       TESTIMONIALS
                     </Typography>
-                  </Box>
-                </Box>
+                  </div>
+                </div>
               </CSSTransition>
               <CSSTransition
                 nodeRef={nodeRef}
@@ -483,32 +482,32 @@ const Header = () => {
                 classNames="companyProfile"
                 mountOnEnter
                 unmountOnExit>
-                <Box
+                <div
                   ref={nodeRef}
                   className={styles.mediaProfile}
                   onMouseEnter={handleMouseEnterThree}
                   onMouseLeave={handleMouseLeaveThree}>
-                  <Box className={styles.mediaSection}>
+                  <div className={styles.mediaSection}>
                     <Typography className={styles.textInMedia}>
                       MEDIA
                     </Typography>
-                  </Box>
-                  <Box
+                  </div>
+                  <div
                     className={`${styles.mediaSection} ${styles.borderMediaSectionOne}`}>
                     <Typography className={styles.textInMedia}>BLOG</Typography>
-                  </Box>
-                  <Box
+                  </div>
+                  <div
                     className={`${styles.mediaSection} ${styles.borderMediaSectionTwo}`}>
                     <Typography className={styles.textInMedia}>
                       FACEBOOK
                     </Typography>
-                  </Box>
-                  <Box className={styles.mediaSection}>
+                  </div>
+                  <div className={styles.mediaSection}>
                     <Typography className={styles.textInMedia}>
                       FORUM
                     </Typography>
-                  </Box>
-                </Box>
+                  </div>
+                </div>
               </CSSTransition>
             </>
           )}
@@ -528,14 +527,14 @@ const Header = () => {
               PaperProps={{
                 className: styles.swipeBar,
               }}>
-              <Box className={styles.closeBurgerIcon}>
+              <div className={styles.closeBurgerIcon}>
                 <IconButton onClick={() => setOpen(false)}>
                   <MenuOpenIcon sx={{ color: 'white', fontSize: '1.8rem' }} />
                 </IconButton>
-              </Box>
-              <Box className={styles.headerInBurger}>
+              </div>
+              <div className={styles.headerInBurger}>
                 <h5>NAVIGATION</h5>
-              </Box>
+              </div>
               <List className={styles.listInBurgerMenu}>
                 <ListItem className={styles.listIntemInBurgerMenu}>
                   <NavLink
@@ -570,7 +569,7 @@ const Header = () => {
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
                     unmountOnExit>
-                    <Box
+                    <div
                       ref={nodeRef}
                       className={`${
                         isOpen
@@ -583,10 +582,10 @@ const Header = () => {
                           window.scrollTo(0, 0)
                           setOpen(false)
                         }}>
-                        <Box className={styles.jdmSectionInBurger}>
+                        <div className={styles.jdmSectionInBurger}>
                           <p>JDM SPORTS</p>
                           <img src={jdmSports} alt="jdm-sports" />
-                        </Box>
+                        </div>
                       </NavLink>
                       <NavLink
                         to="/vehicle-inventory/:jdm-classic"
@@ -594,10 +593,10 @@ const Header = () => {
                           window.scrollTo(0, 0)
                           setOpen(false)
                         }}>
-                        <Box className={styles.jdmSectionInBurger}>
+                        <div className={styles.jdmSectionInBurger}>
                           <p>JDM CLASSIC</p>
                           <img src={jdmClassic} alt="jdm-classic" />
-                        </Box>
+                        </div>
                       </NavLink>
                       <NavLink
                         to="/vehicle-inventory/:non-jdm"
@@ -605,12 +604,12 @@ const Header = () => {
                           window.scrollTo(0, 0)
                           setOpen(false)
                         }}>
-                        <Box className={styles.jdmSectionInBurger}>
+                        <div className={styles.jdmSectionInBurger}>
                           <p>NON JDM</p>
                           <img src={nonJdm} alt="non-jdm" />
-                        </Box>
+                        </div>
                       </NavLink>
-                    </Box>
+                    </div>
                   </CSSTransition>
                 </ListItem>
                 <ListItem className={styles.listIntemInBurgerMenu}>
@@ -628,26 +627,26 @@ const Header = () => {
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
                     unmountOnExit>
-                    <Box
+                    <div
                       ref={nodeRef}
                       className={`${
                         isOpenTwo
                           ? styles.dropVehicleInventory
                           : styles.notOpenVehicleInventory
                       }`}>
-                      <Box className={styles.jdmSectionInBurger}>
+                      <div className={styles.jdmSectionInBurger}>
                         <p> ABOUT US</p>
-                      </Box>
-                      <Box className={styles.jdmSectionInBurger}>
+                      </div>
+                      <div className={styles.jdmSectionInBurger}>
                         <p>OUR SERVICES</p>
-                      </Box>
-                      <Box className={styles.jdmSectionInBurger}>
+                      </div>
+                      <div className={styles.jdmSectionInBurger}>
                         <p>WHY CHOOSE US</p>
-                      </Box>
-                      <Box className={styles.jdmSectionInBurger}>
+                      </div>
+                      <div className={styles.jdmSectionInBurger}>
                         <p> TESTIMONIALS</p>
-                      </Box>
-                    </Box>
+                      </div>
+                    </div>
                   </CSSTransition>
                 </ListItem>
                 <ListItem className={styles.listIntemInBurgerMenu}>
@@ -675,23 +674,23 @@ const Header = () => {
                     timeout={300} // Время анимации (в миллисекундах)
                     classNames="dropdown" // CSS-классы для анимации
                     unmountOnExit>
-                    <Box
+                    <div
                       ref={nodeRef}
                       className={`${
                         isOpenThree
                           ? styles.dropVehicleInventory
                           : styles.notOpenVehicleInventory
                       }`}>
-                      <Box className={styles.jdmSectionInBurger}>
+                      <div className={styles.jdmSectionInBurger}>
                         <p>MEDIA</p>
-                      </Box>
-                      <Box className={styles.jdmSectionInBurger}>
+                      </div>
+                      <div className={styles.jdmSectionInBurger}>
                         <p>FACEBOOK</p>
-                      </Box>
-                      <Box className={styles.jdmSectionInBurger}>
+                      </div>
+                      <div className={styles.jdmSectionInBurger}>
                         <p>FORUM</p>
-                      </Box>
-                    </Box>
+                      </div>
+                    </div>
                   </CSSTransition>
                 </ListItem>
                 <ListItem className={styles.listIntemInBurgerMenu}>
@@ -705,8 +704,8 @@ const Header = () => {
           )}
         </AppBar>
       </Container>
-      <Box className={styles.underHeader} />
-    </Box>
+      <div className={styles.underHeader} />
+    </div>
   )
 }
 

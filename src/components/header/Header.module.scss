@@ -1,12 +1,13 @@
+@import '../../scssMixinsAndVariables/variables.scss';
+@import '../../scssMixinsAndVariables/mixins.scss';
+
 .mainHeaderBg {
   background: url(../../pictures/header.jpg);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   height: 135px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include blockSettings(flex, row, space-between);
 }
 
 .headerOverflow {
@@ -14,14 +15,13 @@
 }
 
 .headerRegisterOverflow {
-  background: #000;
+  background: $blackBg;
   height: 30px;
 }
 
 .registration {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  @include blockSettings2(flex, flex-end, center);
+
   height: 30px;
   p {
     padding: 5px 0px 5px 0px;
@@ -85,32 +85,22 @@
 
 .contactContainer {
   padding-top: 10px;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
+
+  @include blockSettings3(flex, column, flex-end);
+
   gap: 0.3rem;
   color: white;
   .phone {
-    padding-left: 15px;
-    display: flex;
-    gap: 4px;
     background: url(../../pictures/phone_icon.png);
-    background-position: center left;
-    background-repeat: no-repeat;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 20px;
+    padding-left: 15px;
+    @include emailPhone;
   }
   .email {
-    padding-left: 22px;
-    display: flex;
-
-    gap: 4px;
     background: url(../../pictures/mail_icon.png);
-    background-position: center left;
-    background-repeat: no-repeat;
-    font-family: Pathway Gothic One, sans-serif;
-    font-size: 20px;
+    padding-left: 22px;
+    @include emailPhone;
     cursor: pointer;
+
     &:hover {
       text-decoration: underline;
     }
@@ -119,17 +109,13 @@
 
 .formAndBtnContainer {
   margin-top: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+  @include blockSettings3(flex, row, center);
   height: 20px;
   z-index: 20;
 }
 
 .containerSearch {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+  @include blockSettings3(flex, row, center);
   height: 27px;
   background: #0f0d0d;
   border: solid 1px #989797;
@@ -147,18 +133,18 @@
     content: '';
     display: block;
     height: 27px;
-    width: 20px; /* Ширина правой стороны с наклоном */
+    width: 20px;
 
     background: linear-gradient(to left, #0f0d0d 50%, transparent 50%);
     border-top: solid 1px #989797;
     border-bottom: solid 1px #989797;
     border-right: solid 1px #989797;
-    transform: skewX(-20deg); /* Поворот правой стороны */
+    transform: skewX(-20deg);
     position: relative;
     top: 0;
     left: 6px;
 
-    z-index: 100; /* Помещаем повернутую часть над содержимым */
+    z-index: 100;
   }
 }
 
@@ -168,13 +154,11 @@
 }
 
 .submitBtn {
+  @include blockSettings2(flex, center, center);
   margin-left: 20px;
   width: 30px;
   height: 27px;
   background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 2px solid red;
   border-radius: 5px;
   color: black;
@@ -192,16 +176,16 @@
     content: '';
     display: block;
     height: 27px;
-    width: 20px; /* Ширина правой стороны с наклоном */
+    width: 20px;
 
     background: linear-gradient(to right, white 65%, transparent 50%);
 
-    transform: skewX(-20deg); /* Поворот правой стороны */
+    transform: skewX(-20deg);
     position: relative;
     top: -27px;
     left: 16px;
 
-    z-index: 100; /* Помещаем повернутую часть над содержимым */
+    z-index: 100;
   }
 }
 
@@ -218,6 +202,8 @@
 }
 
 .appBar {
+  width: 100%;
+  min-height: 40px;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -225,9 +211,8 @@
 }
 
 .toolbarContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include blockSettings2(flex, center, center);
+
   flex-direction: row;
   width: 100%;
   min-height: 40px;
@@ -235,21 +220,17 @@
   z-index: 3;
 }
 .lists {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include blockSettings2(flex, space-between, center);
   flex-direction: row;
   padding: 0;
   cursor: pointer;
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: $gothicFont;
 }
 .listItem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include blockSettings2(flex, center, center);
   height: 40px;
   transition: 0.2s ease-in-out;
-  background: #000;
+  background: $blackBg;
 
   &:first-child {
     background: red;
@@ -261,22 +242,20 @@
 }
 
 .absoluteInventory {
+  display: flex;
+  flex-direction: row;
   position: absolute;
   width: 100%;
   height: 190px;
   top: 40px;
-  background: #000;
-  display: flex;
-  flex-direction: row;
+  background: $blackBg;
   z-index: 2;
 }
 
 .sectionInventory {
   width: 100%;
-  display: flex;
+  @include blockSettings2(flex, center, center);
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   transition: 0.4s ease-in-out;
 
   cursor: pointer;
@@ -298,7 +277,7 @@
 }
 
 .textInSection {
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: $gothicFont;
   font-size: 18px;
   padding-top: 10px;
   cursor: pointer;
@@ -309,22 +288,20 @@
 }
 
 .companyProfile {
+  display: flex;
+  flex-direction: row;
   position: absolute;
   width: 100%;
   height: 50px;
   top: 40px;
-  background: #000;
-  display: flex;
-  flex-direction: row;
+  background: $blackBg;
 
   z-index: 2;
 }
 
 .companySection {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include blockSettings2(flex, center, center);
   transition: 0.4s ease-in-out;
 
   cursor: pointer;
@@ -343,7 +320,7 @@
 }
 
 .textInCompany {
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: $gothicFont;
   font-size: 18px;
 
   cursor: pointer;
@@ -353,7 +330,7 @@
   width: 100%;
   height: 50px;
   top: 40px;
-  background: #000;
+  background: $blackBg;
   display: flex;
   flex-direction: row;
 
@@ -362,9 +339,7 @@
 
 .mediaSection {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include blockSettings2(flex, center, center);
   transition: 0.4s ease-in-out;
 
   cursor: pointer;
@@ -383,7 +358,7 @@
 }
 
 .textInMedia {
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: $gothicFont;
   font-size: 18px;
 
   cursor: pointer;
@@ -474,7 +449,7 @@
   .listInBurgerMenu {
     display: flex;
     flex-direction: column;
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: $gothicFont;
     color: white;
     p {
       font-size: 23px;
@@ -484,7 +459,7 @@
     color: white;
     font-size: 40px;
     letter-spacing: 2px;
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: $gothicFont;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -515,7 +490,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background: #000;
+    background: $blackBg;
     border-top: 2px solid red;
     border-bottom: 2px solid red;
     box-shadow: inset 0px 10px 20px 2px rgba(255, 0, 0, 0.25);
@@ -523,7 +498,7 @@
   .dropVehicleInventory {
     display: flex;
     flex-direction: column;
-    background: #000;
+    background: $blackBg;
   }
 
   .notOpenVehicleInventory {

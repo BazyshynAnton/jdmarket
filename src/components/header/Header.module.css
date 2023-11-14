@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .mainHeaderBg {
   background: url(../../pictures/header.jpg);
   background-size: cover;
@@ -113,27 +112,27 @@
   color: white;
 }
 .contactContainer .phone {
+  background: url(../../pictures/phone_icon.png);
   padding-left: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 4px;
-  background: url(../../pictures/phone_icon.png);
   background-position: center left;
   background-repeat: no-repeat;
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 20px;
 }
 .contactContainer .email {
+  background: url(../../pictures/mail_icon.png);
   padding-left: 22px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 4px;
-  background: url(../../pictures/mail_icon.png);
   background-position: center left;
   background-repeat: no-repeat;
-  font-family: Pathway Gothic One, sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   font-size: 20px;
   cursor: pointer;
 }
@@ -184,18 +183,18 @@
   content: "";
   display: block;
   height: 27px;
-  width: 20px; /* Ширина правой стороны с наклоном */
+  width: 20px;
   background: -webkit-gradient(linear, right top, left top, color-stop(50%, #0f0d0d), color-stop(50%, transparent));
   background: linear-gradient(to left, #0f0d0d 50%, transparent 50%);
   border-top: solid 1px #989797;
   border-bottom: solid 1px #989797;
   border-right: solid 1px #989797;
   -webkit-transform: skewX(-20deg);
-          transform: skewX(-20deg); /* Поворот правой стороны */
+          transform: skewX(-20deg);
   position: relative;
   top: 0;
   left: 6px;
-  z-index: 100; /* Помещаем повернутую часть над содержимым */
+  z-index: 100;
 }
 
 .formController {
@@ -204,19 +203,19 @@
 }
 
 .submitBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-left: 20px;
   width: 30px;
   height: 27px;
   background: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border: 2px solid red;
   border-radius: 5px;
   color: black;
@@ -234,15 +233,15 @@
   content: "";
   display: block;
   height: 27px;
-  width: 20px; /* Ширина правой стороны с наклоном */
+  width: 20px;
   background: -webkit-gradient(linear, left top, right top, color-stop(65%, white), color-stop(50%, transparent));
   background: linear-gradient(to right, white 65%, transparent 50%);
   -webkit-transform: skewX(-20deg);
-          transform: skewX(-20deg); /* Поворот правой стороны */
+          transform: skewX(-20deg);
   position: relative;
   top: -27px;
   left: 16px;
-  z-index: 100; /* Помещаем повернутую часть над содержимым */
+  z-index: 100;
 }
 
 .searchIco {
@@ -258,6 +257,8 @@
 }
 
 .appBar {
+  width: 100%;
+  min-height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,12 +274,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -293,12 +294,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -312,12 +313,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 40px;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -331,11 +332,6 @@
 }
 
 .absoluteInventory {
-  position: absolute;
-  width: 100%;
-  height: 190px;
-  top: 40px;
-  background: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -343,6 +339,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: absolute;
+  width: 100%;
+  height: 190px;
+  top: 40px;
+  background: #000;
   z-index: 2;
 }
 
@@ -351,16 +352,16 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
   cursor: pointer;
@@ -395,11 +396,6 @@
 }
 
 .companyProfile {
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  top: 40px;
-  background: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,6 +403,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 40px;
+  background: #000;
   z-index: 2;
 }
 
