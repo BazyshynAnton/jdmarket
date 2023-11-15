@@ -566,8 +566,8 @@ const Header = () => {
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isOpen}
-                    timeout={300} // Время анимации (в миллисекундах)
-                    classNames="dropdown" // CSS-классы для анимации
+                    timeout={300}
+                    classNames="dropdown"
                     unmountOnExit>
                     <div
                       ref={nodeRef}
@@ -624,8 +624,8 @@ const Header = () => {
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isOpenTwo}
-                    timeout={300} // Время анимации (в миллисекундах)
-                    classNames="dropdown" // CSS-классы для анимации
+                    timeout={300}
+                    classNames="dropdown"
                     unmountOnExit>
                     <div
                       ref={nodeRef}
@@ -671,8 +671,8 @@ const Header = () => {
                   <CSSTransition
                     nodeRef={nodeRef}
                     in={isOpenThree}
-                    timeout={300} // Время анимации (в миллисекундах)
-                    classNames="dropdown" // CSS-классы для анимации
+                    timeout={300}
+                    classNames="dropdown"
                     unmountOnExit>
                     <div
                       ref={nodeRef}
