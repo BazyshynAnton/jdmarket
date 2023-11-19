@@ -1,7 +1,7 @@
-import CardSale from '../../carSale/cardSale/CardSale'
-import { Box } from '@mui/material'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import vehiclePageCars from '../../../../data/vehiclePageCars'
+
+import CardSale from '../../carSale/cardSale/CardSale'
 
 import nonPorsche from '../../../../pictures/nonPorsche.jpg'
 import nonMercedes from '../../../../pictures/nonMercedes.jpg'
@@ -10,8 +10,9 @@ import nonFerrari from '../../../../pictures/nonFerrari.jpg'
 import nonBmw from '../../../../pictures/nonBmw.jpg'
 import nonJaguar from '../../../../pictures/nonJaguar.jpg'
 
+import vehiclePageCars from '../../../../data/vehiclePageCars'
+
 import styles from './NavSectionInNonJdm.module.css'
-import { useState } from 'react'
 
 const NavSectionInNonJdm = () => {
   const [sectionMark, setSectionMark] = useState(null)
@@ -23,8 +24,8 @@ const NavSectionInNonJdm = () => {
 
   return (
     <>
-      <Box className={styles.mainNavAndSectionContainer}>
-        <Box className={styles.navContainer}>
+      <div className={styles.mainNavAndSectionContainer}>
+        <div className={styles.navContainer}>
           <NavLink to="/" className={styles.homeBtn}>
             <p>HOME</p>
           </NavLink>
@@ -34,83 +35,77 @@ const NavSectionInNonJdm = () => {
           </NavLink>
           <p>{'>'}</p>
           <p>NON JDM</p>
-        </Box>
-      </Box>
-      <Box className={styles.sectionsContainer}>
-        <Box
+        </div>
+      </div>
+      <div className={styles.sectionsContainer}>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('porsche')}
-        >
+          onClick={() => setSectionMark('porsche')}>
           <img src={nonPorsche} alt="porsche" />
 
           <p>
             <i>PORSCHE</i>
           </p>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('mercedes')}
-        >
+          onClick={() => setSectionMark('mercedes')}>
           <img src={nonMercedes} alt="mercedes" />
 
           <p>
             <i>MERCEDES</i>
           </p>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('jaguar')}
-        >
+          onClick={() => setSectionMark('jaguar')}>
           <img src={nonJaguar} alt="jaguar" />
 
           <p>
             <i>JAGUAR</i>
           </p>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('ferrari')}
-        >
+          onClick={() => setSectionMark('ferrari')}>
           <img src={nonFerrari} alt="ferrari" />
 
           <p>
             <i>FERRARI</i>
           </p>
-        </Box>
+        </div>
 
-        <Box className={styles.section} onClick={() => setSectionMark('bmw')}>
+        <div className={styles.section} onClick={() => setSectionMark('bmw')}>
           <img src={nonBmw} alt="bmw" />
 
           <p>
             <i>BMW</i>
           </p>
-        </Box>
-        <Box className={styles.section} onClick={() => setSectionMark('audi')}>
+        </div>
+        <div className={styles.section} onClick={() => setSectionMark('audi')}>
           <img src={nonAudi} alt="audi" />
 
           <p>
             <i>AUDI</i>
           </p>
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       {sectionMark !== null && (
         <button
           className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}
-        >
+          onClick={() => setSectionMark(null)}>
           <p>Reset Filter</p>
         </button>
       )}
 
-      <Box className={styles.containerOfAllCars}>
+      <div className={styles.containerOfAllCars}>
         {sectionMark === null
           ? filterCarsByClass.map((card) => (
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-              >
+                onClick={() => window.scrollTo(0, 0)}>
                 <CardSale card={card} />
               </NavLink>
             ))
@@ -118,12 +113,11 @@ const NavSectionInNonJdm = () => {
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-              >
+                onClick={() => window.scrollTo(0, 0)}>
                 <CardSale card={card} />
               </NavLink>
             ))}
-      </Box>
+      </div>
     </>
   )
 }

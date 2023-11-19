@@ -1,7 +1,9 @@
+@import '../../../scssMixinsAndVariables/variables.scss';
+@import '../../../scssMixinsAndVariables/mixins.scss';
+
 .mainCOntainerOfUserPage {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include blockSettings(flex, row, space-between);
+
   background: #fff;
   height: 500px;
   padding: 20px;
@@ -37,9 +39,7 @@
 //card
 
 .cardOfCarsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include blockSettings2(flex, center, center);
   flex-direction: column;
   width: 100%;
 
@@ -47,9 +47,7 @@
   cursor: pointer;
 
   .imgContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include blockSettings2(flex, center, center);
     width: 100%;
     height: 180px;
     padding-top: 20px;
@@ -62,10 +60,8 @@
 }
 
 .cardTextAndButton {
-  display: flex;
+  @include blockSettings2(flex, space-between, center);
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   height: 45px;
 
   p {
@@ -75,12 +71,11 @@
 }
 
 .removeFromFavorites {
-  display: flex;
-  align-items: center;
+  @include blockSettings3(flex, flex-start, center);
+
   flex-direction: row;
 
   width: 85px;
-  justify-content: flex-start;
 
   &:hover {
     .removeButton {
@@ -115,7 +110,7 @@
   );
   width: 180px;
   height: 45px;
-  font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+  font-family: $gothicFont;
   font-weight: normal;
   font-size: 30px;
 
@@ -139,9 +134,7 @@
 }
 
 .swiperSlideContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include blockSettings2(flex, center, center);
 }
 
 //CardNavBtns
@@ -151,9 +144,7 @@
   position: absolute;
   top: -30px;
   right: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  @include blockSettings(flex, row, space-between);
   z-index: 9999;
   div {
     cursor: pointer;
@@ -189,15 +180,13 @@
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: normal;
-    font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+    font-family: $gothicFont;
   }
 }
 
 .forRadioAndCheckboxContainer {
-  display: flex;
+  @include blockSettings2(flex, flex-start, center);
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
   gap: 0.2rem;
   label {
     padding-right: 7px;

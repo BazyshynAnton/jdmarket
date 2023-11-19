@@ -4,7 +4,6 @@
 }
 
 .containerInfo {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,21 +11,22 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
-  height: 110px;
-  margin-top: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  width: 100%;
+  height: 110px;
+  margin-top: 50px;
+  gap: 2rem;
   z-index: 3;
 }
 .containerInfo p {
   font-size: 18px;
-  font-family: Pathway Gothic One, PathwayGothicOneRegular, Arial, Helvetica, sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   color: white;
 }
 .containerInfo::before {
@@ -57,7 +57,6 @@
 }
 
 .contentTextInfo {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,11 +64,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
-  height: 40px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 40px;
   gap: 2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -167,18 +167,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .modalContent .shyText {
   font-size: 20px;
   color: red;
-  font-family: Pathway Gothic One, PathwayGothicOneRegular, Arial, Helvetica, sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   font-weight: 100;
 }
 .modalContent p {
@@ -223,18 +223,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .helpContent .shyText {
   font-size: 20px;
   color: red;
-  font-family: Pathway Gothic One, PathwayGothicOneRegular, Arial, Helvetica, sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   font-weight: 100;
 }
 .helpContent p {
@@ -275,10 +275,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

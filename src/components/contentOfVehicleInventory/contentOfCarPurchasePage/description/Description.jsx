@@ -1,9 +1,8 @@
-import { Box } from '@mui/material'
 import styles from '../infoAboutCar/InfoAndVideoAboutCar.module.css'
 
 const Description = () => {
   return (
-    <Box className={styles.descrip}>
+    <div className={styles.descrip}>
       <p>Nissan Skyline GTR R34 V spec</p>
       <p>Factory stock bayside blue color</p>
       <p>Upgraded Oil Cooler</p>
@@ -27,7 +26,7 @@ const Description = () => {
       <p>So it is almost one owner car with low mileage.</p>
       <p>Ownership papers are available upon the request.</p>
       <p>NEGOTIATE THE BEST PRICE</p>
-    </Box>
+    </div>
   )
 }
 

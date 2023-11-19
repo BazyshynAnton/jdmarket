@@ -16,7 +16,7 @@
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), white);
   width: 210px;
   height: 45px;
-  font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   font-weight: normal;
   font-size: 30px;
 }
@@ -35,7 +35,7 @@
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), white);
   width: 350px;
   height: 45px;
-  font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   font-weight: normal;
   font-size: 30px;
 }
@@ -51,7 +51,7 @@
   width: 100%;
   background: white;
   padding: 10px 0px 0px 20px;
-  font-family: Pathway Gothic One, Arial, Helvetica, sans-serif;
+  font-family: "Pathway Gothic One", sans-serif;
   font-weight: normal;
   font-size: 22px;
   z-index: 3;
@@ -79,24 +79,24 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cardOfCarsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -110,12 +110,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 180px;
 }
@@ -164,12 +164,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .cardOfManufactureContainer img {
   -o-object-fit: cover;

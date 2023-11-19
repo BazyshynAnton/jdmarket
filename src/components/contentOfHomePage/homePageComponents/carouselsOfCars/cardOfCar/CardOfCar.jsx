@@ -1,7 +1,8 @@
-import swal from 'sweetalert'
-import { Box } from '@mui/material'
-import styles from '../CarouselsOfCars.module.css'
 import { NavLink } from 'react-router-dom'
+
+import swal from 'sweetalert'
+
+import styles from '../CarouselsOfCars.module.css'
 
 const stylesForCardOfFavoriteCars = {
   btn: {
@@ -22,11 +23,11 @@ const stylesForCardOfFavoriteCars = {
 
 const CardOfCar = ({ text, img, id }) => {
   return (
-    <Box className={styles.cardOfCarsContainer}>
-      <Box className={styles.imgContainer}>
+    <div className={styles.cardOfCarsContainer}>
+      <div className={styles.imgContainer}>
         <img src={img} alt="car" />
-      </Box>
-      <Box className={styles.cardTextAndButton}>
+      </div>
+      <div className={styles.cardTextAndButton}>
         <p style={{ fontFamily: 'Open Sans, sans-serif' }}>{text}</p>
         {id === '8402' && (
           <NavLink
@@ -49,8 +50,8 @@ const CardOfCar = ({ text, img, id }) => {
             view details
           </button>
         )}
-      </Box>
-    </Box>
+      </div>
+    </div>
   )
 }
 

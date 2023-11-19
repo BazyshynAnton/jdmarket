@@ -1,8 +1,9 @@
-import { Box } from '@mui/material'
-import avatarExample from '../../../../pictures/avatarExample.jpg'
-import styles from '../ContentOfUserPage.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setEdit } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+
+import avatarExample from '../../../../pictures/avatarExample.jpg'
+
+import styles from '../ContentOfUserPage.module.css'
 
 const stylesForTextAndButton = {
   text: {
@@ -32,10 +33,10 @@ const UserInfo = () => {
   const dispatch = useDispatch()
 
   return (
-    <Box className={styles.userInfo}>
-      <Box className={styles.userAvatarContainer}>
+    <div className={styles.userInfo}>
+      <div className={styles.userAvatarContainer}>
         <img src={avatarExample} alt="user-avatar" />
-      </Box>
+      </div>
 
       <p style={stylesForTextAndButton.text}>
         {accountInfo.nameAccount} {accountInfo.secondName}
@@ -63,7 +64,7 @@ const UserInfo = () => {
           Edit Profile
         </button>
       )}
-    </Box>
+    </div>
   )
 }
 

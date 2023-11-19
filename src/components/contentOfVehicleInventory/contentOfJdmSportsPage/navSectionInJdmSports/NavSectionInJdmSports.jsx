@@ -1,7 +1,6 @@
-import CardSale from '../../carSale/cardSale/CardSale'
-import { Box } from '@mui/material'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import vehiclePageCars from '../../../../data/vehiclePageCars'
+import CardSale from '../../carSale/cardSale/CardSale'
 
 import nissanSection from '../../../../pictures/nissanSection.jpg'
 import mitsubishiSection from '../../../../pictures/mitsubishiSection.jpg'
@@ -10,8 +9,9 @@ import toyotaSection from '../../../../pictures/toyotaSection.jpg'
 import subaruSection from '../../../../pictures/subaruSection.jpg'
 import hondaSection from '../../../../pictures/hondaSection.jpg'
 
+import vehiclePageCars from '../../../../data/vehiclePageCars'
+
 import styles from './NavSectionInJdmSports.module.css'
-import { useState } from 'react'
 
 const NavSectionInJdmSports = () => {
   const [sectionMark, setSectionMark] = useState(null)
@@ -23,8 +23,8 @@ const NavSectionInJdmSports = () => {
 
   return (
     <>
-      <Box className={styles.mainNavAndSectionContainer}>
-        <Box className={styles.navContainer}>
+      <div className={styles.mainNavAndSectionContainer}>
+        <div className={styles.navContainer}>
           <NavLink to="/" className={styles.homeBtn}>
             <p>HOME</p>
           </NavLink>
@@ -34,83 +34,77 @@ const NavSectionInJdmSports = () => {
           </NavLink>
           <p>{'>'}</p>
           <p>JDM sports</p>
-        </Box>
-      </Box>
-      <Box className={styles.sectionsContainer}>
-        <Box
+        </div>
+      </div>
+      <div className={styles.sectionsContainer}>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('nissan')}
-        >
+          onClick={() => setSectionMark('nissan')}>
           <img src={nissanSection} alt="nissan" />
 
           <p>
             <i>NISSAN</i>
           </p>
-        </Box>
+        </div>
 
-        <Box
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('mitsubishi')}
-        >
+          onClick={() => setSectionMark('mitsubishi')}>
           <img src={mitsubishiSection} alt="mitsubishi" />
 
           <p>
             <i>MITSUBISHI</i>
           </p>
-        </Box>
-        <Box className={styles.section} onClick={() => setSectionMark('mazda')}>
+        </div>
+        <div className={styles.section} onClick={() => setSectionMark('mazda')}>
           <img src={mazdaSection} alt="mazda" />
 
           <p>
             <i>MAZDA</i>
           </p>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('toyota')}
-        >
+          onClick={() => setSectionMark('toyota')}>
           <img src={toyotaSection} alt="toyota" />
 
           <p>
             <i>TOYOTA</i>
           </p>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('subaru')}
-        >
+          onClick={() => setSectionMark('subaru')}>
           <img src={subaruSection} alt="subaru" />
 
           <p>
             <i>SUBARU</i>
           </p>
-        </Box>
-        <Box className={styles.section} onClick={() => setSectionMark('honda')}>
+        </div>
+        <div className={styles.section} onClick={() => setSectionMark('honda')}>
           <img src={hondaSection} alt="honda" />
 
           <p>
             <i>HONDA</i>
           </p>
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       {sectionMark !== null && (
         <button
           className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}
-        >
+          onClick={() => setSectionMark(null)}>
           <p>Reset Filter</p>
         </button>
       )}
 
-      <Box className={styles.containerOfAllCars}>
+      <div className={styles.containerOfAllCars}>
         {sectionMark === null
           ? filteredCarsByClass.map((card) => (
               <NavLink
                 to={`/vehicle-inventory/${card.id}`}
                 onClick={() => window.scrollTo(0, 0)}
-                key={card.id}
-              >
+                key={card.id}>
                 <CardSale card={card} />
               </NavLink>
             ))
@@ -118,12 +112,11 @@ const NavSectionInJdmSports = () => {
               <NavLink
                 to={`/vehicle-inventory/${card.id}`}
                 onClick={() => window.scrollTo(0, 0)}
-                key={card.id}
-              >
+                key={card.id}>
                 <CardSale card={card} />
               </NavLink>
             ))}
-      </Box>
+      </div>
     </>
   )
 }

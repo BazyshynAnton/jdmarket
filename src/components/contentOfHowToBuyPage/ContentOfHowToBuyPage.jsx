@@ -16,17 +16,17 @@ import styles from './ContentOfHowToBuyPage.module.css'
 const ContentOfHowToBuyPage = () => {
   return (
     <Container>
-      <Box className={styles.navigationBoxContainer}>
+      <div className={styles.navigationBoxContainer}>
         <NavLink to="/" className={styles.navTextLink}>
           <p>HOME</p>
         </NavLink>
         <p>{'>'}</p>
         <p>How to buy?</p>
-      </Box>
+      </div>
 
-      <Box className={styles.wrapperInfoContainer}>
-        <Box
-          sx={{ fontFamily: 'Open Sans, sans-serif', fontSize: '13.5px' }}
+      <div className={styles.wrapperInfoContainer}>
+        <div
+          style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '13.5px' }}
           className={styles.infoContainer}>
           <h1>How to Buy JDM Inventory Vehicles?</h1>
           <h3>
@@ -34,7 +34,7 @@ const ContentOfHowToBuyPage = () => {
             think! Here are 7 easy steps of purchasing process of JDM Co., Ltd.
             inventory cars
           </h3>
-          <Box>
+          <div>
             <img
               src={selectCar}
               alt="select-car-instructions"
@@ -76,7 +76,7 @@ const ContentOfHowToBuyPage = () => {
               alt="drive-instructions"
               className={styles.coverImg}
             />
-          </Box>
+          </div>
 
           <h4>
             *If you would like to have any sort of assistance in regards with
@@ -91,8 +91,8 @@ const ContentOfHowToBuyPage = () => {
             it for you in Japan.
           </h4>
           <img src={stockSearch} alt="stock" className={styles.coverImg} />
-        </Box>
-      </Box>
+        </div>
+      </div>
     </Container>
   )
 }

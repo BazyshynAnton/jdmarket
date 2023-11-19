@@ -1,23 +1,20 @@
+import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Box } from '@mui/material'
 import { Navigation } from 'swiper/modules'
-import 'swiper/css'
 
 import CardOfCar from '../cardOfCar/CardOfCar'
 import SwiperNavBtns from '../swiperNavBtns/SwiperNavBtns'
+
 import cars from '../../../../../data/cars'
 
+import 'swiper/css'
 import styles from '../CarouselsOfCars.module.css'
-import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
 
 const LatestArrivals = () => {
   const [slidesPerView, setSlidesPerView] = useState(4)
 
   useEffect(() => {
     const handleResize = () => {
-      // При ширине экрана меньше 800px, устанавливаем 3 слайда,
-      // в противном случае устанавливаем 4 слайда (по умолчанию).
       if (window.innerWidth <= 380) {
         setSlidesPerView(1)
       } else if (window.innerWidth <= 655) {
@@ -29,24 +26,22 @@ const LatestArrivals = () => {
       }
     }
 
-    // Вызываем handleResize при загрузке страницы и изменении размера окна.
     handleResize()
     window.addEventListener('resize', handleResize)
 
-    // Очищаем слушатель событий при размонтировании компонента.
     return () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
 
   return (
-    <Box className={styles.mainContainerSwiper}>
-      <Box className={styles.nameOfSwiper}>
+    <div className={styles.mainContainerSwiper}>
+      <div className={styles.nameOfSwiper}>
         <p>LATEST ARRIVALS</p>
-      </Box>
-      <Box className={styles.titleOfSwiper}>
+      </div>
+      <div className={styles.titleOfSwiper}>
         <p>Latest arrived Vehicles to our Inventory</p>
-      </Box>
+      </div>
 
       <Swiper
         slidesPerView={slidesPerView}
@@ -61,7 +56,7 @@ const LatestArrivals = () => {
         ))}
         <SwiperNavBtns />
       </Swiper>
-    </Box>
+    </div>
   )
 }
 

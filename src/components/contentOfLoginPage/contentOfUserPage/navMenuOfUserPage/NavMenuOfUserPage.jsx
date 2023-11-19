@@ -1,18 +1,17 @@
-import { Box } from '@mui/material'
-import styles from '../ContentOfUserPage.module.css'
 import { NavLink } from 'react-router-dom'
+
+import styles from '../ContentOfUserPage.module.css'
 
 const NavMenuOfUserPage = () => {
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
         gap: '1rem',
-      }}
-    >
-      <Box className={styles.navMenuOfUserPage}>
+      }}>
+      <div className={styles.navMenuOfUserPage}>
         <NavLink to="/">
           <p>HOME</p>
         </NavLink>
@@ -21,24 +20,22 @@ const NavMenuOfUserPage = () => {
             color: 'black',
             cursor: 'text',
             textDecoration: 'none',
-          }}
-        >
+          }}>
           {'>'}
         </p>
         <p style={{ color: 'black', cursor: 'text', textDecoration: 'none' }}>
           User
         </p>
-      </Box>
+      </div>
 
       <p
         style={{
           fontSize: '22px',
           fontFamily: 'Pathway Gothic One, Arial, Helvetica, sans-serif',
-        }}
-      >
+        }}>
         User profile
       </p>
-    </Box>
+    </div>
   )
 }
 

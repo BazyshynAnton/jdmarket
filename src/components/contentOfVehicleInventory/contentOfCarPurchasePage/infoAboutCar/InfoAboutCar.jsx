@@ -1,11 +1,12 @@
-import { Box, useMediaQuery } from '@mui/material'
-import styles from './InfoAndVideoAboutCar.module.css'
+import { useMediaQuery } from '@mui/material'
+
 import VideoAboutCar from './VideoAboutCar'
+
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  setInFavorite,
-  setFavoriteCar,
-} from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+import { setFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+
+import styles from './InfoAndVideoAboutCar.module.css'
+
 const colorForInformation = {
   color: '#800000',
 }
@@ -20,31 +21,31 @@ const InfoAboutCar = () => {
 
   const isDesktop = useMediaQuery('(min-width:236px)')
   return (
-    <Box className={styles.mainInfoContainer}>
+    <div className={styles.mainInfoContainer}>
       <h1>Nissan Skyline GTR R34 V spec (N.8402)</h1>
       {!!isDesktop && (
-        <Box className={styles.mainTxtContainer}>
-          <Box className={styles.info}>
+        <div className={styles.mainTxtContainer}>
+          <div className={styles.info}>
             <p>Stock number:</p>
             <p>Mileage:</p>
             <p>Year:</p>
             <p>Fuel:</p>
             <p>Chassis number:</p>
             <p>Transmission:</p>
-          </Box>
-          <Box className={styles.info}>
+          </div>
+          <div className={styles.info}>
             <p>#8402</p>
             <p>40,941 km</p>
             <p>10/1999</p>
             <p>Gasoline</p>
             <p>BNR34-005552</p>
             <p>M/T6</p>
-          </Box>
-        </Box>
+          </div>
+        </div>
       )}
       {!isDesktop && (
-        <Box className={styles.mainTxtContainer}>
-          <Box className={styles.info}>
+        <div className={styles.mainTxtContainer}>
+          <div className={styles.info}>
             <p>Stock number:</p>
             <p style={colorForInformation}>#8402</p>
             <p>Mileage:</p>
@@ -57,8 +58,8 @@ const InfoAboutCar = () => {
             <p style={colorForInformation}>BNR34-005552</p>
             <p>Transmission:</p>
             <p style={colorForInformation}>M/T6</p>
-          </Box>
-        </Box>
+          </div>
+        </div>
       )}
       <h2>Price(USD): $245000</h2>
 
@@ -70,8 +71,7 @@ const InfoAboutCar = () => {
                 title: 'Again?...',
                 text: 'This car has already been added to favorites!😊',
               })
-            }
-          >
+            }>
             ✦ Add to favorites
           </button> //ALREADY
         ) : (
@@ -83,8 +83,7 @@ const InfoAboutCar = () => {
                 title: 'Great!',
                 text: 'We are waiting for your letter!😊',
               })
-            }}
-          >
+            }}>
             ✦ Add to favorites
           </button> // ADD!!!
         )
@@ -95,13 +94,12 @@ const InfoAboutCar = () => {
               title: 'Oops...',
               text: 'Please "Log in" or register.',
             })
-          }
-        >
+          }>
           ✦ Add to favorites
         </button> // PLZ REGISTER!!!
       )}
       <VideoAboutCar />
-    </Box>
+    </div>
   )
 }
 

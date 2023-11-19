@@ -1,3 +1,5 @@
+@import '../../../../scssMixinsAndVariables/mixins.scss';
+
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -18,21 +20,19 @@
 }
 
 .smallImgs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   object-fit: cover;
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: center;
   .imgClick {
     cursor: pointer;
   }
 }
 
 .containerInfoAndSlider {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include blockSettings(flex, row, space-between);
 }
 
 //nf

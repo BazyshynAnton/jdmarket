@@ -1,13 +1,14 @@
-import { Box } from '@mui/material'
-import slides from '../../../../data/slides'
 import Carousel from 'react-material-ui-carousel'
 import Item from './Item'
 import IndiIco from './IndiIco'
+
+import slides from '../../../../data/slides'
+
 import styles from './CarouselSlide.module.css'
 
 const CarouselSlide = () => {
   return (
-    <Box className={styles.carouselAndTitleContainer}>
+    <div className={styles.carouselAndTitleContainer}>
       <Carousel
         className={styles.imgContainerSlide}
         IndicatorIcon={slides.map((slide) => (
@@ -32,7 +33,7 @@ const CarouselSlide = () => {
           <Item key={slide.id} slide={slide} />
         ))}
       </Carousel>
-    </Box>
+    </div>
   )
 }
 

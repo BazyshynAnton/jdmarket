@@ -1,5 +1,3 @@
-import { Box } from '@mui/material'
-import styles from '../ContentOfUserPage.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   setDefaultData,
@@ -8,6 +6,8 @@ import {
   setConfirm,
   setControllEditProfile,
 } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+
+import styles from '../ContentOfUserPage.module.css'
 
 const stylesForEditForm = {
   stylesForRadioInput: {
@@ -48,12 +48,12 @@ const EditProfile = () => {
   }
 
   return (
-    <Box className={styles.containerEditProfile}>
+    <div className={styles.containerEditProfile}>
       <h4>YOUR PERSONAL INFORMATION</h4>
 
       <form onSubmit={handleFormSubmit} className={styles.formEditContent}>
         <p>Title</p>
-        <Box className={styles.forRadioAndCheckboxContainer}>
+        <div className={styles.forRadioAndCheckboxContainer}>
           <input
             style={stylesForEditForm.stylesForRadioInput}
             type="radio"
@@ -74,8 +74,8 @@ const EditProfile = () => {
             onChange={handleRadioMissusChange}
           />
           <label htmlFor="missus">Ms.</label>
-        </Box>
-        <Box sx={stylesForEditForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForEditForm.stylesForIputContainer}>
           {inputNameAccountControll ? (
             <label htmlFor="nameAccount" style={{ color: 'red' }}>
               First name*
@@ -89,8 +89,8 @@ const EditProfile = () => {
             value={accountInfo.nameAccount}
             onChange={handleInputChange}
           />
-        </Box>
-        <Box sx={stylesForEditForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForEditForm.stylesForIputContainer}>
           {inputSecondNameControll ? (
             <label htmlFor="secondName" style={{ color: 'red' }}>
               Last name*
@@ -104,8 +104,8 @@ const EditProfile = () => {
             value={accountInfo.secondName}
             onChange={handleInputChange}
           />
-        </Box>
-        <Box sx={stylesForEditForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForEditForm.stylesForIputContainer}>
           {inputEmailControll ? (
             <label htmlFor="email3" style={{ color: 'red' }}>
               Email*
@@ -120,8 +120,8 @@ const EditProfile = () => {
             defaultValue={accountInfo.emailAddress}
             onChange={handleInputChange}
           />
-        </Box>
-        <Box sx={stylesForEditForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForEditForm.stylesForIputContainer}>
           {inputPasswordControll ? (
             <label htmlFor="password2" style={{ color: 'red' }}>
               Password*
@@ -136,8 +136,8 @@ const EditProfile = () => {
             value={accountInfo.password}
             onChange={handleInputChange}
           />
-        </Box>
-        <Box sx={stylesForEditForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForEditForm.stylesForIputContainer}>
           <label htmlFor="photo">Change Profile Picrure</label>
           <input
             style={{
@@ -150,8 +150,8 @@ const EditProfile = () => {
             name="photo"
             id="photo"
           />
-        </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           {accountInfo.nameAccount === '' ||
           accountInfo.secondName === '' ||
           accountInfo.emailAddress === '' ||
@@ -175,9 +175,9 @@ const EditProfile = () => {
               confirm
             </button>
           )}
-        </Box>
+        </div>
       </form>
-    </Box>
+    </div>
   )
 }
 

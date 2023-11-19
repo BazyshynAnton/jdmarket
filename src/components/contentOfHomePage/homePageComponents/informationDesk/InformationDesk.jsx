@@ -1,12 +1,12 @@
-import { Box } from '@mui/material'
 import React, { useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
+
 import AddIcCallIcon from '@mui/icons-material/AddIcCall'
 import ManageHistoryIcon from '@mui/icons-material/ManageHistory'
 import EmailIcon from '@mui/icons-material/Email'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 import styles from './InformationDesk.module.css'
-import { CSSTransition } from 'react-transition-group'
 
 const InformationDesk = () => {
   const nodeRef = React.useRef(null)
@@ -47,7 +47,7 @@ const InformationDesk = () => {
   }
 
   return (
-    <Box className={styles.containerInfo}>
+    <div className={styles.containerInfo}>
       <CSSTransition
         nodeRef={nodeRef}
         in={isOpen}
@@ -106,40 +106,40 @@ const InformationDesk = () => {
           </form>
         </div>
       </CSSTransition>
-      <Box className={styles.contentTextInfo}>
-        <Box className={styles.containerText}>
+      <div className={styles.contentTextInfo}>
+        <div className={styles.containerText}>
           <h5 className={styles.header}>CONTACT US</h5>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.containerTextModal}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}>
           <AddIcCallIcon className={styles.phone} />
           <p>+81-573-66-5670</p>
-        </Box>
+        </div>
 
-        <Box className={styles.containerText}>
+        <div className={styles.containerText}>
           <ManageHistoryIcon className={styles.oclock} />
-          <Box>
+          <div>
             <p>Sales: 7 Days a Week</p>
             <p>Operations: Mon-Fri 9:00AM-6:00PM PST</p>
-          </Box>
-        </Box>
-        <Box
+          </div>
+        </div>
+        <div
           className={styles.containerText}
           onMouseEnter={handleMouseEnterTwo}
           onMouseLeave={handleMouseLeaveTwo}>
           <EmailIcon className={styles.mail} />
           <p>info@jdm.com</p>
-        </Box>
-        <Box className={styles.containerText}>
+        </div>
+        <div className={styles.containerText}>
           <WhatsAppIcon className={styles.skype} />
-          <Box>
+          <div>
             <p>WhatsApp: +818045457447</p>
-          </Box>
-        </Box>
-      </Box>
-    </Box>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

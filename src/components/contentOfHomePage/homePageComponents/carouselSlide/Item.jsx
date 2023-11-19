@@ -1,17 +1,16 @@
-import { Box } from '@mui/material'
 import styles from './CarouselSlide.module.css'
 
 const Item = ({ slide }) => {
   return (
-    <Box className={styles.imgContainerSlide}>
-      <Box className={styles.titleOnSlide}>
-        <Box className={styles.bgAndText}>
+    <div className={styles.imgContainerSlide}>
+      <div className={styles.titleOnSlide}>
+        <div className={styles.bgAndText}>
           <h3>{slide.header}</h3>
           <p>{slide.text}</p>
-        </Box>
-      </Box>
+        </div>
+      </div>
       <img src={slide.img} alt={slide.title} />
-    </Box>
+    </div>
   )
 }
 

@@ -26,8 +26,8 @@ const CarSale = () => {
 
   return (
     <>
-      <Box className={styles.mainNavAndSectionContainer}>
-        <Box className={styles.navContainer}>
+      <div className={styles.mainNavAndSectionContainer}>
+        <div className={styles.navContainer}>
           <NavLink
             to="/"
             onClick={() => window.scrollTo(0, 0)}
@@ -36,11 +36,11 @@ const CarSale = () => {
           </NavLink>
           <p>{'>'}</p>
           <p>Search</p>
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       {sort ? (
-        <Box sx={{ marginTop: '20px', flexWrap: 'wrap', width: '100%' }}>
+        <div style={{ marginTop: '20px', flexWrap: 'wrap', width: '100%' }}>
           <h4 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '15px' }}>
             Search{' '}
             <span style={{ color: 'red' }}>
@@ -51,14 +51,14 @@ const CarSale = () => {
             {' - '}
             {filteredCars.length} results have been found.
           </h4>
-        </Box>
+        </div>
       ) : (
-        <Box sx={{ marginTop: '20px', flexWrap: 'wrap', width: '100%' }}>
+        <div style={{ marginTop: '20px', flexWrap: 'wrap', width: '100%' }}>
           <h4>I am looking for...</h4>
-        </Box>
+        </div>
       )}
 
-      <Box className={styles.containerOfAllCars}>
+      <div className={styles.containerOfAllCars}>
         {sort
           ? filteredCars.map((card) => (
               <NavLink
@@ -69,7 +69,7 @@ const CarSale = () => {
               </NavLink>
             ))
           : ''}
-      </Box>
+      </div>
     </>
   )
 }

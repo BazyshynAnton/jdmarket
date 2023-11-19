@@ -1,11 +1,10 @@
+import { useState } from 'react'
 import { useSwiper } from 'swiper/react'
+
 import buttonNext from '../../../../../pictures/button-next.png'
 import buttonPrevious from '../../../../../pictures/button-previous.png'
 import buttonNextRed from '../../../../../pictures/button-next-red.png'
 import buttonPreviousRed from '../../../../../pictures/button-previous-red.png'
-import styles from './SwiperNavBtns.module.css'
-import { useState } from 'react'
-import { Box } from '@mui/material'
 
 const SwiperManufactureNavBtns = () => {
   const [arrow, setArrow] = useState(false)
@@ -28,8 +27,8 @@ const SwiperManufactureNavBtns = () => {
   }
   return (
     <>
-      <Box
-        sx={{
+      <div
+        style={{
           position: 'absolute',
           zIndex: '9999',
           top: '45%',
@@ -44,9 +43,9 @@ const SwiperManufactureNavBtns = () => {
         ) : (
           <img src={buttonPrevious} alt="prev" />
         )}
-      </Box>
-      <Box
-        sx={{
+      </div>
+      <div
+        style={{
           position: 'absolute',
           zIndex: '9999',
           top: '45%',
@@ -61,7 +60,7 @@ const SwiperManufactureNavBtns = () => {
         ) : (
           <img src={buttonNext} alt="next" />
         )}
-      </Box>
+      </div>
     </>
   )
 }

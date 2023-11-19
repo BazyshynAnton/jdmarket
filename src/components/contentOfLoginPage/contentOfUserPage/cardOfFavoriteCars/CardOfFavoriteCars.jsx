@@ -1,11 +1,12 @@
-import { Box, useMediaQuery } from '@mui/material'
-import { NavLink } from 'react-router-dom'
-import CancelIcon from '@mui/icons-material/Cancel'
-import styles from '../ContentOfUserPage.module.css'
-
-import { setRemoveFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
-import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { setRemoveFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+
+import CancelIcon from '@mui/icons-material/Cancel'
+
+import styles from '../ContentOfUserPage.module.css'
 
 const stylesForCardOfFavoriteCars = {
   btn: {
@@ -56,14 +57,14 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
   const dispatch = useDispatch()
   const { favoriteCar } = useSelector((store) => store.registeredAccount)
   return (
-    <Box className={styles.cardOfCarsContainer}>
-      <Box className={styles.imgContainer}>
+    <div className={styles.cardOfCarsContainer}>
+      <div className={styles.imgContainer}>
         <img src={img} alt="car" />
-      </Box>
+      </div>
 
       {id === '8402' && (
         <>
-          <Box className={styles.cardTextAndButton}>
+          <div className={styles.cardTextAndButton}>
             <p style={{ fontFamily: 'Open Sans, sans-serif' }}>{text}</p>
             <NavLink
               to="/vehicle-inventory/8f22002c-8568-4e5b-829c-84cebeea1130"
@@ -74,22 +75,22 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
               }>
               view details
             </NavLink>
-          </Box>
-          <Box sx={{ width: '100%' }}>
-            <Box
+          </div>
+          <div style={{ width: '100%' }}>
+            <div
               className={styles.removeFromFavorites}
               onClick={() =>
                 dispatch(setRemoveFavoriteCar(favoriteCar.id.replace(id, '')))
               }>
               <p style={{ fontFamily: 'Open Sans, sans-serif' }}>Remove</p>
               <CancelIcon className={styles.removeButton} />
-            </Box>
-          </Box>
+            </div>
+          </div>
         </>
       )}
       {id !== '8402' && (
         <>
-          <Box className={styles.cardTextAndButton}>
+          <div className={styles.cardTextAndButton}>
             <p>{text}</p>
             <button
               style={stylesForCardOfFavoriteCars.btn}
@@ -101,20 +102,20 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
               }>
               view details
             </button>
-          </Box>
-          <Box sx={{ width: '100%' }}>
-            <Box
+          </div>
+          <div style={{ width: '100%' }}>
+            <div
               className={styles.removeFromFavorites}
               onClick={() => {
                 dispatch(setRemoveFavoriteCar(favoriteCar.id.replace(id, '')))
               }}>
               <p>Remove</p>
               <CancelIcon className={styles.removeButton} />
-            </Box>
-          </Box>
+            </div>
+          </div>
         </>
       )}
-    </Box>
+    </div>
   )
 }
 

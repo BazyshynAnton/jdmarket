@@ -1,3 +1,5 @@
+@import '../../../scssMixinsAndVariables/mixins.scss';
+
 .mainContainer {
   margin-top: 20px;
   display: flex;
@@ -7,9 +9,8 @@
 }
 
 .navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  @include blockSettings(flex, row, flex-start);
+
   gap: 0.2rem;
 
   font-size: 12px;

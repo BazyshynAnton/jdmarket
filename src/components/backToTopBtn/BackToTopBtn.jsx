@@ -1,6 +1,7 @@
+import { useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import React, { useEffect, useState } from 'react'
-import { Box, Container } from '@mui/material'
+import { Container } from '@mui/material'
+
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow'
 import EmailIcon from '@mui/icons-material/Email'
 import PhoneIcon from '@mui/icons-material/Phone'
@@ -8,7 +9,7 @@ import PhoneIcon from '@mui/icons-material/Phone'
 import styles from './BackToTopBtn.module.css'
 
 const BackToTopBtn = () => {
-  const nodeRef = React.useRef(null)
+  const nodeRef = useRef(null)
 
   const [backToTopBtn, setBackToTopBtn] = useState(false)
 
@@ -49,7 +50,7 @@ const BackToTopBtn = () => {
 
   return (
     <Container>
-      <Box className={styles.mainContainer}>
+      <div className={styles.mainContainer}>
         <CSSTransition
           nodeRef={nodeRef}
           in={backToTopBtn}
@@ -57,7 +58,7 @@ const BackToTopBtn = () => {
           classNames="fadeBackToTopBtn"
           mountOnEnter
           unmountOnExit>
-          <Box ref={nodeRef} className={styles.backToTopBtnMainContainer}>
+          <div ref={nodeRef} className={styles.backToTopBtnMainContainer}>
             <CSSTransition
               nodeRef={nodeRef}
               in={isOpen}
@@ -65,23 +66,23 @@ const BackToTopBtn = () => {
               classNames="infoMail"
               mountOnEnter
               unmountOnExit>
-              <Box
+              <div
                 ref={nodeRef}
                 className={styles.infoMail}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}>
                 <p>info@jdm.com</p>
-              </Box>
+              </div>
             </CSSTransition>
-            <Box onClick={scrollUp} className={styles.backToTopBtnIcon}>
+            <div onClick={scrollUp} className={styles.backToTopBtnIcon}>
               <DoubleArrowIcon />
-            </Box>
-            <Box
+            </div>
+            <div
               className={styles.emailIcon}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}>
               <EmailIcon />
-            </Box>
+            </div>
             <CSSTransition
               nodeRef={nodeRef}
               in={isOpenTwo}
@@ -89,23 +90,23 @@ const BackToTopBtn = () => {
               classNames="infoMail"
               mountOnEnter
               unmountOnExit>
-              <Box
+              <div
                 ref={nodeRef}
                 className={styles.infoPhone}
                 onMouseEnter={handleMouseEnterTwo}
                 onMouseLeave={handleMouseLeaveTwo}>
                 <p>+81-573-56766</p>
-              </Box>
+              </div>
             </CSSTransition>
-            <Box
+            <div
               className={styles.phoneIcon}
               onMouseEnter={handleMouseEnterTwo}
               onMouseLeave={handleMouseLeaveTwo}>
               <PhoneIcon />
-            </Box>
-          </Box>
+            </div>
+          </div>
         </CSSTransition>
-      </Box>
+      </div>
     </Container>
   )
 }

@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import { Box } from '@mui/material'
 import CardSale from './cardSale/CardSale'
 
 import jdmSports from '../../../pictures/jdmSports.jpg'
@@ -12,25 +11,23 @@ import styles from './CarSale.module.css'
 const CarSale = () => {
   return (
     <>
-      <Box className={styles.mainNavAndSectionContainer}>
-        <Box className={styles.navContainer}>
+      <div className={styles.mainNavAndSectionContainer}>
+        <div className={styles.navContainer}>
           <NavLink
             to="/"
             onClick={() => window.scrollTo(0, 0)}
-            className={styles.homeBtn}
-          >
+            className={styles.homeBtn}>
             <p>HOME</p>
           </NavLink>
           <p>{'>'}</p>
           <p>VEHICLE INVENTORY</p>
-        </Box>
+        </div>
 
-        <Box className={styles.sectionsContainer}>
+        <div className={styles.sectionsContainer}>
           <NavLink
             to="/vehicle-inventory/jdm-sports"
             onClick={() => window.scrollTo(0, 0)}
-            className={`${styles.linkStyleForSection} ${styles.section}`}
-          >
+            className={`${styles.linkStyleForSection} ${styles.section}`}>
             <img src={jdmSports} alt="jdm-sports" />
 
             <p>
@@ -40,8 +37,7 @@ const CarSale = () => {
           <NavLink
             to="/vehicle-inventory/jdm-classic"
             onClick={() => window.scrollTo(0, 0)}
-            className={`${styles.linkStyleForSection} ${styles.section}`}
-          >
+            className={`${styles.linkStyleForSection} ${styles.section}`}>
             <img src={jdmClassic} alt="jdm-classic" />
 
             <p>
@@ -51,27 +47,25 @@ const CarSale = () => {
           <NavLink
             to="/vehicle-inventory/non-jdm"
             onClick={() => window.scrollTo(0, 0)}
-            className={`${styles.linkStyleForSection} ${styles.section}`}
-          >
+            className={`${styles.linkStyleForSection} ${styles.section}`}>
             <img src={nonJdm} alt="non-jdm" />
 
             <p>
               <i>NON JDM</i>
             </p>
           </NavLink>
-        </Box>
-      </Box>
-      <Box className={styles.containerOfAllCars}>
+        </div>
+      </div>
+      <div className={styles.containerOfAllCars}>
         {vehiclePageCars.map((card) => (
           <NavLink
             key={card.id}
             to={`/vehicle-inventory/${card.id}`}
-            onClick={() => window.scrollTo(0, 0)}
-          >
+            onClick={() => window.scrollTo(0, 0)}>
             <CardSale card={card} />
           </NavLink>
         ))}
-      </Box>
+      </div>
     </>
   )
 }

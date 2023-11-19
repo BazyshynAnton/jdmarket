@@ -1,7 +1,7 @@
-import CardSale from '../../carSale/cardSale/CardSale'
-import { Box } from '@mui/material'
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import vehiclePageCars from '../../../../data/vehiclePageCars'
+
+import CardSale from '../../carSale/cardSale/CardSale'
 
 import sectionClassicNissan from '../../../../pictures/sectionClassicNissan.jpg'
 import sectionClassicMitsubishi from '../../../../pictures/sectionClassicMitsubishi.jpg'
@@ -10,8 +10,9 @@ import sectionClassicToyota from '../../../../pictures/sectionClassicToyota.jpg'
 import sectionClassicSubaru from '../../../../pictures/sectionClassicSubaru.jpg'
 import sectionClassicHonda from '../../../../pictures/sectionClassicHonda.jpg'
 
+import vehiclePageCars from '../../../../data/vehiclePageCars'
+
 import styles from './NavSectionInJdmClassic.module.css'
-import { useState } from 'react'
 
 const NavSectionInJdmClassic = () => {
   const [sectionMark, setSectionMark] = useState(null)
@@ -22,8 +23,8 @@ const NavSectionInJdmClassic = () => {
   )
   return (
     <>
-      <Box className={styles.mainNavAndSectionContainer}>
-        <Box className={styles.navContainer}>
+      <div className={styles.mainNavAndSectionContainer}>
+        <div className={styles.navContainer}>
           <NavLink to="/" className={styles.homeBtn}>
             <p>HOME</p>
           </NavLink>
@@ -33,84 +34,76 @@ const NavSectionInJdmClassic = () => {
           </NavLink>
           <p>{'>'}</p>
           <p>JDM classic</p>
-        </Box>
-      </Box>
-      <Box className={styles.sectionsContainer}>
-        <Box
+        </div>
+      </div>
+      <div className={styles.sectionsContainer}>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('oldHonda')}
-        >
+          onClick={() => setSectionMark('oldHonda')}>
           <img src={sectionClassicHonda} alt="oldHonda" />
           <p>
             <i>HONDA</i>
           </p>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('oldToyota')}
-        >
+          onClick={() => setSectionMark('oldToyota')}>
           <img src={sectionClassicToyota} alt="oldToyota" />
           <p>
             <i>TOYOTA</i>
           </p>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('oldNissan')}
-        >
+          onClick={() => setSectionMark('oldNissan')}>
           <img src={sectionClassicNissan} alt="oldNissan" />
           <p>
             <i>NISSAN</i>
           </p>
-        </Box>
+        </div>
 
-        <Box
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('oldMitsubishi')}
-        >
+          onClick={() => setSectionMark('oldMitsubishi')}>
           <img src={sectionClassicMitsubishi} alt="oldMitsubishi" />
           <p>
             <i>MITSUBISHI</i>
           </p>
-        </Box>
+        </div>
 
-        <Box
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('oldSubaru')}
-        >
+          onClick={() => setSectionMark('oldSubaru')}>
           <img src={sectionClassicSubaru} alt="oldSubaru" />
           <p>
             <i>SUBARU</i>
           </p>
-        </Box>
-        <Box
+        </div>
+        <div
           className={styles.section}
-          onClick={() => setSectionMark('oldMazda')}
-        >
+          onClick={() => setSectionMark('oldMazda')}>
           <img src={sectionCLassicMazda} alt="oldMazda" />
           <p>
             <i>MAZDA</i>
           </p>
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       {sectionMark !== null && (
         <button
           className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}
-        >
+          onClick={() => setSectionMark(null)}>
           <p>Reset Filter</p>
         </button>
       )}
 
-      <Box className={styles.containerOfAllCars}>
+      <div className={styles.containerOfAllCars}>
         {sectionMark === null
           ? filteredCarsByClass.map((card) => (
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-              >
+                onClick={() => window.scrollTo(0, 0)}>
                 <CardSale card={card} />
               </NavLink>
             ))
@@ -118,12 +111,11 @@ const NavSectionInJdmClassic = () => {
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-              >
+                onClick={() => window.scrollTo(0, 0)}>
                 <CardSale card={card} />
               </NavLink>
             ))}
-      </Box>
+      </div>
     </>
   )
 }

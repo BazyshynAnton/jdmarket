@@ -1,3 +1,6 @@
+@import '../../../../scssMixinsAndVariables/variables.scss';
+@import '../../../../scssMixinsAndVariables/mixins.scss';
+
 .mainNavAndSectionContainer {
   display: flex;
   flex-direction: column;
@@ -5,9 +8,8 @@
 }
 
 .navContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  @include blockSettings(flex, row, flex-start);
+
   gap: 0.2rem;
 
   p {
@@ -26,19 +28,17 @@
 
 .sectionsContainer {
   margin-top: 20px;
-  display: flex;
-  flex-direction: row;
+  @include blockSettings(flex, row, center);
+
   width: 100%;
-  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
 .section {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include blockSettings3(flex, column, center);
+
   background: #c3c3c3;
   padding: 7px 7px 7px 7px;
   cursor: pointer;
@@ -47,7 +47,7 @@
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 0.5px;
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: $gothicFont;
     color: black;
   }
 
@@ -81,7 +81,7 @@
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 0.5px;
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: $gothicFont;
   color: black;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;

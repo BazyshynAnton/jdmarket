@@ -1,8 +1,10 @@
-import { Box } from '@mui/material'
-import styles from '../ContentOfLoginPage.module.css'
 import { NavLink } from 'react-router-dom'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { backToLoginPage } from '../createAccountAndRegisteredAccount/createAccountSlice'
+
+import styles from '../ContentOfLoginPage.module.css'
+
 const NavigationMenu = () => {
   const dispatch = useDispatch()
   const { registration } = useSelector((store) => store.formRegister)
@@ -12,16 +14,15 @@ const NavigationMenu = () => {
   }
 
   return (
-    <Box className={styles.mainNavContainer}>
-      <Box className={styles.navContainer}>
+    <div className={styles.mainNavContainer}>
+      <div className={styles.navContainer}>
         <NavLink to="/" onClick={() => scrollTo(0, 0)}>
           <p className={styles.linkNav}>HOME</p>
         </NavLink>
         <p>{'>'}</p>
         <p
           className={registration ? styles.linkNav : ''}
-          onClick={registration ? backToLoginPageLink : () => {}}
-        >
+          onClick={registration ? backToLoginPageLink : () => {}}>
           Authentication
         </p>
         {registration && (
@@ -30,14 +31,14 @@ const NavigationMenu = () => {
             <p>Create your account</p>
           </>
         )}
-      </Box>
+      </div>
 
       {!registration ? (
         <p className={styles.headerOfPage}>Authentication</p>
       ) : (
         <p className={styles.headerOfPage}>Create an account</p>
       )}
-    </Box>
+    </div>
   )
 }
 

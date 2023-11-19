@@ -1,16 +1,17 @@
-import { Container, Box } from '@mui/material'
+import { NavLink } from 'react-router-dom'
+import { Container } from '@mui/material'
+
+import InfromationDesk from '../../contentOfHomePage/homePageComponents/informationDesk/InformationDesk'
 import ImageInformationDesk from './imageInformationDesk/ImageInformationDesk'
-import styles from './ContentOfCarPurchasePage.module.css'
-import OrderSheet from './orderSheet/OrderSheet'
 import FeaturedCars from '../../contentOfHomePage/homePageComponents/carouselsOfCars/featuredCars/FeaturedCars'
 import ForumBanner from '../../contentOfHomePage/homePageComponents/forumBanner/ForumBanner'
-import InfromationDesk from '../../contentOfHomePage/homePageComponents/informationDesk/InformationDesk'
-import { NavLink } from 'react-router-dom'
+
+import styles from './ContentOfCarPurchasePage.module.css'
 
 const ContentOfCarPurchasePage = () => {
   return (
     <Container>
-      <Box className={styles.navigation}>
+      <div className={styles.navigation}>
         <NavLink to="/" className={styles.activeNav}>
           HOME
         </NavLink>
@@ -20,12 +21,12 @@ const ContentOfCarPurchasePage = () => {
         </NavLink>
         <p>{'>'}</p>
         <p>Purchase page</p>
-      </Box>
-      <Box className={styles.mainContainer}>
-        <Box className={styles.containerInfoAndSlider}>
+      </div>
+      <div className={styles.mainContainer}>
+        <div className={styles.containerInfoAndSlider}>
           <ImageInformationDesk />
-        </Box>
-      </Box>
+        </div>
+      </div>
 
       <FeaturedCars />
       <ForumBanner />

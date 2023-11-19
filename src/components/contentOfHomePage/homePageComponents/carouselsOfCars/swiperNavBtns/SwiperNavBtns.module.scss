@@ -1,12 +1,12 @@
+@import '../../../../../scssMixinsAndVariables/mixins.scss';
+
 .navBtns {
   width: 45px;
   height: 17px;
   position: absolute;
   top: -60px;
   right: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  @include blockSettings(flex, row, space-between);
   z-index: 9999;
   div {
     cursor: pointer;

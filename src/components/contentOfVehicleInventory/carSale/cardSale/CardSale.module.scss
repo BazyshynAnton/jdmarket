@@ -1,8 +1,10 @@
+@import '../../../../scssMixinsAndVariables/mixins.scss';
+@import '../../../../scssMixinsAndVariables/variables.scss';
+
 .mainCardContainer {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include blockSettings(flex, column, center);
+
   background: #000;
   margin-bottom: 10px;
 
@@ -45,14 +47,12 @@
 }
 
 .textContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include blockSettings(flex, row, space-between);
   background: #000;
   height: 50px;
 
   p {
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: $gothicFont;
     color: white;
     font-size: 15px;
     padding: 8px 0px 0px 8px;
@@ -67,7 +67,7 @@
   padding: 0px 15px 0px 0px;
   button {
     background: red;
-    font-family: 'Pathway Gothic One', sans-serif;
+    font-family: $gothicFont;
     color: white;
     font-size: 15px;
     padding: 2px 13px 5px;

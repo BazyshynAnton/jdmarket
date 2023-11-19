@@ -1,3 +1,5 @@
+@import '../../scssMixinsAndVariables/mixins.scss';
+
 .navigationBoxContainer {
   display: flex;
   flex-direction: row;
@@ -22,10 +24,9 @@
 }
 
 .infoContainer {
-  display: flex;
+  @include blockSettings2(flex, center, center);
+
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   gap: 1.5rem;
 }

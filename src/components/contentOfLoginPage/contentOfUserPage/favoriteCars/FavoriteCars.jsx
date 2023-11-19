@@ -1,14 +1,16 @@
-import { Box } from '@mui/material'
-import CardOfFavoriteCars from '../cardOfFavoriteCars/CardOfFavoriteCars'
-import styles from '../ContentOfUserPage.module.css'
 import { useEffect, useState } from 'react'
-import cars from '../../../../data/cars'
-import { Navigation } from 'swiper/modules'
-import 'swiper/css'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import CardNavBtns from '../cardNavBtns/CardNavBtns'
-import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import { useSelector } from 'react-redux'
+
+import CardOfFavoriteCars from '../cardOfFavoriteCars/CardOfFavoriteCars'
+import CardNavBtns from '../cardNavBtns/CardNavBtns'
+
+import cars from '../../../../data/cars'
+
+import 'swiper/css'
+import styles from '../ContentOfUserPage.module.css'
 
 const FavoriteCars = () => {
   const { favoriteCar, activeUser } = useSelector(
@@ -40,18 +42,17 @@ const FavoriteCars = () => {
   }, [])
 
   return (
-    <Box className={styles.mainContainerSwiper}>
-      <Box className={styles.nameOfSwiper}>
+    <div className={styles.mainContainerSwiper}>
+      <div className={styles.nameOfSwiper}>
         <p>FAVORITE CARS</p>
-      </Box>
+      </div>
       {favoriteCars.length ? (
         <Swiper
           slidesPerView={slidesPerView}
           spaceBetween={30}
           navigation={true}
           modules={[Navigation]}
-          className={styles.favoriteCarsSwiper}
-        >
+          className={styles.favoriteCarsSwiper}>
           {favoriteCars.map((car) => (
             <SwiperSlide className={styles.swiperSlideContainer} key={car.id}>
               <CardOfFavoriteCars text={car.text} img={car.img} id={car.id} />
@@ -60,7 +61,7 @@ const FavoriteCars = () => {
           <CardNavBtns />
         </Swiper>
       ) : (
-        <Box
+        <div
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -70,8 +71,7 @@ const FavoriteCars = () => {
             fontFamily: 'Pathway Gothic One, sans-serif',
             fontSize: '25px',
           }}
-          className={styles.favoriteCarsSwiper}
-        >
+          className={styles.favoriteCarsSwiper}>
           List is empty ☹️
           {activeUser ? (
             <NavLink
@@ -85,8 +85,7 @@ const FavoriteCars = () => {
                 cursor: 'pointer',
                 fontSize: '15px',
                 textAlign: 'center',
-              }}
-            >
+              }}>
               show cars
             </NavLink>
           ) : (
@@ -105,14 +104,13 @@ const FavoriteCars = () => {
                 background: 'red',
                 cursor: 'pointer',
                 fontSize: '12px',
-              }}
-            >
+              }}>
               show cars
             </button>
           )}
-        </Box>
+        </div>
       )}
-    </Box>
+    </div>
   )
 }
 

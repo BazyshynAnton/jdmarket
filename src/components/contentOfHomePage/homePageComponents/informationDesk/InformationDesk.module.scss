@@ -1,24 +1,24 @@
+@import '../../../../scssMixinsAndVariables/mixins.scss';
+@import '../../../../scssMixinsAndVariables/variables.scss';
+
 .header {
   color: white;
   font-size: 25px;
 }
 
 .containerInfo {
+  @include blockSettings(flex, row, center);
+  align-items: center;
   position: relative;
-  display: flex;
-  flex-direction: row;
   width: 100%;
   height: 110px;
   margin-top: 50px;
-  justify-content: center;
   gap: 2rem;
-  align-items: center;
   z-index: 3;
 
   p {
     font-size: 18px;
-    font-family: Pathway Gothic One, PathwayGothicOneRegular, Arial, Helvetica,
-      sans-serif;
+    font-family: $gothicFont;
     color: white;
   }
 
@@ -51,13 +51,10 @@
 }
 
 .contentTextInfo {
+  @include blockSettings(flex, row, center);
   position: relative;
-  display: flex;
-  flex-direction: row;
   width: 100%;
   height: 40px;
-
-  justify-content: center;
   gap: 2rem;
   align-items: center;
   z-index: 10;
@@ -65,9 +62,7 @@
 
 .containerText {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include blockSettings(flex, row, center);
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
@@ -86,9 +81,7 @@
 
 .containerTextModal {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include blockSettings(flex, row, center);
   align-items: center;
   cursor: pointer;
   z-index: 10;
@@ -133,14 +126,11 @@
   background: #303030;
   z-index: 0;
   padding-left: 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  @include blockSettings(flex, column, center);
   .shyText {
     font-size: 20px;
     color: red;
-    font-family: Pathway Gothic One, PathwayGothicOneRegular, Arial, Helvetica,
-      sans-serif;
+    font-family: $gothicFont;
     font-weight: 100;
   }
 
@@ -186,14 +176,12 @@
   background: #303030;
   z-index: 0;
   padding-left: 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  @include blockSettings(flex, column, center);
+
   .shyText {
     font-size: 20px;
     color: red;
-    font-family: Pathway Gothic One, PathwayGothicOneRegular, Arial, Helvetica,
-      sans-serif;
+    font-family: $gothicFont;
     font-weight: 100;
   }
 
@@ -231,10 +219,9 @@
 }
 
 .formContainer {
-  display: flex;
-  flex-direction: column;
+  @include blockSettings(flex, column, center);
+
   height: 100%;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
 
@@ -247,9 +234,7 @@
 }
 
 .inputContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include blockSettings(flex, row, center);
   width: 100%;
   gap: 0.2rem;
   input {
@@ -262,9 +247,7 @@
 
 .btnContainer {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  @include blockSettings(flex, row, flex-end);
   padding: 0px 25px 0px 20px;
 
   button {

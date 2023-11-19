@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin blockSettings($display, $flexDirection, $justifyContent) {
   display: $display;
   flex-direction: $flexDirection;
@@ -23,4 +25,18 @@
   background-repeat: no-repeat;
   font-family: $gothicFont;
   font-size: 20px;
+}
+
+@mixin mediaFooterContainer {
+  position: absolute;
+  background: $darkGrey;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  height: 34px;
+  width: 34px;
+  z-index: 30;
+  &:hover {
+    background: $redBg;
+  }
 }

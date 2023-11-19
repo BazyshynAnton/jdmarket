@@ -1,13 +1,12 @@
-import { Box } from '@mui/material'
-import styles from '../ContentOfLoginPage.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-
 import {
   setFormData,
   setMister,
   setMissus,
   setCreateAccount,
 } from '../createAccountAndRegisteredAccount/createAccountSlice'
+
+import styles from '../ContentOfLoginPage.module.css'
 
 const stylesForRegistrationForm = {
   stylesForRadioInput: {
@@ -58,15 +57,14 @@ const RegistrationForm = () => {
   }
 
   return (
-    <Box className={styles.registrationFormContainer}>
+    <div className={styles.registrationFormContainer}>
       <h4>YOUR PERSONAL INFORMATION</h4>
 
       <form
         onSubmit={handleFormControll}
-        className={styles.formRegistrationContent}
-      >
+        className={styles.formRegistrationContent}>
         <p>Title</p>
-        <Box className={styles.forRadioAndCheckboxContainer}>
+        <div className={styles.forRadioAndCheckboxContainer}>
           <input
             style={stylesForRegistrationForm.stylesForRadioInput}
             type="radio"
@@ -87,8 +85,8 @@ const RegistrationForm = () => {
             onChange={handleRadioMissusChange}
           />
           <label htmlFor="missus">Ms.</label>
-        </Box>
-        <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForRegistrationForm.stylesForIputContainer}>
           {onClickFieldFirstName ? (
             <label htmlFor="firstName" style={{ color: 'red' }}>
               First name*
@@ -102,8 +100,8 @@ const RegistrationForm = () => {
             value={formData.firstName}
             onChange={handleInputChange}
           />
-        </Box>
-        <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForRegistrationForm.stylesForIputContainer}>
           {onClickFieldLastName ? (
             <label htmlFor="lastName" style={{ color: 'red' }}>
               Last name*
@@ -117,8 +115,8 @@ const RegistrationForm = () => {
             value={formData.lastName}
             onChange={handleInputChange}
           />
-        </Box>
-        <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForRegistrationForm.stylesForIputContainer}>
           {onClickFieldEmail ? (
             <label htmlFor="email3" style={{ color: 'red' }}>
               Email*
@@ -133,8 +131,8 @@ const RegistrationForm = () => {
             onChange={handleInputChange}
             defaultValue={formData.email}
           />
-        </Box>
-        <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
+        </div>
+        <div style={stylesForRegistrationForm.stylesForIputContainer}>
           {onClickFieldPassword ? (
             <label htmlFor="password2" style={{ color: 'red' }}>
               Password*
@@ -149,9 +147,9 @@ const RegistrationForm = () => {
             value={formData.password}
             onChange={handleInputChange}
           />
-        </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Box className={styles.forRadioAndCheckboxContainer}>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className={styles.forRadioAndCheckboxContainer}>
             <input
               name="newsletter"
               id="newsletter"
@@ -160,21 +158,19 @@ const RegistrationForm = () => {
             />
             <label
               htmlFor="newsletter"
-              className={styles.textCheckboxNewsLetter}
-            >
+              className={styles.textCheckboxNewsLetter}>
               Sign up for our newsletter!
             </label>
-          </Box>
+          </div>
 
           <button
             onClick={handleInputSubmit}
-            style={stylesForRegistrationForm.stylesForSubmitBtn}
-          >
+            style={stylesForRegistrationForm.stylesForSubmitBtn}>
             register
           </button>
-        </Box>
+        </div>
       </form>
-    </Box>
+    </div>
   )
 }
 

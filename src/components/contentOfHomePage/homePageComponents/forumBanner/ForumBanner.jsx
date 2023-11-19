@@ -1,9 +1,8 @@
-import { Box } from '@mui/material'
 import forumBanner from '../../../../pictures/forumBanner.jpg'
 
 const ForumBanner = () => {
   return (
-    <Box
+    <div
       style={{
         display: 'flex',
         width: '100%',
@@ -16,7 +15,7 @@ const ForumBanner = () => {
         src={forumBanner}
         alt="forum-banner"
       />
-    </Box>
+    </div>
   )
 }
 

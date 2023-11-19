@@ -1,5 +1,6 @@
-import { Box, FormControl } from '@mui/material'
 import React, { useState } from 'react'
+import { FormControl } from '@mui/material'
+
 import stockSearch from '../../../../pictures/stockSearch.png'
 
 import styles from './OrderSheet.module.css'
@@ -19,10 +20,10 @@ const OrderSheet = () => {
 
   return (
     <>
-      <Box className={styles.orderSheet}>ORDER SHEET</Box>
+      <div className={styles.orderSheet}>ORDER SHEET</div>
       <hr className={styles.lineUnderOrderSheet} />
 
-      <Box className={styles.containerOfForm}>
+      <div className={styles.containerOfForm}>
         <p>
           If you are interested in purchasing this car, fill out the contact
           form below and we will get back to you within 1-2 business days.
@@ -55,7 +56,7 @@ const OrderSheet = () => {
               onChange={(e) => setValues({ ...values, email: e.target.value })}
             />
             <input
-              type="number"
+              type="tel"
               id="phone"
               placeholder="Phone"
               value={values.phone}
@@ -77,7 +78,7 @@ const OrderSheet = () => {
         </form>
 
         <img src={stockSearch} alt="search-other-than-stock" />
-      </Box>
+      </div>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material'
+import { Container } from '@mui/material'
 import UserInfo from './userInfo/UserInfo'
 
 import styles from './ContentOfUserPage.module.css'
@@ -14,7 +14,7 @@ const ContentOfUserPage = () => {
   return (
     <Container>
       <NavMenuOfUserPage />
-      <Box className={styles.mainCOntainerOfUserPage}>
+      <div className={styles.mainCOntainerOfUserPage}>
         {edit ? (
           <EditProfile />
         ) : (
@@ -23,7 +23,7 @@ const ContentOfUserPage = () => {
             <FavoriteCars />
           </>
         )}
-      </Box>
+      </div>
 
       <ForumBanner />
       <InformationDesk />

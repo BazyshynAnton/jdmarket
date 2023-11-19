@@ -1,5 +1,7 @@
-import { Box } from '@mui/material'
-import styles from '../ContentOfLoginPage.module.css'
+import { NavLink } from 'react-router-dom'
+
+import RegistrationForm from '../registrationForm/RegistrationForm'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { setFormData, setRegistration } from './createAccountSlice'
 import {
@@ -7,8 +9,8 @@ import {
   setActiveUserSignIn,
   setControllValid,
 } from './alreadyRegisteredAccountSlice'
-import RegistrationForm from '../registrationForm/RegistrationForm'
-import { NavLink } from 'react-router-dom'
+
+import styles from '../ContentOfLoginPage.module.css'
 
 const stylesForRegistrationForm = {
   stylesForIputContainer: {
@@ -59,17 +61,16 @@ const CreateAccountAndRegisteredAccount = () => {
   }
 
   return (
-    <Box className={styles.createAndRegisteredContainer}>
+    <div className={styles.createAndRegisteredContainer}>
       {!registration && (
         <>
-          <Box className={styles.createAccountContainer}>
+          <div className={styles.createAccountContainer}>
             <h4>CREATE AN ACCOUNT</h4>
             <form
               onSubmit={handleFormSubmit}
-              className={styles.formContainerCreateAnAccount}
-            >
+              className={styles.formContainerCreateAnAccount}>
               <p>Please enter your email address to create an account.</p>
-              <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
+              <div style={stylesForRegistrationForm.stylesForIputContainer}>
                 {onClickFieldEmail ? (
                   <label htmlFor="email" style={{ color: 'red' }}>
                     invalid value.
@@ -85,21 +86,20 @@ const CreateAccountAndRegisteredAccount = () => {
                   value={formData.email}
                   onChange={handleFormControll}
                 />
-              </Box>
+              </div>
               <button
                 type="button"
                 onClick={() => {
                   handleRegistration()
-                }}
-              >
+                }}>
                 create an account
               </button>
             </form>
-          </Box>
-          <Box className={styles.registeredContainer}>
+          </div>
+          <div className={styles.registeredContainer}>
             <h4>ALREADY REGISTERED?</h4>
             <form onSubmit={handleFormSubmit} className={styles.formRegistered}>
-              <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
+              <div style={stylesForRegistrationForm.stylesForIputContainer}>
                 <label htmlFor="email">Email address</label>
                 <input
                   name="emailAddress"
@@ -108,8 +108,8 @@ const CreateAccountAndRegisteredAccount = () => {
                   value={accountInfo.emailAddress}
                   onChange={handleAlreadyRegisteredInputChange}
                 />
-              </Box>
-              <Box sx={stylesForRegistrationForm.stylesForIputContainer}>
+              </div>
+              <div style={stylesForRegistrationForm.stylesForIputContainer}>
                 <label htmlFor="password">Password</label>
                 <input
                   type="password"
@@ -118,7 +118,7 @@ const CreateAccountAndRegisteredAccount = () => {
                   value={accountInfo.password}
                   onChange={handleAlreadyRegisteredInputChange}
                 />
-              </Box>
+              </div>
               <p className={styles.forgotPassword}>Forgot your password?</p>
               {accountInfo.emailAddress.includes(
                 'stroustrup-example@gmail.com'
@@ -128,8 +128,7 @@ const CreateAccountAndRegisteredAccount = () => {
                   style={{ width: '60px' }}
                   onClick={() => {
                     dispatch(setActiveUserSignIn())
-                  }}
-                >
+                  }}>
                   <button type="button">sign in</button>
                 </NavLink>
               ) : (
@@ -145,12 +144,12 @@ const CreateAccountAndRegisteredAccount = () => {
                 </>
               )}
             </form>
-          </Box>
+          </div>
         </>
       )}
 
       {!!registration && <RegistrationForm />}
-    </Box>
+    </div>
   )
 }
 
