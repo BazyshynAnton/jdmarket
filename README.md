@@ -1,6 +1,6 @@
 # JDM
 
-Welcome to our unique JDM (Japanese Domestic Market) car dealership,
+Welcome to JDM (Japanese Domestic Market) car dealership,
 where a passion for Japanese technology and style combines with the highest quality vehicles straight from Japan.
 
 ## Description
