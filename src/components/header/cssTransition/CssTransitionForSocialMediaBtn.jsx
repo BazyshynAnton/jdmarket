@@ -1,6 +1,7 @@
 import React from 'react'
 import { CSSTransition } from 'react-transition-group'
-import styles from '../Header.module.css'
+
+import styles from '../Header.module.scss'
 
 const CssTransitionForSocialMediaBtn = ({
   nodeRef,
@@ -15,21 +16,25 @@ const CssTransitionForSocialMediaBtn = ({
       timeout={300}
       classNames="companyProfile"
       mountOnEnter
-      unmountOnExit>
+      unmountOnExit
+    >
       <div
         ref={nodeRef}
         className={styles.mediaProfile}
         onMouseEnter={handleMouseEnterThree}
-        onMouseLeave={handleMouseLeaveThree}>
+        onMouseLeave={handleMouseLeaveThree}
+      >
         <div className={styles.mediaSection}>
           <p className={styles.textInMedia}>MEDIA</p>
         </div>
         <div
-          className={`${styles.mediaSection} ${styles.borderMediaSectionOne}`}>
+          className={`${styles.mediaSection} ${styles.borderMediaSectionOne}`}
+        >
           <p className={styles.textInMedia}>BLOG</p>
         </div>
         <div
-          className={`${styles.mediaSection} ${styles.borderMediaSectionTwo}`}>
+          className={`${styles.mediaSection} ${styles.borderMediaSectionTwo}`}
+        >
           <p className={styles.textInMedia}>FACEBOOK</p>
         </div>
         <div className={styles.mediaSection}>

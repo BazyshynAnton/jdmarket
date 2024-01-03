@@ -1,5 +1,6 @@
-import { CSSTransition } from 'react-transition-group'
-import styles from '../Header.module.css'
+import { CSSTransition } from '../../shared/utils/reactImports'
+
+import styles from '../Header.module.scss'
 
 const CssTransitionForSmallScreenCompanyProfileBtn = ({ nodeRef, state }) => {
   return (
@@ -8,14 +9,16 @@ const CssTransitionForSmallScreenCompanyProfileBtn = ({ nodeRef, state }) => {
       in={state.isOpenTwo}
       timeout={300}
       classNames="dropdown"
-      unmountOnExit>
+      unmountOnExit
+    >
       <div
         ref={nodeRef}
         className={`${
           state.isOpenTwo
             ? styles.dropVehicleInventory
             : styles.notOpenVehicleInventory
-        }`}>
+        }`}
+      >
         <div className={styles.jdmSectionInBurger}>
           <p> ABOUT US</p>
         </div>

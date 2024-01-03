@@ -12,7 +12,7 @@ import styles from './ContentOfHomePage.module.css'
 const ContentOfHomePage = () => {
   return (
     <>
-      <Container>
+      <div className="my-container">
         <div className={styles.containerCarouselAndPanel}>
           <CarouselSlide />
           <Panel />
@@ -22,7 +22,7 @@ const ContentOfHomePage = () => {
         <InventoryByManufactures />
         <ForumBanner />
         <InformationDesk />
-      </Container>
+      </div>
     </>
   )
 }

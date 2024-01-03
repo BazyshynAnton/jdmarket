@@ -1,15 +1,40 @@
-import { List, ListItem, IconButton, SwipeableDrawer } from '@mui/material'
+import {
+  useRef,
+  useState,
+  NavLink,
+  useEffect,
+} from '../../shared/utils/reactImports'
 
-import { useRef, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import MenuOpenIcon from '@mui/icons-material/MenuOpen'
-
-import styles from '../Header.module.css'
 import CssTransitionForSmallScreenSocialMediaBtn from '../cssTransition/CssTransitionForSmallScreenSocialMediaBtn'
 import CssTransitionForSmallScreenVehicleInventoryBtn from '../cssTransition/CssTransitionForSmallScreenVehicleInventoryBtn'
 import CssTransitionForSmallScreenCompanyProfileBtn from '../cssTransition/CssTransitionForSmallScreenCompanyProfileBtn'
 
+import menuOpenIcon from '../../../assets/pictures/app-icons/menuOpenIcon.png'
+
+import styles from '../Header.module.scss'
+
 const AppBarForSmallScreens = ({ open, setOpen }) => {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.scrollbarWidth = 'none' // Firefox
+      document.body.style.msOverflowStyle = 'none' // Edge
+      document.body.style['&::-webkit-scrollbar'] = 'display: none' // WebKit
+    } else {
+      document.body.style.overflow = 'auto'
+      document.body.style.scrollbarWidth = 'auto' // Firefox
+      document.body.style.msOverflowStyle = 'auto' // Edge
+      document.body.style['&::-webkit-scrollbar'] = 'auto' // WebKit
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'
+      document.body.style.scrollbarWidth = 'auto' // Firefox
+      document.body.style.msOverflowStyle = 'auto' // Edge
+      document.body.style['&::-webkit-scrollbar'] = 'auto' // WebKit
+    }
+  }, [open])
+
   const nodeRef = useRef(null)
 
   //Burger menu controll
@@ -43,38 +68,48 @@ const AppBarForSmallScreens = ({ open, setOpen }) => {
   }
 
   return (
-    <SwipeableDrawer
-      open={open}
-      onOpen={() => setOpen(true)}
-      onClose={() => setOpen(false)}
-      anchor="left"
-      PaperProps={{
-        className: styles.swipeBar,
-      }}>
-      <div className={styles.closeBurgerIcon}>
-        <IconButton onClick={() => setOpen(false)}>
-          <MenuOpenIcon sx={{ color: 'white', fontSize: '1.8rem' }} />
-        </IconButton>
+    <div className={`${styles.swipeBar} ${open ? styles.open : ''}`}>
+      <div
+        style={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'flex-end',
+          height: '50px',
+          paddingRight: '30px',
+        }}
+      >
+        <button
+          style={{ zIndex: '10000', background: 'none', cursor: 'pointer' }}
+          onClick={() => setOpen(false)}
+        >
+          <img
+            style={{ width: '30px', height: '20px' }}
+            src={menuOpenIcon}
+            alt="menu-open"
+          />
+        </button>
       </div>
       <div className={styles.headerInBurger}>
         <h5>NAVIGATION</h5>
       </div>
-      <List className={styles.listInBurgerMenu}>
-        <ListItem className={styles.listIntemInBurgerMenu}>
+      <ul className={styles.listInBurgerMenu}>
+        <li className={styles.listItemInBurgerMenu}>
           <NavLink
             to="/"
             onClick={() => {
               window.scrollTo(0, 0)
               setOpen(false)
-            }}>
+            }}
+          >
             <p>HOME</p>
           </NavLink>
-        </ListItem>
-        <ListItem
+        </li>
+        <li
           onClick={handleClickFunctionInBurger}
-          className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
+          className={`${styles.listItemInBurgerMenuVehicleInventory} ${
             stateIsOpen.isOpen ? styles.activeBurgerVehicle : ''
-          }`}>
+          }`}
+        >
           {!stateIsOpen.isOpen && <p>VEHICLE INVENTORY</p>}
           {stateIsOpen.isOpen && (
             <NavLink
@@ -82,7 +117,9 @@ const AppBarForSmallScreens = ({ open, setOpen }) => {
               onClick={() => {
                 window.scrollTo(0, 0)
                 setOpen(false)
-              }}>
+              }}
+              style={{ width: '150px' }}
+            >
               <p>VEHICLE INVENTORY</p>
             </NavLink>
           )}
@@ -91,54 +128,57 @@ const AppBarForSmallScreens = ({ open, setOpen }) => {
             state={stateIsOpen}
             setOpen={setOpen}
           />
-        </ListItem>
+        </li>
 
-        <ListItem className={styles.listIntemInBurgerMenu}>
+        <li className={styles.listItemInBurgerMenu}>
           <p>JAPAN CAR AUCTION</p>
-        </ListItem>
-        <ListItem
+        </li>
+        <li
           onClick={handleClickFunctionInBurgerTwo}
-          className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
+          className={`${styles.listItemInBurgerMenuVehicleInventory} ${
             stateIsOpen.isOpenTwo ? styles.activeBurgerVehicle : ''
-          }`}>
+          }`}
+        >
           <p>COMPANY PROFILE</p>
           <CssTransitionForSmallScreenCompanyProfileBtn
             nodeRef={nodeRef}
             state={stateIsOpen}
           />
-        </ListItem>
-        <ListItem className={styles.listIntemInBurgerMenu}>
+        </li>
+        <li className={styles.listItemInBurgerMenu}>
           <p>USA JDM IMPORTS</p>
-        </ListItem>
-        <ListItem className={styles.listIntemInBurgerMenu}>
+        </li>
+        <li className={styles.listItemInBurgerMenu}>
           <NavLink
             to="/how-to-buy"
             onClick={() => {
               window.scrollTo(0, 0)
               setOpen(false)
-            }}>
+            }}
+          >
             <p>HOW TO BUY?</p>
           </NavLink>
-        </ListItem>
-        <ListItem
+        </li>
+        <li
           onClick={handleClickFunctionInBurgerThree}
-          className={`${styles.listIntemInBurgerMenuVehicleInventory} ${
+          className={`${styles.listItemInBurgerMenuVehicleInventory} ${
             stateIsOpen.isOpenThree ? styles.activeBurgerVehicle : ''
-          }`}>
+          }`}
+        >
           <p>SOCIAL MEDIA</p>
           <CssTransitionForSmallScreenSocialMediaBtn
             nodeRef={nodeRef}
             state={stateIsOpen}
           />
-        </ListItem>
-        <ListItem className={styles.listIntemInBurgerMenu}>
+        </li>
+        <li className={styles.listItemInBurgerMenu}>
           <p>CONTACT US</p>
-        </ListItem>
-        <ListItem className={styles.listIntemInBurgerMenu}>
+        </li>
+        <li className={styles.listItemInBurgerMenu}>
           <p>FAQ</p>
-        </ListItem>
-      </List>
-    </SwipeableDrawer>
+        </li>
+      </ul>
+    </div>
   )
 }
 

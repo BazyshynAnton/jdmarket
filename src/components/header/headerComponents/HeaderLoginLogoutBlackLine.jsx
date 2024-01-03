@@ -1,15 +1,16 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { Container } from '@mui/material'
-import { NavLink } from 'react-router-dom'
-
-import styles from '../Header.module.css'
+import {
+  useDispatch,
+  useSelector,
+  NavLink,
+} from '../../shared/utils/reactImports'
+import { setClearRegistration } from '../../contentOfLoginPage/createAccountAndRegisteredAccount/createAccountSlice'
 
 import {
   setActiveUserLogout,
   setEditFalse,
 } from '../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
-import { setClearRegistration } from '../../contentOfLoginPage/createAccountAndRegisteredAccount/createAccountSlice'
+import styles from '../Header.module.scss'
 
 const HeaderLoginLogoutBlackLine = () => {
   const { accountInfo, activeUser } = useSelector(
@@ -18,8 +19,8 @@ const HeaderLoginLogoutBlackLine = () => {
   const dispatch = useDispatch()
 
   return (
-    <div className={styles.headerRegisterOverflow}>
-      <Container>
+    <div style={{ background: '#000', height: '30px' }}>
+      <div className="my-container">
         <div className={styles.registration}>
           {activeUser ? (
             <div
@@ -28,13 +29,15 @@ const HeaderLoginLogoutBlackLine = () => {
                 flexDirection: 'row',
                 alignItems: 'center',
                 gap: '0.3rem',
-              }}>
+              }}
+            >
               <NavLink to="/user">
                 <p
                   style={{
                     textDecoration: 'none',
                   }}
-                  onClick={() => dispatch(setEditFalse())}>
+                  onClick={() => dispatch(setEditFalse())}
+                >
                   {accountInfo.nameAccount} {accountInfo.secondName}
                 </p>
               </NavLink>
@@ -50,7 +53,8 @@ const HeaderLoginLogoutBlackLine = () => {
                 to="/login"
                 onClick={() => {
                   dispatch(setActiveUserLogout())
-                }}>
+                }}
+              >
                 <p>Logout</p>
               </NavLink>
             </div>
@@ -59,12 +63,13 @@ const HeaderLoginLogoutBlackLine = () => {
               to="/login"
               onClick={() => {
                 dispatch(setClearRegistration())
-              }}>
+              }}
+            >
               <p>Log in</p>
             </NavLink>
           )}
         </div>
-      </Container>
+      </div>
     </div>
   )
 }

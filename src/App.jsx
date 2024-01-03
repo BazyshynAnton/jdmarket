@@ -1,16 +1,35 @@
+import { lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import VehicleInventory from './pages/vehicleInventory/VehicleInventory'
+// import HomePage from './pages/HomePage'
+// import VehicleInventory from './pages/vehicleInventory/VehicleInventory'
 import MainLayout from './layouts/MainLayout'
-import JdmSportsPage from './pages/vehicleInventory/JdmSportsPage'
-import JdmClassicPage from './pages/vehicleInventory/JdmClassicPage'
-import NonJdmPage from './pages/vehicleInventory/NonJdmPage'
-import HowToBuyPage from './pages/HowToBuyPage'
-import CarPurchasePage from './pages/CarPurchasePage'
-import LoginPage from './pages/LoginPage'
-import UserPage from './pages/UserPage'
-import SearchPage from './pages/SearchPage'
-import NotFound from './pages/NotFound'
+// import JdmSportsPage from './pages/vehicleInventory/JdmSportsPage'
+// import JdmClassicPage from './pages/vehicleInventory/JdmClassicPage'
+// import NonJdmPage from './pages/vehicleInventory/NonJdmPage'
+// import HowToBuyPage from './pages/HowToBuyPage'
+// import CarPurchasePage from './pages/CarPurchasePage'
+// import LoginPage from './pages/LoginPage'
+// import UserPage from './pages/UserPage'
+// import SearchPage from './pages/SearchPage'
+// import NotFound from './pages/NotFound'
+
+const HomePage = lazy(() => import('./pages/HomePage'))
+const VehicleInventory = lazy(() =>
+  import('./pages/vehicleInventory/VehicleInventory')
+)
+const JdmSportsPage = lazy(() =>
+  import('./pages/vehicleInventory/JdmSportsPage')
+)
+const JdmClassicPage = lazy(() =>
+  import('./pages/vehicleInventory/JdmClassicPage')
+)
+const NonJdmPage = lazy(() => import('./pages/vehicleInventory/NonJdmPage'))
+const HowToBuyPage = lazy(() => import('./pages/HowToBuyPage'))
+const CarPurchasePage = lazy(() => import('./pages/CarPurchasePage'))
+const LoginPage = lazy(() => import('./pages/LoginPage'))
+const UserPage = lazy(() => import('./pages/UserPage'))
+const SearchPage = lazy(() => import('./pages/SearchPage'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 function App() {
   return (

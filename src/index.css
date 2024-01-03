@@ -12,8 +12,19 @@ html,
 body {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
   background-image: url(./pictures/main-bg.png);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.my-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 24px;
 }
 
 a {
@@ -42,23 +53,6 @@ a {
 input[name='searchInput']::placeholder {
   color: #fff;
   font-style: italic;
-}
-
-.selectionOpt {
-  border: none;
-  border-radius: 0px;
-  font-size: 10px;
-  color: #777;
-  height: 20px;
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
-.selectionOpt:hover {
-  color: white;
-  border: none;
-  outline: none;
-  box-shadow: none;
 }
 
 /*text in navbar*/
@@ -121,7 +115,7 @@ input[name='searchInput']::placeholder {
 
 /* absoluteInventory */
 .absoluteInventory-enter {
-  transform: translateY(-10%);
+  transform: translateY(-1%);
   opacity: 0;
 }
 
@@ -138,12 +132,12 @@ input[name='searchInput']::placeholder {
 }
 
 .absoluteInventory-exit-active {
-  transform: translateY(-20%);
+  transform: translateY(-2%);
   opacity: 0;
 }
 /* companyProfile */
 .companyProfile-enter {
-  transform: translateY(-10%);
+  transform: translateY(-1%);
   opacity: 0;
 }
 
@@ -160,7 +154,7 @@ input[name='searchInput']::placeholder {
 }
 
 .companyProfile-exit-active {
-  transform: translateY(-20%);
+  transform: translateY(-2%);
   opacity: 0;
 }
 /* fadeBackToTopBtn */
@@ -215,11 +209,11 @@ input[name='searchInput']::placeholder {
 }
 
 .dropdown-enter-active {
-  max-height: 500px; /* Установите максимальную высоту ваших элементов */
+  max-height: 500px;
 }
 
 .dropdown-exit {
-  max-height: 500px; /* Установите максимальную высоту ваших элементов */
+  max-height: 500px;
   overflow: hidden;
   transition: max-height 400ms ease-out;
 }

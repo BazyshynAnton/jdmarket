@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import { useState, NavLink, React } from '../../shared/utils/reactImports'
 
-import { List, ListItem, Toolbar } from '@mui/material'
 import CssTransitionForSocialMediaBtn from '../cssTransition/CssTransitionForSocialMediaBtn'
-import { NavLink } from 'react-router-dom'
 import CssTransitionForVehicleInventoryBtn from '../cssTransition/CssTransitionForVehicleInventoryBtn'
 import CssTransitionForCompanyProfileBtn from '../cssTransition/CssTransitionForCompanyProfileBtn'
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
-import styles from '../Header.module.css'
 
-const AppBarForBigSceens = () => {
+import homeRoundedIcon from '../../../assets/pictures/app-icons/homeRoundedIcon.png'
+
+import styles from '../Header.module.scss'
+
+const AppBarForBigScreens = () => {
   const nodeRef = React.useRef(null)
 
   const initialState = {
@@ -56,13 +56,28 @@ const AppBarForBigSceens = () => {
 
   return (
     <>
-      <Toolbar className={styles.toolbarContainer}>
-        <List className={styles.lists}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexDirection: 'row',
+          width: '100%',
+          minHeight: '40px',
+          padding: '0',
+          zIndex: '3',
+        }}
+      >
+        <ul className={styles.lists}>
           <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
-            <ListItem className={styles.listItem}>
-              <HomeRoundedIcon className={styles.homeBtn} />
+            <li className={styles.listItem}>
+              <img
+                style={{ width: '19px', height: '19px' }}
+                src={homeRoundedIcon}
+                alt="home"
+              />
               HOME
-            </ListItem>
+            </li>
           </NavLink>
 
           <NavLink
@@ -72,38 +87,42 @@ const AppBarForBigSceens = () => {
               stateForMenu.isMenuOpen ? styles.openMenu : ''
             }`}
             onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}>
-            <ListItem>VEHICLE INVENTORY</ListItem>
+            onMouseLeave={handleMouseLeave}
+          >
+            <li>VEHICLE INVENTORY</li>
           </NavLink>
 
-          <ListItem className={styles.listItem}>JAPAN CAR AUCTION</ListItem>
-          <ListItem
+          <li className={styles.listItem}>JAPAN CAR AUCTION</li>
+          <li
             className={`${styles.listItem} ${
               stateForMenu.isMenuTwoOpen ? styles.openMenu : ''
             }`}
             onMouseEnter={handleMouseEnterTwo}
-            onMouseLeave={handleMouseLeaveTwo}>
+            onMouseLeave={handleMouseLeaveTwo}
+          >
             COMPANY PROFILE
-          </ListItem>
-          <ListItem className={styles.listItem}>USA JDM IMPORTS</ListItem>
+          </li>
+          <li className={styles.listItem}>USA JDM IMPORTS</li>
           <NavLink
             to="/how-to-buy"
             onClick={() => window.scrollTo(0, 0)}
-            className={styles.listItem}>
-            <ListItem>HOW TO BUY?</ListItem>
+            className={styles.listItem}
+          >
+            <li>HOW TO BUY?</li>
           </NavLink>
-          <ListItem
+          <li
             className={`${styles.listItem} ${
               stateForMenu.isMenuThreeOpen ? styles.openMenu : ''
             }`}
             onMouseEnter={handleMouseEnterThree}
-            onMouseLeave={handleMouseLeaveThree}>
+            onMouseLeave={handleMouseLeaveThree}
+          >
             SOCIAL MEDIA
-          </ListItem>
-          <ListItem className={styles.listItem}>CONTACT US</ListItem>
-          <ListItem className={styles.listItem}>FAQ</ListItem>
-        </List>
-      </Toolbar>
+          </li>
+          <li className={styles.listItem}>CONTACT US</li>
+          <li className={styles.listItem}>FAQ</li>
+        </ul>
+      </div>
       <CssTransitionForVehicleInventoryBtn
         nodeRef={nodeRef}
         state={stateForMenu}
@@ -126,4 +145,4 @@ const AppBarForBigSceens = () => {
   )
 }
 
-export default AppBarForBigSceens
+export default AppBarForBigScreens

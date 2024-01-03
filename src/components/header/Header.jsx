@@ -1,19 +1,26 @@
-import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import { Container, AppBar, useMediaQuery, IconButton } from '@mui/material'
-import { useDispatch, useSelector } from 'react-redux'
+import {
+  useEffect,
+  useState,
+  NavLink,
+  useDispatch,
+  useSelector,
+  Suspense,
+  lazy,
+} from '../shared/utils/reactImports'
 import { setHelper } from './headerSlice'
 
 import HeaderLoginLogoutBlackLine from './headerComponents/HeaderLoginLogoutBlackLine'
 import SearchIconComponent from './headerComponents/SearchIconComponent'
-import AppBarForBigSceens from './headerComponents/AppBarForBigSceens'
-import AppBarForSmallScreens from './headerComponents/AppBarForSmallScreens'
+import AppBarForBigScreens from './headerComponents/AppBarForBigScreens'
 
-import MenuIcon from '@mui/icons-material/Menu'
-
+import menuIcon from '../../assets/pictures/app-icons/menuIcon.png'
 import headerLogo from '../../pictures/head-logo.png'
 
-import styles from './Header.module.css'
+import styles from './Header.module.scss'
+
+const AppBarForSmallScreens = lazy(() =>
+  import('./headerComponents/AppBarForSmallScreens')
+)
 
 const Header = () => {
   const INPUTID = 'inputID'
@@ -21,7 +28,19 @@ const Header = () => {
   const { helper } = useSelector((store) => store.headerSlice)
 
   //Controll window size
-  const isDesktop = useMediaQuery('(min-width: 656px)')
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 656)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 656)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const [open, setOpen] = useState(false)
 
@@ -47,7 +66,7 @@ const Header = () => {
   return (
     <div className={styles.headerOverflow}>
       <HeaderLoginLogoutBlackLine />
-      <Container>
+      <div className="my-container">
         <div className={styles.mainHeaderBg}>
           <div className={styles.headerLogoContainer}>
             <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
@@ -58,24 +77,33 @@ const Header = () => {
           <SearchIconComponent />
         </div>
 
-        <AppBar position="relative" className={styles.appBar}>
+        <div className={styles.appBar}>
           {isDesktop && (
             <>
-              <AppBarForBigSceens />
+              <AppBarForBigScreens />
             </>
           )}
 
           {!isDesktop && (
-            <IconButton onClick={() => setOpen(true)}>
-              <MenuIcon className={styles.burgerBtn} />
-            </IconButton>
+            <button
+              style={{ cursor: 'pointer', background: 'none' }}
+              onClick={() => setOpen(true)}
+            >
+              <img
+                style={{ width: '35px', height: '30px' }}
+                src={menuIcon}
+                alt="menu"
+              />
+            </button>
           )}
 
           {!isDesktop && (
-            <AppBarForSmallScreens open={open} setOpen={setOpen} />
+            <Suspense>
+              <AppBarForSmallScreens open={open} setOpen={setOpen} />
+            </Suspense>
           )}
-        </AppBar>
-      </Container>
+        </div>
+      </div>
       <div className={styles.underHeader} />
     </div>
   )

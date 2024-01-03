@@ -1,10 +1,10 @@
-import { CSSTransition } from 'react-transition-group'
-import styles from '../Header.module.css'
+import { NavLink, CSSTransition } from '../../shared/utils/reactImports'
 
 import jdmSports from '../../../pictures/jdmSports.jpg'
 import jdmClassic from '../../../pictures/jdmClassic.jpg'
 import nonJdm from '../../../pictures/nonJdm.jpg'
-import { NavLink } from 'react-router-dom'
+
+import styles from '../Header.module.scss'
 
 const CssTransitionForVehicleInventoryBtn = ({
   nodeRef,
@@ -19,30 +19,35 @@ const CssTransitionForVehicleInventoryBtn = ({
       timeout={300}
       classNames="absoluteInventory"
       mountOnEnter
-      unmountOnExit>
+      unmountOnExit
+    >
       <div
         ref={nodeRef}
         className={styles.absoluteInventory}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+        onMouseLeave={handleMouseLeave}
+      >
         <NavLink
           to="/vehicle-inventory/jdm-sports"
           onClick={() => window.scrollTo(0, 0)}
-          className={styles.sectionInventory}>
+          className={styles.sectionInventory}
+        >
           <img src={jdmSports} alt="jdm-sports" />
           <p className={styles.textInSection}>JDM SPORTS</p>
         </NavLink>
         <NavLink
           to="/vehicle-inventory/jdm-classic"
           onClick={() => window.scrollTo(0, 0)}
-          className={`${styles.sectionInventory} ${styles.borderSection}`}>
+          className={`${styles.sectionInventory} ${styles.borderSection}`}
+        >
           <img src={jdmClassic} alt="jdm-classic" />
           <p className={styles.textInSection}>JDM CLASSIC</p>
         </NavLink>
         <NavLink
           to="/vehicle-inventory/non-jdm"
           onClick={() => window.scrollTo(0, 0)}
-          className={styles.sectionInventory}>
+          className={styles.sectionInventory}
+        >
           <img src={nonJdm} alt="non-jdm" />
           <p className={styles.textInSection}>NON JDM</p>
         </NavLink>

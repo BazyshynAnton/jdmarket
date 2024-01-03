@@ -1,9 +1,10 @@
-import { NavLink } from 'react-router-dom'
-import { CSSTransition } from 'react-transition-group'
-import styles from '../Header.module.css'
+import { NavLink, CSSTransition } from '../../shared/utils/reactImports'
+
 import jdmSports from '../../../pictures/jdmSports.jpg'
 import jdmClassic from '../../../pictures/jdmClassic.jpg'
 import nonJdm from '../../../pictures/nonJdm.jpg'
+
+import styles from '../Header.module.scss'
 
 const CssTransitionForSmallScreenVehicleInventoryBtn = ({
   nodeRef,
@@ -16,20 +17,23 @@ const CssTransitionForSmallScreenVehicleInventoryBtn = ({
       in={state.isOpen}
       timeout={300}
       classNames="dropdown"
-      unmountOnExit>
+      unmountOnExit
+    >
       <div
         ref={nodeRef}
         className={`${
           state.isOpen
             ? styles.dropVehicleInventory
             : styles.notOpenVehicleInventory
-        }`}>
+        }`}
+      >
         <NavLink
           to="/vehicle-inventory/:jdm-sports"
           onClick={() => {
             window.scrollTo(0, 0)
             setOpen(false)
-          }}>
+          }}
+        >
           <div className={styles.jdmSectionInBurger}>
             <p>JDM SPORTS</p>
             <img src={jdmSports} alt="jdm-sports" />
@@ -40,7 +44,8 @@ const CssTransitionForSmallScreenVehicleInventoryBtn = ({
           onClick={() => {
             window.scrollTo(0, 0)
             setOpen(false)
-          }}>
+          }}
+        >
           <div className={styles.jdmSectionInBurger}>
             <p>JDM CLASSIC</p>
             <img src={jdmClassic} alt="jdm-classic" />
@@ -51,7 +56,8 @@ const CssTransitionForSmallScreenVehicleInventoryBtn = ({
           onClick={() => {
             window.scrollTo(0, 0)
             setOpen(false)
-          }}>
+          }}
+        >
           <div className={styles.jdmSectionInBurger}>
             <p>NON JDM</p>
             <img src={nonJdm} alt="non-jdm" />

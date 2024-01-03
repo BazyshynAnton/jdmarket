@@ -1,20 +1,21 @@
-import React from 'react'
-import HelperForSearch from './HelperForSearch'
-
-import { FormControl, MenuItem, Select } from '@mui/material'
-import { useDispatch, useSelector } from 'react-redux'
-import { CSSTransition } from 'react-transition-group'
-
 import {
   setSelectForm,
   setSearchInput,
   setSort,
   setHelper,
 } from '../headerSlice'
+import {
+  useDispatch,
+  useSelector,
+  React,
+} from '../../shared/utils/reactImports'
+import { CSSTransition } from 'react-transition-group'
+
+import HelperForSearch from './HelperForSearch'
 
 import vehiclePageCars from '../../../data/vehiclePageCars'
 
-import styles from '../Header.module.css'
+import styles from '../Header.module.scss'
 
 const HeaderSearch = () => {
   const INPUTID = 'inputID'
@@ -55,21 +56,20 @@ const HeaderSearch = () => {
 
   return (
     <form onSubmit={handleSubmit} style={{ position: 'relative' }}>
-      <FormControl className={styles.formController}>
-        <Select
-          className="selectionOpt"
-          name="filter_type"
-          value={selectForm.searchCategory}
-          onChange={handleCategoryChange}>
-          <MenuItem value="Maker">Maker</MenuItem>
-          <MenuItem value="honda">HONDA</MenuItem>
-          <MenuItem value="mazda">MAZDA</MenuItem>
-          <MenuItem value="mitsubishi">MITSUBISHI</MenuItem>
-          <MenuItem value="nissan">NISSAN</MenuItem>
-          <MenuItem value="subaru">SUBARU</MenuItem>
-          <MenuItem value="toyota">TOYOTA</MenuItem>
-        </Select>
-      </FormControl>
+      <select
+        className={styles.selectionOpt}
+        name="filter_type"
+        value={selectForm.searchCategory}
+        onChange={handleCategoryChange}
+      >
+        <option value="Maker">Maker</option>
+        <option value="honda">HONDA</option>
+        <option value="mazda">MAZDA</option>
+        <option value="mitsubishi">MITSUBISHI</option>
+        <option value="nissan">NISSAN</option>
+        <option value="subaru">SUBARU</option>
+        <option value="toyota">TOYOTA</option>
+      </select>
       <input
         id={INPUTID}
         name="searchInput"
@@ -85,7 +85,8 @@ const HeaderSearch = () => {
         in={helper}
         timeout={300}
         classNames="helper"
-        unmountOnExit={true}>
+        unmountOnExit={true}
+      >
         {() =>
           helper && filteredCars.length === 0 ? (
             ''

@@ -1,9 +1,7 @@
-import React from 'react'
-
-import { useDispatch } from 'react-redux'
+import { useDispatch, React } from '../../shared/utils/reactImports'
 import { setSearchInput } from '../headerSlice'
 
-import styles from '../Header.module.css'
+import styles from '../Header.module.scss'
 
 const HelperForSearch = ({ filteredCars }) => {
   const dispatch = useDispatch()
@@ -18,7 +16,7 @@ const HelperForSearch = ({ filteredCars }) => {
         position: 'absolute',
         bottom: '100',
         background: '#fff',
-        zIndex: '9999',
+        zIndex: '999999999',
         width: '230px',
         display: 'flex',
         flexDirection: 'column',
@@ -29,12 +27,14 @@ const HelperForSearch = ({ filteredCars }) => {
         fontFamily: "'Open Sans', sans-serif",
         fontSize: '12px',
         overflow: 'hidden',
-      }}>
+      }}
+    >
       {filteredCars.map((car) => (
         <p
           onClick={() => dispatch(setSearchInput(car.text))}
           className={styles.hoverForHelpSearchMenu}
-          key={car.id}>
+          key={car.id}
+        >
           {car.text}
         </p>
       ))}
@@ -52,7 +52,8 @@ const HelperForSearch = ({ filteredCars }) => {
             fontWeight: 'bold',
             fontSize: '15px',
             cursor: 'default',
-          }}>
+          }}
+        >
           <span style={{ padding: '0px 10px 0px 0px' }}>...</span>
         </div>
       )}

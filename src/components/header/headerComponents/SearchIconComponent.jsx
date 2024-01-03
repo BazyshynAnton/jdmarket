@@ -1,12 +1,57 @@
-import { Button } from '@mui/material'
-import { NavLink } from 'react-router-dom'
-import ThumbUpIcon from '@mui/icons-material/ThumbUp'
-import SearchIcon from '@mui/icons-material/Search'
-import HeaderSearch from './HeaderSearch'
-import styles from '../Header.module.css'
-import { useDispatch } from 'react-redux'
-
+import { useDispatch, useState, NavLink } from '../../shared/utils/reactImports'
 import { setSort } from '../headerSlice'
+
+import HeaderSearch from './HeaderSearch'
+
+import thumbUpIcon from '../../../assets/pictures/app-icons/thumbUpIcon.png'
+import searchIcon from '../../../assets/pictures/app-icons/searchIcon.png'
+import searchIconRed from '../../../assets/pictures/app-icons/searchIconRed.png'
+
+import styles from '../Header.module.scss'
+
+const stylesForComponent = {
+  follow: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '5px',
+    boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.5)',
+    background: '#4267b2',
+    color: '#fff',
+    cursor: 'pointer',
+    fontSize: '11px',
+    height: '19px',
+    minWidth: '110px',
+  },
+  share: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '5px',
+    boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.5)',
+    background: '#4267b2',
+    color: '#fff',
+    cursor: 'pointer',
+    fontSize: '11px',
+    height: '19px',
+    minWidth: '50px',
+  },
+
+  forSpan: {
+    fontWeight: 'bold',
+    padding: '5px 3px 5px 3px',
+    display: 'inline-block',
+    verticalAlign: ' middle',
+    lineHeight: 'normal',
+    textTransform: 'none',
+  },
+  forFacebookContainer: {
+    padding: '10px 0px 0px 0px',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    gap: '5px',
+  },
+}
 
 const SearchIconComponent = () => {
   const dispatch = useDispatch()
@@ -15,20 +60,30 @@ const SearchIconComponent = () => {
     dispatch(setSort(true))
   }
 
+  const [isIconRed, setIsIconRed] = useState(false)
+  const handleChangeIconColor = () => {
+    setIsIconRed(!isIconRed)
+  }
+
   return (
     <div className={styles.infoAndSearchContainer}>
-      <div className={styles.facebookContainer}>
-        <Button variant="contained">
+      <div style={stylesForComponent.forFacebookContainer}>
+        <button style={stylesForComponent.follow}>
           <span>
-            <ThumbUpIcon sx={{ width: 15 }} />
+            <img
+              style={{ width: '12px', height: '13px' }}
+              src={thumbUpIcon}
+              alt="up"
+            />
           </span>
-          <span>Follow</span>
-          <span className={styles.textInSpanFacebook}>125K</span>
-        </Button>
-        <Button variant="contained" className={styles.shareFacebook}>
-          <span>Share</span>
-        </Button>
+          <span style={stylesForComponent.forSpan}>Follow</span>
+          <span style={{ fontWeight: 'normal' }}>125K</span>
+        </button>
+        <button style={stylesForComponent.share}>
+          <span style={stylesForComponent.forSpan}>Share</span>
+        </button>
       </div>
+
       <div className={styles.contactContainer}>
         <div className={styles.phone}>
           <p>+81-573-66-5670</p>
@@ -42,10 +97,26 @@ const SearchIconComponent = () => {
           <HeaderSearch />
         </div>
 
-        <div className={styles.afterContainer}>
+        <div
+          className={styles.afterContainer}
+          onMouseEnter={handleChangeIconColor}
+          onMouseLeave={handleChangeIconColor}
+        >
           <NavLink to="search">
             <div className={styles.submitBtn} onClick={handleSearchButtonClick}>
-              <SearchIcon className={styles.searchIco} />
+              {isIconRed ? (
+                <img
+                  style={{ width: '18px', height: '18px', zIndex: '1000' }}
+                  src={searchIconRed}
+                  alt="search"
+                />
+              ) : (
+                <img
+                  style={{ width: '18px', height: '18px', zIndex: '1000' }}
+                  src={searchIcon}
+                  alt="search"
+                />
+              )}
             </div>
           </NavLink>
         </div>

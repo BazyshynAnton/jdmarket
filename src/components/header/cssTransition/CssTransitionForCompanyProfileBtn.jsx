@@ -1,6 +1,6 @@
 import { CSSTransition } from 'react-transition-group'
 
-import styles from '../Header.module.css'
+import styles from '../Header.module.scss'
 
 const CssTransitionForCompanyProfileBtn = ({
   nodeRef,
@@ -15,21 +15,25 @@ const CssTransitionForCompanyProfileBtn = ({
       timeout={300}
       classNames="companyProfile"
       mountOnEnter
-      unmountOnExit>
+      unmountOnExit
+    >
       <div
         ref={nodeRef}
         className={styles.companyProfile}
         onMouseEnter={handleMouseEnterTwo}
-        onMouseLeave={handleMouseLeaveTwo}>
+        onMouseLeave={handleMouseLeaveTwo}
+      >
         <div className={styles.companySection}>
           <p className={styles.textInCompany}>ABOUT US</p>
         </div>
         <div
-          className={`${styles.companySection} ${styles.borderCompanySectionOne}`}>
+          className={`${styles.companySection} ${styles.borderCompanySectionOne}`}
+        >
           <p className={styles.textInCompany}>OUR SERVICES</p>
         </div>
         <div
-          className={`${styles.companySection} ${styles.borderCompanySectionTwo}`}>
+          className={`${styles.companySection} ${styles.borderCompanySectionTwo}`}
+        >
           <p className={styles.textInCompany}>WHY CHOOSE US</p>
         </div>
         <div className={styles.companySection}>
