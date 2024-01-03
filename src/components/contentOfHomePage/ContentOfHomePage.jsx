@@ -1,4 +1,3 @@
-import { Container } from '@mui/material'
 import CarouselSlide from './homePageComponents/carouselSlide/CarouselSlide'
 import Panel from './homePageComponents/panel/Panel'
 import LatestArrivals from './homePageComponents/carouselsOfCars/latestArrivals/LatestArrivals'
