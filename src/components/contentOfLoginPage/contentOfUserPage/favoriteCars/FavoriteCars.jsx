@@ -11,6 +11,7 @@ import cars from '../../../../data/cars'
 
 import 'swiper/css'
 import styles from '../ContentOfUserPage.module.css'
+import swal from 'sweetalert'
 
 const FavoriteCars = () => {
   const { favoriteCar, activeUser } = useSelector(
@@ -20,8 +21,6 @@ const FavoriteCars = () => {
   const favoriteCars = cars.filter((car) => favoriteCar.id.includes(car.id))
   useEffect(() => {
     const handleResize = () => {
-      // При ширине экрана меньше 800px, устанавливаем 3 слайда,
-      // в противном случае устанавливаем 4 слайда (по умолчанию).
       if (window.innerWidth <= 380) {
         setSlidesPerView(1)
       } else if (window.innerWidth <= 655) {
@@ -31,11 +30,9 @@ const FavoriteCars = () => {
       }
     }
 
-    // Вызываем handleResize при загрузке страницы и изменении размера окна.
     handleResize()
     window.addEventListener('resize', handleResize)
 
-    // Очищаем слушатель событий при размонтировании компонента.
     return () => {
       window.removeEventListener('resize', handleResize)
     }
@@ -52,7 +49,8 @@ const FavoriteCars = () => {
           spaceBetween={30}
           navigation={true}
           modules={[Navigation]}
-          className={styles.favoriteCarsSwiper}>
+          className={styles.favoriteCarsSwiper}
+        >
           {favoriteCars.map((car) => (
             <SwiperSlide className={styles.swiperSlideContainer} key={car.id}>
               <CardOfFavoriteCars text={car.text} img={car.img} id={car.id} />
@@ -71,7 +69,8 @@ const FavoriteCars = () => {
             fontFamily: 'Pathway Gothic One, sans-serif',
             fontSize: '25px',
           }}
-          className={styles.favoriteCarsSwiper}>
+          className={styles.favoriteCarsSwiper}
+        >
           List is empty ☹️
           {activeUser ? (
             <NavLink
@@ -85,7 +84,8 @@ const FavoriteCars = () => {
                 cursor: 'pointer',
                 fontSize: '15px',
                 textAlign: 'center',
-              }}>
+              }}
+            >
               show cars
             </NavLink>
           ) : (
@@ -104,7 +104,8 @@ const FavoriteCars = () => {
                 background: 'red',
                 cursor: 'pointer',
                 fontSize: '12px',
-              }}>
+              }}
+            >
               show cars
             </button>
           )}

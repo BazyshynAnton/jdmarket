@@ -4,6 +4,7 @@ import { setEdit } from '../../createAccountAndRegisteredAccount/alreadyRegister
 import avatarExample from '../../../../pictures/avatarExample.jpg'
 
 import styles from '../ContentOfUserPage.module.css'
+import swal from 'sweetalert'
 
 const stylesForTextAndButton = {
   text: {
@@ -49,7 +50,8 @@ const UserInfo = () => {
           onClick={() => {
             dispatch(setEdit())
           }}
-          style={stylesForTextAndButton.btn}>
+          style={stylesForTextAndButton.btn}
+        >
           Edit Profile
         </button>
       ) : (
@@ -60,7 +62,8 @@ const UserInfo = () => {
               text: 'You are not registered or not logged in.',
             })
           }
-          style={stylesForTextAndButton.btn}>
+          style={stylesForTextAndButton.btn}
+        >
           Edit Profile
         </button>
       )}

@@ -1,31 +1,14 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, LazyLoadImage } from '../../../../shared/utils/reactImports'
 
-import swal from 'sweetalert'
+import swal from '../../../../shared/utils/swalImports'
 
-import styles from '../CarouselsOfCars.module.css'
-
-const stylesForCardOfFavoriteCars = {
-  btn: {
-    marginLeft: '10px',
-    float: 'right',
-    background: 'red',
-    borderRadius: '4px',
-    color: 'white',
-    width: '40%',
-    height: '30px',
-    cursor: 'pointer',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontFamily: 'Open Sans, sans-serif',
-  },
-}
+import styles from '../CarouselsOfCars.module.scss'
 
 const CardOfCar = ({ text, img, id }) => {
   return (
     <div className={styles.cardOfCarsContainer}>
       <div className={styles.imgContainer}>
-        <img src={img} alt="car" />
+        <LazyLoadImage src={img} alt="car" />
       </div>
       <div className={styles.cardTextAndButton}>
         <p style={{ fontFamily: 'Open Sans, sans-serif' }}>{text}</p>
@@ -34,19 +17,20 @@ const CardOfCar = ({ text, img, id }) => {
             to="/vehicle-inventory/8f22002c-8568-4e5b-829c-84cebeea1130"
             onClick={() => window.scrollTo(0, 0)}
             className={styles.styleForCarLinkBtn}
-            style={stylesForCardOfFavoriteCars.btn}>
+          >
             view details
           </NavLink>
         )}
         {id !== '8402' && (
           <button
-            style={{ fontFamily: 'Open Sans, sans-serif' }}
+            style={{ fontFamily: 'Open Sans, sans-serif', fontWeight: 'bold' }}
             onClick={() =>
               swal({
                 title: 'Oops...',
                 text: 'Car Has Already Been Sold.',
               })
-            }>
+            }
+          >
             view details
           </button>
         )}

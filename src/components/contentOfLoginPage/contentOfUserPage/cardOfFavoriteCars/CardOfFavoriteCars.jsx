@@ -7,6 +7,7 @@ import { setRemoveFavoriteCar } from '../../../contentOfLoginPage/createAccountA
 import CancelIcon from '@mui/icons-material/Cancel'
 
 import styles from '../ContentOfUserPage.module.css'
+import swal from 'sweetalert'
 
 const stylesForCardOfFavoriteCars = {
   btn: {
@@ -72,7 +73,8 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
                 ifStyle
                   ? stylesForCardOfFavoriteCars.btn2
                   : stylesForCardOfFavoriteCars.btn
-              }>
+              }
+            >
               view details
             </NavLink>
           </div>
@@ -81,7 +83,8 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
               className={styles.removeFromFavorites}
               onClick={() =>
                 dispatch(setRemoveFavoriteCar(favoriteCar.id.replace(id, '')))
-              }>
+              }
+            >
               <p style={{ fontFamily: 'Open Sans, sans-serif' }}>Remove</p>
               <CancelIcon className={styles.removeButton} />
             </div>
@@ -99,7 +102,8 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
                   title: 'Oops...',
                   text: 'Car Has Already Been Sold.',
                 })
-              }>
+              }
+            >
               view details
             </button>
           </div>
@@ -108,7 +112,8 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
               className={styles.removeFromFavorites}
               onClick={() => {
                 dispatch(setRemoveFavoriteCar(favoriteCar.id.replace(id, '')))
-              }}>
+              }}
+            >
               <p>Remove</p>
               <CancelIcon className={styles.removeButton} />
             </div>

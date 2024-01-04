@@ -1,14 +1,13 @@
-import { useEffect, useState } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { useEffect, useState } from '../../../../shared/utils/reactImports'
+import { Swiper, SwiperSlide } from '../../../../shared/utils/swiperImports'
 
 import CardOfManufacture from '../cardOfManufacture/CardOfManufacture'
 import SwiperManufactureNavBtns from '../swiperNavBtns/SwiperManufactureNavBtns'
 
 import manufactures from '../../../../../data/manufactures'
 
+import styles from '../CarouselsOfCars.module.scss'
 import 'swiper/css'
-import styles from '../CarouselsOfCars.module.css'
 
 const InventoryByManufactures = () => {
   const [slidesPerView, setSlidesPerView] = useState(4)
@@ -43,13 +42,13 @@ const InventoryByManufactures = () => {
       <Swiper
         slidesPerView={slidesPerView}
         spaceBetween={30}
-        navigation={true}
-        modules={[Navigation]}
-        className={styles.latestManufactureArrivalsSwiper}>
+        className={styles.latestManufactureArrivalsSwiper}
+      >
         {manufactures.map((manufacture) => (
           <SwiperSlide
             className={styles.swiperSlideContainer}
-            key={manufacture.id}>
+            key={manufacture.id}
+          >
             <CardOfManufacture img={manufacture.img} />
           </SwiperSlide>
         ))}

@@ -1,26 +1,36 @@
-import { useEffect, useRef, useState } from 'react'
-import { CSSTransition } from 'react-transition-group'
-import { Container } from '@mui/material'
+import {
+  useEffect,
+  useRef,
+  useState,
+  CSSTransition,
+  LazyLoadImage,
+} from '../shared/utils/reactImports'
 
-import DoubleArrowIcon from '@mui/icons-material/DoubleArrow'
-import EmailIcon from '@mui/icons-material/Email'
-import PhoneIcon from '@mui/icons-material/Phone'
+import doubleArrowIcon from '../../assets/pictures/app-icons/doubleArrowIcon.png'
+import mailIcon from '../../assets/pictures/app-icons/mailIcon.png'
+import phoneIcon from '../../assets/pictures/app-icons/phoneIcon.png'
 
-import styles from './BackToTopBtn.module.css'
+import styles from './BackToTopBtn.module.scss'
+
+const stylesForImg = { width: '24px', height: '24px' }
 
 const BackToTopBtn = () => {
-  const nodeRef = useRef(null)
+  const nodeRef1 = useRef(null)
+  const nodeRef2 = useRef(null)
+  const nodeRef3 = useRef(null)
 
   const [backToTopBtn, setBackToTopBtn] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [isOpenTwo, setIsOpenTwo] = useState(false)
+  const [leaveDelay, setLeaveDelay] = useState(null)
+  const [leaveDelayTwo, setLeaveDelayTwo] = useState(null)
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        setBackToTopBtn(true)
-      } else {
-        setBackToTopBtn(false)
-      }
-    })
+    const handleScroll = () => {
+      setBackToTopBtn(window.scrollY > 100)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const scrollUp = () => {
@@ -30,84 +40,116 @@ const BackToTopBtn = () => {
     })
   }
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [isOpenTwo, setIsOpenTwo] = useState(false)
-
-  const handleMouseEnter = () => {
-    setIsOpen(true)
-  }
-
-  const handleMouseLeave = () => {
-    setIsOpen(false)
-  }
-  const handleMouseEnterTwo = () => {
-    setIsOpenTwo(true)
-  }
-
-  const handleMouseLeaveTwo = () => {
-    setIsOpenTwo(false)
-  }
-
   return (
-    <Container>
+    <div className="my-container">
       <div className={styles.mainContainer}>
         <CSSTransition
-          nodeRef={nodeRef}
+          nodeRef={nodeRef1}
           in={backToTopBtn}
           timeout={300}
           classNames="fadeBackToTopBtn"
           mountOnEnter
-          unmountOnExit>
-          <div ref={nodeRef} className={styles.backToTopBtnMainContainer}>
-            <CSSTransition
-              nodeRef={nodeRef}
-              in={isOpen}
-              timeout={300}
-              classNames="infoMail"
-              mountOnEnter
-              unmountOnExit>
-              <div
-                ref={nodeRef}
-                className={styles.infoMail}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}>
-                <p>info@jdm.com</p>
-              </div>
-            </CSSTransition>
+          unmountOnExit
+        >
+          <div ref={nodeRef1} className={styles.backToTopBtnMainContainer}>
             <div onClick={scrollUp} className={styles.backToTopBtnIcon}>
-              <DoubleArrowIcon />
+              <LazyLoadImage
+                style={stylesForImg}
+                src={doubleArrowIcon}
+                alt="scroll-to-top"
+              />
             </div>
             <div
               className={styles.emailIcon}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}>
-              <EmailIcon />
+              onMouseEnter={() => {
+                clearTimeout(leaveDelay)
+                setIsOpen(true)
+              }}
+              onMouseLeave={() => {
+                setLeaveDelay(
+                  setTimeout(() => {
+                    setIsOpen(false)
+                  }, 300)
+                )
+              }}
+            >
+              <LazyLoadImage style={stylesForImg} src={mailIcon} alt="mail" />
+
+              <CSSTransition
+                nodeRef={nodeRef2}
+                in={isOpen}
+                timeout={300}
+                classNames="infoMail"
+                mountOnEnter
+                unmountOnExit
+              >
+                <div
+                  ref={nodeRef2}
+                  className={styles.infoMail}
+                  onMouseEnter={() => {
+                    clearTimeout(leaveDelay)
+                    setIsOpen(true)
+                  }}
+                  onMouseLeave={() => {
+                    setLeaveDelay(
+                      setTimeout(() => {
+                        setIsOpen(false)
+                      }, 300)
+                    )
+                  }}
+                >
+                  <p>info@jdm.com</p>
+                </div>
+              </CSSTransition>
             </div>
-            <CSSTransition
-              nodeRef={nodeRef}
-              in={isOpenTwo}
-              timeout={300}
-              classNames="infoMail"
-              mountOnEnter
-              unmountOnExit>
-              <div
-                ref={nodeRef}
-                className={styles.infoPhone}
-                onMouseEnter={handleMouseEnterTwo}
-                onMouseLeave={handleMouseLeaveTwo}>
-                <p>+81-573-56766</p>
-              </div>
-            </CSSTransition>
+
             <div
               className={styles.phoneIcon}
-              onMouseEnter={handleMouseEnterTwo}
-              onMouseLeave={handleMouseLeaveTwo}>
-              <PhoneIcon />
+              onMouseEnter={() => {
+                clearTimeout(leaveDelayTwo)
+                setIsOpenTwo(true)
+              }}
+              onMouseLeave={() => {
+                setLeaveDelayTwo(
+                  setTimeout(() => {
+                    setIsOpenTwo(false)
+                  }, 300)
+                )
+              }}
+            >
+              <LazyLoadImage style={stylesForImg} src={phoneIcon} alt="phone" />
+
+              <CSSTransition
+                nodeRef={nodeRef3}
+                in={isOpenTwo}
+                timeout={300}
+                classNames="infoMail"
+                mountOnEnter
+                unmountOnExit
+              >
+                <div
+                  ref={nodeRef3}
+                  className={styles.infoPhone}
+                  onMouseEnter={() => {
+                    clearTimeout(leaveDelayTwo)
+                    setIsOpenTwo(true)
+                  }}
+                  onMouseLeave={() => {
+                    setLeaveDelayTwo(
+                      setTimeout(() => {
+                        setIsOpenTwo(false)
+                      }, 300)
+                    )
+                  }}
+                >
+                  <p>+81-573-56766</p>
+                </div>
+              </CSSTransition>
             </div>
           </div>
         </CSSTransition>
       </div>
-    </Container>
+    </div>
   )
 }
 

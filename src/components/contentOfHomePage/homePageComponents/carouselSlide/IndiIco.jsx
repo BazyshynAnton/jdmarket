@@ -1,10 +1,12 @@
-import styles from './CarouselSlide.module.css'
+import { LazyLoadImage } from '../../../shared/utils/reactImports'
+
+import styles from './CarouselSlide.module.scss'
 
 const IndiIco = ({ slide }) => {
   return (
     <div className={styles.borderContainerIco}>
       <div className={styles.containerIco}>
-        <img src={slide.img} alt={slide.title} />
+        <LazyLoadImage src={slide.img} alt={slide.title} />
       </div>
     </div>
   )

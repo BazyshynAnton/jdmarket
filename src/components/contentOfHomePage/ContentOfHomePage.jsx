@@ -6,7 +6,7 @@ import InventoryByManufactures from './homePageComponents/carouselsOfCars/invent
 import ForumBanner from './homePageComponents/forumBanner/ForumBanner'
 import InformationDesk from './homePageComponents/informationDesk/InformationDesk'
 
-import styles from './ContentOfHomePage.module.css'
+import styles from './ContentOfHomePage.module.scss'
 
 const ContentOfHomePage = () => {
   return (

@@ -1,4 +1,8 @@
-import { NavLink, CSSTransition } from '../../shared/utils/reactImports'
+import {
+  NavLink,
+  CSSTransition,
+  LazyLoadImage,
+} from '../../shared/utils/reactImports'
 
 import jdmSports from '../../../pictures/jdmSports.jpg'
 import jdmClassic from '../../../pictures/jdmClassic.jpg'
@@ -36,7 +40,7 @@ const CssTransitionForSmallScreenVehicleInventoryBtn = ({
         >
           <div className={styles.jdmSectionInBurger}>
             <p>JDM SPORTS</p>
-            <img src={jdmSports} alt="jdm-sports" />
+            <LazyLoadImage src={jdmSports} alt="jdm-sports" />
           </div>
         </NavLink>
         <NavLink
@@ -48,7 +52,7 @@ const CssTransitionForSmallScreenVehicleInventoryBtn = ({
         >
           <div className={styles.jdmSectionInBurger}>
             <p>JDM CLASSIC</p>
-            <img src={jdmClassic} alt="jdm-classic" />
+            <LazyLoadImage src={jdmClassic} alt="jdm-classic" />
           </div>
         </NavLink>
         <NavLink
@@ -60,7 +64,7 @@ const CssTransitionForSmallScreenVehicleInventoryBtn = ({
         >
           <div className={styles.jdmSectionInBurger}>
             <p>NON JDM</p>
-            <img src={nonJdm} alt="non-jdm" />
+            <LazyLoadImage src={nonJdm} alt="non-jdm" />
           </div>
         </NavLink>
       </div>

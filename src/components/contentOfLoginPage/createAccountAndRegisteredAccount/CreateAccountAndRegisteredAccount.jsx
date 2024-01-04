@@ -30,7 +30,7 @@ const CreateAccountAndRegisteredAccount = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault()
 
-    dispatch(setValid())
+    dispatch(setControllValid())
   }
 
   const handleFormControll = (event) => {
@@ -40,7 +40,7 @@ const CreateAccountAndRegisteredAccount = () => {
 
   const handleRegistration = () => {
     if (formData.email === false) {
-      useDispatch(onClickFieldEmail())
+      dispatch(onClickFieldEmail())
     }
 
     dispatch(setRegistration())
@@ -68,7 +68,8 @@ const CreateAccountAndRegisteredAccount = () => {
             <h4>CREATE AN ACCOUNT</h4>
             <form
               onSubmit={handleFormSubmit}
-              className={styles.formContainerCreateAnAccount}>
+              className={styles.formContainerCreateAnAccount}
+            >
               <p>Please enter your email address to create an account.</p>
               <div style={stylesForRegistrationForm.stylesForIputContainer}>
                 {onClickFieldEmail ? (
@@ -91,7 +92,8 @@ const CreateAccountAndRegisteredAccount = () => {
                 type="button"
                 onClick={() => {
                   handleRegistration()
-                }}>
+                }}
+              >
                 create an account
               </button>
             </form>
@@ -128,7 +130,8 @@ const CreateAccountAndRegisteredAccount = () => {
                   style={{ width: '60px' }}
                   onClick={() => {
                     dispatch(setActiveUserSignIn())
-                  }}>
+                  }}
+                >
                   <button type="button">sign in</button>
                 </NavLink>
               ) : (

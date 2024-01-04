@@ -1,4 +1,9 @@
-import { useDispatch, useState, NavLink } from '../../shared/utils/reactImports'
+import {
+  useDispatch,
+  useState,
+  NavLink,
+  LazyLoadImage,
+} from '../../shared/utils/reactImports'
 import { setSort } from '../headerSlice'
 
 import HeaderSearch from './HeaderSearch'
@@ -66,11 +71,11 @@ const SearchIconComponent = () => {
   }
 
   return (
-    <div className={styles.infoAndSearchContainer}>
+    <div style={{ maxWidth: '100%', height: '100%' }}>
       <div style={stylesForComponent.forFacebookContainer}>
         <button style={stylesForComponent.follow}>
           <span>
-            <img
+            <LazyLoadImage
               style={{ width: '12px', height: '13px' }}
               src={thumbUpIcon}
               alt="up"
@@ -105,13 +110,13 @@ const SearchIconComponent = () => {
           <NavLink to="search">
             <div className={styles.submitBtn} onClick={handleSearchButtonClick}>
               {isIconRed ? (
-                <img
+                <LazyLoadImage
                   style={{ width: '18px', height: '18px', zIndex: '1000' }}
                   src={searchIconRed}
                   alt="search"
                 />
               ) : (
-                <img
+                <LazyLoadImage
                   style={{ width: '18px', height: '18px', zIndex: '1000' }}
                   src={searchIcon}
                   alt="search"

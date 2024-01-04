@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
-import { CSSTransition } from 'react-transition-group'
+import {
+  useState,
+  React,
+  CSSTransition,
+} from '../../../shared/utils/reactImports'
 
 import AddIcCallIcon from '@mui/icons-material/AddIcCall'
 import ManageHistoryIcon from '@mui/icons-material/ManageHistory'
 import EmailIcon from '@mui/icons-material/Email'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
-import styles from './InformationDesk.module.css'
+import styles from './InformationDesk.module.scss'
 
 const InformationDesk = () => {
   const nodeRef = React.useRef(null)
@@ -54,12 +57,14 @@ const InformationDesk = () => {
         timeout={300}
         classNames="modal"
         mountOnEnter
-        unmountOnExit>
+        unmountOnExit
+      >
         <div
           ref={nodeRef}
           className={styles.modalContent}
           onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
+          onMouseLeave={handleMouseLeave}
+        >
           <p className={styles.shyText}>Don't be shy!</p>
           <p>We are always here to help you.</p>
         </div>
@@ -70,12 +75,14 @@ const InformationDesk = () => {
         timeout={300}
         classNames="help"
         mountOnEnter
-        unmountOnExit>
+        unmountOnExit
+      >
         <div
           ref={nodeRef}
           className={styles.helpContent}
           onMouseEnter={handleMouseEnterTwo}
-          onMouseLeave={handleMouseLeaveTwo}>
+          onMouseLeave={handleMouseLeaveTwo}
+        >
           <form onSubmit={handleSubmit} className={styles.formContainer}>
             <div className={styles.inputContainer}>
               <input
@@ -85,7 +92,8 @@ const InformationDesk = () => {
                 value={formData.name}
                 id="name"
                 autoComplete="name"
-                onChange={handleChange}></input>
+                onChange={handleChange}
+              ></input>
               <input
                 type="email"
                 placeholder="Email*"
@@ -93,13 +101,15 @@ const InformationDesk = () => {
                 value={formData.email}
                 id="email"
                 autoComplete="email"
-                onChange={handleChange}></input>
+                onChange={handleChange}
+              ></input>
             </div>
             <textarea
               placeholder="Comment*"
               name="comment"
               value={formData.comment}
-              onChange={handleChange}></textarea>
+              onChange={handleChange}
+            ></textarea>
             <div className={styles.btnContainer}>
               <button type="submit">Submit</button>
             </div>
@@ -113,7 +123,8 @@ const InformationDesk = () => {
         <div
           className={styles.containerTextModal}
           onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
+          onMouseLeave={handleMouseLeave}
+        >
           <AddIcCallIcon className={styles.phone} />
           <p>+81-573-66-5670</p>
         </div>
@@ -128,7 +139,8 @@ const InformationDesk = () => {
         <div
           className={styles.containerText}
           onMouseEnter={handleMouseEnterTwo}
-          onMouseLeave={handleMouseLeaveTwo}>
+          onMouseLeave={handleMouseLeaveTwo}
+        >
           <EmailIcon className={styles.mail} />
           <p>info@jdm.com</p>
         </div>

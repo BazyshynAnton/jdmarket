@@ -1,4 +1,8 @@
-import { NavLink, CSSTransition } from '../../shared/utils/reactImports'
+import {
+  NavLink,
+  CSSTransition,
+  LazyLoadImage,
+} from '../../shared/utils/reactImports'
 
 import jdmSports from '../../../pictures/jdmSports.jpg'
 import jdmClassic from '../../../pictures/jdmClassic.jpg'
@@ -32,7 +36,7 @@ const CssTransitionForVehicleInventoryBtn = ({
           onClick={() => window.scrollTo(0, 0)}
           className={styles.sectionInventory}
         >
-          <img src={jdmSports} alt="jdm-sports" />
+          <LazyLoadImage src={jdmSports} alt="jdm-sports" />
           <p className={styles.textInSection}>JDM SPORTS</p>
         </NavLink>
         <NavLink
@@ -40,7 +44,7 @@ const CssTransitionForVehicleInventoryBtn = ({
           onClick={() => window.scrollTo(0, 0)}
           className={`${styles.sectionInventory} ${styles.borderSection}`}
         >
-          <img src={jdmClassic} alt="jdm-classic" />
+          <LazyLoadImage src={jdmClassic} alt="jdm-classic" />
           <p className={styles.textInSection}>JDM CLASSIC</p>
         </NavLink>
         <NavLink
@@ -48,7 +52,7 @@ const CssTransitionForVehicleInventoryBtn = ({
           onClick={() => window.scrollTo(0, 0)}
           className={styles.sectionInventory}
         >
-          <img src={nonJdm} alt="non-jdm" />
+          <LazyLoadImage src={nonJdm} alt="non-jdm" />
           <p className={styles.textInSection}>NON JDM</p>
         </NavLink>
       </div>

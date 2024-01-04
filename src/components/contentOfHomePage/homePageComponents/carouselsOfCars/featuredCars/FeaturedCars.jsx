@@ -1,14 +1,13 @@
-import { useEffect, useState } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { useEffect, useState } from '../../../../shared/utils/reactImports'
+import { Swiper, SwiperSlide } from '../../../../shared/utils/swiperImports'
 
 import CardOfCar from '../cardOfCar/CardOfCar'
 import SwiperNavBtns from '../swiperNavBtns/SwiperNavBtns'
 
 import cars from '../../../../../data/cars'
 
+import styles from '../CarouselsOfCars.module.scss'
 import 'swiper/css'
-import styles from '../CarouselsOfCars.module.css'
 
 const FeaturedCars = () => {
   const [slidesPerView, setSlidesPerView] = useState(4)
@@ -33,6 +32,22 @@ const FeaturedCars = () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+
+  //Controll window size
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 800)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 800)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <div className={styles.mainContainerSwiper}>
       <div className={styles.nameOfSwiper}>
@@ -46,14 +61,23 @@ const FeaturedCars = () => {
         slidesPerView={slidesPerView}
         spaceBetween={30}
         navigation={true}
-        modules={[Navigation]}
-        className={styles.latestArrivalsSwiper}>
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          background: '#fff',
+          overflow: 'visible',
+          overflowX: 'clip',
+          overflowY: 'visible',
+          padding: '20px 20px 0px 20px',
+        }}
+      >
         {cars.slice(7, 14).map((car) => (
           <SwiperSlide className={styles.swiperSlideContainer} key={car.id}>
             <CardOfCar text={car.text} img={car.img} />
           </SwiperSlide>
         ))}
-        <SwiperNavBtns />
+        {isDesktop && <SwiperNavBtns />}
       </Swiper>
     </div>
   )

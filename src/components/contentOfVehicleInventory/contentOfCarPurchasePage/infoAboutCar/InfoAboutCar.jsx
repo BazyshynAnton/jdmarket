@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
 import styles from './InfoAndVideoAboutCar.module.css'
+import swal from 'sweetalert'
 
 const colorForInformation = {
   color: '#800000',
@@ -71,7 +72,8 @@ const InfoAboutCar = () => {
                 title: 'Again?...',
                 text: 'This car has already been added to favorites!😊',
               })
-            }>
+            }
+          >
             ✦ Add to favorites
           </button> //ALREADY
         ) : (
@@ -83,7 +85,8 @@ const InfoAboutCar = () => {
                 title: 'Great!',
                 text: 'We are waiting for your letter!😊',
               })
-            }}>
+            }}
+          >
             ✦ Add to favorites
           </button> // ADD!!!
         )
@@ -94,7 +97,8 @@ const InfoAboutCar = () => {
               title: 'Oops...',
               text: 'Please "Log in" or register.',
             })
-          }>
+          }
+        >
           ✦ Add to favorites
         </button> // PLZ REGISTER!!!
       )}

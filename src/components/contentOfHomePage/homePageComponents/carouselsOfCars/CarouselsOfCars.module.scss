@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  position: relative;
 }
 
 .nameOfSwiper {
@@ -54,22 +55,13 @@
   font-family: $gothicFont;
   font-weight: normal;
   font-size: 22px;
-  z-index: 3;
+  z-index: 0;
 }
 
 .latestManufactureArrivalsSwiper {
   position: relative;
   width: 100%;
   height: 160px;
-  background: white;
-  overflow-y: visible;
-  padding: 0px 20px 0px 20px;
-}
-
-.latestArrivalsSwiper {
-  position: relative;
-  width: 100%;
-  height: 260px;
   background: white;
   overflow-y: visible;
   padding: 0px 20px 0px 20px;
@@ -84,13 +76,14 @@
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+  height: 100%;
   padding-bottom: 20px;
   cursor: pointer;
 
   .imgContainer {
     @include blockSettings2(flex, center, center);
     width: 100%;
-    height: 180px;
+    height: 100%;
     img {
       object-fit: cover;
       width: 100%;
@@ -110,18 +103,38 @@
   button {
     margin-left: 10px;
     float: right;
-    background: red;
     border-radius: 4px;
     color: white;
     width: 40%;
     height: 30px;
     cursor: pointer;
     font-size: 12px;
+    background: linear-gradient(to bottom, #d80505 0%, #a10202 100%);
+
+    &:hover {
+      background: linear-gradient(to bottom, #a10202 0%, #d80505 100%);
+    }
   }
 }
 
 .styleForCarLinkBtn {
+  margin-left: 10px;
+  float: right;
+  border-radius: 4px;
+  color: #fff;
+  width: 40%;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #d80505 0%, #a10202 100%);
   font-size: 12px;
+  &:hover {
+    background: linear-gradient(to bottom, #a10202 0%, #d80505 100%);
+  }
 }
 
 .cardOfManufactureContainer {
@@ -175,13 +188,23 @@
 
 @media (max-width: 455px) {
   .cardTextAndButton {
+    height: 100px;
+    flex-direction: column;
+    justify-content: space-between;
+    p {
+      width: 90%;
+    }
     button {
+      width: 100%;
       font-size: 9.5px;
+      margin-left: 0px;
     }
   }
 
   .styleForCarLinkBtn {
     font-size: 9.5px;
+    margin-left: 0px;
+    width: 100%;
   }
 }
 

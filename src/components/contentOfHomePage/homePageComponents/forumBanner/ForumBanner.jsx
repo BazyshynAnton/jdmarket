@@ -1,3 +1,4 @@
+import { LazyLoadImage } from '../../../shared/utils/reactImports'
 import forumBanner from '../../../../pictures/forumBanner.jpg'
 
 const ForumBanner = () => {
@@ -9,8 +10,9 @@ const ForumBanner = () => {
         height: '100%',
         marginTop: '50px',
         cursor: 'pointer',
-      }}>
-      <img
+      }}
+    >
+      <LazyLoadImage
         style={{ objectFit: 'cover', width: '100%', height: '100%' }}
         src={forumBanner}
         alt="forum-banner"

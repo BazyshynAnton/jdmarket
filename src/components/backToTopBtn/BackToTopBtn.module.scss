@@ -64,6 +64,10 @@
   cursor: pointer;
   padding: 5px 5px 5px 5px;
 
+  @-moz-document url-prefix() {
+    left: -87px;
+  }
+
   p {
     color: white;
     font-family: $gothicFont;
@@ -85,6 +89,10 @@
   z-index: -100;
   cursor: pointer;
   padding: 5px 5px 5px 5px;
+
+  @-moz-document url-prefix() {
+    left: -89px;
+  }
 
   p {
     color: white;

@@ -1,4 +1,9 @@
-import { useState, NavLink, React } from '../../shared/utils/reactImports'
+import {
+  useState,
+  NavLink,
+  React,
+  LazyLoadImage,
+} from '../../shared/utils/reactImports'
 
 import CssTransitionForSocialMediaBtn from '../cssTransition/CssTransitionForSocialMediaBtn'
 import CssTransitionForVehicleInventoryBtn from '../cssTransition/CssTransitionForVehicleInventoryBtn'
@@ -71,7 +76,7 @@ const AppBarForBigScreens = () => {
         <ul className={styles.lists}>
           <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
             <li className={styles.listItem}>
-              <img
+              <LazyLoadImage
                 style={{ width: '19px', height: '19px' }}
                 src={homeRoundedIcon}
                 alt="home"

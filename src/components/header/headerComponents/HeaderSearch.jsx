@@ -8,8 +8,8 @@ import {
   useDispatch,
   useSelector,
   React,
+  CSSTransition,
 } from '../../shared/utils/reactImports'
-import { CSSTransition } from 'react-transition-group'
 
 import HelperForSearch from './HelperForSearch'
 

@@ -2,6 +2,7 @@ import {
   useRef,
   useState,
   NavLink,
+  LazyLoadImage,
   useEffect,
 } from '../../shared/utils/reactImports'
 
@@ -82,7 +83,7 @@ const AppBarForSmallScreens = ({ open, setOpen }) => {
           style={{ zIndex: '10000', background: 'none', cursor: 'pointer' }}
           onClick={() => setOpen(false)}
         >
-          <img
+          <LazyLoadImage
             style={{ width: '30px', height: '20px' }}
             src={menuOpenIcon}
             alt="menu-open"

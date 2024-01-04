@@ -16,13 +16,14 @@ const NavigationMenu = () => {
   return (
     <div className={styles.mainNavContainer}>
       <div className={styles.navContainer}>
-        <NavLink to="/" onClick={() => scrollTo(0, 0)}>
+        <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
           <p className={styles.linkNav}>HOME</p>
         </NavLink>
         <p>{'>'}</p>
         <p
           className={registration ? styles.linkNav : ''}
-          onClick={registration ? backToLoginPageLink : () => {}}>
+          onClick={registration ? backToLoginPageLink : () => {}}
+        >
           Authentication
         </p>
         {registration && (

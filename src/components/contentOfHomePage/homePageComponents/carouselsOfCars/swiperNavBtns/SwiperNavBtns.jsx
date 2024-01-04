@@ -6,7 +6,7 @@ import buttonPrevious from '../../../../../pictures/button-previous.png'
 import buttonNextRed from '../../../../../pictures/button-next-red.png'
 import buttonPreviousRed from '../../../../../pictures/button-previous-red.png'
 
-import styles from './SwiperNavBtns.module.css'
+import styles from './SwiperNavBtns.module.scss'
 
 const SwiperNavBtns = () => {
   const [arrow, setArrow] = useState(false)
@@ -33,7 +33,8 @@ const SwiperNavBtns = () => {
       <div
         onClick={() => swiper.slidePrev()}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+        onMouseLeave={handleMouseLeave}
+      >
         {arrow ? (
           <img src={buttonPreviousRed} alt="prev" />
         ) : (
@@ -43,7 +44,8 @@ const SwiperNavBtns = () => {
       <div
         onClick={() => swiper.slideNext()}
         onMouseEnter={handleMouseEnterTwo}
-        onMouseLeave={handleMouseLeaveTwo}>
+        onMouseLeave={handleMouseLeaveTwo}
+      >
         {arrowTwo ? (
           <img src={buttonNextRed} alt="next" />
         ) : (

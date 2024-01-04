@@ -1,4 +1,6 @@
-import styles from './CarouselSlide.module.css'
+import { LazyLoadImage } from '../../../shared/utils/reactImports'
+
+import styles from './CarouselSlide.module.scss'
 
 const Item = ({ slide }) => {
   return (
@@ -9,7 +11,7 @@ const Item = ({ slide }) => {
           <p>{slide.text}</p>
         </div>
       </div>
-      <img src={slide.img} alt={slide.title} />
+      <LazyLoadImage src={slide.img} alt={slide.title} />
     </div>
   )
 }

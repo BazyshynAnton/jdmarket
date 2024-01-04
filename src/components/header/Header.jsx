@@ -6,6 +6,7 @@ import {
   useSelector,
   Suspense,
   lazy,
+  LazyLoadImage,
 } from '../shared/utils/reactImports'
 import { setHelper } from './headerSlice'
 
@@ -70,7 +71,7 @@ const Header = () => {
         <div className={styles.mainHeaderBg}>
           <div className={styles.headerLogoContainer}>
             <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
-              <img src={headerLogo} alt="JDMexpoLogo" />
+              <LazyLoadImage src={headerLogo} alt="JDMexpoLogo" />
             </NavLink>
           </div>
 
@@ -89,7 +90,7 @@ const Header = () => {
               style={{ cursor: 'pointer', background: 'none' }}
               onClick={() => setOpen(true)}
             >
-              <img
+              <LazyLoadImage
                 style={{ width: '35px', height: '30px' }}
                 src={menuIcon}
                 alt="menu"

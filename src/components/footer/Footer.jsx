@@ -1,10 +1,11 @@
-import { Container } from '@mui/material'
-import styles from './Footer.module.css'
-import { useState } from 'react'
+import { useState, LazyLoadImage } from '../shared/utils/reactImports'
+
 import facebookIconTwo from '../../pictures/facebookIconTwo.png'
 import twitterIcon from '../../pictures/twitterIcon.png'
 import instIcon from '../../pictures/instIcon.png'
 import gPlusIcon from '../../pictures/gPlusIcon.png'
+
+import styles from './Footer.module.scss'
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -26,20 +27,20 @@ const Footer = () => {
 
   return (
     <div className={styles.footerContainerOverflow}>
-      <Container>
+      <div className="my-container">
         <div className={styles.footerContainer}>
           <div className={styles.mediaContainer}>
             <div className={styles.facebookContainer}>
-              <img src={facebookIconTwo} alt="facebook" />
+              <LazyLoadImage src={facebookIconTwo} alt="facebook" />
             </div>
             <div className={styles.twitterContainer}>
-              <img src={twitterIcon} alt="twitter" />
+              <LazyLoadImage src={twitterIcon} alt="twitter" />
             </div>
             <div className={styles.instagramContainer}>
-              <img src={instIcon} alt="instagram" />
+              <LazyLoadImage src={instIcon} alt="instagram" />
             </div>
             <div className={styles.googlePlusContainer}>
-              <img src={gPlusIcon} alt="gPlusIcon" />
+              <LazyLoadImage src={gPlusIcon} alt="gPlusIcon" />
             </div>
           </div>
           <div className={styles.siteMapContainer}>
@@ -73,7 +74,8 @@ const Footer = () => {
                 value={formData.name}
                 id="name"
                 autoComplete="name"
-                onChange={handleChange}></input>
+                onChange={handleChange}
+              ></input>
               <input
                 type="email"
                 placeholder="Email*"
@@ -81,16 +83,18 @@ const Footer = () => {
                 value={formData.email}
                 id="email"
                 autoComplete="email"
-                onChange={handleChange}></input>
+                onChange={handleChange}
+              ></input>
               <button
                 type="submit"
-                style={{ fontFamily: 'Open Sans, sans-serif' }}>
+                style={{ fontFamily: 'Open Sans, sans-serif' }}
+              >
                 sign up
               </button>
             </form>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   )
 }

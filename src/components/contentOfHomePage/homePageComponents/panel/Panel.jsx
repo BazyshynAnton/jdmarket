@@ -1,6 +1,6 @@
 import american from '../../../../pictures/american.png'
 
-import styles from './Panel.module.css'
+import styles from './Panel.module.scss'
 
 const Panel = () => {
   return (
