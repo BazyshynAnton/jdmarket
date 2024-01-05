@@ -1,13 +1,15 @@
-import styles from '../../../carSale/cardSale/CardSale.module.css'
+import { LazyLoadImage } from '../../../../shared/utils/reactImports'
+
+import styles from '../../../carSale/cardSale/CardSale.module.scss'
 
 const CardSale = ({ card }) => {
   return (
     <div className={styles.mainCardContainer}>
       <div className={styles.imgContainer}>
         <div className={styles.imgAvailableSoldContainer}>
-          <img src={card.imgTwo} alt="available/sold" />
+          <LazyLoadImage src={card.imgTwo} alt="available/sold" />
         </div>
-        <img src={card.img} alt={card.text} />
+        <LazyLoadImage src={card.img} alt={card.text} />
       </div>
       <div className={styles.textContainer}>
         <p>{card.text}</p>

@@ -1,16 +1,15 @@
-import { NavLink } from 'react-router-dom'
-import { Container } from '@mui/material'
+import { NavLink } from '../../shared/utils/reactImports'
 
-import InfromationDesk from '../../contentOfHomePage/homePageComponents/informationDesk/InformationDesk'
+import InformationDesk from '../../contentOfHomePage/homePageComponents/informationDesk/InformationDesk'
 import ImageInformationDesk from './imageInformationDesk/ImageInformationDesk'
 import FeaturedCars from '../../contentOfHomePage/homePageComponents/carouselsOfCars/featuredCars/FeaturedCars'
 import ForumBanner from '../../contentOfHomePage/homePageComponents/forumBanner/ForumBanner'
 
-import styles from './ContentOfCarPurchasePage.module.css'
+import styles from './ContentOfCarPurchasePage.module.scss'
 
 const ContentOfCarPurchasePage = () => {
   return (
-    <Container>
+    <div className="my-container">
       <div className={styles.navigation}>
         <NavLink to="/" className={styles.activeNav}>
           HOME
@@ -30,8 +29,8 @@ const ContentOfCarPurchasePage = () => {
 
       <FeaturedCars />
       <ForumBanner />
-      <InfromationDesk />
-    </Container>
+      <InformationDesk />
+    </div>
   )
 }
 

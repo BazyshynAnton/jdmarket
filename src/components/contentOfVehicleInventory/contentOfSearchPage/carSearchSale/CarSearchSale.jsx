@@ -1,14 +1,10 @@
-import { NavLink } from 'react-router-dom'
-import { Box } from '@mui/material'
+import { NavLink, useSelector } from '../../../shared/utils/reactImports'
+
 import CardSearchSale from './cardSearchSale/CardSearchSale'
 
-// import jdmSports from '../../../../pictures/jdmSports.jpg'
-// import jdmClassic from '../../../../pictures/jdmClassic.jpg'
-// import nonJdm from '../../../../pictures/nonJdm.jpg'
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 
-import styles from '../../carSale/CarSale.module.css'
-import { useSelector } from 'react-redux'
+import styles from '../../carSale/CarSale.module.scss'
 
 const CarSale = () => {
   const { searchInput, sort, selectForm } = useSelector(
@@ -31,7 +27,8 @@ const CarSale = () => {
           <NavLink
             to="/"
             onClick={() => window.scrollTo(0, 0)}
-            className={styles.homeBtn}>
+            className={styles.homeBtn}
+          >
             <p>HOME</p>
           </NavLink>
           <p>{'>'}</p>
@@ -64,7 +61,8 @@ const CarSale = () => {
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}>
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 <CardSearchSale card={card} />
               </NavLink>
             ))

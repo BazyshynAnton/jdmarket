@@ -1,11 +1,10 @@
-import { Container } from '@mui/material'
 import CarSearchSale from './carSearchSale/CarSearchSale'
 
 const ContentOfVehicleInventory = () => {
   return (
-    <Container>
+    <div className="my-container">
       <CarSearchSale />
-    </Container>
+    </div>
   )
 }
 

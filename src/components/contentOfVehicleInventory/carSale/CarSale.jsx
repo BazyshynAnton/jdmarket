@@ -1,12 +1,14 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, LazyLoadImage } from '../../shared/utils/reactImports'
+
 import CardSale from './cardSale/CardSale'
 
 import jdmSports from '../../../pictures/jdmSports.jpg'
 import jdmClassic from '../../../pictures/jdmClassic.jpg'
 import nonJdm from '../../../pictures/nonJdm.jpg'
+
 import vehiclePageCars from '../../../data/vehiclePageCars'
 
-import styles from './CarSale.module.css'
+import styles from './CarSale.module.scss'
 
 const CarSale = () => {
   return (
@@ -16,7 +18,8 @@ const CarSale = () => {
           <NavLink
             to="/"
             onClick={() => window.scrollTo(0, 0)}
-            className={styles.homeBtn}>
+            className={styles.homeBtn}
+          >
             <p>HOME</p>
           </NavLink>
           <p>{'>'}</p>
@@ -27,8 +30,9 @@ const CarSale = () => {
           <NavLink
             to="/vehicle-inventory/jdm-sports"
             onClick={() => window.scrollTo(0, 0)}
-            className={`${styles.linkStyleForSection} ${styles.section}`}>
-            <img src={jdmSports} alt="jdm-sports" />
+            className={`${styles.linkStyleForSection} ${styles.section}`}
+          >
+            <LazyLoadImage src={jdmSports} alt="jdm-sports" />
 
             <p>
               <i>JDM SPORTS</i>
@@ -37,8 +41,9 @@ const CarSale = () => {
           <NavLink
             to="/vehicle-inventory/jdm-classic"
             onClick={() => window.scrollTo(0, 0)}
-            className={`${styles.linkStyleForSection} ${styles.section}`}>
-            <img src={jdmClassic} alt="jdm-classic" />
+            className={`${styles.linkStyleForSection} ${styles.section}`}
+          >
+            <LazyLoadImage src={jdmClassic} alt="jdm-classic" />
 
             <p>
               <i>JDM CLASSIC</i>
@@ -47,8 +52,9 @@ const CarSale = () => {
           <NavLink
             to="/vehicle-inventory/non-jdm"
             onClick={() => window.scrollTo(0, 0)}
-            className={`${styles.linkStyleForSection} ${styles.section}`}>
-            <img src={nonJdm} alt="non-jdm" />
+            className={`${styles.linkStyleForSection} ${styles.section}`}
+          >
+            <LazyLoadImage src={nonJdm} alt="non-jdm" />
 
             <p>
               <i>NON JDM</i>
@@ -61,7 +67,8 @@ const CarSale = () => {
           <NavLink
             key={card.id}
             to={`/vehicle-inventory/${card.id}`}
-            onClick={() => window.scrollTo(0, 0)}>
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <CardSale card={card} />
           </NavLink>
         ))}

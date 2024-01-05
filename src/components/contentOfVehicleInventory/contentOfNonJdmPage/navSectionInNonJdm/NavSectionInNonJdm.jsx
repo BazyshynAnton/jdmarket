@@ -1,5 +1,8 @@
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import {
+  useState,
+  NavLink,
+  LazyLoadImage,
+} from '../../../shared/utils/reactImports'
 
 import CardSale from '../../carSale/cardSale/CardSale'
 
@@ -12,7 +15,7 @@ import nonJaguar from '../../../../pictures/nonJaguar.jpg'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 
-import styles from './NavSectionInNonJdm.module.css'
+import styles from './NavSectionInNonJdm.module.scss'
 
 const NavSectionInNonJdm = () => {
   const [sectionMark, setSectionMark] = useState(null)
@@ -40,8 +43,9 @@ const NavSectionInNonJdm = () => {
       <div className={styles.sectionsContainer}>
         <div
           className={styles.section}
-          onClick={() => setSectionMark('porsche')}>
-          <img src={nonPorsche} alt="porsche" />
+          onClick={() => setSectionMark('porsche')}
+        >
+          <LazyLoadImage src={nonPorsche} alt="porsche" />
 
           <p>
             <i>PORSCHE</i>
@@ -49,8 +53,9 @@ const NavSectionInNonJdm = () => {
         </div>
         <div
           className={styles.section}
-          onClick={() => setSectionMark('mercedes')}>
-          <img src={nonMercedes} alt="mercedes" />
+          onClick={() => setSectionMark('mercedes')}
+        >
+          <LazyLoadImage src={nonMercedes} alt="mercedes" />
 
           <p>
             <i>MERCEDES</i>
@@ -58,8 +63,9 @@ const NavSectionInNonJdm = () => {
         </div>
         <div
           className={styles.section}
-          onClick={() => setSectionMark('jaguar')}>
-          <img src={nonJaguar} alt="jaguar" />
+          onClick={() => setSectionMark('jaguar')}
+        >
+          <LazyLoadImage src={nonJaguar} alt="jaguar" />
 
           <p>
             <i>JAGUAR</i>
@@ -67,8 +73,9 @@ const NavSectionInNonJdm = () => {
         </div>
         <div
           className={styles.section}
-          onClick={() => setSectionMark('ferrari')}>
-          <img src={nonFerrari} alt="ferrari" />
+          onClick={() => setSectionMark('ferrari')}
+        >
+          <LazyLoadImage src={nonFerrari} alt="ferrari" />
 
           <p>
             <i>FERRARI</i>
@@ -76,14 +83,14 @@ const NavSectionInNonJdm = () => {
         </div>
 
         <div className={styles.section} onClick={() => setSectionMark('bmw')}>
-          <img src={nonBmw} alt="bmw" />
+          <LazyLoadImage src={nonBmw} alt="bmw" />
 
           <p>
             <i>BMW</i>
           </p>
         </div>
         <div className={styles.section} onClick={() => setSectionMark('audi')}>
-          <img src={nonAudi} alt="audi" />
+          <LazyLoadImage src={nonAudi} alt="audi" />
 
           <p>
             <i>AUDI</i>
@@ -94,7 +101,8 @@ const NavSectionInNonJdm = () => {
       {sectionMark !== null && (
         <button
           className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}>
+          onClick={() => setSectionMark(null)}
+        >
           <p>Reset Filter</p>
         </button>
       )}
@@ -105,7 +113,8 @@ const NavSectionInNonJdm = () => {
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}>
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 <CardSale card={card} />
               </NavLink>
             ))
@@ -113,7 +122,8 @@ const NavSectionInNonJdm = () => {
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}>
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 <CardSale card={card} />
               </NavLink>
             ))}

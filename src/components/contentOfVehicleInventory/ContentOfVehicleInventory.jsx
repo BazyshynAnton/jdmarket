@@ -1,12 +1,10 @@
-import React from 'react'
-import { Container } from '@mui/material'
 import CarSale from './carSale/CarSale'
 
 const ContentOfVehicleInventory = () => {
   return (
-    <Container>
+    <div className="my-container">
       <CarSale />
-    </Container>
+    </div>
   )
 }
 

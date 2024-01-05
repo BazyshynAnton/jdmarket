@@ -1,4 +1,4 @@
-import styles from '../infoAboutCar/InfoAndVideoAboutCar.module.css'
+import styles from '../infoAboutCar/InfoAndVideoAboutCar.module.scss'
 
 const Description = () => {
   return (

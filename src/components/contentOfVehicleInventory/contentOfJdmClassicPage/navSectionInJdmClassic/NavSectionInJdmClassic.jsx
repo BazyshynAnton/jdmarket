@@ -1,5 +1,8 @@
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import {
+  useState,
+  NavLink,
+  LazyLoadImage,
+} from '../../../shared/utils/reactImports'
 
 import CardSale from '../../carSale/cardSale/CardSale'
 
@@ -12,7 +15,7 @@ import sectionClassicHonda from '../../../../pictures/sectionClassicHonda.jpg'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 
-import styles from './NavSectionInJdmClassic.module.css'
+import styles from './NavSectionInJdmClassic.module.scss'
 
 const NavSectionInJdmClassic = () => {
   const [sectionMark, setSectionMark] = useState(null)
@@ -39,24 +42,27 @@ const NavSectionInJdmClassic = () => {
       <div className={styles.sectionsContainer}>
         <div
           className={styles.section}
-          onClick={() => setSectionMark('oldHonda')}>
-          <img src={sectionClassicHonda} alt="oldHonda" />
+          onClick={() => setSectionMark('oldHonda')}
+        >
+          <LazyLoadImage src={sectionClassicHonda} alt="oldHonda" />
           <p>
             <i>HONDA</i>
           </p>
         </div>
         <div
           className={styles.section}
-          onClick={() => setSectionMark('oldToyota')}>
-          <img src={sectionClassicToyota} alt="oldToyota" />
+          onClick={() => setSectionMark('oldToyota')}
+        >
+          <LazyLoadImage src={sectionClassicToyota} alt="oldToyota" />
           <p>
             <i>TOYOTA</i>
           </p>
         </div>
         <div
           className={styles.section}
-          onClick={() => setSectionMark('oldNissan')}>
-          <img src={sectionClassicNissan} alt="oldNissan" />
+          onClick={() => setSectionMark('oldNissan')}
+        >
+          <LazyLoadImage src={sectionClassicNissan} alt="oldNissan" />
           <p>
             <i>NISSAN</i>
           </p>
@@ -64,8 +70,9 @@ const NavSectionInJdmClassic = () => {
 
         <div
           className={styles.section}
-          onClick={() => setSectionMark('oldMitsubishi')}>
-          <img src={sectionClassicMitsubishi} alt="oldMitsubishi" />
+          onClick={() => setSectionMark('oldMitsubishi')}
+        >
+          <LazyLoadImage src={sectionClassicMitsubishi} alt="oldMitsubishi" />
           <p>
             <i>MITSUBISHI</i>
           </p>
@@ -73,16 +80,18 @@ const NavSectionInJdmClassic = () => {
 
         <div
           className={styles.section}
-          onClick={() => setSectionMark('oldSubaru')}>
-          <img src={sectionClassicSubaru} alt="oldSubaru" />
+          onClick={() => setSectionMark('oldSubaru')}
+        >
+          <LazyLoadImage src={sectionClassicSubaru} alt="oldSubaru" />
           <p>
             <i>SUBARU</i>
           </p>
         </div>
         <div
           className={styles.section}
-          onClick={() => setSectionMark('oldMazda')}>
-          <img src={sectionCLassicMazda} alt="oldMazda" />
+          onClick={() => setSectionMark('oldMazda')}
+        >
+          <LazyLoadImage src={sectionCLassicMazda} alt="oldMazda" />
           <p>
             <i>MAZDA</i>
           </p>
@@ -92,7 +101,8 @@ const NavSectionInJdmClassic = () => {
       {sectionMark !== null && (
         <button
           className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}>
+          onClick={() => setSectionMark(null)}
+        >
           <p>Reset Filter</p>
         </button>
       )}
@@ -103,7 +113,8 @@ const NavSectionInJdmClassic = () => {
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}>
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 <CardSale card={card} />
               </NavLink>
             ))
@@ -111,7 +122,8 @@ const NavSectionInJdmClassic = () => {
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}>
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 <CardSale card={card} />
               </NavLink>
             ))}

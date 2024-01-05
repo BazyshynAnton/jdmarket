@@ -4,7 +4,7 @@
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: #fff;
   padding: 50px 20px;
 }
 
@@ -16,7 +16,7 @@
   font-size: 12px;
 
   .activeNav {
-    color: red;
+    color: #b90000;
     cursor: pointer;
     &:hover {
       text-decoration: underline;

@@ -1,12 +1,15 @@
-import { useMediaQuery } from '@mui/material'
+import {
+  useDispatch,
+  useEffect,
+  useSelector,
+  useState,
+} from '../../../shared/utils/reactImports'
+import { setFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+import swal from '../../../shared/utils/swalImports'
 
 import VideoAboutCar from './VideoAboutCar'
 
-import { useDispatch, useSelector } from 'react-redux'
-import { setFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
-
-import styles from './InfoAndVideoAboutCar.module.css'
-import swal from 'sweetalert'
+import styles from './InfoAndVideoAboutCar.module.scss'
 
 const colorForInformation = {
   color: '#800000',
@@ -20,7 +23,20 @@ const InfoAboutCar = () => {
     (store) => store.registeredAccount
   )
 
-  const isDesktop = useMediaQuery('(min-width:236px)')
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 236)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 236)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <div className={styles.mainInfoContainer}>
       <h1>Nissan Skyline GTR R34 V spec (N.8402)</h1>

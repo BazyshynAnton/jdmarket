@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from '../../../shared/utils/reactImports'
 import { useParams } from 'react-router-dom'
-import { useMediaQuery } from '@mui/material'
 
 import OrderSheet from '../orderSheet/OrderSheet'
 import Description from '../description/Description'
@@ -10,7 +9,7 @@ import sms from '../../../../pictures/sms.png'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 
-import styles from './ImageInformationDesk.module.css'
+import styles from './ImageInformationDesk.module.scss'
 
 const ImageInformationDesk = () => {
   const { id } = useParams()
@@ -19,7 +18,22 @@ const ImageInformationDesk = () => {
   const selectedCarId = '8f22002c-8568-4e5b-829c-84cebeea1130'
   const selectedCar = vehiclePageCars.find((car) => car.id === selectedCarId)
   const [image, setImage] = useState(selectedCar.img1)
-  const isDesktop = useMediaQuery('(min-width: 741px)')
+
+  //Controll window size
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 741)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 741)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <>
       {!!isDesktop && (

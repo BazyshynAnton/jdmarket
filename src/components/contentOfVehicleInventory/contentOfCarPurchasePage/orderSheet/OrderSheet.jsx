@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { useState, React } from '../../../shared/utils/reactImports'
 import { FormControl } from '@mui/material'
 
 import stockSearch from '../../../../pictures/stockSearch.png'
 
-import styles from './OrderSheet.module.css'
+import styles from './OrderSheet.module.scss'
 
 const OrderSheet = () => {
   const [values, setValues] = useState({

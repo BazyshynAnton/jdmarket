@@ -17,7 +17,7 @@
 }
 
 .homeBtn {
-  color: red;
+  color: #b90000;
   text-decoration: underline;
 
   &:hover {
@@ -43,7 +43,7 @@
     font-weight: bold;
     letter-spacing: 0.5px;
     font-family: $gothicFont;
-    color: black;
+    color: #000;
   }
 
   &::before {
@@ -69,8 +69,6 @@
   grid-template-columns: repeat(auto-fill, minmax(calc(33.33% - 10px), 1fr));
   grid-gap: 10px;
 }
-
-//card
 
 @media (max-width: 920px) {
   .section {

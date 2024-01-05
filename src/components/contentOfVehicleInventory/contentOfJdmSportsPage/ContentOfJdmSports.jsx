@@ -1,11 +1,10 @@
-import { Container } from '@mui/material'
 import NavSectionInJdmSports from './navSectionInJdmSports/NavSectionInJdmSports'
 
 const ContentOfJdmSports = () => {
   return (
-    <Container>
+    <div className="my-container">
       <NavSectionInJdmSports />
-    </Container>
+    </div>
   )
 }
 
