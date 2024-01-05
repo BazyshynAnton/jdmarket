@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useSwiper } from 'swiper/react'
+import { useState, LazyLoadImage } from '../../../../shared/utils/reactImports'
+import { useSwiper } from '../../../../shared/utils/swiperImports'
 
 import buttonNext from '../../../../../pictures/button-next.png'
 import buttonPrevious from '../../../../../pictures/button-previous.png'
@@ -37,11 +37,12 @@ const SwiperManufactureNavBtns = () => {
         }}
         onClick={() => swiper.slidePrev()}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+        onMouseLeave={handleMouseLeave}
+      >
         {arrow ? (
-          <img src={buttonPreviousRed} alt="prev" />
+          <LazyLoadImage src={buttonPreviousRed} alt="prev" />
         ) : (
-          <img src={buttonPrevious} alt="prev" />
+          <LazyLoadImage src={buttonPrevious} alt="prev" />
         )}
       </div>
       <div
@@ -54,11 +55,12 @@ const SwiperManufactureNavBtns = () => {
         }}
         onClick={() => swiper.slideNext()}
         onMouseEnter={handleMouseEnterTwo}
-        onMouseLeave={handleMouseLeaveTwo}>
+        onMouseLeave={handleMouseLeaveTwo}
+      >
         {arrowTwo ? (
-          <img src={buttonNextRed} alt="next" />
+          <LazyLoadImage src={buttonNextRed} alt="next" />
         ) : (
-          <img src={buttonNext} alt="next" />
+          <LazyLoadImage src={buttonNext} alt="next" />
         )}
       </div>
     </>

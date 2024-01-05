@@ -43,9 +43,10 @@
   }
 
   p {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     text-align: justify;
+    font-family: $openSansFont;
   }
   button {
     background: none;
@@ -95,11 +96,11 @@
     }
 
     p {
-      font-size: 10px;
+      font-size: 9px;
     }
 
     button {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 

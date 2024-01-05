@@ -6,12 +6,12 @@ import { Suspense } from 'react'
 const MainLayout = () => {
   return (
     <>
-      <Header />
-      <BackToTopBtn />
       <Suspense>
+        <Header />
+        <BackToTopBtn />
         <Outlet />
+        <Footer />
       </Suspense>
-      <Footer />
     </>
   )
 }

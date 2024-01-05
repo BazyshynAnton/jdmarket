@@ -21,12 +21,12 @@ const cars = [
   },
   {
     img: oneNissanSkylineR32,
-    text: 'Nissan Skyline GTR R32 6M/T(SOLD)',
+    text: 'Nissan Skyline GTR R32 6M/T (SOLD)',
     id: '8369',
   },
   {
     img: oneNissanSkylineR33,
-    text: 'Nissan Skyline GTR R33(SOLD)',
+    text: 'Nissan Skyline GTR R33 (SOLD)',
     id: '8363',
   },
   {

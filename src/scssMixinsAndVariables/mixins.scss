@@ -29,7 +29,7 @@
 
 @mixin mediaFooterContainer {
   position: absolute;
-  background: $darkGrey;
+  background: #303030;
   border-radius: 100%;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -37,6 +37,6 @@
   width: 34px;
   z-index: 30;
   &:hover {
-    background: $redBg;
+    background: #b90000;
   }
 }

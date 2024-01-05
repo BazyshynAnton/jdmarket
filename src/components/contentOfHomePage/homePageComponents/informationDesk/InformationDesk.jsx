@@ -1,15 +1,20 @@
 import {
   useState,
   React,
-  CSSTransition,
+  lazy,
+  Suspense,
+  LazyLoadImage,
 } from '../../../shared/utils/reactImports'
 
-import AddIcCallIcon from '@mui/icons-material/AddIcCall'
-import ManageHistoryIcon from '@mui/icons-material/ManageHistory'
-import EmailIcon from '@mui/icons-material/Email'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import phoneForInfoDesk from '../../../../assets/pictures/app-icons/phoneForInfoDesk.png'
+import clockIcon from '../../../../assets/pictures/app-icons/clockIcon.png'
+import mailFOrInfoDesk from '../../../../assets/pictures/app-icons/mailForInfoDesk.png'
+import whatsIcon from '../../../../assets/pictures/app-icons/whatsIcon.png'
 
 import styles from './InformationDesk.module.scss'
+
+const DontBeShy = lazy(() => import('./CSSTransition/DontBeShy'))
+const MailForm = lazy(() => import('./CSSTransition/MailForm'))
 
 const InformationDesk = () => {
   const nodeRef = React.useRef(null)
@@ -51,71 +56,25 @@ const InformationDesk = () => {
 
   return (
     <div className={styles.containerInfo}>
-      <CSSTransition
-        nodeRef={nodeRef}
-        in={isOpen}
-        timeout={300}
-        classNames="modal"
-        mountOnEnter
-        unmountOnExit
-      >
-        <div
-          ref={nodeRef}
-          className={styles.modalContent}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <p className={styles.shyText}>Don't be shy!</p>
-          <p>We are always here to help you.</p>
-        </div>
-      </CSSTransition>
-      <CSSTransition
-        nodeRef={nodeRef}
-        in={isOpenTwo}
-        timeout={300}
-        classNames="help"
-        mountOnEnter
-        unmountOnExit
-      >
-        <div
-          ref={nodeRef}
-          className={styles.helpContent}
-          onMouseEnter={handleMouseEnterTwo}
-          onMouseLeave={handleMouseLeaveTwo}
-        >
-          <form onSubmit={handleSubmit} className={styles.formContainer}>
-            <div className={styles.inputContainer}>
-              <input
-                type="text"
-                placeholder="Name*"
-                name="name"
-                value={formData.name}
-                id="name"
-                autoComplete="name"
-                onChange={handleChange}
-              ></input>
-              <input
-                type="email"
-                placeholder="Email*"
-                name="email"
-                value={formData.email}
-                id="email"
-                autoComplete="email"
-                onChange={handleChange}
-              ></input>
-            </div>
-            <textarea
-              placeholder="Comment*"
-              name="comment"
-              value={formData.comment}
-              onChange={handleChange}
-            ></textarea>
-            <div className={styles.btnContainer}>
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
-      </CSSTransition>
+      <Suspense>
+        <DontBeShy
+          nodeRef={nodeRef}
+          isOpen={isOpen}
+          handleMouseEnter={handleMouseEnter}
+          handleMouseLeave={handleMouseLeave}
+        />
+      </Suspense>
+      <Suspense>
+        <MailForm
+          nodeRef={nodeRef}
+          isOpenTwo={isOpenTwo}
+          handleMouseEnterTwo={handleMouseEnterTwo}
+          handleMouseLeaveTwo={handleMouseLeaveTwo}
+          handleSubmit={handleSubmit}
+          formData={formData}
+          handleChange={handleChange}
+        />
+      </Suspense>
       <div className={styles.contentTextInfo}>
         <div className={styles.containerText}>
           <h5 className={styles.header}>CONTACT US</h5>
@@ -125,12 +84,38 @@ const InformationDesk = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <AddIcCallIcon className={styles.phone} />
+          <div
+            style={{
+              width: '32px',
+              height: '30px',
+              background: '#5a5a5a',
+              borderRadius: '5px',
+            }}
+          >
+            <LazyLoadImage
+              style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+              src={phoneForInfoDesk}
+              alt="whatsApp"
+            />
+          </div>
           <p>+81-573-66-5670</p>
         </div>
 
         <div className={styles.containerText}>
-          <ManageHistoryIcon className={styles.oclock} />
+          <div
+            style={{
+              width: '43px',
+              height: '40px',
+              background: '#5a5a5a',
+              borderRadius: '5px',
+            }}
+          >
+            <LazyLoadImage
+              style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+              src={clockIcon}
+              alt="whatsApp"
+            />
+          </div>
           <div>
             <p>Sales: 7 Days a Week</p>
             <p>Operations: Mon-Fri 9:00AM-6:00PM PST</p>
@@ -141,11 +126,30 @@ const InformationDesk = () => {
           onMouseEnter={handleMouseEnterTwo}
           onMouseLeave={handleMouseLeaveTwo}
         >
-          <EmailIcon className={styles.mail} />
+          <div
+            style={{
+              width: '35px',
+              height: '27px',
+              background: '#5a5a5a',
+              borderRadius: '5px',
+            }}
+          >
+            <LazyLoadImage
+              style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+              src={mailFOrInfoDesk}
+              alt="whatsApp"
+            />
+          </div>
           <p>info@jdm.com</p>
         </div>
         <div className={styles.containerText}>
-          <WhatsAppIcon className={styles.skype} />
+          <div style={{ width: '40px', height: '40px', background: '#5a5a5a' }}>
+            <LazyLoadImage
+              style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+              src={whatsIcon}
+              alt="whatsApp"
+            />
+          </div>
           <div>
             <p>WhatsApp: +818045457447</p>
           </div>

@@ -2,8 +2,9 @@
 @import '../../../../scssMixinsAndVariables/variables.scss';
 
 .header {
-  color: white;
+  color: #fff;
   font-size: 25px;
+  font-family: $openSansFont;
 }
 
 .containerInfo {
@@ -19,7 +20,7 @@
   p {
     font-size: 18px;
     font-family: $gothicFont;
-    color: white;
+    color: #fff;
   }
 
   &::before {
@@ -66,17 +67,6 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  &:hover {
-    .oclock {
-      color: #2f2f2f;
-    }
-    .mail {
-      color: #2f2f2f;
-    }
-    .skype {
-      color: #2f2f2f;
-    }
-  }
 }
 
 .containerTextModal {
@@ -85,51 +75,21 @@
   align-items: center;
   cursor: pointer;
   z-index: 10;
-
-  &:hover {
-    .phone {
-      color: #2f2f2f;
-    }
-  }
-}
-
-.phone {
-  font-size: 2.5rem;
-  color: #5a5a5a;
-  transition: 0.3s ease-in-out;
-}
-
-.oclock {
-  font-size: 2.5rem;
-  color: #5a5a5a;
-  transition: 0.3s ease-in-out;
-}
-
-.mail {
-  font-size: 2.5rem;
-  color: #5a5a5a;
-  transition: 0.3s ease-in-out;
-}
-
-.skype {
-  font-size: 2.5rem;
-  color: #5a5a5a;
-  transition: 0.3s ease-in-out;
 }
 
 .modalContent {
   position: absolute;
-  top: -26px;
+  top: -23px;
   left: 280px;
   width: 160px;
   height: 60px;
   background: #303030;
-  z-index: 0;
+  z-index: 99999;
   padding-left: 10px;
   @include blockSettings(flex, column, center);
   .shyText {
     font-size: 20px;
-    color: red;
+    color: #b90000;
     font-family: $gothicFont;
     font-weight: 100;
   }
@@ -169,21 +129,14 @@
 
 .helpContent {
   position: absolute;
-  top: -166px;
+  top: -160px;
   right: 100px;
   width: 300px;
   height: 200px;
   background: #303030;
-  z-index: 0;
+  z-index: 9999;
   padding-left: 10px;
   @include blockSettings(flex, column, center);
-
-  .shyText {
-    font-size: 20px;
-    color: red;
-    font-family: $gothicFont;
-    font-weight: 100;
-  }
 
   p {
     font-size: 15px;
@@ -251,8 +204,8 @@
   padding: 0px 25px 0px 20px;
 
   button {
-    background: red;
-    color: white;
+    background: #b90000;
+    color: #fff;
     border-radius: 4px;
     width: 65px;
     height: 30px;

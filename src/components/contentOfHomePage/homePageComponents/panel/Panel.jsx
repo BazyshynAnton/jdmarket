@@ -1,3 +1,5 @@
+import { LazyLoadImage } from '../../../shared/utils/reactImports.js'
+
 import american from '../../../../pictures/american.png'
 
 import styles from './Panel.module.scss'
@@ -16,12 +18,12 @@ const Panel = () => {
           to your preference and deliver them anywhere around the globe.
         </p>
         <div className={styles.imgContainerUsa}>
-          <img src={american} alt="attention" />
+          <LazyLoadImage src={american} alt="attention" />
         </div>
         <p>
           &nbsp;&nbsp;&nbsp;&nbsp;As of 2015, we are now able to deliver Nissan
           Skyline, Hakosuka GC 10, GTR 32, Honda NSX, Mazda RX-7, Toyota Soarer
-          and many other JDM vehicles anywhere in the USA!
+          and many other JDM vehicles anywhere in the USA!{' '}
           <button>Learn more.</button>
         </p>
       </div>
