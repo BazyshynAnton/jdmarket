@@ -1,5 +1,4 @@
-import { NavLink } from 'react-router-dom'
-import { Container, Box } from '@mui/material'
+import { NavLink, LazyLoadImage } from '../shared/utils/reactImports'
 
 import selectCar from '../../pictures/selectCar.png'
 import order from '../../pictures/order.png'
@@ -11,11 +10,11 @@ import drive from '../../pictures/drive.png'
 import arrowDownHowToBuy from '../../pictures/arrowDownHowToBuy.png'
 import stockSearch from '../../pictures/stockSearch.png'
 
-import styles from './ContentOfHowToBuyPage.module.css'
+import styles from './ContentOfHowToBuyPage.module.scss'
 
 const ContentOfHowToBuyPage = () => {
   return (
-    <Container>
+    <div className="my-container">
       <div className={styles.navigationBoxContainer}>
         <NavLink to="/" className={styles.navTextLink}>
           <p>HOME</p>
@@ -27,7 +26,8 @@ const ContentOfHowToBuyPage = () => {
       <div className={styles.wrapperInfoContainer}>
         <div
           style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '13.5px' }}
-          className={styles.infoContainer}>
+          className={styles.infoContainer}
+        >
           <h1>How to Buy JDM Inventory Vehicles?</h1>
           <h3>
             Importing your dream vehicle from Japan is not as difficult as you
@@ -35,43 +35,43 @@ const ContentOfHowToBuyPage = () => {
             inventory cars
           </h3>
           <div>
-            <img
+            <LazyLoadImage
               src={selectCar}
               alt="select-car-instructions"
               className={styles.coverImg}
             />
-            <img src={arrowDownHowToBuy} alt="down-arrow" />
-            <img
+            <LazyLoadImage src={arrowDownHowToBuy} alt="down-arrow" />
+            <LazyLoadImage
               src={order}
               alt="order-instructions"
               className={styles.coverImg}
             />
-            <img src={arrowDownHowToBuy} alt="down-arrow" />
-            <img
+            <LazyLoadImage src={arrowDownHowToBuy} alt="down-arrow" />
+            <LazyLoadImage
               src={invoice}
               alt="invoice-instructions"
               className={styles.coverImg}
             />
-            <img src={arrowDownHowToBuy} alt="down-arrow" />
-            <img
+            <LazyLoadImage src={arrowDownHowToBuy} alt="down-arrow" />
+            <LazyLoadImage
               src={payment}
               alt="payment-instructions"
               className={styles.coverImg}
             />
-            <img src={arrowDownHowToBuy} alt="down-arrow" />
-            <img
+            <LazyLoadImage src={arrowDownHowToBuy} alt="down-arrow" />
+            <LazyLoadImage
               src={shipment}
               alt="shipment-instructions"
               className={styles.coverImg}
             />
-            <img src={arrowDownHowToBuy} alt="down-arrow" />
-            <img
+            <LazyLoadImage src={arrowDownHowToBuy} alt="down-arrow" />
+            <LazyLoadImage
               src={paperwork}
               alt="paperwork-instructions"
               className={styles.coverImg}
             />
-            <img src={arrowDownHowToBuy} alt="down-arrow" />
-            <img
+            <LazyLoadImage src={arrowDownHowToBuy} alt="down-arrow" />
+            <LazyLoadImage
               src={drive}
               alt="drive-instructions"
               className={styles.coverImg}
@@ -90,10 +90,14 @@ const ContentOfHowToBuyPage = () => {
             available in our current stock, send us an inquiry and we will find
             it for you in Japan.
           </h4>
-          <img src={stockSearch} alt="stock" className={styles.coverImg} />
+          <LazyLoadImage
+            src={stockSearch}
+            alt="stock"
+            className={styles.coverImg}
+          />
         </div>
       </div>
-    </Container>
+    </div>
   )
 }
 

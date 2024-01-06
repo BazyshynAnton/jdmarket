@@ -2,7 +2,7 @@ import { LazyLoadImage } from '../../../shared/utils/reactImports'
 import r34buy2 from '../../../../pictures/r34buy2.jpg'
 import ytico from '../../../../pictures/ytico.png'
 
-import styles from './InfoAndVideoAboutCar.module.scss'
+import styles from '../reusableComponents/InfoAndVideoAboutCar.module.scss'
 
 const VideoAboutCar = () => {
   return (

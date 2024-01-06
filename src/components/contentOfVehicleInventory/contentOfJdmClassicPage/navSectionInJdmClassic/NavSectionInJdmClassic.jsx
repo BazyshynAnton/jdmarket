@@ -1,10 +1,8 @@
-import {
-  useState,
-  NavLink,
-  LazyLoadImage,
-} from '../../../shared/utils/reactImports'
+import { useState } from '../../../shared/utils/reactImports'
 
-import CardSale from '../../carSale/cardSale/CardSale'
+import ReusableNavSection from '../../reusableNavSection/ReusableNavSection'
+import Navigation from '../../reusableNavSection/Navigation'
+import FilterAndCars from '../../reusableNavSection/FilterAndCars'
 
 import sectionClassicNissan from '../../../../pictures/sectionClassicNissan.jpg'
 import sectionClassicMitsubishi from '../../../../pictures/sectionClassicMitsubishi.jpg'
@@ -15,7 +13,7 @@ import sectionClassicHonda from '../../../../pictures/sectionClassicHonda.jpg'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 
-import styles from './NavSectionInJdmClassic.module.scss'
+import styles from '../../reusableNavSection/ReusableNavSection.module.scss'
 
 const NavSectionInJdmClassic = () => {
   const [sectionMark, setSectionMark] = useState(null)
@@ -26,108 +24,52 @@ const NavSectionInJdmClassic = () => {
   )
   return (
     <>
-      <div className={styles.mainNavAndSectionContainer}>
-        <div className={styles.navContainer}>
-          <NavLink to="/" className={styles.homeBtn}>
-            <p>HOME</p>
-          </NavLink>
-          <p>{'>'}</p>
-          <NavLink to="/vehicle-inventory" className={styles.homeBtn}>
-            <p>VEHICLE INVENTORY</p>
-          </NavLink>
-          <p>{'>'}</p>
-          <p>JDM classic</p>
-        </div>
-      </div>
+      <Navigation section={'JDM classic'} />
       <div className={styles.sectionsContainer}>
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('oldHonda')}
-        >
-          <LazyLoadImage src={sectionClassicHonda} alt="oldHonda" />
-          <p>
-            <i>HONDA</i>
-          </p>
-        </div>
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('oldToyota')}
-        >
-          <LazyLoadImage src={sectionClassicToyota} alt="oldToyota" />
-          <p>
-            <i>TOYOTA</i>
-          </p>
-        </div>
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('oldNissan')}
-        >
-          <LazyLoadImage src={sectionClassicNissan} alt="oldNissan" />
-          <p>
-            <i>NISSAN</i>
-          </p>
-        </div>
-
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('oldMitsubishi')}
-        >
-          <LazyLoadImage src={sectionClassicMitsubishi} alt="oldMitsubishi" />
-          <p>
-            <i>MITSUBISHI</i>
-          </p>
-        </div>
-
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('oldSubaru')}
-        >
-          <LazyLoadImage src={sectionClassicSubaru} alt="oldSubaru" />
-          <p>
-            <i>SUBARU</i>
-          </p>
-        </div>
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('oldMazda')}
-        >
-          <LazyLoadImage src={sectionCLassicMazda} alt="oldMazda" />
-          <p>
-            <i>MAZDA</i>
-          </p>
-        </div>
+        <ReusableNavSection
+          picture={sectionClassicHonda}
+          setSectionMark={setSectionMark}
+          carName={'oldHonda'}
+          carMake={'HONDA'}
+        />
+        <ReusableNavSection
+          picture={sectionClassicToyota}
+          setSectionMark={setSectionMark}
+          carName={'oldToyota'}
+          carMake={'TOYOTA'}
+        />
+        <ReusableNavSection
+          picture={sectionClassicNissan}
+          setSectionMark={setSectionMark}
+          carName={'oldNissan'}
+          carMake={'NISSAN'}
+        />
+        <ReusableNavSection
+          picture={sectionClassicMitsubishi}
+          setSectionMark={setSectionMark}
+          carName={'oldMitsubishi'}
+          carMake={'MITSUBISHI'}
+        />
+        <ReusableNavSection
+          picture={sectionClassicSubaru}
+          setSectionMark={setSectionMark}
+          carName={'oldSubaru'}
+          carMake={'SUBARU'}
+        />
+        <ReusableNavSection
+          picture={sectionCLassicMazda}
+          setSectionMark={setSectionMark}
+          carName={'oldMazda'}
+          carMake={'MAZDA'}
+        />
       </div>
 
-      {sectionMark !== null && (
-        <button
-          className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}
-        >
-          <p>Reset Filter</p>
-        </button>
-      )}
-
-      <div className={styles.containerOfAllCars}>
-        {sectionMark === null
-          ? filteredCarsByClass.map((card) => (
-              <NavLink
-                key={card.id}
-                to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                <CardSale card={card} />
-              </NavLink>
-            ))
-          : filteredCarsByMark.map((card) => (
-              <NavLink
-                key={card.id}
-                to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                <CardSale card={card} />
-              </NavLink>
-            ))}
-      </div>
+      <FilterAndCars
+        sectionMark={sectionMark}
+        setSectionMark={setSectionMark}
+        filteredCarsByClass={filteredCarsByClass}
+        filteredCarsByMark={filteredCarsByMark}
+      />
     </>
   )
 }

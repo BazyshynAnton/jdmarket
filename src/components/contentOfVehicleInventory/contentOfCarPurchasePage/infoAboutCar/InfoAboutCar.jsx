@@ -1,4 +1,6 @@
 import {
+  Suspense,
+  lazy,
   useDispatch,
   useEffect,
   useSelector,
@@ -8,12 +10,13 @@ import { setFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegi
 import swal from '../../../shared/utils/swalImports'
 
 import VideoAboutCar from './VideoAboutCar'
+import TextInfoBigScreens from '../reusableComponents/TextInfoBigScreens'
 
-import styles from './InfoAndVideoAboutCar.module.scss'
+import styles from '../reusableComponents/InfoAndVideoAboutCar.module.scss'
 
-const colorForInformation = {
-  color: '#800000',
-}
+const TextInfoSmallScreens = lazy(() =>
+  import('../reusableComponents/TextInfoSmallScreens')
+)
 
 const key = '8402'
 
@@ -41,42 +44,26 @@ const InfoAboutCar = () => {
     <div className={styles.mainInfoContainer}>
       <h1>Nissan Skyline GTR R34 V spec (N.8402)</h1>
       {!!isDesktop && (
-        <div className={styles.mainTxtContainer}>
-          <div className={styles.info}>
-            <p>Stock number:</p>
-            <p>Mileage:</p>
-            <p>Year:</p>
-            <p>Fuel:</p>
-            <p>Chassis number:</p>
-            <p>Transmission:</p>
-          </div>
-          <div className={styles.info}>
-            <p>#8402</p>
-            <p>40,941 km</p>
-            <p>10/1999</p>
-            <p>Gasoline</p>
-            <p>BNR34-005552</p>
-            <p>M/T6</p>
-          </div>
-        </div>
+        <TextInfoBigScreens
+          stockNumber={'#8402'}
+          mileage={'40,941 km'}
+          year={'10/1999'}
+          fuel={'Gasoline'}
+          chassisNumber={'BNR34-005552'}
+          transmission={'M/T6'}
+        />
       )}
       {!isDesktop && (
-        <div className={styles.mainTxtContainer}>
-          <div className={styles.info}>
-            <p>Stock number:</p>
-            <p style={colorForInformation}>#8402</p>
-            <p>Mileage:</p>
-            <p style={colorForInformation}>40,941 km</p>
-            <p>Year:</p>
-            <p style={colorForInformation}>10/1999</p>
-            <p>Fuel:</p>
-            <p style={colorForInformation}>Gasoline</p>
-            <p>Chassis number:</p>
-            <p style={colorForInformation}>BNR34-005552</p>
-            <p>Transmission:</p>
-            <p style={colorForInformation}>M/T6</p>
-          </div>
-        </div>
+        <Suspense>
+          <TextInfoSmallScreens
+            stockNumber={'#8402'}
+            mileage={'40,941 km'}
+            year={'10/1999'}
+            fuel={'Gasoline'}
+            chassisNumber={'BNR34-005552'}
+            transmission={'M/T6'}
+          />
+        </Suspense>
       )}
       <h2>Price(USD): $245000</h2>
 

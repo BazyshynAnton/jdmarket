@@ -1,5 +1,5 @@
-@import '../../../../scssMixinsAndVariables/mixins.scss';
-@import '../../../../scssMixinsAndVariables/variables.scss';
+@import '../../../scssMixinsAndVariables/variables.scss';
+@import '../../../scssMixinsAndVariables/mixins.scss';
 
 .mainNavAndSectionContainer {
   display: flex;
@@ -11,6 +11,7 @@
   @include blockSettings(flex, row, flex-start);
 
   gap: 0.2rem;
+
   p {
     font-size: 12px;
   }
@@ -26,18 +27,19 @@
 }
 
 .sectionsContainer {
-  @include blockSettings(flex, row, center);
-
   margin-top: 20px;
+  display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   width: 100%;
+  justify-content: center;
   gap: 1rem;
 }
 
 .section {
+  position: relative;
   @include blockSettings3(flex, column, center);
 
-  position: relative;
   background: #c3c3c3;
   padding: 7px 7px 7px 7px;
   cursor: pointer;
@@ -51,7 +53,7 @@
   }
 
   &::before {
-    content: url(../../../../pictures/shadowForSectionLeft.png);
+    content: url(../../../pictures/shadowForSectionLeft.png);
     position: absolute;
     left: 0;
     bottom: -16px;
@@ -59,7 +61,7 @@
   }
 
   &::after {
-    content: url(../../../../pictures/shadowForSectionRight.png);
+    content: url(../../../pictures/shadowForSectionRight.png);
     position: absolute;
     right: 0;
     bottom: -16px;

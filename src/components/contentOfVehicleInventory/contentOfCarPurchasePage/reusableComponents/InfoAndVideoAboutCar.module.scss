@@ -23,6 +23,7 @@
   button {
     background: #b90000;
     padding: 7px 100px;
+    font-family: $openSansFont;
     border-radius: 5px;
     color: #fff;
     font-size: 15px;
@@ -32,6 +33,7 @@
 
 .info {
   line-height: 1.7rem;
+  font-family: $openSansFont;
 }
 
 .mainTxtContainer {
@@ -44,7 +46,7 @@
 //descrip
 .descrip {
   margin-top: 50px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $openSansFont;
   font-size: 15px;
 }
 

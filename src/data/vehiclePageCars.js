@@ -14,10 +14,10 @@ import oneNissanPao from '../pictures/oneNissanPao.jpg'
 import president from '../pictures/president.jpg'
 import nsx from '../pictures/nsx.jpg'
 import audiR8 from '../pictures/audiR8.jpg'
-import cobra from '../pictures/cobra.jpg'
 import benz from '../pictures/benz.jpg'
 import m3 from '../pictures/m3.jpg'
-//r4
+import porscheGt3 from '../pictures/porscheGt3.jpg'
+//r34
 import r34buy1 from '../pictures/r34buy1.jpg'
 import r34buy2 from '../pictures/r34buy2.jpg'
 import r34buy3 from '../pictures/r34buy3.jpg'
@@ -201,11 +201,11 @@ const vehiclePageCars = [
     class: 3,
   },
   {
-    img: cobra,
+    img: porscheGt3,
     imgTwo: sold,
-    text: 'Shelby Cobra (N.8460)',
+    text: 'Porsche 911 GT3R Taisan(N.8352)',
     id: 'c6d5b665-33ed-4ba7-acb1-b9998e15b15c',
-    mark: 'shelby',
+    mark: 'porsche',
     class: 3,
   },
   {

@@ -1,10 +1,8 @@
-import {
-  useState,
-  NavLink,
-  LazyLoadImage,
-} from '../../../shared/utils/reactImports'
+import { useState } from '../../../shared/utils/reactImports'
 
-import CardSale from '../../carSale/cardSale/CardSale'
+import ReusableNavSection from '../../reusableNavSection/ReusableNavSection'
+import Navigation from '../../reusableNavSection/Navigation'
+import FilterAndCars from '../../reusableNavSection/FilterAndCars'
 
 import nissanSection from '../../../../pictures/nissanSection.jpg'
 import mitsubishiSection from '../../../../pictures/mitsubishiSection.jpg'
@@ -15,7 +13,7 @@ import hondaSection from '../../../../pictures/hondaSection.jpg'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 
-import styles from './NavSectionInJdmSports.module.scss'
+import styles from '../../reusableNavSection/ReusableNavSection.module.scss'
 
 const NavSectionInJdmSports = () => {
   const [sectionMark, setSectionMark] = useState(null)
@@ -27,107 +25,52 @@ const NavSectionInJdmSports = () => {
 
   return (
     <>
-      <div className={styles.mainNavAndSectionContainer}>
-        <div className={styles.navContainer}>
-          <NavLink to="/" className={styles.homeBtn}>
-            <p>HOME</p>
-          </NavLink>
-          <p>{'>'}</p>
-          <NavLink to="/vehicle-inventory" className={styles.homeBtn}>
-            <p>VEHICLE INVENTORY</p>
-          </NavLink>
-          <p>{'>'}</p>
-          <p>JDM sports</p>
-        </div>
-      </div>
+      <Navigation section={'JDM sports'} />
       <div className={styles.sectionsContainer}>
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('nissan')}
-        >
-          <LazyLoadImage src={nissanSection} alt="nissan" />
-
-          <p>
-            <i>NISSAN</i>
-          </p>
-        </div>
-
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('mitsubishi')}
-        >
-          <LazyLoadImage src={mitsubishiSection} alt="mitsubishi" />
-
-          <p>
-            <i>MITSUBISHI</i>
-          </p>
-        </div>
-        <div className={styles.section} onClick={() => setSectionMark('mazda')}>
-          <LazyLoadImage src={mazdaSection} alt="mazda" />
-
-          <p>
-            <i>MAZDA</i>
-          </p>
-        </div>
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('toyota')}
-        >
-          <LazyLoadImage src={toyotaSection} alt="toyota" />
-
-          <p>
-            <i>TOYOTA</i>
-          </p>
-        </div>
-        <div
-          className={styles.section}
-          onClick={() => setSectionMark('subaru')}
-        >
-          <LazyLoadImage src={subaruSection} alt="subaru" />
-
-          <p>
-            <i>SUBARU</i>
-          </p>
-        </div>
-        <div className={styles.section} onClick={() => setSectionMark('honda')}>
-          <LazyLoadImage src={hondaSection} alt="honda" />
-
-          <p>
-            <i>HONDA</i>
-          </p>
-        </div>
+        <ReusableNavSection
+          picture={nissanSection}
+          setSectionMark={setSectionMark}
+          carName={'nissan'}
+          carMake={'NISSAN'}
+        />
+        <ReusableNavSection
+          picture={mitsubishiSection}
+          setSectionMark={setSectionMark}
+          carName={'mitsubishi'}
+          carMake={'MITSUBISHI'}
+        />
+        <ReusableNavSection
+          picture={mazdaSection}
+          setSectionMark={setSectionMark}
+          carName={'mazda'}
+          carMake={'MAZDA'}
+        />
+        <ReusableNavSection
+          picture={toyotaSection}
+          setSectionMark={setSectionMark}
+          carName={'toyota'}
+          carMake={'TOYOTA'}
+        />
+        <ReusableNavSection
+          picture={subaruSection}
+          setSectionMark={setSectionMark}
+          carName={'subaru'}
+          carMake={'SUBARU'}
+        />
+        <ReusableNavSection
+          picture={hondaSection}
+          setSectionMark={setSectionMark}
+          carName={'honda'}
+          carMake={'HONDA'}
+        />
       </div>
 
-      {sectionMark !== null && (
-        <button
-          className={styles.filterBtn}
-          onClick={() => setSectionMark(null)}
-        >
-          <p>Reset Filter</p>
-        </button>
-      )}
-
-      <div className={styles.containerOfAllCars}>
-        {sectionMark === null
-          ? filteredCarsByClass.map((card) => (
-              <NavLink
-                to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-                key={card.id}
-              >
-                <CardSale card={card} />
-              </NavLink>
-            ))
-          : filteredCarsByMark.map((card) => (
-              <NavLink
-                to={`/vehicle-inventory/${card.id}`}
-                onClick={() => window.scrollTo(0, 0)}
-                key={card.id}
-              >
-                <CardSale card={card} />
-              </NavLink>
-            ))}
-      </div>
+      <FilterAndCars
+        sectionMark={sectionMark}
+        setSectionMark={setSectionMark}
+        filteredCarsByClass={filteredCarsByClass}
+        filteredCarsByMark={filteredCarsByMark}
+      />
     </>
   )
 }
