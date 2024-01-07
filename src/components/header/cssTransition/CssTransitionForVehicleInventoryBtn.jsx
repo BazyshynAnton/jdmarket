@@ -4,9 +4,9 @@ import {
   LazyLoadImage,
 } from '../../shared/utils/reactImports'
 
-import jdmSports from '../../../pictures/jdmSports.jpg'
-import jdmClassic from '../../../pictures/jdmClassic.jpg'
-import nonJdm from '../../../pictures/nonJdm.jpg'
+import jdmSports from '../../../assets/pictures/jdmSports.jpg'
+import jdmClassic from '../../../assets/pictures/jdmClassic.jpg'
+import nonJdm from '../../../assets/pictures/nonJdm.jpg'
 
 import styles from '../Header.module.scss'
 

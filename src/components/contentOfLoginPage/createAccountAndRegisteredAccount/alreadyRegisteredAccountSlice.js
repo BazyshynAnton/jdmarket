@@ -78,15 +78,23 @@ const alreadyRegisteredAccount = createSlice({
     setControlEditProfile: (state) => {
       if (state.accountInfo.nameAccount === '') {
         state.inputNameAccountControl = true
+      } else {
+        state.inputNameAccountControl = false
       }
       if (state.accountInfo.secondName === '') {
         state.inputSecondNameControl = true
+      } else {
+        state.inputSecondNameControl = false
       }
       if (state.accountInfo.emailAddress === '') {
         state.inputEmailControl = true
+      } else {
+        state.inputEmailControl = false
       }
       if (state.accountInfo.password === '') {
         state.inputPasswordControl = true
+      } else {
+        state.inputPasswordControl = false
       }
     },
   },

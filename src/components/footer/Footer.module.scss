@@ -6,14 +6,14 @@
   margin-top: 5px;
   width: 100%;
   height: 151px;
-  background: url(../../pictures/header-container-bg.png);
+  background: url(../../assets/pictures/header-container-bg.png);
   overflow: visible;
   z-index: 10;
 
   &::after {
     position: absolute;
     content: '';
-    background: url(../../pictures/main-bg.png);
+    background: url(../../assets/pictures/main-bg.png);
     top: 0;
     right: 0;
     width: 50%;
@@ -26,7 +26,7 @@
   @include blockSettings3(flex, row, center);
 
   position: relative;
-  background: url(../../pictures/header-container-bg.png);
+  background: url(../../assets/pictures/header-container-bg.png);
   width: 100%;
   height: 151px;
   overflow: visible;
@@ -39,7 +39,7 @@
     top: 0;
     width: 200px;
     height: 151px;
-    background: url(../../pictures/rowCorner.png);
+    background: url(../../assets/pictures/rowCorner.png);
   }
 }
 
@@ -49,7 +49,7 @@
   top: 0;
   width: 200px;
   height: 151px;
-  background: url(../../pictures/main-bg.png);
+  background: url(../../assets/pictures/main-bg.png);
 }
 
 .siteMapContainer {
@@ -64,9 +64,6 @@
     padding: 0px 0px 10px 0px;
     font-family: $gothicFont;
     font-size: 20px;
-  }
-  p {
-    font-family: $openSansFont;
   }
 }
 
@@ -102,8 +99,6 @@
   }
 
   p {
-    font-family: $openSansFont;
-
     font-size: 12.5px;
     color: #fff;
   }

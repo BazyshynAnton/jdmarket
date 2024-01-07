@@ -15,7 +15,7 @@ import SearchIconComponent from './headerComponents/SearchIconComponent'
 import AppBarForBigScreens from './headerComponents/AppBarForBigScreens'
 
 import menuIcon from '../../assets/pictures/app-icons/menuIcon.png'
-import headerLogo from '../../pictures/head-logo.png'
+import headerLogo from '../../assets/pictures/head-logo.png'
 
 import styles from './Header.module.scss'
 

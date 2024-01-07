@@ -171,7 +171,10 @@ const EditProfile = () => {
                 letterSpacing: '0.6px',
               }}
               type="button"
-              onClick={() => dispatch(setConfirm())}
+              onClick={() => {
+                dispatch(setConfirm())
+                dispatch(setControlEditProfile())
+              }}
               className={styles.stylesForSubmitBtn}
             >
               confirm

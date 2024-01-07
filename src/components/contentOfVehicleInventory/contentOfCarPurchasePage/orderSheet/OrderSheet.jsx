@@ -1,6 +1,6 @@
 import { useState, LazyLoadImage } from '../../../shared/utils/reactImports'
 
-import stockSearch from '../../../../pictures/stockSearch.png'
+import stockSearch from '../../../../assets/pictures/stockSearch.png'
 
 import styles from './OrderSheet.module.scss'
 

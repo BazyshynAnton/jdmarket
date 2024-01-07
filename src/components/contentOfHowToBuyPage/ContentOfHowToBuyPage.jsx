@@ -1,14 +1,14 @@
 import { NavLink, LazyLoadImage } from '../shared/utils/reactImports'
 
-import selectCar from '../../pictures/selectCar.png'
-import order from '../../pictures/order.png'
-import invoice from '../../pictures/invoice.png'
-import payment from '../../pictures/payment.png'
-import shipment from '../../pictures/shipment.png'
-import paperwork from '../../pictures/paperwork.png'
-import drive from '../../pictures/drive.png'
-import arrowDownHowToBuy from '../../pictures/arrowDownHowToBuy.png'
-import stockSearch from '../../pictures/stockSearch.png'
+import selectCar from '../../assets/pictures/selectCar.png'
+import order from '../../assets/pictures/order.png'
+import invoice from '../../assets/pictures/invoice.png'
+import payment from '../../assets/pictures/payment.png'
+import shipment from '../../assets/pictures/shipment.png'
+import paperwork from '../../assets/pictures/paperwork.png'
+import drive from '../../assets/pictures/drive.png'
+import arrowDownHowToBuy from '../../assets/pictures/arrowDownHowToBuy.png'
+import stockSearch from '../../assets/pictures/stockSearch.png'
 
 import styles from './ContentOfHowToBuyPage.module.scss'
 

@@ -9,7 +9,7 @@ import OrderSheet from '../orderSheet/OrderSheet'
 import Description from '../description/Description'
 import InfoAboutCar from '../infoAboutCar/InfoAboutCar'
 
-import sms from '../../../../pictures/sms.png'
+import sms from '../../../../assets/pictures/sms.png'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 

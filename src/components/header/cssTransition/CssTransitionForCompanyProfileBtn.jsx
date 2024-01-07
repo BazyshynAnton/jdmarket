@@ -1,4 +1,4 @@
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from '../../shared/utils/reactImports'
 
 import styles from '../Header.module.scss'
 

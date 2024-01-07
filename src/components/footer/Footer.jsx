@@ -1,9 +1,9 @@
 import { useState, LazyLoadImage } from '../shared/utils/reactImports'
 
-import facebookIconTwo from '../../pictures/facebookIconTwo.png'
-import twitterIcon from '../../pictures/twitterIcon.png'
-import instIcon from '../../pictures/instIcon.png'
-import gPlusIcon from '../../pictures/gPlusIcon.png'
+import facebookIconTwo from '../../assets/pictures/facebookIconTwo.png'
+import twitterIcon from '../../assets/pictures/twitterIcon.png'
+import instIcon from '../../assets/pictures/instIcon.png'
+import gPlusIcon from '../../assets/pictures/gPlusIcon.png'
 
 import styles from './Footer.module.scss'
 

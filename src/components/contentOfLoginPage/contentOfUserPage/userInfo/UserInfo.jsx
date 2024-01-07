@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from '../../../shared/utils/reactImports'
 import { setEdit } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 import swal from '../../../shared/utils/swalImports'
 
-import avatarExample from '../../../../pictures/avatarExample.jpg'
+import avatarExample from '../../../../assets/pictures/avatarExample.jpg'
 
 import styles from '../ContentOfUserPage.module.scss'
 

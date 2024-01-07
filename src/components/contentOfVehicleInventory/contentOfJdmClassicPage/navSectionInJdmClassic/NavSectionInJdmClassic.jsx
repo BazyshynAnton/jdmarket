@@ -4,12 +4,12 @@ import ReusableNavSection from '../../reusableNavSection/ReusableNavSection'
 import Navigation from '../../reusableNavSection/Navigation'
 import FilterAndCars from '../../reusableNavSection/FilterAndCars'
 
-import sectionClassicNissan from '../../../../pictures/sectionClassicNissan.jpg'
-import sectionClassicMitsubishi from '../../../../pictures/sectionClassicMitsubishi.jpg'
-import sectionCLassicMazda from '../../../../pictures/sectionCLassicMazda.jpg'
-import sectionClassicToyota from '../../../../pictures/sectionClassicToyota.jpg'
-import sectionClassicSubaru from '../../../../pictures/sectionClassicSubaru.jpg'
-import sectionClassicHonda from '../../../../pictures/sectionClassicHonda.jpg'
+import sectionClassicNissan from '../../../../assets/pictures/sectionClassicNissan.jpg'
+import sectionClassicMitsubishi from '../../../../assets/pictures/sectionClassicMitsubishi.jpg'
+import sectionCLassicMazda from '../../../../assets/pictures/sectionCLassicMazda.jpg'
+import sectionClassicToyota from '../../../../assets/pictures/sectionClassicToyota.jpg'
+import sectionClassicSubaru from '../../../../assets/pictures/sectionClassicSubaru.jpg'
+import sectionClassicHonda from '../../../../assets/pictures/sectionClassicHonda.jpg'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 

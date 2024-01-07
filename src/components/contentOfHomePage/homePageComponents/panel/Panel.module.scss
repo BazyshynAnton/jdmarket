@@ -6,19 +6,19 @@
   width: 33%;
   height: 533px;
   padding: 20px 20px 20px 20px;
-  background: url(../../../../pictures/infoPanel.jpg);
+  background: url(../../../../assets/pictures/infoPanel.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 
   overflow: visible;
   &::before {
-    content: url(../../../../pictures/box-shadow-left.png);
+    content: url(../../../../assets/pictures/box-shadow-left.png);
     position: absolute;
     bottom: -21px;
     left: 0;
   }
   &::after {
-    content: url(../../../../pictures/box-shadow-right.png);
+    content: url(../../../../assets/pictures/box-shadow-right.png);
     position: absolute;
     bottom: -21px;
     right: 0;
@@ -46,7 +46,6 @@
     font-size: 12px;
     font-weight: bold;
     text-align: justify;
-    font-family: $openSansFont;
   }
   button {
     background: none;

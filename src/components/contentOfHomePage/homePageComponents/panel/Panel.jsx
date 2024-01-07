@@ -1,6 +1,6 @@
 import { LazyLoadImage } from '../../../shared/utils/reactImports.js'
 
-import american from '../../../../pictures/american.png'
+import american from '../../../../assets/pictures/american.png'
 
 import styles from './Panel.module.scss'
 

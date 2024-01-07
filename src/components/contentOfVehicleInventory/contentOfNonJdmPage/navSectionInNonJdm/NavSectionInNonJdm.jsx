@@ -4,12 +4,12 @@ import ReusableNavSection from '../../reusableNavSection/ReusableNavSection'
 import Navigation from '../../reusableNavSection/Navigation'
 import FilterAndCars from '../../reusableNavSection/FilterAndCars'
 
-import nonPorsche from '../../../../pictures/nonPorsche.jpg'
-import nonMercedes from '../../../../pictures/nonMercedes.jpg'
-import nonAudi from '../../../../pictures/nonAudi.jpg'
-import nonFerrari from '../../../../pictures/nonFerrari.jpg'
-import nonBmw from '../../../../pictures/nonBmw.jpg'
-import nonJaguar from '../../../../pictures/nonJaguar.jpg'
+import nonPorsche from '../../../../assets/pictures/nonPorsche.jpg'
+import nonMercedes from '../../../../assets/pictures/nonMercedes.jpg'
+import nonAudi from '../../../../assets/pictures/nonAudi.jpg'
+import nonFerrari from '../../../../assets/pictures/nonFerrari.jpg'
+import nonBmw from '../../../../assets/pictures/nonBmw.jpg'
+import nonJaguar from '../../../../assets/pictures/nonJaguar.jpg'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 

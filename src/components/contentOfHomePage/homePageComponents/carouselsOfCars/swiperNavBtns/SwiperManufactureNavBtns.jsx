@@ -1,10 +1,10 @@
 import { useState, LazyLoadImage } from '../../../../shared/utils/reactImports'
 import { useSwiper } from '../../../../shared/utils/swiperImports'
 
-import buttonNext from '../../../../../pictures/button-next.png'
-import buttonPrevious from '../../../../../pictures/button-previous.png'
-import buttonNextRed from '../../../../../pictures/button-next-red.png'
-import buttonPreviousRed from '../../../../../pictures/button-previous-red.png'
+import buttonNext from '../../../../../assets/pictures/button-next.png'
+import buttonPrevious from '../../../../../assets/pictures/button-previous.png'
+import buttonNextRed from '../../../../../assets/pictures/button-next-red.png'
+import buttonPreviousRed from '../../../../../assets/pictures/button-previous-red.png'
 
 const SwiperManufactureNavBtns = () => {
   const [arrow, setArrow] = useState(false)

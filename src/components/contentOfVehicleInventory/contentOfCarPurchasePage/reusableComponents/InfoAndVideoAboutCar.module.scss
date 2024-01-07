@@ -21,9 +21,11 @@
   }
 
   button {
+    margin-top: 10px;
+
     background: #b90000;
-    padding: 7px 100px;
-    font-family: $openSansFont;
+    padding: 7px 0px;
+    width: 250px;
     border-radius: 5px;
     color: #fff;
     font-size: 15px;
@@ -33,7 +35,6 @@
 
 .info {
   line-height: 1.7rem;
-  font-family: $openSansFont;
 }
 
 .mainTxtContainer {
@@ -46,7 +47,6 @@
 //descrip
 .descrip {
   margin-top: 50px;
-  font-family: $openSansFont;
   font-size: 15px;
 }
 
@@ -88,7 +88,7 @@
   }
 }
 
-@media (max-width: 395px) {
+@media (max-width: 430px) {
   .mainInfoContainer {
     h1 {
       font-size: 30px;
@@ -100,6 +100,7 @@
 
     button {
       padding: 7px 15px;
+      width: auto;
     }
   }
 

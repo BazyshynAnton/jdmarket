@@ -1,6 +1,6 @@
 import { LazyLoadImage } from '../../../shared/utils/reactImports'
-import r34buy2 from '../../../../pictures/r34buy2.jpg'
-import ytico from '../../../../pictures/ytico.png'
+import r34buy2 from '../../../../assets/pictures/r34buy2.jpg'
+import ytico from '../../../../assets/pictures/ytico.png'
 
 import styles from '../reusableComponents/InfoAndVideoAboutCar.module.scss'
 

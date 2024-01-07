@@ -9,14 +9,14 @@
   margin-bottom: 10px;
 
   &::before {
-    content: url(../../../../pictures/shadowForSectionLeft.png);
+    content: url(../../../../assets/pictures/shadowForSectionLeft.png);
     position: absolute;
     left: 0;
     bottom: -16px;
   }
 
   &::after {
-    content: url(../../../../pictures/shadowForSectionRight.png);
+    content: url(../../../../assets/pictures/shadowForSectionRight.png);
     position: absolute;
     right: 0;
     bottom: -16px;

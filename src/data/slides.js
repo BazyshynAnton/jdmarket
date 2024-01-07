@@ -1,7 +1,7 @@
-import slide1 from '../pictures/slide1.jpg'
-import slide2 from '../pictures/slide2.jpg'
-import slide3 from '../pictures/slide3.jpg'
-import slide4 from '../pictures/slide4.jpg'
+import slide1 from '../assets/pictures/slide1.jpg'
+import slide2 from '../assets/pictures/slide2.jpg'
+import slide3 from '../assets/pictures/slide3.jpg'
+import slide4 from '../assets/pictures/slide4.jpg'
 
 const slides = [
   {

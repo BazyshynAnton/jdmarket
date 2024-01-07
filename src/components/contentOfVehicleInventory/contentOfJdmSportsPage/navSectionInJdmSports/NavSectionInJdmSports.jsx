@@ -4,12 +4,12 @@ import ReusableNavSection from '../../reusableNavSection/ReusableNavSection'
 import Navigation from '../../reusableNavSection/Navigation'
 import FilterAndCars from '../../reusableNavSection/FilterAndCars'
 
-import nissanSection from '../../../../pictures/nissanSection.jpg'
-import mitsubishiSection from '../../../../pictures/mitsubishiSection.jpg'
-import mazdaSection from '../../../../pictures/mazdaSection.jpg'
-import toyotaSection from '../../../../pictures/toyotaSection.jpg'
-import subaruSection from '../../../../pictures/subaruSection.jpg'
-import hondaSection from '../../../../pictures/hondaSection.jpg'
+import nissanSection from '../../../../assets/pictures/nissanSection.jpg'
+import mitsubishiSection from '../../../../assets/pictures/mitsubishiSection.jpg'
+import mazdaSection from '../../../../assets/pictures/mazdaSection.jpg'
+import toyotaSection from '../../../../assets/pictures/toyotaSection.jpg'
+import subaruSection from '../../../../assets/pictures/subaruSection.jpg'
+import hondaSection from '../../../../assets/pictures/hondaSection.jpg'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 

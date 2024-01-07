@@ -8,12 +8,12 @@ import { setRemoveFavoriteCar } from '../../../contentOfLoginPage/createAccountA
 
 import swal from '../../../shared/utils/swalImports'
 
+import styleTwo from '../../../contentOfHomePage/homePageComponents/carouselsOfCars/CarouselsOfCars.module.scss'
+
 import cancelIcon from '../../../../assets/pictures/app-icons/cancelIcon.png'
 import cancelIconRed from '../../../../assets/pictures/app-icons/cancelIconRed.png'
 
 import styles from '../ContentOfUserPage.module.scss'
-
-import styleTwo from '../../../contentOfHomePage/homePageComponents/carouselsOfCars/CarouselsOfCars.module.scss'
 
 const CardOfFavoriteCars = ({ text, img, id }) => {
   const [isButtonHovered, setIsButtonHovered] = useState(false)

@@ -1,5 +1,5 @@
 import { LazyLoadImage } from '../../../shared/utils/reactImports'
-import forumBanner from '../../../../pictures/forumBanner.jpg'
+import forumBanner from '../../../../assets/pictures/forumBanner.jpg'
 
 const ForumBanner = () => {
   return (

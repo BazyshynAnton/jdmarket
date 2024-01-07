@@ -11,7 +11,7 @@ html,
 body {
   height: 100%;
   font-family: 'Open Sans';
-  background-image: url(./pictures/main-bg.png);
+  background-image: url(./assets/pictures/main-bg.png);
 }
 
 ul,
@@ -220,7 +220,7 @@ input[name='searchInput']::placeholder {
 /* sweet-alert */
 
 .swal-modal {
-  background: url(./pictures/header-container-bg.png);
+  background: url(./assets/pictures/header-container-bg.png);
   border: 3px solid #767676;
 }
 

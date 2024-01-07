@@ -20,7 +20,7 @@
   font-size: 30px;
 
   &::after {
-    content: url(../../../../pictures/headerSectionCorner.png);
+    content: url(../../../../assets/pictures/headerSectionCorner.png);
     position: absolute;
     right: -15px;
     top: 0;
@@ -40,7 +40,7 @@
   font-size: 30px;
 
   &::after {
-    content: url(../../../../pictures/headerSectionCorner.png);
+    content: url(../../../../assets/pictures/headerSectionCorner.png);
     position: absolute;
     right: -15px;
     top: 0;
@@ -128,7 +128,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   background: linear-gradient(to bottom, #d80505 0%, #a10202 100%);
   font-size: 12px;
