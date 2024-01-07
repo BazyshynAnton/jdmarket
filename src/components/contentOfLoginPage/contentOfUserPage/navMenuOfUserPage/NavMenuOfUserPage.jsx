@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from '../../../shared/utils/reactImports'
 
-import styles from '../ContentOfUserPage.module.css'
+import styles from '../ContentOfUserPage.module.scss'
 
 const NavMenuOfUserPage = () => {
   return (
@@ -10,20 +10,22 @@ const NavMenuOfUserPage = () => {
         flexDirection: 'column',
         justifyContent: 'flex-start',
         gap: '1rem',
-      }}>
+      }}
+    >
       <div className={styles.navMenuOfUserPage}>
         <NavLink to="/">
           <p>HOME</p>
         </NavLink>
         <p
           style={{
-            color: 'black',
+            color: '#000',
             cursor: 'text',
             textDecoration: 'none',
-          }}>
+          }}
+        >
           {'>'}
         </p>
-        <p style={{ color: 'black', cursor: 'text', textDecoration: 'none' }}>
+        <p style={{ color: '#000', cursor: 'text', textDecoration: 'none' }}>
           User
         </p>
       </div>
@@ -31,8 +33,9 @@ const NavMenuOfUserPage = () => {
       <p
         style={{
           fontSize: '22px',
-          fontFamily: 'Pathway Gothic One, Arial, Helvetica, sans-serif',
-        }}>
+          fontFamily: 'Pathway Gothic One',
+        }}
+      >
         User profile
       </p>
     </div>

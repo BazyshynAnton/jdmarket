@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from '../../../shared/utils/reactImports'
 import { setEdit } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
+import swal from '../../../shared/utils/swalImports'
 
 import avatarExample from '../../../../pictures/avatarExample.jpg'
 
-import styles from '../ContentOfUserPage.module.css'
-import swal from 'sweetalert'
+import styles from '../ContentOfUserPage.module.scss'
 
 const stylesForTextAndButton = {
   text: {
@@ -16,7 +16,7 @@ const stylesForTextAndButton = {
   btn: {
     marginTop: '10px',
     width: '100px',
-    background: '#8B0000',
+    background: '#b90000',
     color: '#fff',
     padding: '5px 10px',
     borderRadius: '5px',

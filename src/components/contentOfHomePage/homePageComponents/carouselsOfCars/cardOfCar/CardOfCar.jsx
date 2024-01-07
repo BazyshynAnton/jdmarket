@@ -11,7 +11,7 @@ const CardOfCar = ({ text, img, id }) => {
         <LazyLoadImage src={img} alt="car" />
       </div>
       <div className={styles.cardTextAndButton}>
-        <p style={{ fontFamily: 'Open Sans, sans-serif' }}>{text}</p>
+        <p>{text}</p>
         {id === '8402' && (
           <NavLink
             to="/vehicle-inventory/8f22002c-8568-4e5b-829c-84cebeea1130"
@@ -23,7 +23,7 @@ const CardOfCar = ({ text, img, id }) => {
         )}
         {id !== '8402' && (
           <button
-            style={{ fontFamily: 'Open Sans, sans-serif', fontWeight: 'bold' }}
+            style={{ fontWeight: 'bold' }}
             onClick={() =>
               swal({
                 title: 'Oops...',

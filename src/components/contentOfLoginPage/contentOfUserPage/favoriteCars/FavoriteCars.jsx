@@ -1,17 +1,23 @@
-import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
-import { useSelector } from 'react-redux'
+import {
+  useEffect,
+  useState,
+  NavLink,
+  useSelector,
+} from '../../../shared/utils/reactImports'
+import {
+  Swiper,
+  SwiperSlide,
+  Navigation,
+} from '../../../shared/utils/swiperImports'
+import swal from '../../../shared/utils/swalImports'
 
 import CardOfFavoriteCars from '../cardOfFavoriteCars/CardOfFavoriteCars'
 import CardNavBtns from '../cardNavBtns/CardNavBtns'
 
 import cars from '../../../../data/cars'
 
+import styles from '../ContentOfUserPage.module.scss'
 import 'swiper/css'
-import styles from '../ContentOfUserPage.module.css'
-import swal from 'sweetalert'
 
 const FavoriteCars = () => {
   const { favoriteCar, activeUser } = useSelector(
@@ -49,6 +55,12 @@ const FavoriteCars = () => {
           spaceBetween={30}
           navigation={true}
           modules={[Navigation]}
+          style={{
+            overflow: 'visible',
+            overflowX: 'clip',
+            overflowY: 'visible',
+            padding: '0px 20px 0px 20px',
+          }}
           className={styles.favoriteCarsSwiper}
         >
           {favoriteCars.map((car) => (
@@ -66,7 +78,7 @@ const FavoriteCars = () => {
             gap: '0.3rem',
             justifyContent: 'center',
             alignItems: 'center',
-            fontFamily: 'Pathway Gothic One, sans-serif',
+            fontFamily: 'Pathway Gothic One',
             fontSize: '25px',
           }}
           className={styles.favoriteCarsSwiper}
@@ -80,7 +92,7 @@ const FavoriteCars = () => {
                 width: '90px',
                 padding: '5px 8px',
                 color: '#fff',
-                background: 'red',
+                background: '#b90000',
                 cursor: 'pointer',
                 fontSize: '15px',
                 textAlign: 'center',
@@ -101,7 +113,7 @@ const FavoriteCars = () => {
                 width: '90px',
                 padding: '5px 8px',
                 color: '#fff',
-                background: 'red',
+                background: '#b90000',
                 cursor: 'pointer',
                 fontSize: '12px',
               }}

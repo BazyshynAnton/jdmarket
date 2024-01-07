@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from '../../shared/utils/reactImports'
 import {
   setFormData,
   setMister,
@@ -6,7 +6,7 @@ import {
   setCreateAccount,
 } from '../createAccountAndRegisteredAccount/createAccountSlice'
 
-import styles from '../ContentOfLoginPage.module.css'
+import styles from '../ContentOfLoginPage.module.scss'
 
 const stylesForRegistrationForm = {
   stylesForRadioInput: {
@@ -18,7 +18,7 @@ const stylesForRegistrationForm = {
   stylesForSubmitBtn: {
     width: '60px',
   },
-  stylesForIputContainer: {
+  stylesForInputContainer: {
     display: 'flex',
     flexDirection: 'column',
   },
@@ -35,7 +35,7 @@ const RegistrationForm = () => {
 
   const dispatch = useDispatch()
 
-  const handleFormControll = (e) => {
+  const handleFormControl = (e) => {
     e.preventDefault()
   }
 
@@ -61,8 +61,9 @@ const RegistrationForm = () => {
       <h4>YOUR PERSONAL INFORMATION</h4>
 
       <form
-        onSubmit={handleFormControll}
-        className={styles.formRegistrationContent}>
+        onSubmit={handleFormControl}
+        className={styles.formRegistrationContent}
+      >
         <p>Title</p>
         <div className={styles.forRadioAndCheckboxContainer}>
           <input
@@ -86,7 +87,7 @@ const RegistrationForm = () => {
           />
           <label htmlFor="missus">Ms.</label>
         </div>
-        <div style={stylesForRegistrationForm.stylesForIputContainer}>
+        <div style={stylesForRegistrationForm.stylesForInputContainer}>
           {onClickFieldFirstName ? (
             <label htmlFor="firstName" style={{ color: 'red' }}>
               First name*
@@ -101,7 +102,7 @@ const RegistrationForm = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div style={stylesForRegistrationForm.stylesForIputContainer}>
+        <div style={stylesForRegistrationForm.stylesForInputContainer}>
           {onClickFieldLastName ? (
             <label htmlFor="lastName" style={{ color: 'red' }}>
               Last name*
@@ -116,7 +117,7 @@ const RegistrationForm = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div style={stylesForRegistrationForm.stylesForIputContainer}>
+        <div style={stylesForRegistrationForm.stylesForInputContainer}>
           {onClickFieldEmail ? (
             <label htmlFor="email3" style={{ color: 'red' }}>
               Email*
@@ -132,7 +133,7 @@ const RegistrationForm = () => {
             defaultValue={formData.email}
           />
         </div>
-        <div style={stylesForRegistrationForm.stylesForIputContainer}>
+        <div style={stylesForRegistrationForm.stylesForInputContainer}>
           {onClickFieldPassword ? (
             <label htmlFor="password2" style={{ color: 'red' }}>
               Password*
@@ -158,14 +159,16 @@ const RegistrationForm = () => {
             />
             <label
               htmlFor="newsletter"
-              className={styles.textCheckboxNewsLetter}>
+              className={styles.textCheckboxNewsLetter}
+            >
               Sign up for our newsletter!
             </label>
           </div>
 
           <button
             onClick={handleInputSubmit}
-            style={stylesForRegistrationForm.stylesForSubmitBtn}>
+            style={stylesForRegistrationForm.stylesForSubmitBtn}
+          >
             register
           </button>
         </div>

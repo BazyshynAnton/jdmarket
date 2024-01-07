@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from '../../../shared/utils/reactImports'
 import {
   setDefaultData,
   setMissusAccount,
   setMisterAccount,
   setConfirm,
-  setControllEditProfile,
+  setControlEditProfile,
 } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
-import styles from '../ContentOfUserPage.module.css'
+import styles from '../ContentOfUserPage.module.scss'
 
 const stylesForEditForm = {
   stylesForRadioInput: {
@@ -15,7 +15,7 @@ const stylesForEditForm = {
     cursor: 'pointer',
   },
 
-  stylesForIputContainer: {
+  stylesForInputContainer: {
     display: 'flex',
     flexDirection: 'column',
   },
@@ -24,10 +24,10 @@ const stylesForEditForm = {
 const EditProfile = () => {
   const {
     accountInfo,
-    inputNameAccountControll,
-    inputSecondNameControll,
-    inputEmailControll,
-    inputPasswordControll,
+    inputNameAccountControl,
+    inputSecondNameControl,
+    inputEmailControl,
+    inputPasswordControl,
   } = useSelector((store) => store.registeredAccount)
   const dispatch = useDispatch()
   const handleFormSubmit = (e) => {
@@ -75,9 +75,9 @@ const EditProfile = () => {
           />
           <label htmlFor="missus">Ms.</label>
         </div>
-        <div style={stylesForEditForm.stylesForIputContainer}>
-          {inputNameAccountControll ? (
-            <label htmlFor="nameAccount" style={{ color: 'red' }}>
+        <div style={stylesForEditForm.stylesForInputContainer}>
+          {inputNameAccountControl ? (
+            <label htmlFor="nameAccount" style={{ color: '#b90000' }}>
               First name*
             </label>
           ) : (
@@ -90,9 +90,9 @@ const EditProfile = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div style={stylesForEditForm.stylesForIputContainer}>
-          {inputSecondNameControll ? (
-            <label htmlFor="secondName" style={{ color: 'red' }}>
+        <div style={stylesForEditForm.stylesForInputContainer}>
+          {inputSecondNameControl ? (
+            <label htmlFor="secondName" style={{ color: '#b90000' }}>
               Last name*
             </label>
           ) : (
@@ -105,9 +105,9 @@ const EditProfile = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div style={stylesForEditForm.stylesForIputContainer}>
-          {inputEmailControll ? (
-            <label htmlFor="email3" style={{ color: 'red' }}>
+        <div style={stylesForEditForm.stylesForInputContainer}>
+          {inputEmailControl ? (
+            <label htmlFor="email3" style={{ color: '#b90000' }}>
               Email*
             </label>
           ) : (
@@ -121,9 +121,9 @@ const EditProfile = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div style={stylesForEditForm.stylesForIputContainer}>
-          {inputPasswordControll ? (
-            <label htmlFor="password2" style={{ color: 'red' }}>
+        <div style={stylesForEditForm.stylesForInputContainer}>
+          {inputPasswordControl ? (
+            <label htmlFor="password2" style={{ color: '#b90000' }}>
               Password*
             </label>
           ) : (
@@ -137,7 +137,7 @@ const EditProfile = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div style={stylesForEditForm.stylesForIputContainer}>
+        <div style={stylesForEditForm.stylesForInputContainer}>
           <label htmlFor="photo">Change Profile Picrure</label>
           <input
             style={{
@@ -158,20 +158,22 @@ const EditProfile = () => {
           accountInfo.password === '' ? (
             <button
               type="button"
-              onClick={() => dispatch(setControllEditProfile())}
-              className={styles.stylesForSubmitBtn}>
+              onClick={() => dispatch(setControlEditProfile())}
+              className={styles.stylesForSubmitBtn}
+            >
               confirm
             </button>
           ) : (
             <button
               style={{
-                fontFamily: 'Pathway Gothic One, sans-serif',
+                fontFamily: 'Pathway Gothic One',
                 fontSize: '15.5px',
                 letterSpacing: '0.6px',
               }}
               type="button"
               onClick={() => dispatch(setConfirm())}
-              className={styles.stylesForSubmitBtn}>
+              className={styles.stylesForSubmitBtn}
+            >
               confirm
             </button>
           )}

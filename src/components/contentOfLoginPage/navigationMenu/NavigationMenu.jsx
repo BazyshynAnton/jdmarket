@@ -1,9 +1,12 @@
-import { NavLink } from 'react-router-dom'
+import {
+  NavLink,
+  useDispatch,
+  useSelector,
+} from '../../shared/utils/reactImports'
 
-import { useDispatch, useSelector } from 'react-redux'
 import { backToLoginPage } from '../createAccountAndRegisteredAccount/createAccountSlice'
 
-import styles from '../ContentOfLoginPage.module.css'
+import styles from '../ContentOfLoginPage.module.scss'
 
 const NavigationMenu = () => {
   const dispatch = useDispatch()

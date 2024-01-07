@@ -1,4 +1,3 @@
-import { Container } from '@mui/material'
 import NavigationMenu from './navigationMenu/NavigationMenu'
 import CreateAccountAndRegisteredAccount from './createAccountAndRegisteredAccount/CreateAccountAndRegisteredAccount'
 import InformationDesk from '../contentOfHomePage/homePageComponents/informationDesk/InformationDesk'
@@ -6,12 +5,12 @@ import LatestArrivals from '../contentOfHomePage/homePageComponents/carouselsOfC
 
 const ContentOfLoginPage = () => {
   return (
-    <Container>
+    <div className="my-container">
       <NavigationMenu />
       <CreateAccountAndRegisteredAccount />
       <LatestArrivals />
       <InformationDesk />
-    </Container>
+    </div>
   )
 }
 

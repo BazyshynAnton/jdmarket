@@ -1,59 +1,29 @@
-import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-
-import { useDispatch, useSelector } from 'react-redux'
+import {
+  useState,
+  NavLink,
+  useDispatch,
+  useSelector,
+} from '../../../shared/utils/reactImports'
 import { setRemoveFavoriteCar } from '../../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
-import CancelIcon from '@mui/icons-material/Cancel'
+import swal from '../../../shared/utils/swalImports'
 
-import styles from '../ContentOfUserPage.module.css'
-import swal from 'sweetalert'
+import cancelIcon from '../../../../assets/pictures/app-icons/cancelIcon.png'
+import cancelIconRed from '../../../../assets/pictures/app-icons/cancelIconRed.png'
 
-const stylesForCardOfFavoriteCars = {
-  btn: {
-    marginLeft: '10px',
-    float: 'right',
-    background: '#a10202',
-    borderRadius: '4px',
-    color: 'white',
-    width: '40%',
-    height: '30px',
-    cursor: 'pointer',
-    fontFamily: 'Open Sans, sans-serif',
-    fontSize: '12px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+import styles from '../ContentOfUserPage.module.scss'
 
-  btn2: {
-    float: 'right',
-    background: '#a10202',
-    borderRadius: '4px',
-    color: 'white',
-    width: '100%',
-    height: '30px',
-    cursor: 'pointer',
-    fontSize: '12px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-}
+import styleTwo from '../../../contentOfHomePage/homePageComponents/carouselsOfCars/CarouselsOfCars.module.scss'
 
 const CardOfFavoriteCars = ({ text, img, id }) => {
-  const [ifStyle, setIfStyle] = useState(window.innerWidth <= 970)
-  useEffect(() => {
-    const handleResize = () => {
-      setIfStyle(window.innerWidth <= 970)
-    }
+  const [isButtonHovered, setIsButtonHovered] = useState(false)
 
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  const handleMouseOver = () => {
+    setIsButtonHovered(true)
+  }
+  const handleMouseLeave = () => {
+    setIsButtonHovered(false)
+  }
 
   const dispatch = useDispatch()
   const { favoriteCar } = useSelector((store) => store.registeredAccount)
@@ -69,24 +39,34 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
             <p style={{ fontFamily: 'Open Sans, sans-serif' }}>{text}</p>
             <NavLink
               to="/vehicle-inventory/8f22002c-8568-4e5b-829c-84cebeea1130"
-              style={
-                ifStyle
-                  ? stylesForCardOfFavoriteCars.btn2
-                  : stylesForCardOfFavoriteCars.btn
-              }
+              className={styleTwo.styleForCarLinkBtn}
             >
               view details
             </NavLink>
           </div>
           <div style={{ width: '100%' }}>
             <div
+              onMouseEnter={handleMouseOver}
+              onMouseLeave={handleMouseLeave}
               className={styles.removeFromFavorites}
               onClick={() =>
                 dispatch(setRemoveFavoriteCar(favoriteCar.id.replace(id, '')))
               }
             >
               <p style={{ fontFamily: 'Open Sans, sans-serif' }}>Remove</p>
-              <CancelIcon className={styles.removeButton} />
+              {!isButtonHovered ? (
+                <img
+                  style={{ width: '20px', height: '20px' }}
+                  src={cancelIcon}
+                  alt="remove"
+                />
+              ) : (
+                <img
+                  style={{ width: '20px', height: '20px' }}
+                  src={cancelIconRed}
+                  alt="remove"
+                />
+              )}
             </div>
           </div>
         </>
@@ -96,7 +76,7 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
           <div className={styles.cardTextAndButton}>
             <p>{text}</p>
             <button
-              style={stylesForCardOfFavoriteCars.btn}
+              style={styleTwo.styleForCarLinkBtn}
               onClick={() =>
                 swal({
                   title: 'Oops...',
@@ -109,13 +89,27 @@ const CardOfFavoriteCars = ({ text, img, id }) => {
           </div>
           <div style={{ width: '100%' }}>
             <div
+              onMouseEnter={handleMouseOver}
+              onMouseLeave={handleMouseLeave}
               className={styles.removeFromFavorites}
               onClick={() => {
                 dispatch(setRemoveFavoriteCar(favoriteCar.id.replace(id, '')))
               }}
             >
               <p>Remove</p>
-              <CancelIcon className={styles.removeButton} />
+              {!isButtonHovered ? (
+                <img
+                  style={{ width: '20px', height: '20px' }}
+                  src={cancelIcon}
+                  alt="remove"
+                />
+              ) : (
+                <img
+                  style={{ width: '20px', height: '20px' }}
+                  src={cancelIconRed}
+                  alt="remove"
+                />
+              )}
             </div>
           </div>
         </>
