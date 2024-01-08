@@ -44,7 +44,7 @@ Start the project `npm run dev`
 <div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/b7014a7b-d041-45d1-a08a-9809b6ac5203' /></div>
 
 <div align="center"><h3>🔴 How to Buy Page ⚪</h3></div>  
-<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/7c4c7d52-9ede-42fa-9a0a-bb16488c150f' /></div>
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/046866c6-e395-423a-8628-0c6167e93213' /></div>
 
 <div align="center"><h3>🔴 Site Search ⚪</h3></div>  
 <div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/6fd502e5-50e3-4eba-9f79-08580e23b114' /></div>
