@@ -85,8 +85,8 @@ const ContentOfHowToBuyPage = () => {
 
           <h2>Non-stock special purchase</h2>
           <h4>
-            * JDM EXPO Co. Ltd is exclusive exporting agent of high performance
-            and classic vehicles in Japan. If the vehicle that you want is not
+            * JDM Co. Ltd is exclusive exporting agent of high performance and
+            classic vehicles in Japan. If the vehicle that you want is not
             available in our current stock, send us an inquiry and we will find
             it for you in Japan.
           </h4>
