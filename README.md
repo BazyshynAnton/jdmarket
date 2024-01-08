@@ -2,7 +2,6 @@
 
   <p>This project is purely an educational and technical exercise, created to showcase my programming skills. None of the elements presented in this project have any real-world connection, and any resemblances to real events, organizations, or individuals are purely coincidental.</p>
 <div align='center'><img style="width:30%" src='https://github.com/BazyshynAnton/JDM/assets/120124298/f70f6269-7b98-4684-bfd8-99a472041e65' /></div>
-![head-logo](https://github.com/BazyshynAnton/JDM/assets/120124298/af49a8b3-6e18-4839-9c25-e87b8e0bc268)
 
 ## Features
 
