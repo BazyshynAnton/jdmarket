@@ -93,11 +93,7 @@
   position: relative;
   padding: 10px 0px 0px 20px;
 
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgb(185, 185, 185)
-  );
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), #cdcdcd);
   width: 180px;
   height: 45px;
   font-family: $gothicFont;
@@ -107,9 +103,9 @@
   &::after {
     content: url(../../../assets/pictures/headerUserCorner.png);
     position: absolute;
-
     right: -24px;
     top: 0;
+
     bottom: 0;
   }
 }
@@ -118,7 +114,7 @@
   position: relative;
   width: 100%;
   height: 260px;
-  background: rgb(185, 185, 185);
+  background: #cdcdcd;
   overflow-y: visible;
 }
 

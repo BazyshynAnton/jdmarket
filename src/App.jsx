@@ -1,17 +1,7 @@
-import { lazy } from 'react'
+import { lazy } from './components/shared/utils/reactImports'
 import { Routes, Route } from 'react-router-dom'
-// import HomePage from './pages/HomePage'
-// import VehicleInventory from './pages/vehicleInventory/VehicleInventory'
+
 import MainLayout from './layouts/MainLayout'
-// import JdmSportsPage from './pages/vehicleInventory/JdmSportsPage'
-// import JdmClassicPage from './pages/vehicleInventory/JdmClassicPage'
-// import NonJdmPage from './pages/vehicleInventory/NonJdmPage'
-// import HowToBuyPage from './pages/HowToBuyPage'
-// import CarPurchasePage from './pages/CarPurchasePage'
-// import LoginPage from './pages/LoginPage'
-// import UserPage from './pages/UserPage'
-// import SearchPage from './pages/SearchPage'
-// import NotFound from './pages/NotFound'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const VehicleInventory = lazy(() =>
