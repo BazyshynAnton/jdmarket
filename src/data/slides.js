@@ -15,8 +15,8 @@ const slides = [
     id: 2,
     img: slide2,
     title: 'slide2',
-    header: 'YATOMI-SHI HEAD OFFICE',
-    text: 'We welcome you to visit us in Nagoya anytime during working hours and try out your dream car before the excited purchase decision.',
+    header: 'HEAD OFFICE',
+    text: 'We welcome you to visit us in Tokyo anytime during working hours and try out your dream car before the excited purchase decision.',
   },
   {
     id: 3,
