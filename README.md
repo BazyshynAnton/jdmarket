@@ -5,11 +5,11 @@
 
 ## Features
 
--Log in.
--Edit your profile.
--If you're not logged in, register.
--Add cars from the catalog to your "Favorites."
--Filter the car catalog.
+-Log in. <br/>
+-Edit your profile. <br/>
+-If you're not logged in, register. <br/>
+-Add cars from the catalog to your "Favorites." <br/>
+-Filter the car catalog. <br/>
 -Search for cars in the search field.
 
 ## Technologies
@@ -35,9 +35,23 @@ and other.
 
 Start the project `npm run dev`  
 
+<h2>Screenshots of the Project 📸</h2>  
+<br>
+<div align="center"><h3>🔴 Home Page ⚪</h3></div>  
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/3ac33b76-0f4a-4309-9a0e-f6da238c35c7' /></div>
 
-<div align="center"><br>🔴Home Page⚪</div>  
+<div align="center"><h3>🔴 Vehicle Page ⚪</h3></div>  
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/b7014a7b-d041-45d1-a08a-9809b6ac5203' /></div>
 
+<div align="center"><h3>🔴 How to Buy Page ⚪</h3></div>  
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/7c4c7d52-9ede-42fa-9a0a-bb16488c150f' /></div>
 
+<div align="center"><h3>🔴 Site Search ⚪</h3></div>  
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/6fd502e5-50e3-4eba-9f79-08580e23b114' /></div>
 
+<div align="center"><h3>🔴 Log in Page ⚪</h3></div>  
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/043d9e5f-8080-4095-8cb4-774396e4f4d7' /></div>
+
+<div align="center"><h3>🔴 User Page ⚪</h3></div>  
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/516876fc-1acc-4ea9-b140-41a549d77912' /></div>
 
