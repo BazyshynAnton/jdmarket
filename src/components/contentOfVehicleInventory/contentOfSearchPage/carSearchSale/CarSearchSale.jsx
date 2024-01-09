@@ -1,10 +1,16 @@
-import { NavLink, useSelector } from '../../../shared/utils/reactImports'
+import {
+  NavLink,
+  useEffect,
+  useSelector,
+  useState,
+} from '../../../shared/utils/reactImports'
 
 import CardSearchSale from './cardSearchSale/CardSearchSale'
 
 import vehiclePageCars from '../../../../data/vehiclePageCars'
 
 import styles from '../../carSale/CarSale.module.scss'
+import CarSaleNavigation from '../../carSale/carSaleNavigation/CarSaleNavigation'
 
 const CarSale = () => {
   const { searchInput, sort, selectForm } = useSelector(
@@ -19,6 +25,19 @@ const CarSale = () => {
 
     return categoryMatch && textMatch && sort
   })
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const limit = 15
+  const startIndex = (currentPage - 1) * limit
+  const endIndex = startIndex + limit
+
+  const currentCars = filteredCars.slice(startIndex, endIndex)
+
+  useEffect(() => {
+    if (filteredCars.length < 15) {
+      setCurrentPage(1)
+    }
+  }, [filteredCars.length])
 
   return (
     <>
@@ -57,7 +76,7 @@ const CarSale = () => {
 
       <div className={styles.containerOfAllCars}>
         {sort
-          ? filteredCars.map((card) => (
+          ? currentCars.map((card) => (
               <NavLink
                 key={card.id}
                 to={`/vehicle-inventory/${card.id}`}
@@ -68,6 +87,15 @@ const CarSale = () => {
             ))
           : ''}
       </div>
+      {filteredCars.length > 15 && (
+        <CarSaleNavigation
+          currentPage={currentPage}
+          total={100}
+          limit={limit}
+          vehiclePageCars={filteredCars}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
+      )}
     </>
   )
 }

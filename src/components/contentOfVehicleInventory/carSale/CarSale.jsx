@@ -1,6 +1,12 @@
-import { NavLink, LazyLoadImage } from '../../shared/utils/reactImports'
+import {
+  NavLink,
+  LazyLoadImage,
+  useState,
+} from '../../shared/utils/reactImports'
 
 import CardSale from './cardSale/CardSale'
+import CarSaleNavigation from './carSaleNavigation/CarSaleNavigation'
+import InformationDesk from '../../contentOfHomePage/homePageComponents/informationDesk/InformationDesk'
 
 import jdmSports from '../../../assets/pictures/jdmSports.jpg'
 import jdmClassic from '../../../assets/pictures/jdmClassic.jpg'
@@ -11,6 +17,12 @@ import vehiclePageCars from '../../../data/vehiclePageCars'
 import styles from './CarSale.module.scss'
 
 const CarSale = () => {
+  const [currentPage, setCurrentPage] = useState(1)
+  const limit = 15
+  const startIndex = (currentPage - 1) * limit
+  const endIndex = startIndex + limit
+
+  const currentCars = vehiclePageCars.slice(startIndex, endIndex)
   return (
     <>
       <div className={styles.mainNavAndSectionContainer}>
@@ -63,7 +75,7 @@ const CarSale = () => {
         </div>
       </div>
       <div className={styles.containerOfAllCars}>
-        {vehiclePageCars.map((card) => (
+        {currentCars.map((card) => (
           <NavLink
             key={card.id}
             to={`/vehicle-inventory/${card.id}`}
@@ -73,6 +85,14 @@ const CarSale = () => {
           </NavLink>
         ))}
       </div>
+      <CarSaleNavigation
+        currentPage={currentPage}
+        total={100}
+        limit={limit}
+        vehiclePageCars={vehiclePageCars}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
+      <InformationDesk />
     </>
   )
 }
