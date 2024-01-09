@@ -50,74 +50,78 @@ const CarSaleNavigation = ({
   }
   return (
     <>
-      <ul
-        style={{
-          marginTop: '40px',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '0.5rem',
-          alignItems: 'center',
-        }}
-      >
-        <li>
-          <button
-            onClick={() => {
-              onPageChange(currentPage - 1)
-              window.scrollTo(0, 0)
-            }}
-            disabled={currentPage === 1}
-            style={{
-              cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
-              ...stylesForBtn,
-            }}
-          >
-            Previous
-          </button>
-        </li>
-        {4 <= currentPage && (
-          <>
+      <div style={{ flexWrap: 'wrap' }}>
+        <ul
+          style={{
+            width: '100%',
+            marginTop: '40px',
+            flexWrap: 'wrap',
+            display: 'inline-flex',
+            justifyContent: 'center',
+            gap: '0.5rem',
+            alignItems: 'center',
+          }}
+        >
+          <li>
+            <button
+              onClick={() => {
+                onPageChange(currentPage - 1)
+                window.scrollTo(0, 0)
+              }}
+              disabled={currentPage === 1}
+              style={{
+                cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
+                ...stylesForBtn,
+              }}
+            >
+              Previous
+            </button>
+          </li>
+          {4 <= currentPage && (
+            <>
+              <PaginationItem
+                page={1}
+                onPageChange={onPageChange}
+                currentPage={currentPage}
+              />
+              <li>...</li>
+            </>
+          )}
+          {visiblePages.map((page) => (
             <PaginationItem
-              page={1}
+              page={page}
+              key={page}
               onPageChange={onPageChange}
               currentPage={currentPage}
             />
-            <li>...</li>
-          </>
-        )}
-        {visiblePages.map((page) => (
-          <PaginationItem
-            page={page}
-            key={page}
-            onPageChange={onPageChange}
-            currentPage={currentPage}
-          />
-        ))}
-        {endPage < pagesCount && (
-          <>
-            <li>...</li>
-            <PaginationItem
-              page={pagesCount}
-              onPageChange={onPageChange}
-              currentPage={currentPage}
-            />
-          </>
-        )}
-        <li>
-          <button
-            onClick={() => {
-              onPageChange(currentPage + 1)
-              window.scrollTo(0, 0)
-            }}
-            disabled={currentPage === pagesCount}
-            style={{
-              cursor: currentPage === pagesCount ? 'not-allowed' : 'pointer',
-              ...stylesForBtn,
-            }}
-          >
-            Next
-          </button>
-        </li>
-      </ul>
+          ))}
+          {endPage < pagesCount && (
+            <>
+              <li>...</li>
+              <PaginationItem
+                page={pagesCount}
+                onPageChange={onPageChange}
+                currentPage={currentPage}
+              />
+            </>
+          )}
+          <li>
+            <button
+              onClick={() => {
+                onPageChange(currentPage + 1)
+                window.scrollTo(0, 0)
+              }}
+              disabled={currentPage === pagesCount}
+              style={{
+                cursor: currentPage === pagesCount ? 'not-allowed' : 'pointer',
+                ...stylesForBtn,
+              }}
+            >
+              Next
+            </button>
+          </li>
+        </ul>
+      </div>
       <div
         style={{
           marginTop: '20px',

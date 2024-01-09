@@ -59,7 +59,7 @@ const CarSale = () => {
         <div style={{ marginTop: '20px', flexWrap: 'wrap', width: '100%' }}>
           <h4 style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '15px' }}>
             Search{' '}
-            <span style={{ color: 'red' }}>
+            <span style={{ color: '#b90000' }}>
               {selectForm.searchCategory !== 'Maker'
                 ? `${selectForm.searchCategory} ${searchInput}`
                 : `${searchInput}`}
