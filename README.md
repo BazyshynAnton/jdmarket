@@ -41,13 +41,13 @@ Start the project `npm run dev`
 <div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/3ac33b76-0f4a-4309-9a0e-f6da238c35c7' /></div>
 
 <div align="center"><h3>🔴 Vehicle Page ⚪</h3></div>  
-<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/b7014a7b-d041-45d1-a08a-9809b6ac5203' /></div>
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/310165e7-f950-4feb-85d2-6b25d9b154e4' /></div>
 
 <div align="center"><h3>🔴 How to Buy Page ⚪</h3></div>  
 <div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/046866c6-e395-423a-8628-0c6167e93213' /></div>
 
 <div align="center"><h3>🔴 Site Search ⚪</h3></div>  
-<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/6fd502e5-50e3-4eba-9f79-08580e23b114' /></div>
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/f2115c0e-26d8-4d0b-a482-31a902df2da3' /></div>
 
 <div align="center"><h3>🔴 Log in Page ⚪</h3></div>  
 <div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/043d9e5f-8080-4095-8cb4-774396e4f4d7' /></div>
