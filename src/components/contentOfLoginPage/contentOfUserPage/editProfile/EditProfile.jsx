@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from '../../../shared/utils/reactImports'
 import {
-  setDefaultData,
+  setDefaultDataChange,
   setMissusAccount,
   setMisterAccount,
-  setConfirm,
+  setEdit,
+  setApplyChanges,
   setControlEditProfile,
 } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
@@ -23,7 +24,7 @@ const stylesForEditForm = {
 
 const EditProfile = () => {
   const {
-    accountInfo,
+    accountInfoChange,
     inputNameAccountControl,
     inputSecondNameControl,
     inputEmailControl,
@@ -44,7 +45,9 @@ const EditProfile = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target
 
-    dispatch(setDefaultData({ ...accountInfo, [name]: value }))
+    dispatch(
+      setDefaultDataChange({ ...accountInfoChange, [name + 'Change']: value })
+    )
   }
 
   return (
@@ -59,9 +62,9 @@ const EditProfile = () => {
             type="radio"
             name="mister"
             id="mister"
-            value={accountInfo.misterAccount}
+            value={accountInfoChange.misterAccountChange}
             onChange={handleRadioMisterChange}
-            checked={accountInfo.misterAccount}
+            checked={accountInfoChange.misterAccountChange}
           />
           <label htmlFor="mister">Mr.</label>
           <input
@@ -69,8 +72,8 @@ const EditProfile = () => {
             type="radio"
             name="missus"
             id="missus"
-            value={accountInfo.missusAccount}
-            checked={accountInfo.missusAccount}
+            value={accountInfoChange.missusAccountChange}
+            checked={accountInfoChange.missusAccountChange}
             onChange={handleRadioMissusChange}
           />
           <label htmlFor="missus">Ms.</label>
@@ -86,7 +89,7 @@ const EditProfile = () => {
           <input
             name="nameAccount"
             id="nameAccount"
-            value={accountInfo.nameAccount}
+            value={accountInfoChange.nameAccountChange}
             onChange={handleInputChange}
           />
         </div>
@@ -101,7 +104,7 @@ const EditProfile = () => {
           <input
             name="secondName"
             id="secondName"
-            value={accountInfo.secondName}
+            value={accountInfoChange.secondNameChange}
             onChange={handleInputChange}
           />
         </div>
@@ -117,7 +120,7 @@ const EditProfile = () => {
             name="emailAddress"
             id="email3"
             autoComplete="email"
-            defaultValue={accountInfo.emailAddress}
+            defaultValue={accountInfoChange.emailAddressChange}
             onChange={handleInputChange}
           />
         </div>
@@ -133,12 +136,12 @@ const EditProfile = () => {
             type="password"
             name="password"
             id="password2"
-            value={accountInfo.password}
+            value={accountInfoChange.passwordChange}
             onChange={handleInputChange}
           />
         </div>
         <div style={stylesForEditForm.stylesForInputContainer}>
-          <label htmlFor="photo">Change Profile Picrure</label>
+          <label htmlFor="photo">Change Profile Picture</label>
           <input
             style={{
               border: 'none',
@@ -152,10 +155,10 @@ const EditProfile = () => {
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {accountInfo.nameAccount === '' ||
-          accountInfo.secondName === '' ||
-          accountInfo.emailAddress === '' ||
-          accountInfo.password === '' ? (
+          {accountInfoChange.nameAccountChange === '' ||
+          accountInfoChange.secondNameChange === '' ||
+          accountInfoChange.emailAddressChange === '' ||
+          accountInfoChange.passwordChange === '' ? (
             <button
               type="button"
               onClick={() => dispatch(setControlEditProfile())}
@@ -172,8 +175,9 @@ const EditProfile = () => {
               }}
               type="button"
               onClick={() => {
-                dispatch(setConfirm())
+                dispatch(setEdit(false))
                 dispatch(setControlEditProfile())
+                dispatch(setApplyChanges())
               }}
               className={styles.stylesForSubmitBtn}
             >

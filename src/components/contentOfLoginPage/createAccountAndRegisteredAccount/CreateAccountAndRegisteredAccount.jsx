@@ -49,9 +49,12 @@ const CreateAccountAndRegisteredAccount = () => {
   }
 
   //already registered account
-  const { accountInfo, inputEmailControl, inputPasswordControl } = useSelector(
-    (store) => store.registeredAccount
-  )
+  const {
+    accountInfo,
+    accountInfoChange,
+    inputEmailControl,
+    inputPasswordControl,
+  } = useSelector((store) => store.registeredAccount)
 
   const handleAlreadyRegisteredInputChange = (event) => {
     const { name, value } = event.target
@@ -127,9 +130,9 @@ const CreateAccountAndRegisteredAccount = () => {
               {(inputEmailControl || inputPasswordControl) && (
                 <p style={{ color: '#b90000' }}>wrong email or password.</p>
               )}
-              {accountInfo.emailAddress.includes(
-                'stroustrup-example@gmail.com'
-              ) && accountInfo.password.includes('BjarneStroustrup') ? (
+              {accountInfo.emailAddress ===
+                accountInfoChange.emailAddressChange &&
+              accountInfo.password === accountInfoChange.passwordChange ? (
                 <NavLink
                   to="/user"
                   style={{ width: '60px' }}

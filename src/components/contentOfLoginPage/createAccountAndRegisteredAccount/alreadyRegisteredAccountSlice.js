@@ -19,6 +19,14 @@ const accountExampleState = {
     misterAccount: true,
     missusAccount: false,
   },
+  accountInfoChange: {
+    nameAccountChange: 'Bjarne',
+    secondNameChange: 'Stroustrup',
+    emailAddressChange: 'stroustrup-example@gmail.com',
+    passwordChange: 'BjarneStroustrup',
+    misterAccountChange: true,
+    missusAccountChange: false,
+  },
 }
 
 const alreadyRegisteredAccount = createSlice({
@@ -28,13 +36,16 @@ const alreadyRegisteredAccount = createSlice({
     setDefaultData: (state, action) => {
       state.accountInfo = action.payload
     },
+    setDefaultDataChange: (state, action) => {
+      state.accountInfoChange = action.payload
+    },
     setMisterAccount: (state) => {
-      state.accountInfo.misterAccount = true
-      state.accountInfo.missusAccount = false
+      state.accountInfoChange.misterAccountChange = true
+      state.accountInfoChange.missusAccountChange = false
     },
     setMissusAccount: (state) => {
-      state.accountInfo.missusAccount = true
-      state.accountInfo.misterAccount = false
+      state.accountInfoChange.missusAccountChange = true
+      state.accountInfoChange.misterAccountChange = false
     },
     setActiveUserSignIn: (state) => {
       state.activeUser = true
@@ -52,23 +63,22 @@ const alreadyRegisteredAccount = createSlice({
     setRemoveFavoriteCar: (state, action) => {
       state.favoriteCar.id = action.payload
     },
-    setEdit: (state) => {
-      state.edit = true
-    },
-    setEditFalse: (state) => {
-      state.edit = false
-    },
-    setConfirm: (state) => {
-      state.edit = false
+    setEdit: (state, action) => {
+      state.edit = action.payload
     },
 
     setControlValid: (state) => {
-      if (state.accountInfo.emailAddress !== 'stroustrup-example@gmail.com') {
+      if (
+        state.accountInfo.emailAddress !==
+        state.accountInfoChange.emailAddressChange
+      ) {
         state.inputEmailControl = true
       } else {
         state.inputEmailControl = false
       }
-      if (state.accountInfo.password !== 'BjarneStroustrup') {
+      if (
+        state.accountInfo.password !== state.accountInfoChange.passwordChange
+      ) {
         state.inputPasswordControl = true
       } else {
         state.inputPasswordControl = false
@@ -76,44 +86,56 @@ const alreadyRegisteredAccount = createSlice({
     },
 
     setControlEditProfile: (state) => {
-      if (state.accountInfo.nameAccount === '') {
+      if (state.accountInfoChange.nameAccountChange === '') {
         state.inputNameAccountControl = true
       } else {
         state.inputNameAccountControl = false
       }
-      if (state.accountInfo.secondName === '') {
+      if (state.accountInfoChange.secondNameChange === '') {
         state.inputSecondNameControl = true
       } else {
         state.inputSecondNameControl = false
       }
-      if (state.accountInfo.emailAddress === '') {
+      if (state.accountInfoChange.emailAddressChange === '') {
         state.inputEmailControl = true
       } else {
         state.inputEmailControl = false
       }
-      if (state.accountInfo.password === '') {
+      if (state.accountInfoChange.passwordChange === '') {
         state.inputPasswordControl = true
       } else {
         state.inputPasswordControl = false
       }
+    },
+
+    setApplyChanges: (state) => {
+      state.accountInfo.nameAccount = state.accountInfoChange.nameAccountChange
+      state.accountInfo.secondName = state.accountInfoChange.secondNameChange
+      state.accountInfo.emailAddress =
+        state.accountInfoChange.emailAddressChange
+      state.accountInfo.password = state.accountInfoChange.passwordChange
+      state.accountInfo.misterAccount =
+        state.accountInfoChange.misterAccountChange
+      state.accountInfo.missusAccount =
+        state.accountInfoChange.missusAccountChange
     },
   },
 })
 
 export const {
   setDefaultData,
+  setDefaultDataChange,
   setActiveUserSignIn,
   setActiveUserLogout,
   setInFavorite,
   setFavoriteCar,
   setRemoveFavoriteCar,
   setEdit,
-  setEditFalse,
   setMisterAccount,
   setMissusAccount,
-  setConfirm,
   setControlValid,
   setControlEditProfile,
+  setApplyChanges,
 } = alreadyRegisteredAccount.actions
 
 export default alreadyRegisteredAccount.reducer

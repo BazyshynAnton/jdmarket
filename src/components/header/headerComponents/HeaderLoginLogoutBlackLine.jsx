@@ -7,7 +7,7 @@ import { setClearRegistration } from '../../contentOfLoginPage/createAccountAndR
 
 import {
   setActiveUserLogout,
-  setEditFalse,
+  setEdit,
 } from '../../contentOfLoginPage/createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 
 import styles from '../Header.module.scss'
@@ -36,7 +36,7 @@ const HeaderLoginLogoutBlackLine = () => {
                   style={{
                     textDecoration: 'none',
                   }}
-                  onClick={() => dispatch(setEditFalse())}
+                  onClick={() => dispatch(setEdit(false))}
                 >
                   {accountInfo.nameAccount} {accountInfo.secondName}
                 </p>

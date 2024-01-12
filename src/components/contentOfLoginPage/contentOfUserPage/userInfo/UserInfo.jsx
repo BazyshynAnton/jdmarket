@@ -48,7 +48,7 @@ const UserInfo = () => {
       {activeUser ? (
         <button
           onClick={() => {
-            dispatch(setEdit())
+            dispatch(setEdit(true))
           }}
           style={stylesForTextAndButton.btn}
         >
