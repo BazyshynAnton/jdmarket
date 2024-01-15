@@ -1,9 +1,9 @@
-import hondaPic from '../assets/pictures/hondaPic.jpg'
-import mazdaPic from '../assets/pictures/mazdaPic.jpg'
-import mitsubishiPic from '../assets/pictures/mitsubishiPic.jpg'
-import nissanPic from '../assets/pictures/nissanPic.jpg'
-import subaruPic from '../assets/pictures/subaruPic.jpg'
-import toyotaPic from '../assets/pictures/toyotaPic.jpg'
+import hondaPic from '../assets/pictures/hondaPic.png'
+import mazdaPic from '../assets/pictures/mazdaPic.png'
+import mitsubishiPic from '../assets/pictures/mitsubishiPic.png'
+import nissanPic from '../assets/pictures/nissanPic.png'
+import subaruPic from '../assets/pictures/subaruPic.png'
+import toyotaPic from '../assets/pictures/toyotaPic.png'
 
 const manufactures = [
   {

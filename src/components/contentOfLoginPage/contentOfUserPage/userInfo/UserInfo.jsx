@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from '../../../shared/utils/reactImports'
 import { setEdit } from '../../createAccountAndRegisteredAccount/alreadyRegisteredAccountSlice'
 import swal from '../../../shared/utils/swalImports'
 
-import avatarExample from '../../../../assets/pictures/avatarExample.jpg'
+import userLogo from '../../../../assets/pictures/userLogo.jpg'
 
 import styles from '../ContentOfUserPage.module.scss'
 
@@ -36,7 +36,7 @@ const UserInfo = () => {
   return (
     <div className={styles.userInfo}>
       <div className={styles.userAvatarContainer}>
-        <img src={avatarExample} alt="user-avatar" />
+        <img src={userLogo} alt="user-avatar" />
       </div>
 
       <p style={stylesForTextAndButton.text}>

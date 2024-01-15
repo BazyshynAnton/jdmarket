@@ -64,11 +64,12 @@ const ReusableCarouselOfCars = ({ header, underHeaderText, slicedCars }) => {
           position: 'relative',
           width: '100%',
           height: '100%',
-          background: '#fff',
           overflow: 'visible',
           overflowX: 'clip',
           overflowY: 'visible',
           padding: '20px 20px 0px 20px',
+          background:
+            'linear-gradient(to bottom, #eeeeee 0%, #fff 60%, #fff 100%)',
         }}
       >
         {slicedCars.map((car) => (
