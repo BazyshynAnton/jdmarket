@@ -38,7 +38,7 @@ Start the project `npm run dev`
 <h2>Screenshots of the Project 📸</h2>  
 <br>
 <div align="center"><h3>🔴 Home Page ⚪</h3></div>  
-<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/3ac33b76-0f4a-4309-9a0e-f6da238c35c7' /></div>
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/6d3cd14a-fcc1-455c-a310-b3daf0384837' /></div>
 
 <div align="center"><h3>🔴 Vehicle Page ⚪</h3></div>  
 <div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/310165e7-f950-4feb-85d2-6b25d9b154e4' /></div>
@@ -53,5 +53,5 @@ Start the project `npm run dev`
 <div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/043d9e5f-8080-4095-8cb4-774396e4f4d7' /></div>
 
 <div align="center"><h3>🔴 User Page ⚪</h3></div>  
-<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/516876fc-1acc-4ea9-b140-41a549d77912' /></div>
+<div align='center'><img src='https://github.com/BazyshynAnton/JDM/assets/120124298/2f71d165-4086-4ca8-b1d9-81f982cad998' /></div>
 
