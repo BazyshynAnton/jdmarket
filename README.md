@@ -16,7 +16,7 @@
 
 -React.  
 -React-Router-DOM.  
--Redux Tool Kit for state management.  
+-Redux Toolkit for state management.  
 -SCSS for styling.  
 -vite.  
 and other.  
