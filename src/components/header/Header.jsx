@@ -18,6 +18,7 @@ import menuIcon from '../../assets/pictures/app-icons/menuIcon.png'
 import headerLogo from '../../assets/pictures/head-logo.png'
 
 import styles from './Header.module.scss'
+import { useCallback } from 'react'
 
 const AppBarForSmallScreens = lazy(() =>
   import('./headerComponents/AppBarForSmallScreens')
@@ -48,11 +49,14 @@ const Header = () => {
   //dispatch
   const dispatch = useDispatch()
 
-  const handleInputRemoveHelper = (event) => {
-    if (!event.target.closest(`#${INPUTID}`)) {
-      dispatch(setHelper(false))
-    }
-  }
+  const handleInputRemoveHelper = useCallback(
+    (event) => {
+      if (!event.target.closest(`#${INPUTID}`)) {
+        dispatch(setHelper(false))
+      }
+    },
+    [dispatch, INPUTID]
+  )
 
   useEffect(() => {
     if (helper) {
@@ -62,7 +66,7 @@ const Header = () => {
     return () => {
       return document.removeEventListener('click', handleInputRemoveHelper)
     }
-  }, [helper])
+  }, [handleInputRemoveHelper, helper])
 
   return (
     <div className={styles.headerOverflow}>
