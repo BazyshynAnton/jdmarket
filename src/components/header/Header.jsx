@@ -9,6 +9,7 @@ import {
   LazyLoadImage,
 } from '../shared/utils/reactImports'
 import { setHelper } from './headerSlice'
+import { useCallback } from 'react'
 
 import HeaderLoginLogoutBlackLine from './headerComponents/HeaderLoginLogoutBlackLine'
 import SearchIconComponent from './headerComponents/SearchIconComponent'
@@ -18,7 +19,6 @@ import menuIcon from '../../assets/pictures/app-icons/menuIcon.png'
 import headerLogo from '../../assets/pictures/head-logo.png'
 
 import styles from './Header.module.scss'
-import { useCallback } from 'react'
 
 const AppBarForSmallScreens = lazy(() =>
   import('./headerComponents/AppBarForSmallScreens')

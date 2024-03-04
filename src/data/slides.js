@@ -9,7 +9,7 @@ const slides = [
     img: slide1,
     title: 'slide1',
     header: 'DRIVE YOUR DREAM CAR',
-    text: 'R 34 – The fifth generation of the GT-Rs and still the most dominant vehicle in motorsports.',
+    text: 'R 34 - The fifth generation of the GT-Rs and still the most dominant vehicle in motorsports.',
   },
   {
     id: 2,
