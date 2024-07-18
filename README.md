@@ -3,15 +3,6 @@
   <p>This project is purely an educational and technical exercise, created to showcase my programming skills. None of the elements presented in this project have any real-world connection, and any resemblances to real events, organizations, or individuals are purely coincidental.</p>
 <div align='center'><img style="width:30%" src='https://github.com/BazyshynAnton/JDM/assets/120124298/f70f6269-7b98-4684-bfd8-99a472041e65' /></div>
 
-## Features
-
--Log in. <br/>
--Edit your profile. <br/>
--If you're not logged in, register. <br/>
--Add cars from the catalog to your "Favorites." <br/>
--Filter the car catalog. <br/>
--Search for cars in the search field.
-
 ## Technologies
 
 -React.  
@@ -20,6 +11,15 @@
 -SCSS for styling.  
 -vite.  
 and other.  
+
+## Features
+
+-Log in. <br/>
+-Edit your profile. <br/>
+-If you're not logged in, register. <br/>
+-Add cars from the catalog to your "Favorites." <br/>
+-Filter the car catalog. <br/>
+-Search for cars in the search field.
 
 <h2>Authors</h2>
 <p>Bazyshyn Anton</p>
