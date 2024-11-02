@@ -3,37 +3,39 @@
   <p>This project is purely an educational and technical exercise, created to showcase my programming skills. None of the elements presented in this project have any real-world connection, and any resemblances to real events, organizations, or individuals are purely coincidental.</p>
 <div align='center'><img style="width:30%" src='https://github.com/BazyshynAnton/JDM/assets/120124298/f70f6269-7b98-4684-bfd8-99a472041e65' /></div>
 
+## Installation
+
+1.&nbsp;Clone the repository or download the archive.  
+2.&nbsp;Navigate to the project's root folder.  
+3.&nbsp;Install dependencies: `npm install`  
+
+## Getting Started
+
+Start the project&nbsp; &nbsp;- `npm run dev`    <br/>
+Build the project&nbsp;&nbsp;- `npm run build`  <br/>
+Production&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- `npm run preview`  <br/>
+
 ## Technologies
 
--React.  
--React-Router-DOM.  
--Redux Toolkit for state management.  
--SCSS for styling.  
--vite.  
+- React. <br/>
+- React-Router-DOM. <br/>
+- Redux Toolkit for state management. <br/>
+- SCSS for styling. <br/>
+- vite. <br/>
 and other.  
 
 ## Features
 
--Log in. <br/>
--Edit your profile. <br/>
--If you're not logged in, register. <br/>
--Add cars from the catalog to your "Favorites." <br/>
--Filter the car catalog. <br/>
--Search for cars in the search field.
+- Log in. <br/>
+- Edit your profile. <br/>
+- If you're not logged in, register. <br/>
+- Add cars from the catalog to your "Favorites." <br/>
+- Filter the car catalog. <br/>
+- Search for cars in the search field.
 
 <h2>Authors</h2>
 <p>Bazyshyn Anton</p>
-<p>GitHub - <a href='https://github.com/BazyshynAnton'>Bazyshyn Anton</a></p> 
-
-## Installation
-
-1.Clone the repository or download the archive.  
-2.Navigate to the project's root folder.  
-3.Install dependencies: `npm install`  
-
-## Getting Started
-
-Start the project `npm run dev`  
+<p>GitHub - <a href='https://github.com/BazyshynAnton'>Bazyshyn Anton</a></p>  
 
 <h2>Screenshots of the Project 📸</h2>  
 <br>
